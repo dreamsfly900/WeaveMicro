@@ -1,0 +1,9 @@
+D:\微服务架构\wRPCService\obj\Debug\netstandard2.0\wRPCService.csprojAssemblyReference.cache
+D:\微服务架构\wRPCService\obj\Debug\netstandard2.0\wRPCService.AssemblyInfoInputs.cache
+D:\微服务架构\wRPCService\obj\Debug\netstandard2.0\wRPCService.AssemblyInfo.cs
+D:\微服务架构\wRPCService\obj\Debug\netstandard2.0\wRPCService.csproj.CoreCompileInputs.cache
+D:\微服务架构\wRPCService\bin\Debug\netstandard2.0\wRPCService.deps.json
+D:\微服务架构\wRPCService\bin\Debug\netstandard2.0\wRPCService.dll
+D:\微服务架构\wRPCService\bin\Debug\netstandard2.0\wRPCService.pdb
+D:\微服务架构\wRPCService\obj\Debug\netstandard2.0\wRPCService.dll
+D:\微服务架构\wRPCService\obj\Debug\netstandard2.0\wRPCService.pdb

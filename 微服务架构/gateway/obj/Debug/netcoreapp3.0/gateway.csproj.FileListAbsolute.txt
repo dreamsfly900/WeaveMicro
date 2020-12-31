@@ -1,0 +1,16 @@
+D:\微服务架构\gateway\bin\Debug\netcoreapp3.0\gateway.exe
+D:\微服务架构\gateway\bin\Debug\netcoreapp3.0\gateway.deps.json
+D:\微服务架构\gateway\bin\Debug\netcoreapp3.0\gateway.runtimeconfig.json
+D:\微服务架构\gateway\bin\Debug\netcoreapp3.0\gateway.runtimeconfig.dev.json
+D:\微服务架构\gateway\bin\Debug\netcoreapp3.0\gateway.dll
+D:\微服务架构\gateway\bin\Debug\netcoreapp3.0\gateway.pdb
+D:\微服务架构\gateway\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Server.Kestrel.Https.dll
+D:\微服务架构\gateway\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+D:\微服务架构\gateway\obj\Debug\netcoreapp3.0\gateway.csprojAssemblyReference.cache
+D:\微服务架构\gateway\obj\Debug\netcoreapp3.0\gateway.AssemblyInfoInputs.cache
+D:\微服务架构\gateway\obj\Debug\netcoreapp3.0\gateway.AssemblyInfo.cs
+D:\微服务架构\gateway\obj\Debug\netcoreapp3.0\gateway.csproj.CoreCompileInputs.cache
+D:\微服务架构\gateway\obj\Debug\netcoreapp3.0\gateway.csproj.CopyComplete
+D:\微服务架构\gateway\obj\Debug\netcoreapp3.0\gateway.dll
+D:\微服务架构\gateway\obj\Debug\netcoreapp3.0\gateway.pdb
+D:\微服务架构\gateway\obj\Debug\netcoreapp3.0\gateway.genruntimeconfig.cache

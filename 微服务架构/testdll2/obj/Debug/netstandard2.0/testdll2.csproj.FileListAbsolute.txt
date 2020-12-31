@@ -1,0 +1,12 @@
+D:\微服务架构\testdll2\bin\Debug\netstandard2.0\testdll2.deps.json
+D:\微服务架构\testdll2\bin\Debug\netstandard2.0\testdll2.dll
+D:\微服务架构\testdll2\bin\Debug\netstandard2.0\testdll2.pdb
+D:\微服务架构\testdll2\obj\Debug\netstandard2.0\testdll2.AssemblyInfoInputs.cache
+D:\微服务架构\testdll2\obj\Debug\netstandard2.0\testdll2.AssemblyInfo.cs
+D:\微服务架构\testdll2\obj\Debug\netstandard2.0\testdll2.csproj.CoreCompileInputs.cache
+D:\微服务架构\testdll2\obj\Debug\netstandard2.0\testdll2.dll
+D:\微服务架构\testdll2\obj\Debug\netstandard2.0\testdll2.pdb
+D:\微服务架构\testdll2\obj\Debug\netstandard2.0\testdll2.csprojAssemblyReference.cache
+D:\微服务架构\testdll2\bin\Debug\netstandard2.0\wRPCService.dll
+D:\微服务架构\testdll2\bin\Debug\netstandard2.0\wRPCService.pdb
+D:\微服务架构\testdll2\obj\Debug\netstandard2.0\testdll2.csproj.CopyComplete

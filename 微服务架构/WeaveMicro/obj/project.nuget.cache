@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "htSCISzBnmYxwfdyWjgqjXlMa6GDvR5guZnZZOfOeQckTB0vDWaQ/GrbKdp1a3TsXgYpGz9ytGUY0UXHMEcZLA==",
+  "success": true,
+  "projectFilePath": "D:\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\xingy\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\5.0.0\\microsoft.extensions.configuration.fileextensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\microsoft.extensions.configuration.json\\5.0.0\\microsoft.extensions.configuration.json.5.0.0.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\5.0.0\\microsoft.extensions.fileproviders.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\5.0.0\\microsoft.extensions.fileproviders.physical.5.0.0.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\5.0.0\\microsoft.extensions.filesystemglobbing.5.0.0.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\weave.base\\2.0.11\\weave.base.2.0.11.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\weave.server\\2.0.13\\weave.server.2.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

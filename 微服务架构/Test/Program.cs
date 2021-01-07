@@ -29,7 +29,7 @@ namespace Test
        async static void bb()
         {
          
-            String retun = await clientChannel.Call<String>("abcd", "ff", "gbvas");
+            String retun = await clientChannel.Call<String>("abcd", "ff", new object[] { new { name = "gghhss", age = 0 }, new { name = "gghhss", age = 0 } });
             Console.WriteLine("ceshi:"+retun);
              
         }

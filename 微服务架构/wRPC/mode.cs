@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Primitives;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,15 +9,15 @@ namespace wRPC
    
   public  class httpmode
     {
-        public IQueryCollection Query { get; set; }
-        public IFormCollection From { get; set; }
+        public IEnumerable<KeyValuePair<string, StringValues>> Query { get; set; }
+        public IEnumerable<KeyValuePair<string, StringValues>> From { get; set; }
 
-        public IHeaderDictionary Headers { get; set; }
+        public IDictionary<string, StringValues> Headers { get; set; }
     }
     public class Rpcdata<T>
     {
-         
-        public httpmode HttpContext { get; set; }
+        public IHeaderDictionary Headers { get; set; }
+       // public httpmode HttpContext { get; set; }
         public T parameter { get; set; }
         public string FunName { get; set; }
         public string Route { get; internal set; }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AixSVwm/s4qaX0/JK1iG4ViQAuiWxNjPGbjnWUzoM12wrZ3I59p8i1IOAiMITGIg175rxNYty8Ciyb+9sB/pag==",
+  "dgSpecHash": "7JQQ3JFTiPTf3OY5lBzwAQ604FGr325GNp4ZF+TeX0tgVkM6XowUJEVkARLv8+1g4Rp3RFKYDWihGxXrAK2Mmw==",
   "success": true,
   "projectFilePath": "D:\\WeaveMicro\\微服务架构\\gateway\\gateway.csproj",
   "expectedPackageFiles": [
@@ -31,6 +31,7 @@
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.build.framework\\16.8.0\\microsoft.build.framework.16.8.0.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.build.utilities.core\\16.8.0\\microsoft.build.utilities.core.16.8.0.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.extensions.configuration\\2.2.0\\microsoft.extensions.configuration.2.2.0.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.2.0\\microsoft.extensions.configuration.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.extensions.configuration.binder\\2.2.0\\microsoft.extensions.configuration.binder.2.2.0.nupkg.sha512",

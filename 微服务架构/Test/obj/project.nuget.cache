@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+OeIpR9m7OJRVbDAJZTCNeYXgzgtPFH/EkskvY9N9V5B8/6kwo0bZCkiQgwmmSoHHDFYACicgAdqGNmX6k46+Q==",
+  "dgSpecHash": "sLiYCDpCcUfFpQdktms0Acy6MVwoi5O8Mz2ew4l8k2lY103mLGiJgoIcr7O5Ho/YXfgvqDjAGtXTq6+pj+bHlQ==",
   "success": true,
   "projectFilePath": "D:\\WeaveMicro\\微服务架构\\Test\\Test.csproj",
   "expectedPackageFiles": [
@@ -31,6 +31,7 @@
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.build.framework\\16.8.0\\microsoft.build.framework.16.8.0.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.build.utilities.core\\16.8.0\\microsoft.build.utilities.core.16.8.0.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.extensions.configuration\\2.2.0\\microsoft.extensions.configuration.2.2.0.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.2.0\\microsoft.extensions.configuration.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.extensions.configuration.binder\\2.2.0\\microsoft.extensions.configuration.binder.2.2.0.nupkg.sha512",

@@ -422,6 +422,7 @@
           }
         }
       },
+      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Extensions.Configuration/2.2.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "2.2.0"
@@ -990,6 +991,7 @@
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.Build.Framework": "16.8.0",
           "Microsoft.Build.Utilities.Core": "16.8.0",
+          "Microsoft.CSharp": "4.7.0",
           "Weave.TcpSynClient": "2.0.7"
         },
         "runtime": {
@@ -1201,6 +1203,13 @@
       "sha512": "sha512-qEjBBpxmMD4NPX8D4kL8TD+3KUZR7iRFg9Xv9lHCnY6nQpsDELY9ltAQQL5nxlhseB65GikqKxA9pMqd1f0cPQ==",
       "path": "microsoft.build.utilities.core/16.8.0",
       "hashPath": "microsoft.build.utilities.core.16.8.0.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/2.2.0": {
       "type": "package",

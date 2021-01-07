@@ -5,17 +5,19 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeaveMicrocenter", "WeaveMicrocenter.csproj", "{8FB0EC51-9FB0-4279-B888-57F0E0125997}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gateway", "..\gateway\gateway.csproj", "{B5F4C97E-BEDB-4872-B9DC-D62E3289B868}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gateway", "..\gateway\gateway.csproj", "{B5F4C97E-BEDB-4872-B9DC-D62E3289B868}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wRPC", "..\wRPC\wRPC.csproj", "{55DFECBC-A117-4ECF-A672-27B333779D39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wRPC", "..\wRPC\wRPC.csproj", "{55DFECBC-A117-4ECF-A672-27B333779D39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wRPCService", "..\wRPCService\wRPCService.csproj", "{0B6406CE-76E9-4D3C-885A-8A565168AB68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wRPCService", "..\wRPCService\wRPCService.csproj", "{0B6406CE-76E9-4D3C-885A-8A565168AB68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "..\Test\Test.csproj", "{92ADFD94-B0B4-43CD-9685-A99F536C9620}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "..\Test\Test.csproj", "{92ADFD94-B0B4-43CD-9685-A99F536C9620}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "testdll", "testdll", "{27BB2D4E-8C29-458E-9A65-F5B60F862AE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testdll2", "..\testdll2\testdll2.csproj", "{5DD9DBF7-35C9-41FB-A056-666D46FBE51A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "testdll2", "..\testdll2\testdll2.csproj", "{5DD9DBF7-35C9-41FB-A056-666D46FBE51A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication3", "..\WebApplication3\WebApplication3.csproj", "{5AEF56D7-391F-46EA-8F7B-E527BDF41098}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{5DD9DBF7-35C9-41FB-A056-666D46FBE51A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DD9DBF7-35C9-41FB-A056-666D46FBE51A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DD9DBF7-35C9-41FB-A056-666D46FBE51A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AEF56D7-391F-46EA-8F7B-E527BDF41098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AEF56D7-391F-46EA-8F7B-E527BDF41098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AEF56D7-391F-46EA-8F7B-E527BDF41098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AEF56D7-391F-46EA-8F7B-E527BDF41098}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -53,9 +53,8 @@ namespace gateway
             // }
 
             // 文件路径
-            
-                var reader = new StreamReader(context.Request.Body);
-                var contentFromBody = reader.ReadToEnd();
+
+
             //Stream inputstream = context.Request.Body;
             //byte[] b = new byte[context.Request.Body.Length];
             //inputstream.Read(b, 0, (int)inputstream.Length);
@@ -65,8 +64,14 @@ namespace gateway
             //{
             //    string inputstr =contentFromBody.ToString();
             //}
-
-            server ser = WeightAlgorithm.Get(servers, context.Request.Path.Value.Trim('/'), context.Request.Method);
+            var contentFromBody = "";
+            if (context.Request.ContentType == "application/json")
+            {
+                var reader = new StreamReader(context.Request.Body);
+                contentFromBody = reader.ReadToEnd();
+                 
+            }
+            server ser = WeightAlgorithm.Get(servers, context.Request.Path.Value.Trim('/'));
             if (ser == null)
             {
                 await context.Response.WriteAsync($" ~, {404}");
@@ -77,9 +82,48 @@ namespace gateway
                 {
                     //ser.services[0].parameter
                     object[] objs = new object[ser.services[0].parameter.Length];
+                    for (int i = 0; i < objs.Length; i++)
+                    {
 
+                        if (ser.services[0].Method == "NONE")
+                        {
+                            objs[0] = Newtonsoft.Json.JsonConvert.DeserializeObject(contentFromBody);
+
+                            break;
+                        }
+                        else if (ser.services[0].Method == "GET")
+                        {
+                            if (context.Request.Query == null)
+                            {
+                                await context.Response.WriteAsync($" ~,参数不完整");
+                                return;
+                            }
+                            objs[i] = context.Request.Query[ser.services[0].parameter[i]];
+                        }
+                        else if (ser.services[0].Method == "POST")
+                        {
+                            if (!context.Request.HasFormContentType)
+                            {
+                                await context.Response.WriteAsync($" ~,参数不完整");
+                                return;
+                            }
+                            objs[i] = context.Request.Form[ser.services[0].parameter[i]];
+                        }
+                    }
+                    string datastr = Newtonsoft.Json.JsonConvert.SerializeObject(context.Request.Headers);
                     wRPCclient.ClientChannel clientChannel = new wRPCclient.ClientChannel(ser.IP, ser.Port);
-                    String retun = await clientChannel.Call<String>("abcd", "ff", context, "gbvas");
+                    clientChannel.Headers = context.Request.Headers ;
+                    String rl = context.Request.Path.Value.Trim('/');
+                    String[] rls = rl.Split('/');
+                    rl = "";
+                    for (int i=0;i< rls.Length-1;i++)
+                    {
+                        rl += rls[i]+"/";
+                    }
+                    rl= rl.Substring(0, rl.Length-1);
+                    String retun = await clientChannel.Call<String>(rl, rls[rls.Length-1], objs);
+
+                    await context.Response.WriteAsync($"{retun}");
                     //string httpstr = Newtonsoft.Json.JsonConvert.SerializeObject(httpmode);
                 }
                 catch (Exception ex)

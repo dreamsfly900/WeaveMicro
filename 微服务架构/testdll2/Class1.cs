@@ -3,9 +3,19 @@ using wRPC;
 
 namespace testdll2
 {
+    public class mode
+    {
+        public string name;
+        public int age;
+    }
+    public class modeA
+    {
+        public string name;
+        public int age;
+    }
     public class Class1
     {
-        [InstallFun(FunAttribute.ALL, "此方法用于测试")]
+        [InstallFun(FunAttribute.NONE, "此方法用于测试")]
         public void ff(string str)
         {
 
@@ -15,11 +25,11 @@ namespace testdll2
     [Route("abcd")]
     public class Class2: FunctionBase
     {
-        [InstallFun(FunAttribute.ALL, "此方法用于测试")]
-        public String ff(string str)
+        [InstallFun(FunAttribute.NONE, "此方法用于测试")]
+        public String ff(mode md)
         {
           
-            Console.WriteLine(str);
+            Console.WriteLine(md.name);
             return "Class2.ff的返回值";
         }
     }

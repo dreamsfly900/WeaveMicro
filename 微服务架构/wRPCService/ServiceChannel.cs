@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Extensions.Primitives;
+using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Reflection;
 using wRPC;
 
@@ -21,52 +23,94 @@ namespace wRPCService
 
         private void P2Server_weaveReceiveBitEvent(byte command, byte[] data, System.Net.Sockets.Socket soc)
         {
-            String rdata=GZIP.GZipDecompress(data);
-            Rpcdata<Object[]>  rpdata=Newtonsoft.Json.JsonConvert.DeserializeObject<Rpcdata<Object[]>>(rdata);
-            if (!keyValuePairs.ContainsKey(rpdata.Route.Replace('/', '.')))
-            
+            try
             {
-                P2Server.Send(soc, 0x05, "server Route error");
-                return;
-            }
-               
-            Type tt = keyValuePairs[rpdata.Route.Replace('/', '.')];
-            Assembly ab=Assembly.GetAssembly(tt);
-            object obj = ab.CreateInstance(tt.FullName);
-            //Type t = obj.GetType();
-          
-             MethodInfo mi = tt.GetMethod(rpdata.FunName);
-            if (mi != null)
-            {
-                InstallFunAttribute myattribute = (InstallFunAttribute)Attribute.GetCustomAttribute(mi, typeof(InstallFunAttribute));
-                if (myattribute != null)
+                String rdata = GZIP.GZipDecompress(data);
+                Rpcdata<Object[]> rpdata = Newtonsoft.Json.JsonConvert.DeserializeObject<Rpcdata<Object[]>>(rdata);
+                if (!keyValuePairs.ContainsKey(rpdata.Route.Replace('/', '.')))
+
                 {
-                    object[] objs = rpdata.parameter;
-                    if (obj is FunctionBase)
-                    {
-                        (obj as FunctionBase).HttpContext = rpdata.HttpContext;
-                    }
-                    //if (myattribute.Type != FunAttribute.RPC)
-                    //{
-                    //    objs = new object[rpdata.parameter.Length + 1];
-                    //    int i = 0;
-                    //    foreach (object oo in rpdata.parameter)
-                    //    {
-                    //        objs[i] = oo;
-                    //        i++;
-                    //    }
-                    //    objs[objs.Length - 1] = rpdata.HttpContext;
-
-                    //}
-
-                    object rpcdata = mi.Invoke(obj, objs);
-                    byte[] outdata = GZIP.GZipCompress(Newtonsoft.Json.JsonConvert.SerializeObject(rpcdata));
-                    P2Server.Send(soc, 0x01, outdata);
-
+                    P2Server.Send(soc, 0x05, GZIP.GZipCompress( "server Route error"));
+                    return;
                 }
+
+                Type tt = keyValuePairs[rpdata.Route.Replace('/', '.')];
+                Assembly ab = Assembly.GetAssembly(tt);
+                object obj = ab.CreateInstance(tt.FullName);
+                //Type t = obj.GetType();
+
+                MethodInfo mi = tt.GetMethod(rpdata.FunName);
+                if (mi != null)
+                {
+                    InstallFunAttribute myattribute = (InstallFunAttribute)Attribute.GetCustomAttribute(mi, typeof(InstallFunAttribute));
+                    if (myattribute != null)
+                    {
+                        object[] objs = rpdata.parameter;
+                        if (obj is FunctionBase && rpdata.Headers!=null)
+                        {
+
+
+                            (obj as FunctionBase).Headers = new Dictionary<string, StringValues>() ;
+                            foreach (String str in rpdata.Headers.Keys)
+                            {
+                                (obj as FunctionBase).Headers.Add(str, rpdata.Headers[str][0]);
+                            }
+                           
+                        }
+                        //if (myattribute.Type != FunAttribute.RPC)
+                        //{
+                        //    objs = new object[rpdata.parameter.Length + 1];
+                        //    int i = 0;
+                        //    foreach (object oo in rpdata.parameter)
+                        //    {
+                        //        objs[i] = oo;
+                        //        i++;
+                        //    }
+                        //    objs[objs.Length - 1] = rpdata.HttpContext;
+
+                        //}
+                        ParameterInfo[] paramsInfo = mi.GetParameters();//得到指定方法的参数列表 
+                        if (paramsInfo.Length != objs.Length)
+                        { P2Server.Send(soc, 0x02, GZIP.GZipCompress("参数不正确"));return; }
+                            for (int i = 0; i < objs.Length; i++)
+
+                        {
+                         
+                            Type tType = paramsInfo[i].ParameterType;
+
+                            //如果它是值类型,或者String   
+
+                            if (tType.Equals(typeof(string)) || (!tType.IsInterface && !tType.IsClass))
+
+                            {
+
+                                //改变参数类型   
+
+                                objs[i] = Convert.ChangeType(objs[i], tType);
+
+                            }
+
+                            else if (tType.IsClass)//如果是类,将它的json字符串转换成对象   
+
+                            {
+
+                                objs[i] = Newtonsoft.Json.JsonConvert.DeserializeObject(objs[i].ToString(), tType);
+
+                            }
+
+                        }
+                        object rpcdata = mi.Invoke(obj, objs);
+                        byte[] outdata = GZIP.GZipCompress(Newtonsoft.Json.JsonConvert.SerializeObject(rpcdata));
+                        P2Server.Send(soc, 0x01, outdata);
+
+                    }
+                }
+
             }
-           
-            
+            catch (Exception e)
+            {
+                P2Server.Send(soc, 0x02, GZIP.GZipCompress(e.Message));
+            }
         }
 
         public void Start()

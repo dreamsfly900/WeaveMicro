@@ -50,7 +50,7 @@ namespace wRPC
         private static server serviceCenter = new server();
         private static ConcurrentDictionary<string, WeightAlgorithmItem> _serviceDic = new ConcurrentDictionary<string, WeightAlgorithmItem>();
         private static SpinLock _spinLock = new SpinLock();
-        public static server Get(server[] serviceList, string serviceName,String Method)
+        public static server Get(server[] serviceList, string serviceName)
         {
             
             if (serviceList == null)
@@ -62,7 +62,7 @@ namespace wRPC
             _spinLock.Enter(ref locked);//获取锁
 
             WeightAlgorithmItem weightAlgorithmItem = null;
-            if (!_serviceDic.ContainsKey(serviceName + Method))
+            if (!_serviceDic.ContainsKey(serviceName ))
             {
                 weightAlgorithmItem = new WeightAlgorithmItem()
                 {
@@ -70,14 +70,14 @@ namespace wRPC
                     Urls = new List<string>(),
                     Port = new List<int>()
                 };
-                BuildWeightAlgorithmItem(weightAlgorithmItem, serviceList, serviceName, Method);
+                BuildWeightAlgorithmItem(weightAlgorithmItem, serviceList, serviceName);
                 if (weightAlgorithmItem.Urls.Count == 0)
                     return null;
-                _serviceDic.TryAdd(serviceName+ Method, weightAlgorithmItem);
+                _serviceDic.TryAdd(serviceName, weightAlgorithmItem);
             }
             else
             {
-                _serviceDic.TryGetValue(serviceName + Method, out weightAlgorithmItem);
+                _serviceDic.TryGetValue(serviceName , out weightAlgorithmItem);
                 //weightAlgorithmItem.Urls.Clear();
                 //weightAlgorithmItem.Port.Clear();
                 //BuildWeightAlgorithmItem(weightAlgorithmItem, serviceList, serviceName, Method);
@@ -101,16 +101,16 @@ namespace wRPC
                 serviceCenter.Port = weightAlgorithmItem.Port[weightAlgorithmItem.Index];
                 serviceCenter.services = new service[] { weightAlgorithmItem.servic };
             }
-            _serviceDic[serviceName + Method] = weightAlgorithmItem;
+            _serviceDic[serviceName ] = weightAlgorithmItem;
 
-            Console.WriteLine(serviceName + "-----" + url);
+          //  Console.WriteLine(serviceName + "-----" + url);
             if (locked) //释放锁
                 _spinLock.Exit();
             return serviceCenter;
         }
 
         private static void BuildWeightAlgorithmItem(WeightAlgorithmItem weightAlgorithmItem, 
-            server[] serviceList,string serviceName,String Method)
+            server[] serviceList,string serviceName)
         {
             //serviceList.ForEach(service => //有几个权重就加几个实例
             //{
@@ -121,7 +121,8 @@ namespace wRPC
                 {
                     if (servic.servicesDic.ContainsKey(serviceName))
                     {
-                        if(servic.servicesDic[serviceName].Method == Method) { 
+                       // if(servic.servicesDic[serviceName].Method == Method)
+                        { 
                              weight = servic.weight;
                             for (int i = 0; i < weight; i++)
                             {

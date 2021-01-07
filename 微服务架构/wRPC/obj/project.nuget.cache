@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ruYwWilJgLwP1jgDb2IgRcBIqHuDovS7egUPHoKbd/d7Bs19CpYOYAm6IiN2ioCWTytJ6VTTgr98hkardrdoVw==",
+  "dgSpecHash": "H+TMgQB8DoF8OkhB1/ZHXtbOLI+83c+g3hHi3mat5kSLHN6a7klc2qHzr934KANBbXR/C7jtJBefmFF5o2oMmQ==",
   "success": true,
   "projectFilePath": "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.build.framework\\16.8.0\\microsoft.build.framework.16.8.0.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.build.utilities.core\\16.8.0\\microsoft.build.utilities.core.16.8.0.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.extensions.primitives\\2.2.0\\microsoft.extensions.primitives.2.2.0.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",

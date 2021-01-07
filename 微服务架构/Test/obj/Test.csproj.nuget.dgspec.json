@@ -239,6 +239,10 @@
               "target": "Package",
               "version": "[16.8.0, )"
             },
+            "Microsoft.CSharp": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

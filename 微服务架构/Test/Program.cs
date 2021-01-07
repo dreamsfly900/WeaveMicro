@@ -3,67 +3,36 @@ using System.Collections;
 using System.Collections.Concurrent;
 using System.Reflection;
 using wRPC;
+using wRPCService;
 
 namespace Test
 {
+   
     class Program
     {
-        static void Main(string[] args)
-        { 
-            ConcurrentDictionary<string, Assembly> keyValuePairs = new ConcurrentDictionary<string, Assembly>();
-               String[] files = System.IO.Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.dll");
-        
-            foreach (String file in files) {
-                try
-                {
-
-                    Assembly assembly = Assembly.LoadFrom(file);
-                    Type[] ts = assembly.GetTypes();
-                    foreach (Type tt in ts)
-                    {
-                        MethodInfo[] mis = tt.GetMethods();
-                        foreach (MethodInfo mia in mis)
-                        {
-                           
-                            InstallFunAttribute myattribute = (InstallFunAttribute)Attribute.GetCustomAttribute(mia, typeof(InstallFunAttribute));
-                            if (myattribute != null)
-                            {
-                                if(!keyValuePairs.ContainsKey( mia.DeclaringType.FullName))
-                                keyValuePairs.TryAdd(mia.DeclaringType.FullName, assembly);
-                            }
-                        }
-                    }
-                }
-                catch
-                { }
-            }
-            object obj = keyValuePairs["testdll2.Class1"].CreateInstance("testdll2.Class1");
-            Type t = obj.GetType();
-            MethodInfo mi = t.GetMethod("ff");
-            if (mi != null)
-            {
-                InstallFunAttribute myattribute = (InstallFunAttribute)Attribute.GetCustomAttribute(mi, typeof(InstallFunAttribute));
-                if (myattribute != null)
-                {
-
-                }
-            }
-            object[] objs = new object[] { "aavvbb22" };
-             
-            mi.Invoke(obj, objs);
-            Console.WriteLine("Hello World!");
-        }
-    }
-    
-}
-namespace aabb {
-  public  class A {
-
-       public void bb(String aa)
+       static wRPCclient.ClientChannel clientChannel = new wRPCclient.ClientChannel("127.0.0.1", 10098);
+        static  void Main(string[] args)
         {
-            Console.WriteLine(aa);
-        }
-    
-    }
+            ServiceChannel service = new ServiceChannel(10098);
+            service.Start();
+            while (true)
+            {
+                System.Threading.Thread.Sleep(10);
+                bb();
+                Console.ReadLine();
+            }
 
-}
+            
+            Console.WriteLine("H6ello World!");
+        }
+
+       async static void bb()
+        {
+         
+            String retun = await clientChannel.Call<String>("abcd", "ff", "gbvas");
+            Console.WriteLine("ceshi:"+retun);
+             
+        }
+    }
+    
+} 

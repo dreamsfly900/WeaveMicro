@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+        alert(JSON.stringify({ attributionname: 'cscs', pid: 0 }));
+ $.ajax({
+           url: "http://localhost:5000/" + "abcd/ff?name=abcdefg", // 目标资源
+            type:"post",
+            data:JSON.stringify({attributionname:'cscs',pid:0}),
+            contentType:"application/json",
+            success:function(data){
+                console.log(data)
+            }
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

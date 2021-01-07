@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\testdll2\testdll2.csproj" />
+    <ProjectReference Include="..\wRPC\wRPC.csproj" />
   </ItemGroup>
 
 </Project>

@@ -389,11 +389,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj",
+      "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj",
       "projectName": "WeaveMicrocenter",
-      "projectPath": "D:\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj",
+      "projectPath": "D:\\WeaveMicro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj",
       "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
-      "outputPath": "D:\\微服务架构\\WeaveMicro\\obj\\",
+      "outputPath": "D:\\WeaveMicro\\微服务架构\\WeaveMicro\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",

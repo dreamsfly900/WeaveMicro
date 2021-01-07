@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text;
 
@@ -11,5 +12,22 @@ namespace gateway
         public IFormCollection From { get; set; }
 
         public IHeaderDictionary Headers { get; set; }
+    }
+    public class server
+    {
+        public int weight=1;
+
+        public String IP { get; set; }
+        public int Port { get; set; }
+        public service[] services { get; set; }
+
+        public ConcurrentDictionary<string, service> servicesDic = new ConcurrentDictionary<string, service>();
+    }
+    public class service
+    {
+        public string Route { get; set; }
+        public  string Method { get; set; }
+        public String[] parameter { get; set; }
+        public string  annotation { get; set; }
     }
 }

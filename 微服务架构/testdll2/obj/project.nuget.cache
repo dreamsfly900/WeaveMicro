@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "A5jfzlVUX/T0bDXdjfCkpArkb/hykWREHO8ugLuVtkC6yTI5HggoDdGD2Jvo5xO8Nkxaes5NhiYdAfRD71R/hQ==",
+  "dgSpecHash": "l8DktHiNAaMzVDrs615AKS9xQ/dEzO4Os0qN+nJjRQdmUcbiHKcWeEzqwgS51MfxhPRYy+8Ttiq5kGGua6WeRQ==",
   "success": true,
-  "projectFilePath": "D:\\微服务架构\\testdll2\\testdll2.csproj",
+  "projectFilePath": "D:\\WeaveMicro\\微服务架构\\testdll2\\testdll2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

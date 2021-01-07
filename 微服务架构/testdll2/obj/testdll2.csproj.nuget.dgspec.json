@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\微服务架构\\testdll2\\testdll2.csproj": {}
+    "D:\\WeaveMicro\\微服务架构\\testdll2\\testdll2.csproj": {}
   },
   "projects": {
-    "D:\\微服务架构\\testdll2\\testdll2.csproj": {
+    "D:\\WeaveMicro\\微服务架构\\testdll2\\testdll2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\微服务架构\\testdll2\\testdll2.csproj",
+        "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\testdll2\\testdll2.csproj",
         "projectName": "testdll2",
-        "projectPath": "D:\\微服务架构\\testdll2\\testdll2.csproj",
+        "projectPath": "D:\\WeaveMicro\\微服务架构\\testdll2\\testdll2.csproj",
         "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
-        "outputPath": "D:\\微服务架构\\testdll2\\obj\\",
+        "outputPath": "D:\\WeaveMicro\\微服务架构\\testdll2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "D:\\微服务架构\\wRPCService\\wRPCService.csproj": {
-                "projectPath": "D:\\微服务架构\\wRPCService\\wRPCService.csproj"
+              "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
+                "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj"
               }
             }
           }
@@ -65,14 +65,14 @@
         }
       }
     },
-    "D:\\微服务架构\\wRPCService\\wRPCService.csproj": {
+    "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\微服务架构\\wRPCService\\wRPCService.csproj",
+        "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
         "projectName": "wRPCService",
-        "projectPath": "D:\\微服务架构\\wRPCService\\wRPCService.csproj",
+        "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
         "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
-        "outputPath": "D:\\微服务架构\\wRPCService\\obj\\",
+        "outputPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",

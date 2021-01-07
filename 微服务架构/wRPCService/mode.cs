@@ -12,12 +12,17 @@ namespace wRPC
 
         public IHeaderDictionary Headers { get; set; }
     }
+    
+    public class FunctionBase
+    {
+         public httpmode HttpContext { get; set; }
+    }
     public class Rpcdata<T>
     {
         public httpmode HttpContext { get; set; }
         public T parameter { get; set; }
         public string FunName { get; set; }
-        public string Route { get; internal set; }
+        public string Route { get;  set; }
 
         /// <summary>
         /// 0为泛型参数，1为多参数

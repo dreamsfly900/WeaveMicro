@@ -1,33 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "D:\\微服务架构\\gateway\\gateway.csproj": {}
+    "D:\\WeaveMicro\\微服务架构\\gateway\\gateway.csproj": {}
   },
   "projects": {
-    "D:\\微服务架构\\gateway\\gateway.csproj": {
+    "D:\\WeaveMicro\\微服务架构\\gateway\\gateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\微服务架构\\gateway\\gateway.csproj",
+        "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\gateway\\gateway.csproj",
         "projectName": "gateway",
-        "projectPath": "D:\\微服务架构\\gateway\\gateway.csproj",
+        "projectPath": "D:\\WeaveMicro\\微服务架构\\gateway\\gateway.csproj",
         "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
-        "outputPath": "D:\\微服务架构\\gateway\\obj\\",
+        "outputPath": "D:\\WeaveMicro\\微服务架构\\gateway\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj": {
+                "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -37,12 +41,20 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Server.Kestrel": {
+            "Microsoft.AspNetCore": {
               "target": "Package",
               "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Hosting": {
+              "target": "Package",
+              "version": "[2.2.7, )"
+            },
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.2.8, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -64,13 +76,83 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj",
+        "projectName": "wRPC",
+        "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj",
+        "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
+        "outputPath": "D:\\WeaveMicro\\微服务架构\\wRPC\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Build.Framework": {
+              "target": "Package",
+              "version": "[16.8.0, )"
+            },
+            "Microsoft.Build.Utilities.Core": {
+              "target": "Package",
+              "version": "[16.8.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Weave.TcpSynClient": {
+              "target": "Package",
+              "version": "[2.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }

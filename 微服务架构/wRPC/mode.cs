@@ -5,6 +5,7 @@ using System.Text;
 
 namespace wRPC
 {
+   
   public  class httpmode
     {
         public IQueryCollection Query { get; set; }
@@ -14,6 +15,7 @@ namespace wRPC
     }
     public class Rpcdata<T>
     {
+         
         public httpmode HttpContext { get; set; }
         public T parameter { get; set; }
         public string FunName { get; set; }

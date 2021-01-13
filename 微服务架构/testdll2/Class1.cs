@@ -32,5 +32,12 @@ namespace testdll2
             Console.WriteLine(md.name);
             return "Class2.ff的返回值";
         }
+        [InstallFun(FunAttribute.NONE, "此方法用于测试")]
+        public String ff2(string name)
+        {
+
+            Console.WriteLine(name);
+            return "Class2.f2f的返回值";
+        }
     }
 }

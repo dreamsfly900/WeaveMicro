@@ -4,6 +4,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace wRPC
 {
@@ -49,8 +50,8 @@ namespace wRPC
     {
         private static server serviceCenter = new server();
         private static ConcurrentDictionary<string, WeightAlgorithmItem> _serviceDic = new ConcurrentDictionary<string, WeightAlgorithmItem>();
-        private static SpinLock _spinLock = new SpinLock();
-        public static server Get(server[] serviceList, string serviceName)
+   //     private static SpinLock _spinLock = new SpinLock();
+        public static async Task<server>  Get(server[] serviceList, string serviceName)
         {
             
             if (serviceList == null)
@@ -59,7 +60,7 @@ namespace wRPC
                 return serviceList[0];
 
             bool locked = false;
-            _spinLock.Enter(ref locked);//获取锁
+            //_spinLock.Enter(ref locked);//获取锁
 
             WeightAlgorithmItem weightAlgorithmItem = null;
             if (!_serviceDic.ContainsKey(serviceName ))
@@ -104,8 +105,8 @@ namespace wRPC
             _serviceDic[serviceName ] = weightAlgorithmItem;
 
           //  Console.WriteLine(serviceName + "-----" + url);
-            if (locked) //释放锁
-                _spinLock.Exit();
+            //if (locked) //释放锁
+            //    _spinLock.Exit();
             return serviceCenter;
         }
 

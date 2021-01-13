@@ -4,6 +4,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Reflection;
 using wRPC;
+using static wRPC.FunctionBase;
 
 namespace wRPCService
 {
@@ -147,7 +148,15 @@ namespace wRPCService
                             InstallFunAttribute myattribute = (InstallFunAttribute)Attribute.GetCustomAttribute(mia, typeof(InstallFunAttribute));
                             if (myattribute != null)
                             {
-                                
+                                //object obj = assembly.CreateInstance(tt.FullName);
+                                //if (obj is FunctionBase)
+                                //{
+                                //    service[] services = (obj as FunctionBase).GetService();
+                                //}
+                                //else
+                                //{
+                                //    service[] services= GetService(obj);
+                                //}
                                 if (RouteAttr != null)
                                 {
                                     if (!keyValuePairs.ContainsKey(RouteAttr.Route))
@@ -166,6 +175,91 @@ namespace wRPCService
                 { }
             }
             return keyValuePairs;
+        }
+
+        public static service[] GetService()
+        {
+            List<service> listservice = new List<service>();
+            String[] files = System.IO.Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.dll");
+
+            foreach (String file in files)
+            {
+                try
+                {
+
+                    Assembly assembly = Assembly.LoadFrom(file);
+
+
+                    Type[] ts = assembly.GetTypes();
+                    foreach (Type tt in ts)
+                    {
+                        RouteAttribute RouteAttr = (RouteAttribute)Attribute.GetCustomAttribute(tt, typeof(RouteAttribute));
+                      //  MethodInfo[] mis = tt.GetMethods();
+                      
+                                object obj = assembly.CreateInstance(tt.FullName);
+                                if (obj is FunctionBase)
+                                {
+                                    service[] services = (obj as FunctionBase).GetService();
+                                    listservice.AddRange(services);
+                                }
+                                else
+                                {
+                                    service[] services = GetService(obj);
+                                    listservice.AddRange(services);
+                                }
+                           
+                    }
+                }
+                catch
+                { }
+            }
+            return listservice.ToArray();
+        }
+           static service[] GetService(object obj)
+        {
+            List<service> listservice = new List<service>();
+            Type tt = obj.GetType();
+            MethodInfo[] mis = tt.GetMethods();
+            foreach (MethodInfo mi in mis)
+            {
+
+                if (mi != null)
+                {
+
+
+                    InstallFunAttribute myattribute = (InstallFunAttribute)Attribute.GetCustomAttribute(mi, typeof(InstallFunAttribute));
+                    if (myattribute != null)
+                    {
+                        service serv = new service();
+                        RouteAttribute RouteAttr = (RouteAttribute)Attribute.GetCustomAttribute(tt, typeof(RouteAttribute));
+                        if (RouteAttr != null)
+                            serv.Route = RouteAttr.Route;
+                        else
+                            serv.Route = tt.FullName.Replace(".", @"/");
+                        serv.annotation = myattribute.Annotation;
+                        serv.Method = mi.Name;
+                        ParameterInfo[] paramsInfo = mi.GetParameters();//得到指定方法的参数列表 
+                        serv.parameter = new string[paramsInfo.Length];
+                        for (int i = 0; i < paramsInfo.Length; i++)
+
+                        {
+
+                            Type tType = paramsInfo[i].ParameterType;
+
+                            //如果它是值类型,或者String   
+
+                            serv.parameter[i] = tType.Name;
+
+                        }
+
+                        listservice.Add(serv);
+                    }
+
+
+                }
+            }
+
+            return listservice.ToArray();
         }
     }
 }

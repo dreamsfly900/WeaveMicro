@@ -22,18 +22,22 @@ namespace gateway
 
            //server[] servers= Funconfig.getConfig();
            // server ser= WeightAlgorithm.Get(servers, "abcd/ff");
-            Console.WriteLine("Running demo with Kestrel.");
-
+            Console.WriteLine("Running WeaveMicro网关.");
+            var config = builder.Build();
+            args = new string[] { config["applicationUrl"] };
             CreateHostBuilder(args).Build().Run();
             //mainthread loop
             while (true)
             {
                 Console.ReadLine();
             }
+          
         }
-        public static IWebHostBuilder CreateHostBuilder(string[] args) =>
+        static IConfigurationBuilder builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("config.json");
 
-            WebHost.CreateDefaultBuilder().UseStartup<Startup>();
+        public static IWebHostBuilder CreateHostBuilder(string[] args) =>
+           
+            WebHost.CreateDefaultBuilder().UseUrls(args[0]).UseStartup<Startup>();
 
         
     }

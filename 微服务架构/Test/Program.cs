@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Reflection;
+using testdll2;
 using wRPC;
 using wRPCService;
 
@@ -13,12 +14,14 @@ namespace Test
        static wRPCclient.ClientChannel clientChannel = new wRPCclient.ClientChannel("127.0.0.1", 10098);
         static  void Main(string[] args)
         {
+           
+            service[] sric = ToolLoad.GetService();
             ServiceChannel service = new ServiceChannel(10098);
             service.Start();
             while (true)
             {
                 System.Threading.Thread.Sleep(10);
-                bb();
+             //   bb();
                 Console.ReadLine();
             }
 

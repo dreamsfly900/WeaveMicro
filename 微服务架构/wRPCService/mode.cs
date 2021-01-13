@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
+using System.Reflection;
 using System.Text;
 
 namespace wRPC
@@ -27,6 +28,59 @@ namespace wRPC
     public class FunctionBase
     {
         public IDictionary<string, StringValues> Headers { get; set; }
+        public service[] GetService()
+        {
+            List<service> listservice = new List<service>();
+            Type tt = this.GetType();
+            MethodInfo[] mis = tt.GetMethods();
+            foreach (MethodInfo mi in mis)
+            {
+
+                if (mi != null)
+                {
+                   
+
+                    InstallFunAttribute myattribute = (InstallFunAttribute)Attribute.GetCustomAttribute(mi, typeof(InstallFunAttribute));
+                    if (myattribute != null)
+                    {
+                        service serv = new service();
+                        RouteAttribute RouteAttr = (RouteAttribute)Attribute.GetCustomAttribute(tt, typeof(RouteAttribute));
+                        if (RouteAttr != null)
+                            serv.Route = RouteAttr.Route;
+                        else
+                            serv.Route = tt.FullName.Replace(".", @"/");
+                        serv.annotation = myattribute.Annotation;
+                        serv.Method = mi.Name;
+                        ParameterInfo[] paramsInfo = mi.GetParameters();//得到指定方法的参数列表 
+                        serv.parameter = new string[paramsInfo.Length];
+                        for (int i = 0; i < paramsInfo.Length; i++)
+
+                        {
+
+                            Type tType = paramsInfo[i].ParameterType;
+
+                            //如果它是值类型,或者String   
+
+                            serv.parameter[i] = tType.Name;
+
+                        }
+
+                        listservice.Add(serv);
+                    }
+                
+
+                }
+            }
+
+            return listservice.ToArray();
+        }
+    }
+    public class service
+    {
+        public string Route { get; set; }
+        public string Method { get; set; }
+        public String[] parameter { get; set; }
+        public string annotation { get; set; }
     }
     public class Rpcdata<T>
     {
@@ -34,7 +88,7 @@ namespace wRPC
         public IDictionary<string, IList<String>> Headers { get; set; }
         public T parameter { get; set; }
         public string FunName { get; set; }
-        public string Route { get;  set; }
+        public string Route { get; set; }
 
         /// <summary>
         /// 0为泛型参数，1为多参数

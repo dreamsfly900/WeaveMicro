@@ -1,33 +1,54 @@
 ﻿
+using IdentityServer4.Stores;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
+using System;
 using System.IO;
+using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
-
+using System.Threading.Tasks; 
+using IdentityServer4;
+//[assembly: OwinStartup(typeof(gateway.Startup))]
 namespace gateway
 {
     public class Startup
     {
+        static IConfigurationBuilder builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("config.json");
+
         public Startup(IConfiguration configuration)
         {
+            
             Configuration = configuration;
+           
         }
 
         public IConfiguration Configuration { get; }
-
+        public static IConfigurationRoot config;
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddControllers();
-            //services.AddRazorPages();
-            
-        }
+             config = builder.Build();
+            if (Convert.ToBoolean(config["Authentication"]))
+            {
+                services.AddAuthentication(config["defaultScheme"])
+                  .AddJwtBearer(config["defaultScheme"], options =>
+                  {
+                      options.Authority = config["IdentityServer"];
+                      options.RequireHttpsMetadata = false;
 
+                      options.Audience = config["Audience"];
+                  });
+            }
+        }
+        //public void Configuration(IAppBuilder app)
+        //{
+        //    //ConfigureAuth(app);OAuth2.0
+        //}
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
@@ -43,14 +64,18 @@ namespace gateway
                 app.UseExceptionHandler("/Error");
             }
 
+            // app.UseIdentityServer();
             // app.UseStaticFiles();
 
             //  app.UseRouting();
-
+            if (Convert.ToBoolean(config["Authentication"]))
+            {
+                app.UseAuthentication();
+            }
             //app.UseAuthorization();
             app.UseMiddleware<CorsMiddleware>();
+            
             app.Run(Proccessor.agent);
-
             //app.UseEndpoint(endpoints =>
             //{
 

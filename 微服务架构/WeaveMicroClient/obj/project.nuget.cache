@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "7+HiZKCPb8PnFLdgYkZIdXYOUBL7oBS8DDe+xyIjZ/V/4lbiqi35x6dYxfKY6JhjrZuVPAB49CAHQm14kTnYKw==",
+  "success": true,
+  "projectFilePath": "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\xingy\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\weave.base\\2.0.6\\weave.base.2.0.6.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\weave.tcpclient\\2.0.7\\weave.tcpclient.2.0.7.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -33,6 +34,22 @@ namespace WeaveMicrocenter
         public string Sid { get; set; }
         public string IP { get; set; }
         public int port { get; set; }
+        public Socket socket { get; set; }
+    }
+    public class server
+    {
 
+        public String IP { get; set; }
+        public int Port { get; set; }
+        public service[] services { get; set; }
+
+
+    }
+    public class service
+    {
+        public string Route { get; set; }
+        public string Method { get; set; }
+        public String[] parameter { get; set; }
+        public string annotation { get; set; }
     }
 }

@@ -1,0 +1,28 @@
+{
+  "server": [
+    {
+      "IP": "127.0.0.1",
+      "Port": 10098,
+      "services": [
+        {
+          "Route": "testdll2/Class1/ff",
+          "Method": "GET",
+          "parameter": [ "str" ],
+          "annotation": "此方法用于测试"
+        }
+      ]
+    },
+    {
+      "IP": "127.0.0.1",
+      "Port": 10098,
+      "services": [
+        {
+          "Route": "abcd/ff",
+          "Method": "POST",
+          "parameter": [ "str" ],
+          "annotation": "此方法用于测试"
+        }
+      ]
+    }
+  ]
+}

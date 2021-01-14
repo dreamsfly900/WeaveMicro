@@ -1,16 +1,24 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using wRPC;
 
 namespace WeaveMicroClient
 {
     public class MicroClient
     {
         Weave.TCPClient.P2Pclient P2Pclient = new Weave.TCPClient.P2Pclient(Weave.TCPClient.DataType.bytes);
+        public delegate void receiveconfig(server[] serv);
+        public event receiveconfig ReceiveEvent;
         String IP; int port;
         public MicroClient(String IP, int port)
         {
             this.IP = IP;this.port = port;
             P2Pclient.ReceiveServerEventbit += P2Pclient_ReceiveServerEventbit;
             P2Pclient.Timeoutevent += P2Pclient_Timeoutevent;
+        }
+        public void Stop()
+        {
+              P2Pclient.Stop();
         }
         public bool Connection()
         {
@@ -46,11 +54,15 @@ namespace WeaveMicroClient
                 try
                 {
                     String datastr = System.Text.UTF8Encoding.UTF8.GetString(data);
-                    System.IO.StreamWriter sw = new System.IO.StreamWriter("config.json", false);
-                    sw.Write(datastr);
-                    sw.Close();
+                    if (ReceiveEvent != null)
+                        ReceiveEvent(JsonConvert.DeserializeObject<server[]>(datastr));
+                    //String datastr = System.Text.UTF8Encoding.UTF8.GetString(data);
+                    //System.IO.StreamWriter sw = new System.IO.StreamWriter("funconfig.json", false);
+                    //sw.Write(datastr);
+                    //sw.Close();
                 }
-                catch { }
+                catch(Exception e) 
+                { throw  new  Exception( e.Message); }
             }
             
         }
@@ -64,18 +76,12 @@ namespace WeaveMicroClient
     }
     public class server
     {
-         
 
         public String IP { get; set; }
         public int Port { get; set; }
         public service[] services { get; set; }
- 
+
+
     }
-    public class service
-    {
-        public string Route { get; set; }
-        public string Method { get; set; }
-        public String[] parameter { get; set; }
-        public string annotation { get; set; }
-    }
+
 }

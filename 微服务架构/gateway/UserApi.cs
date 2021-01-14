@@ -26,6 +26,7 @@ namespace gateway
             server[] serverlist = new server[0];
             var config=   builder.Build();
             serverlist= config.GetSection("server").Get<server[]>();
+            if(serverlist!=null)
             foreach (server ser in serverlist)
             {
                 foreach (service serice in ser.services)
@@ -86,6 +87,11 @@ namespace gateway
                 }
 
             }
+            if (servers == null)
+            { 
+                await context.Response.WriteAsync($" ~, {999}");
+                return;
+            }
             server ser =await WeightAlgorithm.Get(servers, context.Request.Path.Value.Trim('/'));
             if (ser == null)
             {
@@ -122,7 +128,7 @@ namespace gateway
                             }
                             else
                             {
-                                objs[i] = context.Request.Query[ser.services[0].parameter[i]];
+                                objs[i] = context.Request.Query[ser.services[0].parameter[i]].ToString();
                             }
                         }
                         else if (ser.services[0].Method == "POST")
@@ -133,7 +139,7 @@ namespace gateway
                             }
                             else
                             {
-                                objs[i] = context.Request.Form[ser.services[0].parameter[i]];
+                                objs[i] = context.Request.Form[ser.services[0].parameter[i]].ToString();
                             }
                         }
                     }
@@ -148,7 +154,7 @@ namespace gateway
                         rl += rls[i] + "/";
                     }
                     rl = rl.Substring(0, rl.Length - 1);
-                    String retun = await clientChannel.Call<String>(rl, rls[rls.Length - 1], objs);
+                    String retun =  clientChannel.Call<String>(rl, rls[rls.Length - 1], objs);
 
                     await context.Response.WriteAsync($"{retun}");
                     //string httpstr = Newtonsoft.Json.JsonConvert.SerializeObject(httpmode);

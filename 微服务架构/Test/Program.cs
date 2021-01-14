@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Concurrent;
 using System.Reflection;
 using testdll2;
+using WeaveMicroClient;
+using WeaveRemoteService;
 using wRPC;
 using wRPCService;
 
@@ -14,25 +16,35 @@ namespace Test
        static wRPCclient.ClientChannel clientChannel = new wRPCclient.ClientChannel("127.0.0.1", 10098);
         static  void Main(string[] args)
         {
-           
-            service[] sric = ToolLoad.GetService();
-            ServiceChannel service = new ServiceChannel(10098);
-            service.Start();
+            RemoteService remoteService = new RemoteService();
+            remoteService.Start();
+            while (true)
+            {
+                System.Threading.Thread.Sleep(10);
+                bb();
+            }
             while (true)
             {
                 System.Threading.Thread.Sleep(10);
              //   bb();
-                Console.ReadLine();
+               string cmd = Console.ReadLine();
+                switch (cmd)
+                {
+                    case "exit":
+                        break;
+                    default:
+                        continue;
+                }
             }
+           // mc.Stop();
 
-            
-            Console.WriteLine("H6ello World!");
+           // Console.WriteLine("H6ello World!");
         }
 
        async static void bb()
         {
          
-            String retun = await clientChannel.Call<String>("abcd", "ff", new object[] { new { name = "gghhss", age = 0 }, new { name = "gghhss", age = 0 } });
+            String retun =  clientChannel.Call<String>("abcd", "ff",  new { name = "gghhss", age = 0 } );
             Console.WriteLine("ceshi:"+retun);
              
         }

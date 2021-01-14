@@ -14,10 +14,11 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Weave.TcpSynClient" Version="2.0.7" />
+    <PackageReference Include="Weave.TcpSynClient" Version="2.0.8" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WeaveMicroClient\WeaveMicroClient.csproj" />
     <ProjectReference Include="..\wRPC\wRPC.csproj" />
   </ItemGroup>
 

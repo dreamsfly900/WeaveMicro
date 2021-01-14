@@ -29,10 +29,10 @@ namespace IdentityServer
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryApiResources(Config.GetApis())
                 .AddInMemoryClients(Config.GetClients());
-
+            builder.AddDeveloperSigningCredential();
             if (Environment.IsDevelopment())
             {
-                builder.AddDeveloperSigningCredential();
+                
             }
             else
             {

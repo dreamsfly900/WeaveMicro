@@ -9,4 +9,8 @@
     <PackageReference Include="Weave.TCPClient" Version="2.0.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\wRPCService\wRPCService.csproj" />
+  </ItemGroup>
+
 </Project>

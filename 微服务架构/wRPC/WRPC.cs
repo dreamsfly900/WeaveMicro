@@ -25,51 +25,51 @@ namespace wRPCclient
             if (!tcpSynClient.Start())
                 throw new Exception("无法连接服务器");
         }
-        public async Task<T2> Call<T1, T2>(String Route, string callfun, T1 parameter)
+        public  T2 Call<T1, T2>(String Route, string callfun, T1 parameter)
         {
 
             string datastr = setRpcdata(Route, callfun, parameter, null);
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<T2>(await call(datastr));
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<T2>(call(datastr));
 
 
         }
-        public async Task<String> Call<T>(String Route, string callfun, T parameter)
+        public  String Call<T>(String Route, string callfun, T parameter)
         {
 
             string datastr = setRpcdata(Route, callfun, parameter, null);
 
-            return await call(datastr);
+            return  call(datastr);
 
 
         }
-        public async Task<String> Call(String Route, string callfun, params object[] parameter)
+        public  String Call(String Route, string callfun, params object[] parameter)
         {
 
 
             string datastr = setRpcdata(Route, callfun, parameter, null, 1);
 
-            return await call(datastr);
+            return  call(datastr);
 
 
         }
-        public async Task<T> Call<T>(String Route, string callfun, params object[] parameter)
+        public  T Call<T>(String Route, string callfun, params object[] parameter)
         {
 
 
             string datastr = setRpcdata(Route, callfun, parameter, null, 1);
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(await call(datastr));
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>( call(datastr));
 
 
         }
-        public async Task<T> Call<T>(String Route, string callfun, dynamic parameter, HttpContext context = null)
+        public  T Call<T>(String Route, string callfun, dynamic parameter, HttpContext context = null)
         {
 
 
             string datastr = setRpcdata(Route, callfun, parameter  , context, 1);
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(await call(datastr));
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>( call(datastr));
 
 
         }
@@ -98,10 +98,12 @@ namespace wRPCclient
             string datastr = Newtonsoft.Json.JsonConvert.SerializeObject(rpcdata);
             return datastr;
         }
-        async Task<String> call(String datastr)
+        String call(String datastr)
         {
+            
+            
             tcpSynClient.Send(0x01, GZIP.GZipCompress(datastr));
-            var commdata = await tcpSynClient.Receives(null);
+            var commdata =  tcpSynClient.Receives(null);
             if (commdata == null)
                 throw new Exception("通信意外！");
             if (commdata.comand == 0x01)

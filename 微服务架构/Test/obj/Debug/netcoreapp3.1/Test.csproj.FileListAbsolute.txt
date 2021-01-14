@@ -152,10 +152,16 @@ D:\WeaveMicro\微服务架构\Test\bin\Debug\netcoreapp3.1\Microsoft.Win32.Syste
 D:\WeaveMicro\微服务架构\Test\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
 D:\WeaveMicro\微服务架构\Test\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
 D:\WeaveMicro\微服务架构\Test\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
-D:\WeaveMicro\微服务架构\Test\bin\Debug\netcoreapp3.1\Weave.TcpSynClient.dll
 D:\WeaveMicro\微服务架构\Test\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
 D:\WeaveMicro\微服务架构\Test\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\WeaveMicro\微服务架构\Test\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\WeaveMicro\微服务架构\Test\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 D:\WeaveMicro\微服务架构\Test\bin\Debug\netcoreapp3.1\wRPC.dll
 D:\WeaveMicro\微服务架构\Test\bin\Debug\netcoreapp3.1\wRPC.pdb
+D:\WeaveMicro\微服务架构\Test\bin\Debug\netcoreapp3.1\Weave.TCPClient.dll
+D:\WeaveMicro\微服务架构\Test\bin\Debug\netcoreapp3.1\WeaveMicroClient.dll
+D:\WeaveMicro\微服务架构\Test\bin\Debug\netcoreapp3.1\WeaveMicroClient.pdb
+D:\WeaveMicro\微服务架构\Test\bin\Debug\netcoreapp3.1\config.json
+D:\WeaveMicro\微服务架构\Test\bin\Debug\netcoreapp3.1\WeaveRemoteService.dll
+D:\WeaveMicro\微服务架构\Test\bin\Debug\netcoreapp3.1\WeaveRemoteService.pdb
+D:\WeaveMicro\微服务架构\Test\bin\Debug\netcoreapp3.1\Weave.TcpSynClient.dll

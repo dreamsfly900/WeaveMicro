@@ -18,7 +18,7 @@
       "services": [
         {
           "Route": "abcd/ff",
-          "Method": "POST",
+          "Method": "NONE",
           "parameter": [ "str" ],
           "annotation": "此方法用于测试"
         }

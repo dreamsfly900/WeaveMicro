@@ -26,6 +26,14 @@ namespace wRPC
 
         public String Annotation { get; set; } 
     }
+    public class ParamAttribute : System.Attribute
+    {
+        public String explain { get; set; }
+        public ParamAttribute(String explain)
+        {
+            this.explain = explain;
+        }
+    }
     public class RouteAttribute : System.Attribute
     {
         /// <summary>

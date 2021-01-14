@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using wRPC;
 
 namespace WeaveMicrocenter
 {
@@ -45,11 +46,5 @@ namespace WeaveMicrocenter
 
 
     }
-    public class service
-    {
-        public string Route { get; set; }
-        public string Method { get; set; }
-        public String[] parameter { get; set; }
-        public string annotation { get; set; }
-    }
+    
 }

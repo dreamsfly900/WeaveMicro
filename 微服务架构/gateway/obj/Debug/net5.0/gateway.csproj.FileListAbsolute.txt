@@ -59,3 +59,9 @@ D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\System.IdentityModel.Toke
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\funconfig.json
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\Weave.Server.dll
+D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\Weave.TCPClient.dll
+D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\WeaveMicroClient.dll
+D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\wRPCService.dll
+D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\WeaveMicroClient.pdb
+D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\wRPCService.pdb

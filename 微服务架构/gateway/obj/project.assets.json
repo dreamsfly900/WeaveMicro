@@ -1558,7 +1558,7 @@
           }
         }
       },
-      "Weave.Base/2.0.11": {
+      "Weave.Base/2.0.14": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1"
@@ -1570,16 +1570,55 @@
           "lib/netstandard2.0/Weave.Base.dll": {}
         }
       },
-      "Weave.TcpSynClient/2.0.7": {
+      "Weave.Server/2.0.13": {
         "type": "package",
         "dependencies": {
           "Weave.Base": "2.0.11"
+        },
+        "compile": {
+          "lib/netstandard2.0/Weave.Server.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Weave.Server.dll": {}
+        }
+      },
+      "Weave.TCPClient/2.0.7": {
+        "type": "package",
+        "dependencies": {
+          "Weave.Base": "2.0.6"
+        },
+        "compile": {
+          "lib/netstandard2.0/Weave.TCPClient.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Weave.TCPClient.dll": {}
+        }
+      },
+      "Weave.TcpSynClient/2.0.8": {
+        "type": "package",
+        "dependencies": {
+          "Weave.Base": "2.0.14"
         },
         "compile": {
           "lib/netstandard2.0/Weave.TcpSynClient.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/Weave.TcpSynClient.dll": {}
+        }
+      },
+      "WeaveMicroClient/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3",
+          "Weave.TCPClient": "2.0.7",
+          "wRPCService": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WeaveMicroClient.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WeaveMicroClient.dll": {}
         }
       },
       "wRPC/1.0.0": {
@@ -1590,13 +1629,27 @@
           "Microsoft.Build.Framework": "16.8.0",
           "Microsoft.Build.Utilities.Core": "16.8.0",
           "Microsoft.CSharp": "4.7.0",
-          "Weave.TcpSynClient": "2.0.7"
+          "Weave.TcpSynClient": "2.0.8"
         },
         "compile": {
           "bin/placeholder/wRPC.dll": {}
         },
         "runtime": {
           "bin/placeholder/wRPC.dll": {}
+        }
+      },
+      "wRPCService/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Microsoft.AspNetCore": "2.2.0",
+          "Weave.Server": "2.0.13"
+        },
+        "compile": {
+          "bin/placeholder/wRPCService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/wRPCService.dll": {}
         }
       }
     }
@@ -4711,10 +4764,10 @@
         "version.txt"
       ]
     },
-    "Weave.Base/2.0.11": {
-      "sha512": "zfYApJj1UOyGSso2N6GG35Rr81rkeqJoxm9+JOwUBwWivyhlKwv3Xe3wSyUzpnlQIYFR+m9sFu44jGJIt4jd4g==",
+    "Weave.Base/2.0.14": {
+      "sha512": "9rQiGY3X4Q4PgtiYZQY8GUNtN7Wiy3soptBMMn5tu/vnizNh/zKMtxz/clQkSJc7mfdJzhm8w7t/+hjU7WaucQ==",
       "type": "package",
-      "path": "weave.base/2.0.11",
+      "path": "weave.base/2.0.14",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4724,14 +4777,48 @@
         "lib/net45/Weave.Base.xml",
         "lib/netstandard2.0/Weave.Base.dll",
         "lib/netstandard2.0/Weave.Base.xml",
-        "weave.base.2.0.11.nupkg.sha512",
+        "weave.base.2.0.14.nupkg.sha512",
         "weave.base.nuspec"
       ]
     },
-    "Weave.TcpSynClient/2.0.7": {
-      "sha512": "IDNLnxruAYukLL7Qf8wx4RYpRCnVTZIDP5aRVD/60n4HAk4czTcX4j8FPqamzfnItODtENM3xnedwxtdJoOUiw==",
+    "Weave.Server/2.0.13": {
+      "sha512": "dlzi0vX7dovHPhBoKkHv16WSnW7wGTRyd/EBev6Q5TTFG2zEppG2R19wFnqa7QShnq6V26RG8Pmj9fw22cf6tw==",
       "type": "package",
-      "path": "weave.tcpsynclient/2.0.7",
+      "path": "weave.server/2.0.13",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Weave.Server.dll",
+        "lib/net40/Weave.Server.xml",
+        "lib/net45/Weave.Server.dll",
+        "lib/net45/Weave.Server.xml",
+        "lib/netstandard2.0/Weave.Server.dll",
+        "lib/netstandard2.0/Weave.Server.xml",
+        "weave.server.2.0.13.nupkg.sha512",
+        "weave.server.nuspec"
+      ]
+    },
+    "Weave.TCPClient/2.0.7": {
+      "sha512": "YIEDMaJXSpqTQgaNbASscSgZ/BQCkphzidMs/0P79zSdf/DOnau8ZZbcANIV2PN+v9Mr4bpIpcQivaCHRZW7VA==",
+      "type": "package",
+      "path": "weave.tcpclient/2.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Weave.TCPClient.dll",
+        "lib/net40/Weave.TCPClient.xml",
+        "lib/net45/Weave.TCPClient.dll",
+        "lib/net45/Weave.TCPClient.xml",
+        "lib/netstandard2.0/Weave.TCPClient.dll",
+        "lib/netstandard2.0/Weave.TCPClient.xml",
+        "weave.tcpclient.2.0.7.nupkg.sha512",
+        "weave.tcpclient.nuspec"
+      ]
+    },
+    "Weave.TcpSynClient/2.0.8": {
+      "sha512": "mzFWLjn/qKSFHA+NjqJ6V1VKGIfKTrMo9V4PJ7Y7DASBpHdteYzHoQZWYnJHJJ83xWA8mK4FKKmKWyMAkzssfA==",
+      "type": "package",
+      "path": "weave.tcpsynclient/2.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4739,14 +4826,24 @@
         "lib/net45/Weave.TcpSynClient.xml",
         "lib/netstandard2.0/Weave.TcpSynClient.dll",
         "lib/netstandard2.0/Weave.TcpSynClient.xml",
-        "weave.tcpsynclient.2.0.7.nupkg.sha512",
+        "weave.tcpsynclient.2.0.8.nupkg.sha512",
         "weave.tcpsynclient.nuspec"
       ]
+    },
+    "WeaveMicroClient/1.0.0": {
+      "type": "project",
+      "path": "../WeaveMicroClient/WeaveMicroClient.csproj",
+      "msbuildProject": "../WeaveMicroClient/WeaveMicroClient.csproj"
     },
     "wRPC/1.0.0": {
       "type": "project",
       "path": "../wRPC/wRPC.csproj",
       "msbuildProject": "../wRPC/wRPC.csproj"
+    },
+    "wRPCService/1.0.0": {
+      "type": "project",
+      "path": "../wRPCService/wRPCService.csproj",
+      "msbuildProject": "../wRPCService/wRPCService.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4759,7 +4856,8 @@
       "Microsoft.Extensions.DependencyInjection >= 5.0.1",
       "Microsoft.NETCore.App >= 2.2.8",
       "Newtonsoft.Json >= 12.0.3",
-      "Weave.TcpSynClient >= 2.0.7",
+      "Weave.TcpSynClient >= 2.0.8",
+      "WeaveMicroClient >= 1.0.0",
       "wRPC >= 1.0.0"
     ]
   },
@@ -4790,6 +4888,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj": {
+              "projectPath": "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj"
+            },
             "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj": {
               "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj"
             }
@@ -4840,7 +4941,7 @@
           },
           "Weave.TcpSynClient": {
             "target": "Package",
-            "version": "[2.0.7, )"
+            "version": "[2.0.8, )"
           }
         },
         "imports": [

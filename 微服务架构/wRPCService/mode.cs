@@ -46,22 +46,38 @@ namespace wRPC
                         service serv = new service();
                         RouteAttribute RouteAttr = (RouteAttribute)Attribute.GetCustomAttribute(tt, typeof(RouteAttribute));
                         if (RouteAttr != null)
-                            serv.Route = RouteAttr.Route;
+                            serv.Route = RouteAttr.Route+"/"+ mi.Name;
                         else
-                            serv.Route = tt.FullName.Replace(".", @"/");
+                            serv.Route = tt.FullName.Replace(".", @"/")+"/"+ mi.Name;
                         serv.annotation = myattribute.Annotation;
-                        serv.Method = mi.Name;
+                        serv.Method = myattribute.Type.ToString();
                         ParameterInfo[] paramsInfo = mi.GetParameters();//得到指定方法的参数列表 
                         serv.parameter = new string[paramsInfo.Length];
+                        serv.parameterexplain = new string[paramsInfo.Length];
                         for (int i = 0; i < paramsInfo.Length; i++)
 
                         {
-
+                            ParamAttribute ParamAttr = (ParamAttribute)Attribute.GetCustomAttribute(paramsInfo[i], typeof(ParamAttribute));
                             Type tType = paramsInfo[i].ParameterType;
+                            FieldInfo[] fis = tType.GetFields();
+                            foreach (FieldInfo fi in fis)
+                                if (fi.Name != "Empty")
+                                    serv.parameterexplain[i] += fi.FieldType.Name + " " + fi.Name + ",";
+                                else
+                                    serv.parameterexplain[i] += fi.FieldType.Name + ",";
+
+
+                            if (ParamAttr != null)
+                            {
+
+                                serv.parameterexplain[i] += ParamAttr.explain;
+                            }
+
+
 
                             //如果它是值类型,或者String   
 
-                            serv.parameter[i] = tType.Name;
+                            serv.parameter[i] = paramsInfo[i].Name;
 
                         }
 
@@ -80,6 +96,7 @@ namespace wRPC
         public string Route { get; set; }
         public string Method { get; set; }
         public String[] parameter { get; set; }
+        public String[] parameterexplain { get; set; }
         public string annotation { get; set; }
     }
     public class Rpcdata<T>

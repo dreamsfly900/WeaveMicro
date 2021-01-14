@@ -33,7 +33,7 @@ namespace testdll2
             return "Class2.ff的返回值";
         }
         [InstallFun(FunAttribute.NONE, "此方法用于测试")]
-        public String ff2(string name)
+        public String ff2([Param("用户名")] string name)
         {
 
             Console.WriteLine(name);

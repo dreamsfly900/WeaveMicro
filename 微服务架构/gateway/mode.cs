@@ -3,6 +3,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text;
+using wRPC;
 
 namespace gateway
 { 
@@ -23,11 +24,5 @@ namespace gateway
 
         public ConcurrentDictionary<string, service> servicesDic = new ConcurrentDictionary<string, service>();
     }
-    public class service
-    {
-        public string Route { get; set; }
-        public  string Method { get; set; }
-        public String[] parameter { get; set; }
-        public string  annotation { get; set; }
-    }
+    
 }

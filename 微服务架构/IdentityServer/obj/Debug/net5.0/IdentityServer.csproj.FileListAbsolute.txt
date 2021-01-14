@@ -35,3 +35,4 @@ D:\WeaveMicro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.dll
 D:\WeaveMicro\微服务架构\IdentityServer\obj\Debug\net5.0\ref\IdentityServer.dll
 D:\WeaveMicro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.pdb
 D:\WeaveMicro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.genruntimeconfig.cache
+D:\WeaveMicro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.csprojAssemblyReference.cache

@@ -1,1 +1,1 @@
-{"server":[]}
+{"server":[{"IP":"127.0.0.1","Port":10098,"services":[{"Route":"abcd/ff","Method":"NONE","parameter":["md"],"parameterexplain":["String name,Int32 age,"],"annotation":"此方法用于测试"},{"Route":"abcd/ff2","Method":"NONE","parameter":["name"],"parameterexplain":["String,用户名"],"annotation":"此方法用于测试"}]}]}

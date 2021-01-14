@@ -20,7 +20,7 @@ namespace Test
             remoteService.Start();
             while (true)
             {
-                System.Threading.Thread.Sleep(10);
+                System.Threading.Thread.Sleep(5);
                 bb();
             }
             while (true)

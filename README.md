@@ -28,6 +28,8 @@ Weave微服务架构
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0115/184204_75b9d3ca_598831.png "微信图片_20210115184007.png")
 
 找到Account.cs 方法替换成，自己的验证账号和密码的方法
+
+
 3.  API网关
 
 找到config.json文件 修改配置

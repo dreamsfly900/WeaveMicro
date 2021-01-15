@@ -11,6 +11,7 @@ Weave微服务架构
 1.注册中心
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0115/184458_a18d83c0_598831.png "微信图片_20210115184007.png")
+
 找到config.json文件 修改配置
 
 ```
@@ -21,9 +22,12 @@ Weave微服务架构
 
 2.  验证中心
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0115/184038_7eeb9ba6_598831.png "微信图片_20210115184007.png")
+
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0115/184204_75b9d3ca_598831.png "微信图片_20210115184007.png")
+
 找到Account.cs 方法替换成，自己的验证账号和密码的方法
 3.  API网关
+
 找到config.json文件 修改配置
 ```
 {
@@ -36,12 +40,15 @@ Weave微服务架构
 }
 ```
 4.编写自己的API方法
+
 新建CLASS或者类库
+
 ```
   [Route("abcd")]//路由地址
     public class Class2: FunctionBase//FunctionBase可以继承，也可以不继承，方便以后扩展功能
     {
-        [InstallFun(FunAttribute.NONE, "此方法用于测试")]//指定方法为远程方法， FunAttribute { NONE,Get,POST } 包含三种请求类型，为方法写注释
+        [InstallFun(FunAttribute.NONE, "此方法用于测试")]//指定方法为远程方法， 
+       //FunAttribute { NONE,Get,POST } 包含三种请求类型，为方法写注释
         public String ff(mode md)
         {
           
@@ -62,6 +69,7 @@ Weave微服务架构
 5.  RPC服务
 找到config.json文件 修改配置
 
+
 ```
 {
   "ServerIP": "127.0.0.1",//当前IP
@@ -79,15 +87,23 @@ Weave微服务架构
 
 #### 其他说明
 
-1.  每个RPC服务，和网关服务，会在目录下生成一个funconfig.json，来表明当前注册的服务器和方法，今后可以扩展相关的监控或者其他内容
+1.  每个RPC服务，和网关服务，会在目录下生成一个funconfig.json，
+来表明当前注册的服务器和方法，今后可以扩展相关的监控或者其他内容
+
 2.  注册中心断开后，会自动持久化，原本注册的内容，每次启动，检查远程服务是否开启。
+
 3.  远程调用事件使用weaving-socket架构，远程响应时间0-15毫秒之间
 4. API网关调用远程方法为单连接队列锁模式，每个远程RemoteService ，会开启一个连接。
+
 5.多个RemoteService 拥有相同的方法和路由，使用选举方式分配调用。
+
 6.当RemoteService 从注册中心断开，API网关会立刻更新相关方法进行调用熔断。
+
 7.注册中心未来会更新加入全部已上线的，服务方法，以方便查阅开发。
+
 8.无验证的调用
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0115/190658_08b771ed_598831.png "微信图片_20210115184007.png")
+
 9.有验证的调用
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0115/190741_857a47d3_598831.png "微信图片_20210115190730.png")
 

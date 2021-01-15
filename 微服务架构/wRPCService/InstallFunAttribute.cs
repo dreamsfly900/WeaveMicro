@@ -26,6 +26,8 @@ namespace wRPC
 
         public String Annotation { get; set; } 
     }
+    public class AuthorizeAttribute : System.Attribute
+    { }
     public class ParamAttribute : System.Attribute
     {
         public String explain { get; set; }

@@ -8,26 +8,26 @@
     <script>
 
        
- //$.ajax({
- //          url: "http://localhost:5000/" + "abcd/ff?name=abcdefg", // 目标资源
- //           type:"post",
- //           data:JSON.stringify({attributionname:'cscs',pid:0}),
- //           contentType:"application/json",
- //           success:function(data){
- //               console.log(data)
- //           }
- //       })
-   $.ajax({
-            url: "http://localhost:1201/" + "abcd/ff2?name=abcdefg", // 目标资源
-            cache: false, //true 如果当前请求有缓存的话，直接使用缓存。如果该属性设置为 false，则每次都会向服务器请求
-            async: false, //默认是true，即为异步方式
-            data: { str: 123456},
-            dataType: "json", // 服务器响应的数据类型
-            type: "POST", // 请求方式
-            success: function (data) {
+ $.ajax({
+           url: "http://localhost:1221/" + "abcd/ff?name=abcdefg", // 目标资源
+            type:"post",
+            data:JSON.stringify({attributionname:'cscs',pid:0}),
+            contentType:"application/json",
+            success:function(data){
                 console.log(data)
             }
-        });
+        })
+   //$.ajax({
+   //         url: "http://localhost:1221/" + "abcd/ff2?name=abcdefg", // 目标资源
+   //         cache: false, //true 如果当前请求有缓存的话，直接使用缓存。如果该属性设置为 false，则每次都会向服务器请求
+   //         async: false, //默认是true，即为异步方式
+   //         data: { str: 123456},
+   //         dataType: "json", // 服务器响应的数据类型
+   //         type: "POST", // 请求方式
+   //         success: function (data) {
+   //             console.log(data)
+   //         }
+   //     });
     </script>
 </head>
 <body>

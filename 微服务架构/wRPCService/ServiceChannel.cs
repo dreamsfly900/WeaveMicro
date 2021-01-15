@@ -233,6 +233,11 @@ namespace wRPCService
                     if (myattribute != null)
                     {
                         service serv = new service();
+                        AuthorizeAttribute Authorizeattribute = (AuthorizeAttribute)Attribute.GetCustomAttribute(mi, typeof(AuthorizeAttribute));
+                        if (Authorizeattribute != null)
+                            serv.Authorize = true;
+                        else
+                            serv.Authorize = false;
                         RouteAttribute RouteAttr = (RouteAttribute)Attribute.GetCustomAttribute(tt, typeof(RouteAttribute));
                         if (RouteAttr != null)
                             serv.Route = RouteAttr.Route + "/" + mi.Name;

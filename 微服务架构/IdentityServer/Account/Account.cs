@@ -7,6 +7,7 @@ namespace IdentityServer.Account
 {
     public class Account
     {
+        
         public static bool GetLogin(Dictionary<string, String> servicesDic)
         {
             return true;

@@ -43,16 +43,7 @@ namespace gateway
         public static server[] servers;
         public async static Task agent(HttpContext context)
         {
-            if (Convert.ToBoolean(Startup.config["Authentication"]))
-            {
-                if (!context.User.Identity.IsAuthenticated)
-                {
-                    await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 0, msg = "非法请求" }));
-                  //  context.Abort();
-                     return;
-                }
-
-            }
+           
             Dictionary<string, String> servicesDic = new Dictionary<string, String>();
             dynamic contentFromBody = "";
             if (context.Request.ContentLength != null)
@@ -89,18 +80,23 @@ namespace gateway
             }
             if (servers == null)
             { 
-                await context.Response.WriteAsync($" ~, {999}");
+                await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 999, msg = "非法请求" }));
                 return;
             }
             server ser =await WeightAlgorithm.Get(servers, context.Request.Path.Value.Trim('/'));
             if (ser == null)
             {
-                await context.Response.WriteAsync($" ~, {404}");
+                await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 404, msg = "非法请求" }));
                 //context.Abort();
                 //return;
             }
             else
             {
+                if (!IsAuthenticated(context, ser.services[0].Authorize))
+                {
+                    await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 0, msg = "非法请求" }));
+                    return;
+                }
                 wRPCclient.ClientChannel clientChannel = null;
                 try
                 {
@@ -174,6 +170,26 @@ namespace gateway
 
 
         }
-        
+
+         static bool IsAuthenticated(HttpContext context, bool Authorize)
+        {
+            if (Convert.ToBoolean(Startup.config["Authentication"]) )
+            {
+                if (Authorize)
+                {
+                    if (!context.User.Identity.IsAuthenticated)
+                    {
+                        // await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 0, msg = "非法请求" }));
+                        //  context.Abort();
+                        return false;
+                    }
+                    else
+                        return true;
+                }
+                else
+                    return true;
+            }else
+            return true;
+        }
     }
 }

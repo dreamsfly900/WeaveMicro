@@ -32,6 +32,8 @@ Weave微服务架构
 
 3.  API网关
 
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0115/192918_a576c018_598831.png "微信图片_20210115192900.png")
+
 找到config.json文件 修改配置
 ```
 {

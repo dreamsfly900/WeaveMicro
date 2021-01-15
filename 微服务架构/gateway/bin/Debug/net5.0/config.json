@@ -1,5 +1,5 @@
 {
-  "Authentication": false,
+  "Authentication": true,
   "IdentityServer": "http://localhost:5000",
   "Audience": "api1",
   "defaultScheme": "Bearer",

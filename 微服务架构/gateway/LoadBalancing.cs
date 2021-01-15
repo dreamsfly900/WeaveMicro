@@ -50,17 +50,17 @@ namespace wRPC
     {
         private static server serviceCenter = new server();
         private static ConcurrentDictionary<string, WeightAlgorithmItem> _serviceDic = new ConcurrentDictionary<string, WeightAlgorithmItem>();
-   //     private static SpinLock _spinLock = new SpinLock();
+        private static SpinLock _spinLock = new SpinLock();
         public static async Task<server>  Get(server[] serviceList, string serviceName)
         {
             
             if (serviceList == null)
                 return null;
-            if (serviceList.Length == 1)
-                return serviceList[0];
+            //if (serviceList.Length == 1)
+            //    return serviceList[0];
 
             bool locked = false;
-            //_spinLock.Enter(ref locked);//获取锁
+            _spinLock.Enter(ref locked);//获取锁
 
             WeightAlgorithmItem weightAlgorithmItem = null;
             if (!_serviceDic.ContainsKey(serviceName ))
@@ -104,9 +104,9 @@ namespace wRPC
             }
             _serviceDic[serviceName ] = weightAlgorithmItem;
 
-          //  Console.WriteLine(serviceName + "-----" + url);
-            //if (locked) //释放锁
-            //    _spinLock.Exit();
+            //  Console.WriteLine(serviceName + "-----" + url);
+            if (locked) //释放锁
+                _spinLock.Exit();
             return serviceCenter;
         }
 

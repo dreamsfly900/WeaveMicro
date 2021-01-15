@@ -81,7 +81,7 @@
             },
             "Weave.TcpSynClient": {
               "target": "Package",
-              "version": "[2.0.8, )"
+              "version": "[2.0.9, )"
             }
           },
           "imports": [
@@ -223,7 +223,7 @@
             },
             "Weave.Server": {
               "target": "Package",
-              "version": "[2.0.13, )"
+              "version": "[2.0.16, )"
             }
           },
           "imports": [
@@ -300,7 +300,7 @@
             },
             "Weave.TcpSynClient": {
               "target": "Package",
-              "version": "[2.0.8, )"
+              "version": "[2.0.9, )"
             }
           },
           "imports": [

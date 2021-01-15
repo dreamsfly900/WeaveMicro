@@ -15,29 +15,7 @@ using Newtonsoft.Json;
 namespace gateway
 {
 
-    public static class Funconfig
-    {
-       static IConfigurationBuilder builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("funconfig.json");
-
-
-
-        public static server[] getConfig()
-        {
-            server[] serverlist = new server[0];
-            var config=   builder.Build();
-            serverlist= config.GetSection("server").Get<server[]>();
-            if(serverlist!=null)
-            foreach (server ser in serverlist)
-            {
-                foreach (service serice in ser.services)
-                {
-                    if(!ser.servicesDic.ContainsKey(serice.Route))
-                    ser.servicesDic.GetOrAdd(serice.Route, serice);
-                }
-            }
-            return serverlist;
-        }
-    }
+  
     public static class Proccessor
     {
         public static server[] servers;
@@ -46,6 +24,12 @@ namespace gateway
            
             Dictionary<string, String> servicesDic = new Dictionary<string, String>();
             dynamic contentFromBody = "";
+           
+            if (servers == null)
+            { 
+                await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 999, msg = "非法请求" }));
+                return;
+            }
             if (context.Request.ContentLength != null)
             {
 
@@ -78,28 +62,25 @@ namespace gateway
                 }
 
             }
-            if (servers == null)
-            { 
-                await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 999, msg = "非法请求" }));
-                return;
-            }
             server ser =await WeightAlgorithm.Get(servers, context.Request.Path.Value.Trim('/'));
             if (ser == null)
             {
                 await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 404, msg = "非法请求" }));
                 //context.Abort();
-                //return;
+                return;
             }
             else
             {
                 if (!IsAuthenticated(context, ser.services[0].Authorize))
                 {
                     await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 0, msg = "非法请求" }));
+                   // context.Abort();
                     return;
                 }
-                wRPCclient.ClientChannel clientChannel = null;
+                
                 try
                 {
+                    DateTime dt = DateTime.Now;
                     //ser.services[0].parameter
                     object[] objs = new object[ser.services[0].parameter.Length];
                     for (int i = 0; i < objs.Length; i++)
@@ -140,8 +121,7 @@ namespace gateway
                         }
                     }
                     string datastr = Newtonsoft.Json.JsonConvert.SerializeObject(context.Request.Headers);
-                    clientChannel = new wRPCclient.ClientChannel(ser.IP, ser.Port);
-                    clientChannel.Headers = context.Request.Headers;
+                    
                     String rl = context.Request.Path.Value.Trim('/');
                     String[] rls = rl.Split('/');
                     rl = "";
@@ -150,19 +130,23 @@ namespace gateway
                         rl += rls[i] + "/";
                     }
                     rl = rl.Substring(0, rl.Length - 1);
-                    String retun =  clientChannel.Call<String>(rl, rls[rls.Length - 1], objs);
-
+                    String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs);
+                    //String retun =  clientChannel.Call<String>(rl, rls[rls.Length - 1], objs);
+                  
                     await context.Response.WriteAsync($"{retun}");
+                    DateTime dt2 = DateTime.Now;
+                //    Console.WriteLine((dt2 - dt).TotalMilliseconds);
+                    return;
                     //string httpstr = Newtonsoft.Json.JsonConvert.SerializeObject(httpmode);
                 }
                 catch (Exception ex)
                 {
                     await context.Response.WriteAsync($" ~, {  ex.Message}");
+                    return;
                 }
                 finally
                 {
-                    if (clientChannel != null)
-                        clientChannel.Dispose();
+                    
                 }
 
             }

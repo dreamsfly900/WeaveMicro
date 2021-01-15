@@ -1722,3 +1722,516 @@ System.InvalidOperationException: No signing credential is configured. Can't cre
 2021-01-14 18:41:12.672 +08:00 [DBG] Connection id "0HM5OB5OF00TH" stopped.
 2021-01-14 18:41:12.673 +08:00 [DBG] Connection id "0HM5OB5OF00TG" sending FIN because: "The Socket transport's send loop completed gracefully."
 2021-01-14 18:41:12.674 +08:00 [DBG] Connection id "0HM5OB5OF00TH" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-01-15 11:14:01.838 +08:00 [DBG] Connection id "0HM5OB5OF00TJ" accepted.
+2021-01-15 11:14:01.840 +08:00 [DBG] Connection id "0HM5OB5OF00TJ" started.
+2021-01-15 11:14:01.843 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - -
+2021-01-15 11:14:01.845 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:01.845 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:01.846 +08:00 [DBG] Connection id "0HM5OB5OF00TJ" completed keep alive response.
+2021-01-15 11:14:01.847 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - - - 404 0 - 4.4035ms
+2021-01-15 11:14:01.957 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - -
+2021-01-15 11:14:01.958 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:01.960 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:01.961 +08:00 [DBG] Connection id "0HM5OB5OF00TJ" completed keep alive response.
+2021-01-15 11:14:01.961 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - - - 404 0 - 4.1219ms
+2021-01-15 11:14:02.069 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - -
+2021-01-15 11:14:02.069 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:02.070 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:02.070 +08:00 [DBG] Connection id "0HM5OB5OF00TJ" completed keep alive response.
+2021-01-15 11:14:02.071 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - - - 404 0 - 2.5835ms
+2021-01-15 11:14:02.181 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - -
+2021-01-15 11:14:02.181 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:02.182 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:02.182 +08:00 [DBG] Connection id "0HM5OB5OF00TJ" completed keep alive response.
+2021-01-15 11:14:02.183 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - - - 404 0 - 1.8111ms
+2021-01-15 11:14:02.289 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - -
+2021-01-15 11:14:02.289 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:02.290 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:02.290 +08:00 [DBG] Connection id "0HM5OB5OF00TJ" completed keep alive response.
+2021-01-15 11:14:02.291 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - - - 404 0 - 1.7962ms
+2021-01-15 11:14:02.399 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - -
+2021-01-15 11:14:02.400 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:02.400 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:02.401 +08:00 [DBG] Connection id "0HM5OB5OF00TJ" completed keep alive response.
+2021-01-15 11:14:02.401 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - - - 404 0 - 2.6346ms
+2021-01-15 11:14:02.460 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - -
+2021-01-15 11:14:02.462 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:02.462 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:02.462 +08:00 [DBG] Connection id "0HM5OB5OF00TJ" completed keep alive response.
+2021-01-15 11:14:02.463 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - - - 404 0 - 2.8409ms
+2021-01-15 11:14:02.572 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - -
+2021-01-15 11:14:02.572 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:02.573 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:02.573 +08:00 [DBG] Connection id "0HM5OB5OF00TJ" completed keep alive response.
+2021-01-15 11:14:02.574 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - - - 404 0 - 2.1170ms
+2021-01-15 11:14:02.682 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - -
+2021-01-15 11:14:02.683 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:02.684 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:02.684 +08:00 [DBG] Connection id "0HM5OB5OF00TJ" completed keep alive response.
+2021-01-15 11:14:02.685 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - - - 404 0 - 2.0909ms
+2021-01-15 11:14:02.795 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - -
+2021-01-15 11:14:02.795 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:02.796 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:02.796 +08:00 [DBG] Connection id "0HM5OB5OF00TJ" completed keep alive response.
+2021-01-15 11:14:02.797 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - - - 404 0 - 1.9104ms
+2021-01-15 11:14:02.905 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - -
+2021-01-15 11:14:02.906 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:02.906 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:02.907 +08:00 [DBG] Connection id "0HM5OB5OF00TJ" completed keep alive response.
+2021-01-15 11:14:02.907 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - - - 404 0 - 1.8775ms
+2021-01-15 11:14:03.016 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - -
+2021-01-15 11:14:03.016 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:03.017 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:03.018 +08:00 [DBG] Connection id "0HM5OB5OF00TJ" completed keep alive response.
+2021-01-15 11:14:03.018 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - - - 404 0 - 1.8981ms
+2021-01-15 11:14:42.034 +08:00 [DBG] Connection id "0HM5OB5OF00TK" accepted.
+2021-01-15 11:14:42.036 +08:00 [DBG] Connection id "0HM5OB5OF00TK" started.
+2021-01-15 11:14:42.052 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - -
+2021-01-15 11:14:42.053 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:42.053 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:42.053 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-01-15 11:14:42.054 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-01-15 11:14:42.054 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-01-15 11:14:42.055 +08:00 [DBG] Start discovery request
+2021-01-15 11:14:42.056 +08:00 [DBG] Connection id "0HM5OB5OF00TK" completed keep alive response.
+2021-01-15 11:14:42.057 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 4.9176ms
+2021-01-15 11:14:42.213 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - -
+2021-01-15 11:14:42.213 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:42.214 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:14:42.214 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-01-15 11:14:42.215 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-01-15 11:14:42.215 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-01-15 11:14:42.215 +08:00 [DBG] Start key discovery request
+2021-01-15 11:14:42.216 +08:00 [DBG] Connection id "0HM5OB5OF00TK" completed keep alive response.
+2021-01-15 11:14:42.216 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 3.6754ms
+2021-01-15 11:15:43.038 +08:00 [DBG] Connection id "0HM5OB5OF00TJ" received FIN.
+2021-01-15 11:15:43.039 +08:00 [DBG] Connection id "0HM5OB5OF00TJ" disconnecting.
+2021-01-15 11:15:43.039 +08:00 [DBG] Connection id "0HM5OB5OF00TJ" sending FIN because: "The client closed the connection."
+2021-01-15 11:15:43.053 +08:00 [DBG] Connection id "0HM5OB5OF00TJ" stopped.
+2021-01-15 11:16:43.087 +08:00 [DBG] Connection id "0HM5OB5OF00TK" disconnecting.
+2021-01-15 11:16:43.087 +08:00 [DBG] Connection id "0HM5OB5OF00TK" stopped.
+2021-01-15 11:16:43.088 +08:00 [DBG] Connection id "0HM5OB5OF00TK" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-01-15 11:21:34.325 +08:00 [DBG] Connection id "0HM5OB5OF00TL" accepted.
+2021-01-15 11:21:34.326 +08:00 [DBG] Connection id "0HM5OB5OF00TL" started.
+2021-01-15 11:21:34.339 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - -
+2021-01-15 11:21:34.340 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:21:34.341 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:21:34.341 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-01-15 11:21:34.342 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-01-15 11:21:34.342 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-01-15 11:21:34.342 +08:00 [DBG] Start discovery request
+2021-01-15 11:21:34.343 +08:00 [DBG] Connection id "0HM5OB5OF00TL" completed keep alive response.
+2021-01-15 11:21:34.343 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 4.0463ms
+2021-01-15 11:21:34.501 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - -
+2021-01-15 11:21:34.502 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:21:34.502 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:21:34.503 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-01-15 11:21:34.503 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-01-15 11:21:34.506 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-01-15 11:21:34.506 +08:00 [DBG] Start key discovery request
+2021-01-15 11:21:34.507 +08:00 [DBG] Connection id "0HM5OB5OF00TL" completed keep alive response.
+2021-01-15 11:21:34.508 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 6.6619ms
+2021-01-15 11:22:37.632 +08:00 [DBG] Connection id "0HM5OB5OF00TL" reset.
+2021-01-15 11:22:37.633 +08:00 [DBG] Connection id "0HM5OB5OF00TL" sending FIN because: "The client closed the connection."
+2021-01-15 11:22:37.634 +08:00 [DBG] Connection id "0HM5OB5OF00TL" disconnecting.
+2021-01-15 11:22:37.635 +08:00 [DBG] Connection id "0HM5OB5OF00TL" stopped.
+2021-01-15 11:41:25.162 +08:00 [DBG] Connection id "0HM5OB5OF00TM" accepted.
+2021-01-15 11:41:25.164 +08:00 [DBG] Connection id "0HM5OB5OF00TM" started.
+2021-01-15 11:41:25.181 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - -
+2021-01-15 11:41:25.182 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:41:25.182 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:41:25.182 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-01-15 11:41:25.183 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-01-15 11:41:25.183 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-01-15 11:41:25.184 +08:00 [DBG] Start discovery request
+2021-01-15 11:41:25.184 +08:00 [DBG] Connection id "0HM5OB5OF00TM" completed keep alive response.
+2021-01-15 11:41:25.185 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 3.8998ms
+2021-01-15 11:41:25.331 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - -
+2021-01-15 11:41:25.332 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:41:25.333 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:41:25.333 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-01-15 11:41:25.334 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-01-15 11:41:25.334 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-01-15 11:41:25.334 +08:00 [DBG] Start key discovery request
+2021-01-15 11:41:25.335 +08:00 [DBG] Connection id "0HM5OB5OF00TM" completed keep alive response.
+2021-01-15 11:41:25.336 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 4.1913ms
+2021-01-15 11:43:25.530 +08:00 [DBG] Connection id "0HM5OB5OF00TM" disconnecting.
+2021-01-15 11:43:25.530 +08:00 [DBG] Connection id "0HM5OB5OF00TM" stopped.
+2021-01-15 11:43:25.531 +08:00 [DBG] Connection id "0HM5OB5OF00TM" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-01-15 11:44:22.580 +08:00 [DBG] Connection id "0HM5OB5OF00TN" accepted.
+2021-01-15 11:44:22.581 +08:00 [DBG] Connection id "0HM5OB5OF00TN" started.
+2021-01-15 11:44:22.591 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - -
+2021-01-15 11:44:22.591 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:44:22.592 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:44:22.592 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-01-15 11:44:22.593 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-01-15 11:44:22.594 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-01-15 11:44:22.594 +08:00 [DBG] Start discovery request
+2021-01-15 11:44:22.596 +08:00 [DBG] Connection id "0HM5OB5OF00TN" completed keep alive response.
+2021-01-15 11:44:22.599 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 8.1523ms
+2021-01-15 11:44:22.745 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - -
+2021-01-15 11:44:22.746 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:44:22.747 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:44:22.747 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-01-15 11:44:22.748 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-01-15 11:44:22.748 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-01-15 11:44:22.748 +08:00 [DBG] Start key discovery request
+2021-01-15 11:44:22.749 +08:00 [DBG] Connection id "0HM5OB5OF00TN" completed keep alive response.
+2021-01-15 11:44:22.749 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 4.2583ms
+2021-01-15 11:45:51.317 +08:00 [DBG] Connection id "0HM5OB5OF00TN" received FIN.
+2021-01-15 11:45:51.319 +08:00 [DBG] Connection id "0HM5OB5OF00TN" disconnecting.
+2021-01-15 11:45:51.319 +08:00 [DBG] Connection id "0HM5OB5OF00TN" sending FIN because: "The client closed the connection."
+2021-01-15 11:45:51.320 +08:00 [DBG] Connection id "0HM5OB5OF00TN" stopped.
+2021-01-15 11:46:15.633 +08:00 [DBG] Connection id "0HM5OB5OF00TO" accepted.
+2021-01-15 11:46:15.634 +08:00 [DBG] Connection id "0HM5OB5OF00TO" started.
+2021-01-15 11:46:15.650 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - -
+2021-01-15 11:46:15.651 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:46:15.652 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:46:15.653 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-01-15 11:46:15.653 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-01-15 11:46:15.654 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-01-15 11:46:15.656 +08:00 [DBG] Start discovery request
+2021-01-15 11:46:15.659 +08:00 [DBG] Connection id "0HM5OB5OF00TO" completed keep alive response.
+2021-01-15 11:46:15.662 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 11.7677ms
+2021-01-15 11:46:15.808 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - -
+2021-01-15 11:46:15.809 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:46:15.810 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 11:46:15.810 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-01-15 11:46:15.811 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-01-15 11:46:15.811 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-01-15 11:46:15.812 +08:00 [DBG] Start key discovery request
+2021-01-15 11:46:15.812 +08:00 [DBG] Connection id "0HM5OB5OF00TO" completed keep alive response.
+2021-01-15 11:46:15.814 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 5.9759ms
+2021-01-15 11:48:16.130 +08:00 [DBG] Connection id "0HM5OB5OF00TO" disconnecting.
+2021-01-15 11:48:16.130 +08:00 [DBG] Connection id "0HM5OB5OF00TO" stopped.
+2021-01-15 11:48:16.131 +08:00 [DBG] Connection id "0HM5OB5OF00TO" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-01-15 13:03:35.638 +08:00 [DBG] Connection id "0HM5OB5OF00TP" accepted.
+2021-01-15 13:03:35.639 +08:00 [DBG] Connection id "0HM5OB5OF00TP" started.
+2021-01-15 13:03:35.655 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - -
+2021-01-15 13:03:35.656 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 13:03:35.656 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 13:03:35.657 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-01-15 13:03:35.657 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-01-15 13:03:35.658 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-01-15 13:03:35.658 +08:00 [DBG] Start discovery request
+2021-01-15 13:03:35.661 +08:00 [DBG] Connection id "0HM5OB5OF00TP" completed keep alive response.
+2021-01-15 13:03:35.661 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 6.5813ms
+2021-01-15 13:03:35.805 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - -
+2021-01-15 13:03:35.806 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 13:03:35.806 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 13:03:35.806 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-01-15 13:03:35.807 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-01-15 13:03:35.807 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-01-15 13:03:35.808 +08:00 [DBG] Start key discovery request
+2021-01-15 13:03:35.808 +08:00 [DBG] Connection id "0HM5OB5OF00TP" completed keep alive response.
+2021-01-15 13:03:35.808 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 3.2537ms
+2021-01-15 13:04:18.931 +08:00 [DBG] Connection id "0HM5OB5OF00TP" reset.
+2021-01-15 13:04:18.931 +08:00 [DBG] Connection id "0HM5OB5OF00TP" disconnecting.
+2021-01-15 13:04:18.932 +08:00 [DBG] Connection id "0HM5OB5OF00TP" sending FIN because: "The client closed the connection."
+2021-01-15 13:04:18.933 +08:00 [DBG] Connection id "0HM5OB5OF00TP" stopped.
+2021-01-15 14:01:35.398 +08:00 [DBG] Connection id "0HM5OB5OF00TQ" accepted.
+2021-01-15 14:01:35.400 +08:00 [DBG] Connection id "0HM5OB5OF00TQ" started.
+2021-01-15 14:01:35.412 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - -
+2021-01-15 14:01:35.413 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:01:35.414 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:01:35.414 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-01-15 14:01:35.415 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-01-15 14:01:35.417 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-01-15 14:01:35.417 +08:00 [DBG] Start discovery request
+2021-01-15 14:01:35.418 +08:00 [DBG] Connection id "0HM5OB5OF00TQ" completed keep alive response.
+2021-01-15 14:01:35.420 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 7.0867ms
+2021-01-15 14:01:35.575 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - -
+2021-01-15 14:01:35.576 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:01:35.576 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:01:35.577 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-01-15 14:01:35.577 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-01-15 14:01:35.577 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-01-15 14:01:35.578 +08:00 [DBG] Start key discovery request
+2021-01-15 14:01:35.578 +08:00 [DBG] Connection id "0HM5OB5OF00TQ" completed keep alive response.
+2021-01-15 14:01:35.579 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 3.1148ms
+2021-01-15 14:02:37.135 +08:00 [DBG] Connection id "0HM5OB5OF00TQ" received FIN.
+2021-01-15 14:02:37.136 +08:00 [DBG] Connection id "0HM5OB5OF00TQ" disconnecting.
+2021-01-15 14:02:37.136 +08:00 [DBG] Connection id "0HM5OB5OF00TQ" stopped.
+2021-01-15 14:02:37.137 +08:00 [DBG] Connection id "0HM5OB5OF00TQ" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-01-15 14:02:58.898 +08:00 [DBG] Connection id "0HM5OB5OF00TR" accepted.
+2021-01-15 14:02:58.899 +08:00 [DBG] Connection id "0HM5OB5OF00TR" started.
+2021-01-15 14:02:58.914 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - -
+2021-01-15 14:02:58.914 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:02:58.915 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:02:58.915 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-01-15 14:02:58.916 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-01-15 14:02:58.916 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-01-15 14:02:58.917 +08:00 [DBG] Start discovery request
+2021-01-15 14:02:58.917 +08:00 [DBG] Connection id "0HM5OB5OF00TR" completed keep alive response.
+2021-01-15 14:02:58.919 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 5.1659ms
+2021-01-15 14:02:59.083 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - -
+2021-01-15 14:02:59.084 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:02:59.084 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:02:59.084 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-01-15 14:02:59.085 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-01-15 14:02:59.085 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-01-15 14:02:59.085 +08:00 [DBG] Start key discovery request
+2021-01-15 14:02:59.086 +08:00 [DBG] Connection id "0HM5OB5OF00TR" completed keep alive response.
+2021-01-15 14:02:59.088 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 5.1726ms
+2021-01-15 14:04:59.609 +08:00 [DBG] Connection id "0HM5OB5OF00TR" disconnecting.
+2021-01-15 14:04:59.610 +08:00 [DBG] Connection id "0HM5OB5OF00TR" stopped.
+2021-01-15 14:04:59.610 +08:00 [DBG] Connection id "0HM5OB5OF00TR" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-01-15 14:31:41.952 +08:00 [DBG] Connection id "0HM5OB5OF00TS" accepted.
+2021-01-15 14:31:41.953 +08:00 [DBG] Connection id "0HM5OB5OF00TS" started.
+2021-01-15 14:31:41.964 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - -
+2021-01-15 14:31:41.964 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:31:41.965 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:31:41.969 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-01-15 14:31:41.970 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-01-15 14:31:41.970 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-01-15 14:31:41.970 +08:00 [DBG] Start discovery request
+2021-01-15 14:31:41.971 +08:00 [DBG] Connection id "0HM5OB5OF00TS" completed keep alive response.
+2021-01-15 14:31:41.971 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 7.6359ms
+2021-01-15 14:31:42.124 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - -
+2021-01-15 14:31:42.124 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:31:42.125 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:31:42.125 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-01-15 14:31:42.126 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-01-15 14:31:42.126 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-01-15 14:31:42.126 +08:00 [DBG] Start key discovery request
+2021-01-15 14:31:42.127 +08:00 [DBG] Connection id "0HM5OB5OF00TS" completed keep alive response.
+2021-01-15 14:31:42.127 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 3.3652ms
+2021-01-15 14:33:10.556 +08:00 [DBG] Connection id "0HM5OB5OF00TS" reset.
+2021-01-15 14:33:10.557 +08:00 [DBG] Connection id "0HM5OB5OF00TS" disconnecting.
+2021-01-15 14:33:10.557 +08:00 [DBG] Connection id "0HM5OB5OF00TS" sending FIN because: "The client closed the connection."
+2021-01-15 14:33:10.558 +08:00 [DBG] Connection id "0HM5OB5OF00TS" stopped.
+2021-01-15 14:33:34.120 +08:00 [DBG] Connection id "0HM5OB5OF00TT" accepted.
+2021-01-15 14:33:34.121 +08:00 [DBG] Connection id "0HM5OB5OF00TT" started.
+2021-01-15 14:33:34.135 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - -
+2021-01-15 14:33:34.135 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:33:34.136 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:33:34.136 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-01-15 14:33:34.136 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-01-15 14:33:34.137 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-01-15 14:33:34.137 +08:00 [DBG] Start discovery request
+2021-01-15 14:33:34.138 +08:00 [DBG] Connection id "0HM5OB5OF00TT" completed keep alive response.
+2021-01-15 14:33:34.139 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 4.4718ms
+2021-01-15 14:33:34.300 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - -
+2021-01-15 14:33:34.300 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:33:34.301 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:33:34.301 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-01-15 14:33:34.302 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-01-15 14:33:34.302 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-01-15 14:33:34.302 +08:00 [DBG] Start key discovery request
+2021-01-15 14:33:34.303 +08:00 [DBG] Connection id "0HM5OB5OF00TT" completed keep alive response.
+2021-01-15 14:33:34.303 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 3.4322ms
+2021-01-15 14:35:35.302 +08:00 [DBG] Connection id "0HM5OB5OF00TT" disconnecting.
+2021-01-15 14:35:35.302 +08:00 [DBG] Connection id "0HM5OB5OF00TT" stopped.
+2021-01-15 14:35:35.302 +08:00 [DBG] Connection id "0HM5OB5OF00TT" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-01-15 14:38:41.995 +08:00 [DBG] Connection id "0HM5OB5OF00TU" accepted.
+2021-01-15 14:38:41.996 +08:00 [DBG] Connection id "0HM5OB5OF00TU" started.
+2021-01-15 14:38:42.015 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - -
+2021-01-15 14:38:42.018 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:38:42.018 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:38:42.019 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-01-15 14:38:42.019 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-01-15 14:38:42.019 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-01-15 14:38:42.020 +08:00 [DBG] Start discovery request
+2021-01-15 14:38:42.020 +08:00 [DBG] Connection id "0HM5OB5OF00TU" completed keep alive response.
+2021-01-15 14:38:42.021 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 5.9663ms
+2021-01-15 14:38:42.174 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - -
+2021-01-15 14:38:42.175 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:38:42.175 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:38:42.175 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-01-15 14:38:42.176 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-01-15 14:38:42.176 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-01-15 14:38:42.176 +08:00 [DBG] Start key discovery request
+2021-01-15 14:38:42.177 +08:00 [DBG] Connection id "0HM5OB5OF00TU" completed keep alive response.
+2021-01-15 14:38:42.177 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 3.5258ms
+2021-01-15 14:39:54.639 +08:00 [DBG] Connection id "0HM5OB5OF00TU" reset.
+2021-01-15 14:39:54.640 +08:00 [DBG] Connection id "0HM5OB5OF00TU" sending FIN because: "The client closed the connection."
+2021-01-15 14:39:54.640 +08:00 [DBG] Connection id "0HM5OB5OF00TU" disconnecting.
+2021-01-15 14:39:54.640 +08:00 [DBG] Connection id "0HM5OB5OF00TU" stopped.
+2021-01-15 14:42:07.270 +08:00 [DBG] Connection id "0HM5OB5OF00TV" accepted.
+2021-01-15 14:42:07.271 +08:00 [DBG] Connection id "0HM5OB5OF00TV" started.
+2021-01-15 14:42:07.288 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - -
+2021-01-15 14:42:07.289 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:42:07.289 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:42:07.290 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-01-15 14:42:07.291 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-01-15 14:42:07.291 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-01-15 14:42:07.292 +08:00 [DBG] Start discovery request
+2021-01-15 14:42:07.293 +08:00 [DBG] Connection id "0HM5OB5OF00TV" completed keep alive response.
+2021-01-15 14:42:07.294 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 5.9964ms
+2021-01-15 14:42:07.441 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - -
+2021-01-15 14:42:07.442 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:42:07.442 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:42:07.443 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-01-15 14:42:07.443 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-01-15 14:42:07.443 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-01-15 14:42:07.444 +08:00 [DBG] Start key discovery request
+2021-01-15 14:42:07.444 +08:00 [DBG] Connection id "0HM5OB5OF00TV" completed keep alive response.
+2021-01-15 14:42:07.445 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 3.5252ms
+2021-01-15 14:44:08.012 +08:00 [DBG] Connection id "0HM5OB5OF00TV" disconnecting.
+2021-01-15 14:44:08.012 +08:00 [DBG] Connection id "0HM5OB5OF00TV" stopped.
+2021-01-15 14:44:08.012 +08:00 [DBG] Connection id "0HM5OB5OF00TV" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-01-15 14:52:50.352 +08:00 [DBG] Connection id "0HM5OB5OF00U0" accepted.
+2021-01-15 14:52:50.353 +08:00 [DBG] Connection id "0HM5OB5OF00U0" started.
+2021-01-15 14:52:50.363 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - -
+2021-01-15 14:52:50.364 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:52:50.364 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:52:50.364 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-01-15 14:52:50.366 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-01-15 14:52:50.367 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-01-15 14:52:50.368 +08:00 [DBG] Start discovery request
+2021-01-15 14:52:50.369 +08:00 [DBG] Connection id "0HM5OB5OF00U0" completed keep alive response.
+2021-01-15 14:52:50.370 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 6.7548ms
+2021-01-15 14:52:50.512 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - -
+2021-01-15 14:52:50.512 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:52:50.513 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:52:50.513 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-01-15 14:52:50.513 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-01-15 14:52:50.514 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-01-15 14:52:50.514 +08:00 [DBG] Start key discovery request
+2021-01-15 14:52:50.514 +08:00 [DBG] Connection id "0HM5OB5OF00U0" completed keep alive response.
+2021-01-15 14:52:50.515 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 2.9797ms
+2021-01-15 14:54:51.428 +08:00 [DBG] Connection id "0HM5OB5OF00U0" disconnecting.
+2021-01-15 14:54:51.428 +08:00 [DBG] Connection id "0HM5OB5OF00U0" stopped.
+2021-01-15 14:54:51.429 +08:00 [DBG] Connection id "0HM5OB5OF00U0" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-01-15 14:56:28.957 +08:00 [DBG] Connection id "0HM5OB5OF00U1" accepted.
+2021-01-15 14:56:28.959 +08:00 [DBG] Connection id "0HM5OB5OF00U1" started.
+2021-01-15 14:56:28.981 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - -
+2021-01-15 14:56:28.982 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:56:28.983 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:56:28.985 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-01-15 14:56:28.988 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-01-15 14:56:28.988 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-01-15 14:56:28.989 +08:00 [DBG] Start discovery request
+2021-01-15 14:56:28.989 +08:00 [DBG] Connection id "0HM5OB5OF00U1" completed keep alive response.
+2021-01-15 14:56:28.990 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 8.5699ms
+2021-01-15 14:56:29.148 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - -
+2021-01-15 14:56:29.149 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:56:29.149 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:56:29.149 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-01-15 14:56:29.150 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-01-15 14:56:29.150 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-01-15 14:56:29.151 +08:00 [DBG] Start key discovery request
+2021-01-15 14:56:29.153 +08:00 [DBG] Connection id "0HM5OB5OF00U1" completed keep alive response.
+2021-01-15 14:56:29.155 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 7.1238ms
+2021-01-15 14:56:56.320 +08:00 [DBG] Connection id "0HM5OB5OF00U1" reset.
+2021-01-15 14:56:56.320 +08:00 [DBG] Connection id "0HM5OB5OF00U1" disconnecting.
+2021-01-15 14:56:56.321 +08:00 [DBG] Connection id "0HM5OB5OF00U1" sending FIN because: "The client closed the connection."
+2021-01-15 14:56:56.325 +08:00 [DBG] Connection id "0HM5OB5OF00U1" stopped.
+2021-01-15 14:58:18.576 +08:00 [DBG] Connection id "0HM5OB5OF00U2" accepted.
+2021-01-15 14:58:18.577 +08:00 [DBG] Connection id "0HM5OB5OF00U2" started.
+2021-01-15 14:58:18.591 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - -
+2021-01-15 14:58:18.592 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:58:18.592 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:58:18.593 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-01-15 14:58:18.593 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-01-15 14:58:18.594 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-01-15 14:58:18.597 +08:00 [DBG] Start discovery request
+2021-01-15 14:58:18.599 +08:00 [DBG] Connection id "0HM5OB5OF00U2" completed keep alive response.
+2021-01-15 14:58:18.601 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 9.9623ms
+2021-01-15 14:58:18.754 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - -
+2021-01-15 14:58:18.754 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:58:18.755 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 14:58:18.755 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-01-15 14:58:18.756 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-01-15 14:58:18.756 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-01-15 14:58:18.756 +08:00 [DBG] Start key discovery request
+2021-01-15 14:58:18.757 +08:00 [DBG] Connection id "0HM5OB5OF00U2" completed keep alive response.
+2021-01-15 14:58:18.757 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 3.2086ms
+2021-01-15 14:59:16.053 +08:00 [DBG] Connection id "0HM5OB5OF00U2" received FIN.
+2021-01-15 14:59:16.065 +08:00 [DBG] Connection id "0HM5OB5OF00U2" disconnecting.
+2021-01-15 14:59:16.071 +08:00 [DBG] Connection id "0HM5OB5OF00U2" sending FIN because: "The client closed the connection."
+2021-01-15 14:59:16.078 +08:00 [DBG] Connection id "0HM5OB5OF00U2" stopped.
+2021-01-15 15:01:32.878 +08:00 [DBG] Connection id "0HM5OB5OF00U3" accepted.
+2021-01-15 15:01:32.880 +08:00 [DBG] Connection id "0HM5OB5OF00U3" started.
+2021-01-15 15:01:32.902 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - -
+2021-01-15 15:01:32.903 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 15:01:32.903 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 15:01:32.903 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-01-15 15:01:32.906 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-01-15 15:01:32.908 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-01-15 15:01:32.909 +08:00 [DBG] Start discovery request
+2021-01-15 15:01:32.910 +08:00 [DBG] Connection id "0HM5OB5OF00U3" completed keep alive response.
+2021-01-15 15:01:32.914 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 12.5791ms
+2021-01-15 15:01:33.070 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - -
+2021-01-15 15:01:33.074 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 15:01:33.075 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 15:01:33.076 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-01-15 15:01:33.076 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-01-15 15:01:33.077 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-01-15 15:01:33.077 +08:00 [DBG] Start key discovery request
+2021-01-15 15:01:33.077 +08:00 [DBG] Connection id "0HM5OB5OF00U3" completed keep alive response.
+2021-01-15 15:01:33.078 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 8.1441ms
+2021-01-15 15:03:34.901 +08:00 [DBG] Connection id "0HM5OB5OF00U3" disconnecting.
+2021-01-15 15:03:34.901 +08:00 [DBG] Connection id "0HM5OB5OF00U3" stopped.
+2021-01-15 15:03:34.902 +08:00 [DBG] Connection id "0HM5OB5OF00U3" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-01-15 15:04:44.004 +08:00 [DBG] Connection id "0HM5OB5OF00U4" accepted.
+2021-01-15 15:04:44.017 +08:00 [DBG] Connection id "0HM5OB5OF00U4" started.
+2021-01-15 15:04:44.026 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - -
+2021-01-15 15:04:44.027 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 15:04:44.028 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 15:04:44.028 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-01-15 15:04:44.029 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-01-15 15:04:44.032 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-01-15 15:04:44.033 +08:00 [DBG] Start discovery request
+2021-01-15 15:04:44.033 +08:00 [DBG] Connection id "0HM5OB5OF00U4" completed keep alive response.
+2021-01-15 15:04:44.036 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 9.6937ms
+2021-01-15 15:04:44.187 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - -
+2021-01-15 15:04:44.187 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 15:04:44.188 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 15:04:44.188 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-01-15 15:04:44.189 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-01-15 15:04:44.189 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-01-15 15:04:44.189 +08:00 [DBG] Start key discovery request
+2021-01-15 15:04:44.190 +08:00 [DBG] Connection id "0HM5OB5OF00U4" completed keep alive response.
+2021-01-15 15:04:44.190 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 3.6510ms
+2021-01-15 15:05:49.810 +08:00 [DBG] Connection id "0HM5OB5OF00U4" reset.
+2021-01-15 15:05:49.811 +08:00 [DBG] Connection id "0HM5OB5OF00U4" sending FIN because: "The client closed the connection."
+2021-01-15 15:05:49.811 +08:00 [DBG] Connection id "0HM5OB5OF00U4" disconnecting.
+2021-01-15 15:05:49.811 +08:00 [DBG] Connection id "0HM5OB5OF00U4" stopped.
+2021-01-15 15:05:58.107 +08:00 [DBG] Connection id "0HM5OB5OF00U5" accepted.
+2021-01-15 15:05:58.107 +08:00 [DBG] Connection id "0HM5OB5OF00U5" started.
+2021-01-15 15:05:58.119 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - -
+2021-01-15 15:05:58.120 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 15:05:58.120 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 15:05:58.120 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-01-15 15:05:58.121 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-01-15 15:05:58.121 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-01-15 15:05:58.121 +08:00 [DBG] Start discovery request
+2021-01-15 15:05:58.122 +08:00 [DBG] Connection id "0HM5OB5OF00U5" completed keep alive response.
+2021-01-15 15:05:58.122 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 3.1862ms
+2021-01-15 15:05:58.279 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - -
+2021-01-15 15:05:58.280 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 15:05:58.280 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 15:05:58.281 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-01-15 15:05:58.281 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-01-15 15:05:58.281 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-01-15 15:05:58.282 +08:00 [DBG] Start key discovery request
+2021-01-15 15:05:58.282 +08:00 [DBG] Connection id "0HM5OB5OF00U5" completed keep alive response.
+2021-01-15 15:05:58.283 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 3.6480ms
+2021-01-15 15:06:29.007 +08:00 [DBG] Connection id "0HM5OB5OF00U5" reset.
+2021-01-15 15:06:29.007 +08:00 [DBG] Connection id "0HM5OB5OF00U5" disconnecting.
+2021-01-15 15:06:29.008 +08:00 [DBG] Connection id "0HM5OB5OF00U5" stopped.
+2021-01-15 15:06:29.008 +08:00 [DBG] Connection id "0HM5OB5OF00U5" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-01-15 15:06:57.956 +08:00 [DBG] Connection id "0HM5OB5OF00U6" accepted.
+2021-01-15 15:06:57.957 +08:00 [DBG] Connection id "0HM5OB5OF00U6" started.
+2021-01-15 15:06:57.969 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - -
+2021-01-15 15:06:57.970 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 15:06:57.971 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 15:06:57.972 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-01-15 15:06:57.972 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-01-15 15:06:57.972 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-01-15 15:06:57.973 +08:00 [DBG] Start discovery request
+2021-01-15 15:06:57.973 +08:00 [DBG] Connection id "0HM5OB5OF00U6" completed keep alive response.
+2021-01-15 15:06:57.974 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 5.4327ms
+2021-01-15 15:06:58.140 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - -
+2021-01-15 15:06:58.141 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 15:06:58.141 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-01-15 15:06:58.142 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-01-15 15:06:58.142 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-01-15 15:06:58.142 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-01-15 15:06:58.143 +08:00 [DBG] Start key discovery request
+2021-01-15 15:06:58.143 +08:00 [DBG] Connection id "0HM5OB5OF00U6" completed keep alive response.
+2021-01-15 15:06:58.144 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 3.2810ms
+2021-01-15 15:08:58.730 +08:00 [DBG] Connection id "0HM5OB5OF00U6" disconnecting.
+2021-01-15 15:08:58.730 +08:00 [DBG] Connection id "0HM5OB5OF00U6" stopped.
+2021-01-15 15:08:58.731 +08:00 [DBG] Connection id "0HM5OB5OF00U6" sending FIN because: "The Socket transport's send loop completed gracefully."

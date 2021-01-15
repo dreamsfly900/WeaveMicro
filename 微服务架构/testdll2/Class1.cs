@@ -29,7 +29,7 @@ namespace testdll2
         public String ff(mode md)
         {
           
-            Console.WriteLine(md.name);
+         //   Console.WriteLine(md.name);
             return "Class2.ff的返回值";
         }
         [Authorize]
@@ -37,8 +37,8 @@ namespace testdll2
         public String ff2([Param("用户名")] string name)
         {
 
-            Console.WriteLine(name);
-            return "Class2.f2f的返回值";
+           /// Console.WriteLine(name);
+            return "Class2.f2f22的返回值";
         }
     }
 }

@@ -77,8 +77,10 @@ namespace wRPC
                             if (ParamAttr != null)
                             {
 
-                                serv.parameterexplain[i] += ParamAttr.explain;
+                                serv.parameterexplain[i] += "@" + ParamAttr.explain + "|";
                             }
+                            else
+                                serv.parameterexplain[i] += "@|";
 
 
 
@@ -105,7 +107,7 @@ namespace wRPC
         public String[] parameter { get; set; }
         public String[] parameterexplain { get; set; }
         public string annotation { get; set; }
-        public bool Authorize { get; internal set; }
+        public bool Authorize { get;  set; }
     }
     public class Rpcdata<T>
     {

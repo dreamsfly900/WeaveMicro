@@ -18,7 +18,15 @@ namespace Test
         {
             RemoteService remoteService = new RemoteService("TEST");
             remoteService.Start();
- 
+            //while (true)
+            //{
+
+            //    // DateTime dt = DateTime.Now;
+            //    bb();
+            //    System.Threading.Thread.Sleep(10);
+            //    //DateTime dt2 = DateTime.Now;
+            //    //Console.WriteLine((dt2 - dt).TotalMilliseconds);
+            //}
             while (true)
             {
                 System.Threading.Thread.Sleep(10);
@@ -41,7 +49,7 @@ namespace Test
         {
          
             String retun =  clientChannel.Call<String>("abcd", "ff",  new { name = "gghhss", age = 0 } );
-            Console.WriteLine("ceshi:"+retun);
+          //  Console.WriteLine("ceshi:"+retun);
              
         }
     }

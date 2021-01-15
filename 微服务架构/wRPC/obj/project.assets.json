@@ -432,7 +432,7 @@
           "ref/netstandard1.3/_._": {}
         }
       },
-      "Weave.Base/2.0.14": {
+      "Weave.Base/2.0.15": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1"
@@ -444,10 +444,10 @@
           "lib/netstandard2.0/Weave.Base.dll": {}
         }
       },
-      "Weave.TcpSynClient/2.0.8": {
+      "Weave.TcpSynClient/2.0.9": {
         "type": "package",
         "dependencies": {
-          "Weave.Base": "2.0.14"
+          "Weave.Base": "2.0.15"
         },
         "compile": {
           "lib/netstandard2.0/Weave.TcpSynClient.dll": {}
@@ -2082,10 +2082,10 @@
         "system.threading.tasks.nuspec"
       ]
     },
-    "Weave.Base/2.0.14": {
-      "sha512": "9rQiGY3X4Q4PgtiYZQY8GUNtN7Wiy3soptBMMn5tu/vnizNh/zKMtxz/clQkSJc7mfdJzhm8w7t/+hjU7WaucQ==",
+    "Weave.Base/2.0.15": {
+      "sha512": "ZLgLIzlosgZyPD4pECcW50vLXxEbCXiSSJBZdMcwZvc80hkWHukZn6vkJBNMtjoiL0jcKm+khnVCC7vB0oobZg==",
       "type": "package",
-      "path": "weave.base/2.0.14",
+      "path": "weave.base/2.0.15",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2095,14 +2095,14 @@
         "lib/net45/Weave.Base.xml",
         "lib/netstandard2.0/Weave.Base.dll",
         "lib/netstandard2.0/Weave.Base.xml",
-        "weave.base.2.0.14.nupkg.sha512",
+        "weave.base.2.0.15.nupkg.sha512",
         "weave.base.nuspec"
       ]
     },
-    "Weave.TcpSynClient/2.0.8": {
-      "sha512": "mzFWLjn/qKSFHA+NjqJ6V1VKGIfKTrMo9V4PJ7Y7DASBpHdteYzHoQZWYnJHJJ83xWA8mK4FKKmKWyMAkzssfA==",
+    "Weave.TcpSynClient/2.0.9": {
+      "sha512": "856LUvn/LTCIwGCwlYPdUzjJa5pZ0gwzb5f/zwgbJlkzGb3PGwL3o5r+1hFrVJnlwMjcoHZyXIDOPA40ZgC2jQ==",
       "type": "package",
-      "path": "weave.tcpsynclient/2.0.8",
+      "path": "weave.tcpsynclient/2.0.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2110,7 +2110,7 @@
         "lib/net45/Weave.TcpSynClient.xml",
         "lib/netstandard2.0/Weave.TcpSynClient.dll",
         "lib/netstandard2.0/Weave.TcpSynClient.xml",
-        "weave.tcpsynclient.2.0.8.nupkg.sha512",
+        "weave.tcpsynclient.2.0.9.nupkg.sha512",
         "weave.tcpsynclient.nuspec"
       ]
     }
@@ -2122,7 +2122,7 @@
       "Microsoft.Build.Utilities.Core >= 16.8.0",
       "Microsoft.CSharp >= 4.7.0",
       "NETStandard.Library >= 2.0.3",
-      "Weave.TcpSynClient >= 2.0.8"
+      "Weave.TcpSynClient >= 2.0.9"
     ]
   },
   "packageFolders": {
@@ -2188,7 +2188,7 @@
           },
           "Weave.TcpSynClient": {
             "target": "Package",
-            "version": "[2.0.8, )"
+            "version": "[2.0.9, )"
           }
         },
         "imports": [

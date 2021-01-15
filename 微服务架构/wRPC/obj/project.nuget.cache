@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yVKr6ngoLN2V5fzzMx8SSNQUbh6O7nkvhGhQIipTPwNqC35FyF6i9ojnC8npkzzLpCkATD0l9AC9rI6IRv6irg==",
+  "dgSpecHash": "6Iqbxyko7Zm+kd+esCEid6VMoxFgmSHhxJ6a8Yz7sjrSGQlfdX9W7P8O9Uq81T6J8/hCe7mVfNAZ3ZwPPm2VoA==",
   "success": true,
   "projectFilePath": "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj",
   "expectedPackageFiles": [
@@ -38,8 +38,8 @@
     "C:\\Users\\xingy\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\system.threading\\4.0.11\\system.threading.4.0.11.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
-    "C:\\Users\\xingy\\.nuget\\packages\\weave.base\\2.0.14\\weave.base.2.0.14.nupkg.sha512",
-    "C:\\Users\\xingy\\.nuget\\packages\\weave.tcpsynclient\\2.0.8\\weave.tcpsynclient.2.0.8.nupkg.sha512"
+    "C:\\Users\\xingy\\.nuget\\packages\\weave.base\\2.0.15\\weave.base.2.0.15.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\weave.tcpsynclient\\2.0.9\\weave.tcpsynclient.2.0.9.nupkg.sha512"
   ],
   "logs": []
 }

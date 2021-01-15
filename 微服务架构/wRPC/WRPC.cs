@@ -17,13 +17,19 @@ namespace wRPCclient
         int Port;
         Weave.Client.TcpSynClient tcpSynClient;
         public IHeaderDictionary Headers { get; set; }
+        bool isline = false;
         public ClientChannel(String _IP, int port)
         {
             IP = _IP;
             Port = port;
             tcpSynClient = new TcpSynClient(Weave.Client.DataType.bytes, IP, Port);
-            if (!tcpSynClient.Start())
+            isline = tcpSynClient.Start();
+            if(!isline)
                 throw new Exception("无法连接服务器");
+        }
+        public bool connection()
+        {
+            return isline=tcpSynClient.Start();
         }
         public bool IsLine()
         {
@@ -83,17 +89,17 @@ namespace wRPCclient
         {
             
             Rpcdata<object[]> rpcdata = new wRPC.Rpcdata<object[]>();
-            httpmode httpmode = new httpmode();
-            if (context != null)
-            {
-                if (context.Request.Headers!=null)
-               // httpmode.Headers = Headers;
-                if (context.Request.HasFormContentType )
-                    httpmode.From = context.Request.Form;
-                if (context.Request.Query != null)
-                    httpmode.Query = context.Request.Query;
-            }
-            rpcdata.Headers = Headers;
+            //httpmode httpmode = new httpmode();
+            //if (context != null)
+            //{
+            //    if (context.Request.Headers!=null)
+            //   // httpmode.Headers = Headers;
+            //    if (context.Request.HasFormContentType )
+            //        httpmode.From = context.Request.Form;
+            //    if (context.Request.Query != null)
+            //        httpmode.Query = context.Request.Query;
+            //}
+            //rpcdata.Headers = Headers;
             if (parameter is object[])
                 rpcdata.parameter = parameter as object[];
             else
@@ -106,21 +112,33 @@ namespace wRPCclient
         }
         String call(String datastr)
         {
-            
-            
-            tcpSynClient.Send(0x01, GZIP.GZipCompress(datastr));
-            var commdata =  tcpSynClient.Receives(null);
-            if (commdata == null)
-                throw new Exception("通信意外！");
-            if (commdata.comand == 0x01)
+            DateTime dt = DateTime.Now;
+            if (!isline)
+                isline= connection();
+            if (isline)
             {
-                return GZIP.GZipDecompress(commdata.data);
+                if (tcpSynClient.Send(0x01, GZIP.GZipCompress(datastr)))
+                {
+                  
+                    var commdata = tcpSynClient.Receives(null);
+                    DateTime dt2 = DateTime.Now;
+                    //Console.WriteLine((dt2 - dt).TotalMilliseconds);
+                    if (commdata == null)
+                        throw new Exception("通信意外！");
+                    if (commdata.comand == 0x01)
+                    {
+                        return GZIP.GZipDecompress(commdata.data);
+                    }
+                    else
+                        throw new Exception(GZIP.GZipDecompress(commdata.data));
+                }
             }
-            else
-                throw new Exception(GZIP.GZipDecompress(commdata.data));
+            return "无法发送到服务器";
         }
+        
         public void Dispose()
         {
+            isline = false;
             tcpSynClient.Stop();
         }
     }

@@ -892,7 +892,7 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "Weave.Base/2.0.15": {
+      "Weave.Base/2.0.16": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1"
@@ -904,10 +904,10 @@
           "lib/netstandard2.0/Weave.Base.dll": {}
         }
       },
-      "Weave.Server/2.0.16": {
+      "Weave.Server/2.0.17": {
         "type": "package",
         "dependencies": {
-          "Weave.Base": "2.0.15"
+          "Weave.Base": "2.0.16"
         },
         "compile": {
           "lib/netstandard2.0/Weave.Server.dll": {}
@@ -921,7 +921,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Microsoft.AspNetCore": "2.2.0",
-          "Weave.Server": "2.0.16"
+          "Weave.Server": "2.0.17"
         },
         "compile": {
           "bin/placeholder/wRPCService.dll": {}
@@ -2254,10 +2254,10 @@
         "version.txt"
       ]
     },
-    "Weave.Base/2.0.15": {
-      "sha512": "ZLgLIzlosgZyPD4pECcW50vLXxEbCXiSSJBZdMcwZvc80hkWHukZn6vkJBNMtjoiL0jcKm+khnVCC7vB0oobZg==",
+    "Weave.Base/2.0.16": {
+      "sha512": "OoRPIn/aSypSgK77YjR4isHzREzv5FKUqO8+pJze/rBvyAhjYHNYr/yHV2p2u8fhZAIAMRAVnyRqBIQzWRT1kQ==",
       "type": "package",
-      "path": "weave.base/2.0.15",
+      "path": "weave.base/2.0.16",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2267,14 +2267,14 @@
         "lib/net45/Weave.Base.xml",
         "lib/netstandard2.0/Weave.Base.dll",
         "lib/netstandard2.0/Weave.Base.xml",
-        "weave.base.2.0.15.nupkg.sha512",
+        "weave.base.2.0.16.nupkg.sha512",
         "weave.base.nuspec"
       ]
     },
-    "Weave.Server/2.0.16": {
-      "sha512": "431byE/sBR7i5tdJTfVogA1II4xYCcnllur2xLVATDpPJpYM7Jz0qd4piZybnWnusBvO2cfw/d+jAAZ2W3kLOQ==",
+    "Weave.Server/2.0.17": {
+      "sha512": "Qh1zofqpAevUQaPJBcDCuNY9yXCZr86M0xxU5GSLX4KhjA/2mqvTjEqk0va107cixWqpgYe/iJtpObIE28ELmw==",
       "type": "package",
-      "path": "weave.server/2.0.16",
+      "path": "weave.server/2.0.17",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2284,7 +2284,7 @@
         "lib/net45/Weave.Server.xml",
         "lib/netstandard2.0/Weave.Server.dll",
         "lib/netstandard2.0/Weave.Server.xml",
-        "weave.server.2.0.16.nupkg.sha512",
+        "weave.server.2.0.17.nupkg.sha512",
         "weave.server.nuspec"
       ]
     },
@@ -2301,19 +2301,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\xingy\\.nuget\\packages\\": {}
+    "C:\\Users\\dreamsfly\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\testdll2\\testdll2.csproj",
+      "projectUniqueName": "D:\\weave-micro\\微服务架构\\testdll2\\testdll2.csproj",
       "projectName": "testdll2",
-      "projectPath": "D:\\WeaveMicro\\微服务架构\\testdll2\\testdll2.csproj",
-      "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
-      "outputPath": "D:\\WeaveMicro\\微服务架构\\testdll2\\obj\\",
+      "projectPath": "D:\\weave-micro\\微服务架构\\testdll2\\testdll2.csproj",
+      "packagesPath": "C:\\Users\\dreamsfly\\.nuget\\packages\\",
+      "outputPath": "D:\\weave-micro\\微服务架构\\testdll2\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dreamsfly\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2327,8 +2331,8 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
-              "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj"
+            "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj": {
+              "projectPath": "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj"
             }
           }
         }
@@ -2360,7 +2364,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

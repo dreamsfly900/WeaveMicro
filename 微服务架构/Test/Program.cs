@@ -18,15 +18,15 @@ namespace Test
         {
             RemoteService remoteService = new RemoteService("TEST");
             remoteService.Start();
-            //while (true)
-            //{
+            while (true)
+            {
+                System.Threading.Thread.Sleep(10);
+                DateTime dt = DateTime.Now;
+                bb();
 
-            //    // DateTime dt = DateTime.Now;
-            //    bb();
-            //    System.Threading.Thread.Sleep(10);
-            //    //DateTime dt2 = DateTime.Now;
-            //    //Console.WriteLine((dt2 - dt).TotalMilliseconds);
-            //}
+                DateTime dt2 = DateTime.Now;
+                Console.WriteLine("Main:" + (dt2 - dt).TotalMilliseconds);
+            }
             while (true)
             {
                 System.Threading.Thread.Sleep(10);

@@ -1558,7 +1558,7 @@
           }
         }
       },
-      "Weave.Base/2.0.15": {
+      "Weave.Base/2.0.16": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1"
@@ -1570,10 +1570,10 @@
           "lib/netstandard2.0/Weave.Base.dll": {}
         }
       },
-      "Weave.Server/2.0.16": {
+      "Weave.Server/2.0.17": {
         "type": "package",
         "dependencies": {
-          "Weave.Base": "2.0.15"
+          "Weave.Base": "2.0.16"
         },
         "compile": {
           "lib/netstandard2.0/Weave.Server.dll": {}
@@ -1594,10 +1594,10 @@
           "lib/netstandard2.0/Weave.TCPClient.dll": {}
         }
       },
-      "Weave.TcpSynClient/2.0.9": {
+      "Weave.TcpSynClient/2.0.10": {
         "type": "package",
         "dependencies": {
-          "Weave.Base": "2.0.15"
+          "Weave.Base": "2.0.16"
         },
         "compile": {
           "lib/netstandard2.0/Weave.TcpSynClient.dll": {}
@@ -1629,7 +1629,7 @@
           "Microsoft.Build.Framework": "16.8.0",
           "Microsoft.Build.Utilities.Core": "16.8.0",
           "Microsoft.CSharp": "4.7.0",
-          "Weave.TcpSynClient": "2.0.9"
+          "Weave.TcpSynClient": "2.0.10"
         },
         "compile": {
           "bin/placeholder/wRPC.dll": {}
@@ -1643,7 +1643,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Microsoft.AspNetCore": "2.2.0",
-          "Weave.Server": "2.0.16"
+          "Weave.Server": "2.0.17"
         },
         "compile": {
           "bin/placeholder/wRPCService.dll": {}
@@ -2956,7 +2956,6 @@
       "path": "microsoft.win32.registry/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/net46/Microsoft.Win32.Registry.dll",
@@ -3015,7 +3014,6 @@
       "path": "netstandard.library/2.0.3",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "build/netstandard2.0/NETStandard.Library.targets",
@@ -3204,7 +3202,6 @@
       "path": "system.collections/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3448,7 +3445,6 @@
       "path": "system.globalization/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3533,7 +3529,6 @@
       "path": "system.io/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3708,7 +3703,6 @@
       "path": "system.reflection/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3810,7 +3804,6 @@
       "path": "system.reflection.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3867,7 +3860,6 @@
       "path": "system.resources.resourcemanager/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3924,7 +3916,6 @@
       "path": "system.runtime/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4041,7 +4032,6 @@
       "path": "system.runtime.extensions/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4122,7 +4112,6 @@
       "path": "system.runtime.handles/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4160,7 +4149,6 @@
       "path": "system.runtime.interopservices/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4443,7 +4431,6 @@
       "path": "system.text.encoding/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4571,7 +4558,6 @@
       "path": "system.threading/4.0.11",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4642,7 +4628,6 @@
       "path": "system.threading.tasks/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4764,10 +4749,10 @@
         "version.txt"
       ]
     },
-    "Weave.Base/2.0.15": {
-      "sha512": "ZLgLIzlosgZyPD4pECcW50vLXxEbCXiSSJBZdMcwZvc80hkWHukZn6vkJBNMtjoiL0jcKm+khnVCC7vB0oobZg==",
+    "Weave.Base/2.0.16": {
+      "sha512": "OoRPIn/aSypSgK77YjR4isHzREzv5FKUqO8+pJze/rBvyAhjYHNYr/yHV2p2u8fhZAIAMRAVnyRqBIQzWRT1kQ==",
       "type": "package",
-      "path": "weave.base/2.0.15",
+      "path": "weave.base/2.0.16",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4777,14 +4762,14 @@
         "lib/net45/Weave.Base.xml",
         "lib/netstandard2.0/Weave.Base.dll",
         "lib/netstandard2.0/Weave.Base.xml",
-        "weave.base.2.0.15.nupkg.sha512",
+        "weave.base.2.0.16.nupkg.sha512",
         "weave.base.nuspec"
       ]
     },
-    "Weave.Server/2.0.16": {
-      "sha512": "431byE/sBR7i5tdJTfVogA1II4xYCcnllur2xLVATDpPJpYM7Jz0qd4piZybnWnusBvO2cfw/d+jAAZ2W3kLOQ==",
+    "Weave.Server/2.0.17": {
+      "sha512": "Qh1zofqpAevUQaPJBcDCuNY9yXCZr86M0xxU5GSLX4KhjA/2mqvTjEqk0va107cixWqpgYe/iJtpObIE28ELmw==",
       "type": "package",
-      "path": "weave.server/2.0.16",
+      "path": "weave.server/2.0.17",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4794,7 +4779,7 @@
         "lib/net45/Weave.Server.xml",
         "lib/netstandard2.0/Weave.Server.dll",
         "lib/netstandard2.0/Weave.Server.xml",
-        "weave.server.2.0.16.nupkg.sha512",
+        "weave.server.2.0.17.nupkg.sha512",
         "weave.server.nuspec"
       ]
     },
@@ -4815,10 +4800,10 @@
         "weave.tcpclient.nuspec"
       ]
     },
-    "Weave.TcpSynClient/2.0.9": {
-      "sha512": "856LUvn/LTCIwGCwlYPdUzjJa5pZ0gwzb5f/zwgbJlkzGb3PGwL3o5r+1hFrVJnlwMjcoHZyXIDOPA40ZgC2jQ==",
+    "Weave.TcpSynClient/2.0.10": {
+      "sha512": "qF/F6t8jRbdKC7pS+CpGuygmYlVHc06N8WDvr+CxOtFk7SFTFiL2pcMTSOViqawbs0opv4ihYOsw2swtCp62jg==",
       "type": "package",
-      "path": "weave.tcpsynclient/2.0.9",
+      "path": "weave.tcpsynclient/2.0.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4826,7 +4811,7 @@
         "lib/net45/Weave.TcpSynClient.xml",
         "lib/netstandard2.0/Weave.TcpSynClient.dll",
         "lib/netstandard2.0/Weave.TcpSynClient.xml",
-        "weave.tcpsynclient.2.0.9.nupkg.sha512",
+        "weave.tcpsynclient.2.0.10.nupkg.sha512",
         "weave.tcpsynclient.nuspec"
       ]
     },
@@ -4856,25 +4841,29 @@
       "Microsoft.Extensions.DependencyInjection >= 5.0.1",
       "Microsoft.NETCore.App >= 2.2.8",
       "Newtonsoft.Json >= 12.0.3",
-      "Weave.TcpSynClient >= 2.0.9",
+      "Weave.TcpSynClient >= 2.0.10",
       "WeaveMicroClient >= 1.0.0",
       "wRPC >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\xingy\\.nuget\\packages\\": {}
+    "C:\\Users\\dreamsfly\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\gateway\\gateway.csproj",
+      "projectUniqueName": "D:\\weave-micro\\微服务架构\\gateway\\gateway.csproj",
       "projectName": "gateway",
-      "projectPath": "D:\\WeaveMicro\\微服务架构\\gateway\\gateway.csproj",
-      "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
-      "outputPath": "D:\\WeaveMicro\\微服务架构\\gateway\\obj\\",
+      "projectPath": "D:\\weave-micro\\微服务架构\\gateway\\gateway.csproj",
+      "packagesPath": "C:\\Users\\dreamsfly\\.nuget\\packages\\",
+      "outputPath": "D:\\weave-micro\\微服务架构\\gateway\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dreamsfly\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4888,11 +4877,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj": {
-              "projectPath": "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj"
+            "D:\\weave-micro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj": {
+              "projectPath": "D:\\weave-micro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj"
             },
-            "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj": {
-              "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj"
+            "D:\\weave-micro\\微服务架构\\wRPC\\wRPC.csproj": {
+              "projectPath": "D:\\weave-micro\\微服务架构\\wRPC\\wRPC.csproj"
             }
           }
         }
@@ -4941,7 +4930,7 @@
           },
           "Weave.TcpSynClient": {
             "target": "Package",
-            "version": "[2.0.9, )"
+            "version": "[2.0.10, )"
           }
         },
         "imports": [
@@ -4962,7 +4951,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

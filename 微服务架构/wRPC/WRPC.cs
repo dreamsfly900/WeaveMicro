@@ -85,9 +85,10 @@ namespace wRPCclient
 
 
         }
+        DateTime dt;
         String setRpcdata(String Route, String callfun, object parameter, HttpContext context, int type = 0)
         {
-            
+          
             Rpcdata<object[]> rpcdata = new wRPC.Rpcdata<object[]>();
             //httpmode httpmode = new httpmode();
             //if (context != null)
@@ -103,7 +104,7 @@ namespace wRPCclient
             if (parameter is object[])
                 rpcdata.parameter = parameter as object[];
             else
-          rpcdata.parameter =new object[] { parameter };
+             rpcdata.parameter =new object[] { parameter };
             rpcdata.FunName = callfun;
             rpcdata.Route = Route;
             rpcdata.type = 1;
@@ -112,17 +113,17 @@ namespace wRPCclient
         }
         String call(String datastr)
         {
-            DateTime dt = DateTime.Now;
+         
             if (!isline)
                 isline= connection();
             if (isline)
             {
                 if (tcpSynClient.Send(0x01, GZIP.GZipCompress(datastr)))
                 {
-                  
+                    dt = DateTime.Now;
                     var commdata = tcpSynClient.Receives(null);
                     DateTime dt2 = DateTime.Now;
-                    //Console.WriteLine((dt2 - dt).TotalMilliseconds);
+                 //   Console.WriteLine("call:" + (dt2 - dt).TotalMilliseconds);
                     if (commdata == null)
                         throw new Exception("通信意外！");
                     if (commdata.comand == 0x01)

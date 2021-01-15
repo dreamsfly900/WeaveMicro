@@ -27,7 +27,7 @@ namespace wRPCService
         {
             try
             {
-                DateTime dt = DateTime.Now;
+                 
                 String rdata = GZIP.GZipDecompress(data);
                 Rpcdata<Object[]> rpdata = Newtonsoft.Json.JsonConvert.DeserializeObject<Rpcdata<Object[]>>(rdata);
                 if (!keyValuePairs.ContainsKey(rpdata.Route.Replace('/', '.')))
@@ -93,12 +93,15 @@ namespace wRPCService
                         }
                         object rpcdata = mi.Invoke(obj, objs);
                         byte[] outdata = GZIP.GZipCompress(Newtonsoft.Json.JsonConvert.SerializeObject(rpcdata));
+                     
                         P2Server.Send(soc, 0x01, outdata);
+                        //DateTime dt2 = DateTime.Now;
+                        //Console.WriteLine("service:" + (dt2 - P2Server.dt).TotalMilliseconds);
+
 
                     }
                 }
-                DateTime dt2 = DateTime.Now;
-               //  Console.WriteLine((dt2 - dt).TotalMilliseconds);
+             
 
             }
             catch (Exception e)

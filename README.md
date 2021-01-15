@@ -23,7 +23,9 @@ Weave微服务架构
 ```
 
 2.  验证中心
+
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0115/184038_7eeb9ba6_598831.png "微信图片_20210115184007.png")
+
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0115/184204_75b9d3ca_598831.png "微信图片_20210115184007.png")
 

@@ -10,6 +10,8 @@ namespace WeaveMicroClient
         public delegate void receiveconfig(server[] serv);
         public event receiveconfig ReceiveEvent;
         String IP; int port;
+        server serv;
+        APIclient aPIclient;
         public MicroClient(String IP, int port)
         {
             this.IP = IP;this.port = port;
@@ -32,10 +34,15 @@ namespace WeaveMicroClient
                 System.Threading.Thread.Sleep(1000);
                 goto lb1122;
             }
+            if (serv != null)
+                RegService(serv);
+            if (aPIclient != null)
+                RegClient(aPIclient.Sid);
         }
         public void RegService(server serv)
         {
            String str= Newtonsoft.Json.JsonConvert.SerializeObject(serv);
+            this.serv = serv;
             P2Pclient.Send(0x03, str);
         }
         public void RegClient(String Sid)
@@ -44,6 +51,7 @@ namespace WeaveMicroClient
             aPIclient.IP = IP;
             aPIclient.port = port;
             aPIclient.Sid = Sid;
+            this.aPIclient = aPIclient;
                String str = Newtonsoft.Json.JsonConvert.SerializeObject(aPIclient);
             P2Pclient.Send(0x01, str);
         }
@@ -76,7 +84,7 @@ namespace WeaveMicroClient
     }
     public class server
     {
-
+        public String Name;
         public String IP { get; set; }
         public int Port { get; set; }
         public service[] services { get; set; }

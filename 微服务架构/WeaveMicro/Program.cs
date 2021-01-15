@@ -1,10 +1,12 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Text;
 using WeaveMicrocenter;
+using wRPCclient;
 
 namespace WeaveMicro
 {
@@ -17,8 +19,15 @@ namespace WeaveMicro
             weaveP2Server.weaveReceiveBitEvent += WeaveP2Server_weaveReceiveBitEvent;
             weaveP2Server.weaveDeleteSocketListEvent += WeaveP2Server_weaveDeleteSocketListEvent;
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("config.json");
-
-
+            List<server> tempservers=GetServers("temp.json");
+            for (int i = 0; i < servers.Count; i++)
+            {
+                ClientChannel channel = new ClientChannel(servers[i].IP, servers[i].Port);
+                if (channel.IsLine())
+                {
+                    servers.Add(servers[i]);
+                }
+            }
             var config = builder.Build();
             weaveP2Server.Start(Convert.ToInt32( config["port"]));
             while (true)
@@ -99,13 +108,22 @@ namespace WeaveMicro
                     break;
                 case 0x03:
                     //类型2
-                    server ser= Newtonsoft.Json.JsonConvert.DeserializeObject<server>(System.Text.UTF8Encoding.UTF8.GetString(data));
-                    servers.Add(ser);
+                    server sers= Newtonsoft.Json.JsonConvert.DeserializeObject<server>(System.Text.UTF8Encoding.UTF8.GetString(data));
+                    foreach (server ser in servers)
+                    {
+                        if (sers.IP == ser.IP && sers.Port == ser.Port)
+                        {
+                            return;
+                        }
+
+                    }
+                    servers.Add(sers);
                     APIclient aPIclient = new APIclient();
                     aPIclient.socket = soc;
-                    aPIclient.IP = ser.IP;
-                    aPIclient.port = ser.Port;
+                    aPIclient.IP = sers.IP;
+                    aPIclient.port = sers.Port;
                     APIgateway.Add(aPIclient);
+                    save(JsonConvert.SerializeObject(servers));
                     post();
                         break;
                 default:
@@ -113,8 +131,30 @@ namespace WeaveMicro
                     break;
             }
         }
-
-
+      static  List<server> GetServers(String file)
+        {
+            try
+            {
+                System.IO.StreamReader sw = new StreamReader("temp.json");
+                String data=sw.ReadToEnd();
+                sw.Close();
+                List<server> ser = Newtonsoft.Json.JsonConvert.DeserializeObject<List<server>>(data);
+                return ser;
+            }
+            catch { }
+            return null;
+        }
+       static void save(String str)
+        {
+            try
+            {
+                System.IO.StreamWriter sw = new StreamWriter("temp.json");
+                sw.Write(str);
+                sw.Close();
+            }
+            catch { }
+            
+        }
       static  void post()
         {
 

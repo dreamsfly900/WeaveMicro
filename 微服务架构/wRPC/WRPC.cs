@@ -25,6 +25,12 @@ namespace wRPCclient
             if (!tcpSynClient.Start())
                 throw new Exception("无法连接服务器");
         }
+        public bool IsLine()
+        {
+            bool b=tcpSynClient.Start();
+            tcpSynClient.Stop();
+            return b;
+        }
         public  T2 Call<T1, T2>(String Route, string callfun, T1 parameter)
         {
 

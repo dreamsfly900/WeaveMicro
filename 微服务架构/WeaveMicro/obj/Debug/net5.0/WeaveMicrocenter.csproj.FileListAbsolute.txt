@@ -103,3 +103,16 @@ D:\WeaveMicro\微服务架构\WeaveMicro\bin\Debug\net5.0\runtimes\win-x64\nativ
 D:\WeaveMicro\微服务架构\WeaveMicro\bin\Debug\net5.0\runtimes\win-x86\nativeassets\netcoreapp2.2\aspnetcorev2_inprocess.dll
 D:\WeaveMicro\微服务架构\WeaveMicro\bin\Debug\net5.0\wRPCService.dll
 D:\WeaveMicro\微服务架构\WeaveMicro\bin\Debug\net5.0\wRPCService.pdb
+D:\WeaveMicro\微服务架构\WeaveMicro\bin\Debug\net5.0\Microsoft.Build.Framework.dll
+D:\WeaveMicro\微服务架构\WeaveMicro\bin\Debug\net5.0\Microsoft.Build.Utilities.Core.dll
+D:\WeaveMicro\微服务架构\WeaveMicro\bin\Debug\net5.0\Microsoft.Win32.SystemEvents.dll
+D:\WeaveMicro\微服务架构\WeaveMicro\bin\Debug\net5.0\System.Drawing.Common.dll
+D:\WeaveMicro\微服务架构\WeaveMicro\bin\Debug\net5.0\System.Security.Permissions.dll
+D:\WeaveMicro\微服务架构\WeaveMicro\bin\Debug\net5.0\System.Windows.Extensions.dll
+D:\WeaveMicro\微服务架构\WeaveMicro\bin\Debug\net5.0\Weave.TcpSynClient.dll
+D:\WeaveMicro\微服务架构\WeaveMicro\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\WeaveMicro\微服务架构\WeaveMicro\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\WeaveMicro\微服务架构\WeaveMicro\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\WeaveMicro\微服务架构\WeaveMicro\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\WeaveMicro\微服务架构\WeaveMicro\bin\Debug\net5.0\wRPC.dll
+D:\WeaveMicro\微服务架构\WeaveMicro\bin\Debug\net5.0\wRPC.pdb

@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\wRPCService\wRPCService.csproj" />
+    <ProjectReference Include="..\wRPC\wRPC.csproj" />
   </ItemGroup>
 
   <ItemGroup>

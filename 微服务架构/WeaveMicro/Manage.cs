@@ -39,7 +39,7 @@ namespace WeaveMicrocenter
     }
     public class server
     {
-
+        public String Name { get; set; }
         public String IP { get; set; }
         public int Port { get; set; }
         public service[] services { get; set; }

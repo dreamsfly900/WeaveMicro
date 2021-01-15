@@ -14,7 +14,7 @@ namespace WeaveRemoteService
         service[] sric;
         MicroClient mc;
         server ser;
-        public RemoteService()
+        public RemoteService(String Name)
         {
             var config= builder.Build();
             service = new ServiceChannel(Convert.ToInt32( config["Port"]));
@@ -27,6 +27,7 @@ namespace WeaveRemoteService
             String mcip = config["Microcenter"];
              mc = new MicroClient(mcip.Split(':')[0], Convert.ToInt32(mcip.Split(':')[1]));
              ser = new server();
+            ser.Name = Name;
             ser.services = sric;
             ser.IP = config["ServerIP"] ;
             ser.Port = Convert.ToInt32(config["Port"]);

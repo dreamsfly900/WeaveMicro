@@ -16,13 +16,9 @@ namespace Test
        static wRPCclient.ClientChannel clientChannel = new wRPCclient.ClientChannel("127.0.0.1", 10098);
         static  void Main(string[] args)
         {
-            RemoteService remoteService = new RemoteService();
+            RemoteService remoteService = new RemoteService("TEST");
             remoteService.Start();
-            while (true)
-            {
-                System.Threading.Thread.Sleep(5);
-                bb();
-            }
+ 
             while (true)
             {
                 System.Threading.Thread.Sleep(10);
@@ -41,7 +37,7 @@ namespace Test
            // Console.WriteLine("H6ello World!");
         }
 
-       async static void bb()
+        static void bb()
         {
          
             String retun =  clientChannel.Call<String>("abcd", "ff",  new { name = "gghhss", age = 0 } );

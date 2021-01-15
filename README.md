@@ -67,7 +67,9 @@ Weave微服务架构
   "ServerIP": "127.0.0.1",//当前IP
   "Port": 10098,//监听端口
   "Microcenter": "127.0.0.1:9001"//服务中心地址
-}```
+}
+```
+
 
 ```
  RemoteService remoteService = new RemoteService("TEST");//初始化服务
@@ -84,7 +86,8 @@ Weave微服务架构
 5.多个RemoteService 拥有相同的方法和路由，使用选举方式分配调用。
 6.当RemoteService 从注册中心断开，API网关会立刻更新相关方法进行调用熔断。
 7.注册中心未来会更新加入全部已上线的，服务方法，以方便查阅开发。
-8.无验证的调用![输入图片说明](https://images.gitee.com/uploads/images/2021/0115/190658_08b771ed_598831.png "微信图片_20210115184007.png")
+8.无验证的调用
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0115/190658_08b771ed_598831.png "微信图片_20210115184007.png")
 9.有验证的调用
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0115/190741_857a47d3_598831.png "微信图片_20210115190730.png")
 

@@ -97,7 +97,7 @@ namespace gateway
             if (!context.Response.Headers.ContainsKey("Access-Control-Allow-Origin"))
             {
 
-                context.Response.Headers.Add("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+                context.Response.Headers.Add("Access-Control-Allow-Methods", "GET,POST");
                 context.Response.Headers.Add("Access-Control-Allow-Headers", "Content-Type");
                 //context.Request.Headers.Add("Access-Control-Allow-Origin", "*");
                 context.Response.Headers.Add("Access-Control-Allow-Origin", "*");

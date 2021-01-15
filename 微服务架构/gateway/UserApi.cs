@@ -21,7 +21,8 @@ namespace gateway
         public static server[] servers;
         public async static Task agent(HttpContext context)
         {
-           
+            if (context.Request.Method != "GET" && context.Request.Method != "POST")
+                return;
             Dictionary<string, String> servicesDic = new Dictionary<string, String>();
             dynamic contentFromBody = "";
            

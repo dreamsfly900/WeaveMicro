@@ -892,7 +892,7 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "Weave.Base/2.0.16": {
+      "Weave.Base/2.0.17": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1"
@@ -904,10 +904,10 @@
           "lib/netstandard2.0/Weave.Base.dll": {}
         }
       },
-      "Weave.Server/2.0.17": {
+      "Weave.Server/2.0.18": {
         "type": "package",
         "dependencies": {
-          "Weave.Base": "2.0.16"
+          "Weave.Base": "2.0.17"
         },
         "compile": {
           "lib/netstandard2.0/Weave.Server.dll": {}
@@ -948,7 +948,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Microsoft.AspNetCore": "2.2.0",
-          "Weave.Server": "2.0.17"
+          "Weave.Server": "2.0.18"
         },
         "compile": {
           "bin/placeholder/wRPCService.dll": {}
@@ -2273,10 +2273,10 @@
         "version.txt"
       ]
     },
-    "Weave.Base/2.0.16": {
-      "sha512": "OoRPIn/aSypSgK77YjR4isHzREzv5FKUqO8+pJze/rBvyAhjYHNYr/yHV2p2u8fhZAIAMRAVnyRqBIQzWRT1kQ==",
+    "Weave.Base/2.0.17": {
+      "sha512": "JX08K/xgdHCeyscRWag1YhQNKJieZbY4ujzuPIKA8/aMzdzAbtfr5eaoOC7LB4m7dqOWv5oIqO28P4ujsQYtJg==",
       "type": "package",
-      "path": "weave.base/2.0.16",
+      "path": "weave.base/2.0.17",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2286,14 +2286,14 @@
         "lib/net45/Weave.Base.xml",
         "lib/netstandard2.0/Weave.Base.dll",
         "lib/netstandard2.0/Weave.Base.xml",
-        "weave.base.2.0.16.nupkg.sha512",
+        "weave.base.2.0.17.nupkg.sha512",
         "weave.base.nuspec"
       ]
     },
-    "Weave.Server/2.0.17": {
-      "sha512": "Qh1zofqpAevUQaPJBcDCuNY9yXCZr86M0xxU5GSLX4KhjA/2mqvTjEqk0va107cixWqpgYe/iJtpObIE28ELmw==",
+    "Weave.Server/2.0.18": {
+      "sha512": "aDP4LbCQ2caJJlMMKIqzQSP0j8pNrgvUYahDpRv9gn2vnKtzdT0Nu47GY3K1diM6eXgP5FfkTeAKYpjF/S2uBw==",
       "type": "package",
-      "path": "weave.server/2.0.17",
+      "path": "weave.server/2.0.18",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2303,7 +2303,7 @@
         "lib/net45/Weave.Server.xml",
         "lib/netstandard2.0/Weave.Server.dll",
         "lib/netstandard2.0/Weave.Server.xml",
-        "weave.server.2.0.17.nupkg.sha512",
+        "weave.server.2.0.18.nupkg.sha512",
         "weave.server.nuspec"
       ]
     },

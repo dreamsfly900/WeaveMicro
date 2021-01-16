@@ -1281,7 +1281,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Microsoft.AspNetCore": "2.2.0",
-          "Weave.Server": "2.0.17"
+          "Weave.Server": "2.0.18"
         },
         "compile": {
           "bin/placeholder/wRPCService.dll": {}
@@ -3972,5 +3972,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "检测到包降级: Weave.Server 从 2.0.18 降级到 2.0.17。直接从项目引用包以选择不同版本。 \r\n WeaveMicrocenter -> wRPCService -> Weave.Server (>= 2.0.18) \r\n WeaveMicrocenter -> Weave.Server (>= 2.0.17)",
+      "libraryId": "Weave.Server",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

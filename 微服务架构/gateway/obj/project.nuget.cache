@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7W6M2zSS1PzoOsZw+dFDpzcbt5xUvdNgwH6HEijF5pcYwmDpziifyCsQJsu2QGNtsnoKpD0z4bkI8gRXvNn5ug==",
+  "dgSpecHash": "z4NlqW3o4FVxQEOQhZ0Fr11cqOX1cAp5Y4u2bzXy+GjAlpyXmVdvTsz/rALuM8+t9EQMJcN3MMDpvSJVP7zbRQ==",
   "success": true,
   "projectFilePath": "D:\\weave-micro\\微服务架构\\gateway\\gateway.csproj",
   "expectedPackageFiles": [
@@ -109,8 +109,8 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512",
     "C:\\Users\\dreamsfly\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
-    "C:\\Users\\dreamsfly\\.nuget\\packages\\weave.base\\2.0.16\\weave.base.2.0.16.nupkg.sha512",
-    "C:\\Users\\dreamsfly\\.nuget\\packages\\weave.server\\2.0.17\\weave.server.2.0.17.nupkg.sha512",
+    "C:\\Users\\dreamsfly\\.nuget\\packages\\weave.base\\2.0.17\\weave.base.2.0.17.nupkg.sha512",
+    "C:\\Users\\dreamsfly\\.nuget\\packages\\weave.server\\2.0.18\\weave.server.2.0.18.nupkg.sha512",
     "C:\\Users\\dreamsfly\\.nuget\\packages\\weave.tcpclient\\2.0.7\\weave.tcpclient.2.0.7.nupkg.sha512",
     "C:\\Users\\dreamsfly\\.nuget\\packages\\weave.tcpsynclient\\2.0.10\\weave.tcpsynclient.2.0.10.nupkg.sha512"
   ],

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using wRPC;
 using static wRPC.FunctionBase;
 
@@ -13,8 +14,10 @@ namespace wRPCService
         Weave.Server.WeaveP2Server P2Server = new Weave.Server.WeaveP2Server(Weave.Base.WeaveDataTypeEnum.Bytes);
         Dictionary<string, object> keyValuePairs = new Dictionary<string, object>();
         int Port;
+      
         public ServiceChannel(int port)
         {
+           // MM_BeginPeriod(1);
             P2Server.resttime = 0;
             P2Server.weaveReceiveBitEvent += P2Server_weaveReceiveBitEvent;
               Port = port;

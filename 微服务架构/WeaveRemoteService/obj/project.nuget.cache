@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yldI8WEulHE2mXThh80LIzQ+EkBsModAs4Uc/viPh3X+c53wjYSsiMHzgqL2rKjZQL+f6dOBfDeT7YQtWy0DRg==",
+  "dgSpecHash": "UU3QsX1Nzadog/6F9yWIAsEvTlLRKH7KaaLCXVD3ndJOnnbmkAWjy5DoVaMAY8k1cGd6bqHcFBwNZ8xHK5RMCA==",
   "success": true,
   "projectFilePath": "D:\\weave-micro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj",
   "expectedPackageFiles": [
@@ -70,8 +70,8 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512",
-    "C:\\Users\\dreamsfly\\.nuget\\packages\\weave.base\\2.0.16\\weave.base.2.0.16.nupkg.sha512",
-    "C:\\Users\\dreamsfly\\.nuget\\packages\\weave.server\\2.0.17\\weave.server.2.0.17.nupkg.sha512",
+    "C:\\Users\\dreamsfly\\.nuget\\packages\\weave.base\\2.0.17\\weave.base.2.0.17.nupkg.sha512",
+    "C:\\Users\\dreamsfly\\.nuget\\packages\\weave.server\\2.0.18\\weave.server.2.0.18.nupkg.sha512",
     "C:\\Users\\dreamsfly\\.nuget\\packages\\weave.tcpclient\\2.0.7\\weave.tcpclient.2.0.7.nupkg.sha512"
   ],
   "logs": []

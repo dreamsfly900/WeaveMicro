@@ -803,32 +803,32 @@
           }
         }
       },
-      "Weave.Base/2.0.16": {
+      "Weave.Base/2.0.17": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/Weave.Base.dll": {
-            "assemblyVersion": "2.0.16.0",
-            "fileVersion": "2.0.16.0"
+            "assemblyVersion": "2.0.17.0",
+            "fileVersion": "2.0.17.0"
           }
         }
       },
-      "Weave.Server/2.0.17": {
+      "Weave.Server/2.0.18": {
         "dependencies": {
-          "Weave.Base": "2.0.16"
+          "Weave.Base": "2.0.17"
         },
         "runtime": {
           "lib/netstandard2.0/Weave.Server.dll": {
-            "assemblyVersion": "2.0.17.0",
-            "fileVersion": "2.0.17.0"
+            "assemblyVersion": "2.0.18.0",
+            "fileVersion": "2.0.18.0"
           }
         }
       },
       "wRPCService/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore": "2.2.0",
-          "Weave.Server": "2.0.17"
+          "Weave.Server": "2.0.18"
         },
         "runtime": {
           "wRPCService.dll": {}
@@ -1304,19 +1304,19 @@
       "path": "system.threading.tasks.extensions/4.5.1",
       "hashPath": "system.threading.tasks.extensions.4.5.1.nupkg.sha512"
     },
-    "Weave.Base/2.0.16": {
+    "Weave.Base/2.0.17": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-OoRPIn/aSypSgK77YjR4isHzREzv5FKUqO8+pJze/rBvyAhjYHNYr/yHV2p2u8fhZAIAMRAVnyRqBIQzWRT1kQ==",
-      "path": "weave.base/2.0.16",
-      "hashPath": "weave.base.2.0.16.nupkg.sha512"
+      "sha512": "sha512-JX08K/xgdHCeyscRWag1YhQNKJieZbY4ujzuPIKA8/aMzdzAbtfr5eaoOC7LB4m7dqOWv5oIqO28P4ujsQYtJg==",
+      "path": "weave.base/2.0.17",
+      "hashPath": "weave.base.2.0.17.nupkg.sha512"
     },
-    "Weave.Server/2.0.17": {
+    "Weave.Server/2.0.18": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Qh1zofqpAevUQaPJBcDCuNY9yXCZr86M0xxU5GSLX4KhjA/2mqvTjEqk0va107cixWqpgYe/iJtpObIE28ELmw==",
-      "path": "weave.server/2.0.17",
-      "hashPath": "weave.server.2.0.17.nupkg.sha512"
+      "sha512": "sha512-aDP4LbCQ2caJJlMMKIqzQSP0j8pNrgvUYahDpRv9gn2vnKtzdT0Nu47GY3K1diM6eXgP5FfkTeAKYpjF/S2uBw==",
+      "path": "weave.server/2.0.18",
+      "hashPath": "weave.server.2.0.18.nupkg.sha512"
     },
     "wRPCService/1.0.0": {
       "type": "project",

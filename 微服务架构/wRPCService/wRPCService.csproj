@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
-    <PackageReference Include="Weave.Server" Version="2.0.17" />
+    <PackageReference Include="Weave.Server" Version="2.0.18" />
   </ItemGroup>
 
 </Project>

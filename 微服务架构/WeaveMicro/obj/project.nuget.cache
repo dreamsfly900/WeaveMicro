@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "4DQILOxPkmP8l3n4aQnCGPJhupJaBZvnHeH6Gl2XdQ0ofeAiFord5NDF5oyXIaUNsyuESD7CS+5uzRUnWUum+Q==",
-  "success": true,
+  "dgSpecHash": "UFCKn8rcX5+4Vq2AygWJyGhcRitdRSHZS8HdgqflA/yc7CMe0Uz6cfyT7RLuB88OoDFa4xLHEYtqz8G/y6VpdA==",
+  "success": false,
   "projectFilePath": "D:\\weave-micro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dreamsfly\\.nuget\\packages\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",
@@ -97,5 +97,15 @@
     "C:\\Users\\dreamsfly\\.nuget\\packages\\weave.server\\2.0.17\\weave.server.2.0.17.nupkg.sha512",
     "C:\\Users\\dreamsfly\\.nuget\\packages\\weave.tcpsynclient\\2.0.10\\weave.tcpsynclient.2.0.10.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "检测到包降级: Weave.Server 从 2.0.18 降级到 2.0.17。直接从项目引用包以选择不同版本。 \r\n WeaveMicrocenter -> wRPCService -> Weave.Server (>= 2.0.18) \r\n WeaveMicrocenter -> Weave.Server (>= 2.0.17)",
+      "libraryId": "Weave.Server",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

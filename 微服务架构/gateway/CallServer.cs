@@ -37,36 +37,74 @@ namespace gateway
         //    }
             
         //}
+        //public static string CallService(server ser, String rt, String rls, object[] objs)
+        //{
+        //    bool locked = false;
+        //    wRPCclient.ClientChannel clientChannel = null;
+        //    ClientChannelQueue CCQ=null;
+        //    try
+        //    {
+
+        //        if (_serviceDic.ContainsKey(ser.IP + ":" + ser.Port))
+        //        {
+        //            CCQ = _serviceDic[ser.IP + ":" + ser.Port];
+        //            clientChannel = CCQ.clientChannel;
+        //        }
+        //        else
+        //        {
+        //            clientChannel = new wRPCclient.ClientChannel(ser.IP, ser.Port);
+        //            CCQ = new ClientChannelQueue();
+        //            CCQ.clientChannel = clientChannel;
+        //            _serviceDic.TryAdd(ser.IP + ":" + ser.Port, CCQ);
+
+        //        }
+
+        //        CCQ._spinLock.Enter(ref locked);//获取锁
+        //        return clientChannel.Call<String>(rt, rls, objs);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        //if (!CCQ.clientChannel.connection())
+        //        //{
+                    
+        //        //}
+        //        _serviceDic.TryRemove(ser.IP + ":" + ser.Port, out CCQ);
+
+        //        return JsonConvert.SerializeObject(new { code = 503, msg = e.Message });
+        //    }
+        //    finally
+        //    {
+        //        CCQ.clientChannel.Dispose();
+        //        if (locked) //释放锁
+        //            CCQ._spinLock.Exit();
+        //    }
+        //    //finally
+        //    //{
+        //    //    if (clientChannel != null)
+        //    //        clientChannel.Dispose();
+        //    //}
+        //    return JsonConvert.SerializeObject(new { code = 503, msg = "服务器错误" });
+        //}
         public static string CallService(server ser, String rt, String rls, object[] objs)
         {
             bool locked = false;
             wRPCclient.ClientChannel clientChannel = null;
-            ClientChannelQueue CCQ=null;
+
+            ClientChannelQueue CCQ = null;
+           
             try
             {
 
-                if (_serviceDic.ContainsKey(ser.IP + ":" + ser.Port))
-                {
-                    CCQ = _serviceDic[ser.IP + ":" + ser.Port];
-                    clientChannel = CCQ.clientChannel;
-                }
-                else
-                {
-                    clientChannel = new wRPCclient.ClientChannel(ser.IP, ser.Port);
-                    CCQ = new ClientChannelQueue();
-                    CCQ.clientChannel = clientChannel;
-                    _serviceDic.TryAdd(ser.IP + ":" + ser.Port, CCQ);
-
-                }
-
-                CCQ._spinLock.Enter(ref locked);//获取锁
+                clientChannel = new wRPCclient.ClientChannel(ser.IP, ser.Port);
+                CCQ = new ClientChannelQueue();
+                CCQ.clientChannel = clientChannel;
                 return clientChannel.Call<String>(rt, rls, objs);
             }
             catch (Exception e)
             {
                 //if (!CCQ.clientChannel.connection())
                 //{
-                    
+
                 //}
                 _serviceDic.TryRemove(ser.IP + ":" + ser.Port, out CCQ);
 
@@ -75,14 +113,9 @@ namespace gateway
             finally
             {
                 CCQ.clientChannel.Dispose();
-                if (locked) //释放锁
-                    CCQ._spinLock.Exit();
+                
             }
-            //finally
-            //{
-            //    if (clientChannel != null)
-            //        clientChannel.Dispose();
-            //}
+            
             return JsonConvert.SerializeObject(new { code = 503, msg = "服务器错误" });
         }
     }

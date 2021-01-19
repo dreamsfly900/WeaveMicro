@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using testdll2;
 using WeaveMicroClient;
 using WeaveRemoteService;
@@ -14,19 +15,24 @@ namespace Test
     class Program
     {
        static wRPCclient.ClientChannel clientChannel = new wRPCclient.ClientChannel("127.0.0.1", 10098);
+        [DllImport("winmm.dll", EntryPoint = "timeBeginPeriod")]
+        public static extern uint MM_BeginPeriod(uint uMilliseconds);
+        //[DllImport("winmm.dll", EntryPoint = "timeEndPeriod")]
+        //public static extern uint MM_EndPeriod(uint uMilliseconds);
         static  void Main(string[] args)
         {
             RemoteService remoteService = new RemoteService("TEST");
             remoteService.Start();
-            //while (true)
-            //{
+            // MM_BeginPeriod(1);//设置休眠精度
+            while (true)
+            {
+                System.Threading.Thread.Sleep(10);
+                DateTime dt = DateTime.Now;
+                bb();
 
-            //    // DateTime dt = DateTime.Now;
-            //    bb();
-            //    System.Threading.Thread.Sleep(10);
-            //    //DateTime dt2 = DateTime.Now;
-            //    //Console.WriteLine((dt2 - dt).TotalMilliseconds);
-            //}
+                DateTime dt2 = DateTime.Now;
+                Console.WriteLine("Main:" + (dt2 - dt).TotalMilliseconds);
+            }
             while (true)
             {
                 System.Threading.Thread.Sleep(10);

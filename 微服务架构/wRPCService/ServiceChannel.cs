@@ -3,6 +3,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using wRPC;
 using static wRPC.FunctionBase;
 
@@ -13,8 +14,10 @@ namespace wRPCService
         Weave.Server.WeaveP2Server P2Server = new Weave.Server.WeaveP2Server(Weave.Base.WeaveDataTypeEnum.Bytes);
         Dictionary<string, object> keyValuePairs = new Dictionary<string, object>();
         int Port;
+      
         public ServiceChannel(int port)
         {
+           // MM_BeginPeriod(1);
             P2Server.resttime = 0;
             P2Server.weaveReceiveBitEvent += P2Server_weaveReceiveBitEvent;
               Port = port;
@@ -27,7 +30,7 @@ namespace wRPCService
         {
             try
             {
-                DateTime dt = DateTime.Now;
+                 
                 String rdata = GZIP.GZipDecompress(data);
                 Rpcdata<Object[]> rpdata = Newtonsoft.Json.JsonConvert.DeserializeObject<Rpcdata<Object[]>>(rdata);
                 if (!keyValuePairs.ContainsKey(rpdata.Route.Replace('/', '.')))
@@ -93,12 +96,15 @@ namespace wRPCService
                         }
                         object rpcdata = mi.Invoke(obj, objs);
                         byte[] outdata = GZIP.GZipCompress(Newtonsoft.Json.JsonConvert.SerializeObject(rpcdata));
+                     
                         P2Server.Send(soc, 0x01, outdata);
+                        //DateTime dt2 = DateTime.Now;
+                        //Console.WriteLine("service:" + (dt2 - P2Server.dt).TotalMilliseconds);
+
 
                     }
                 }
-                DateTime dt2 = DateTime.Now;
-               //  Console.WriteLine((dt2 - dt).TotalMilliseconds);
+             
 
             }
             catch (Exception e)

@@ -22,3 +22,15 @@ D:\WeaveMicro\微服务架构\testdll2\obj\Debug\netstandard2.0\testdll2.csproj.
 D:\WeaveMicro\微服务架构\testdll2\obj\Debug\netstandard2.0\testdll2.csproj.CopyComplete
 D:\WeaveMicro\微服务架构\testdll2\obj\Debug\netstandard2.0\testdll2.dll
 D:\WeaveMicro\微服务架构\testdll2\obj\Debug\netstandard2.0\testdll2.pdb
+D:\weave-micro\微服务架构\testdll2\bin\Debug\netstandard2.0\testdll2.deps.json
+D:\weave-micro\微服务架构\testdll2\bin\Debug\netstandard2.0\testdll2.dll
+D:\weave-micro\微服务架构\testdll2\bin\Debug\netstandard2.0\testdll2.pdb
+D:\weave-micro\微服务架构\testdll2\bin\Debug\netstandard2.0\wRPCService.dll
+D:\weave-micro\微服务架构\testdll2\bin\Debug\netstandard2.0\wRPCService.pdb
+D:\weave-micro\微服务架构\testdll2\obj\Debug\netstandard2.0\testdll2.csprojAssemblyReference.cache
+D:\weave-micro\微服务架构\testdll2\obj\Debug\netstandard2.0\testdll2.csproj.CoreCompileInputs.cache
+D:\weave-micro\微服务架构\testdll2\obj\Debug\netstandard2.0\testdll2.AssemblyInfoInputs.cache
+D:\weave-micro\微服务架构\testdll2\obj\Debug\netstandard2.0\testdll2.AssemblyInfo.cs
+D:\weave-micro\微服务架构\testdll2\obj\Debug\netstandard2.0\testdll2.csproj.CopyComplete
+D:\weave-micro\微服务架构\testdll2\obj\Debug\netstandard2.0\testdll2.dll
+D:\weave-micro\微服务架构\testdll2\obj\Debug\netstandard2.0\testdll2.pdb

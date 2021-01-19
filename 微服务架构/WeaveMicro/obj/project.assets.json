@@ -1223,7 +1223,7 @@
           }
         }
       },
-      "Weave.Base/2.0.16": {
+      "Weave.Base/2.0.17": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "12.0.1"
@@ -1235,10 +1235,10 @@
           "lib/netstandard2.0/Weave.Base.dll": {}
         }
       },
-      "Weave.Server/2.0.17": {
+      "Weave.Server/2.0.18": {
         "type": "package",
         "dependencies": {
-          "Weave.Base": "2.0.16"
+          "Weave.Base": "2.0.17"
         },
         "compile": {
           "lib/netstandard2.0/Weave.Server.dll": {}
@@ -3822,10 +3822,10 @@
         "version.txt"
       ]
     },
-    "Weave.Base/2.0.16": {
-      "sha512": "OoRPIn/aSypSgK77YjR4isHzREzv5FKUqO8+pJze/rBvyAhjYHNYr/yHV2p2u8fhZAIAMRAVnyRqBIQzWRT1kQ==",
+    "Weave.Base/2.0.17": {
+      "sha512": "JX08K/xgdHCeyscRWag1YhQNKJieZbY4ujzuPIKA8/aMzdzAbtfr5eaoOC7LB4m7dqOWv5oIqO28P4ujsQYtJg==",
       "type": "package",
-      "path": "weave.base/2.0.16",
+      "path": "weave.base/2.0.17",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3835,14 +3835,14 @@
         "lib/net45/Weave.Base.xml",
         "lib/netstandard2.0/Weave.Base.dll",
         "lib/netstandard2.0/Weave.Base.xml",
-        "weave.base.2.0.16.nupkg.sha512",
+        "weave.base.2.0.17.nupkg.sha512",
         "weave.base.nuspec"
       ]
     },
-    "Weave.Server/2.0.17": {
-      "sha512": "Qh1zofqpAevUQaPJBcDCuNY9yXCZr86M0xxU5GSLX4KhjA/2mqvTjEqk0va107cixWqpgYe/iJtpObIE28ELmw==",
+    "Weave.Server/2.0.18": {
+      "sha512": "aDP4LbCQ2caJJlMMKIqzQSP0j8pNrgvUYahDpRv9gn2vnKtzdT0Nu47GY3K1diM6eXgP5FfkTeAKYpjF/S2uBw==",
       "type": "package",
-      "path": "weave.server/2.0.17",
+      "path": "weave.server/2.0.18",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3852,7 +3852,7 @@
         "lib/net45/Weave.Server.xml",
         "lib/netstandard2.0/Weave.Server.dll",
         "lib/netstandard2.0/Weave.Server.xml",
-        "weave.server.2.0.17.nupkg.sha512",
+        "weave.server.2.0.18.nupkg.sha512",
         "weave.server.nuspec"
       ]
     },
@@ -3886,7 +3886,7 @@
     "net5.0": [
       "Microsoft.Extensions.Configuration >= 5.0.0",
       "Microsoft.Extensions.Configuration.Json >= 5.0.0",
-      "Weave.Server >= 2.0.17",
+      "Weave.Server >= 2.0.18",
       "wRPC >= 1.0.0",
       "wRPCService >= 1.0.0"
     ]
@@ -3947,7 +3947,7 @@
           },
           "Weave.Server": {
             "target": "Package",
-            "version": "[2.0.17, )"
+            "version": "[2.0.18, )"
           }
         },
         "imports": [
@@ -3968,16 +3968,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "检测到包降级: Weave.Server 从 2.0.18 降级到 2.0.17。直接从项目引用包以选择不同版本。 \r\n WeaveMicrocenter -> wRPCService -> Weave.Server (>= 2.0.18) \r\n WeaveMicrocenter -> Weave.Server (>= 2.0.17)",
-      "libraryId": "Weave.Server",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  }
 }

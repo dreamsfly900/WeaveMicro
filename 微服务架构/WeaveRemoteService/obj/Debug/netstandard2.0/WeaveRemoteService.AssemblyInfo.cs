@@ -13,6 +13,7 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("WeaveRemoteService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("WeaveMicro微服务，远程API启动类库，负责连接注册中心与启动本地方法的监听")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("WeaveRemoteService")]

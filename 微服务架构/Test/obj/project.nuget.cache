@@ -96,7 +96,8 @@
     "C:\\Users\\xingy\\.nuget\\packages\\weave.base\\2.0.15\\weave.base.2.0.15.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\weave.server\\2.0.16\\weave.server.2.0.16.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\weave.tcpclient\\2.0.7\\weave.tcpclient.2.0.7.nupkg.sha512",
-    "C:\\Users\\xingy\\.nuget\\packages\\weave.tcpsynclient\\2.0.9\\weave.tcpsynclient.2.0.9.nupkg.sha512"
+    "C:\\Users\\xingy\\.nuget\\packages\\weave.tcpsynclient\\2.0.9\\weave.tcpsynclient.2.0.9.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\weaveremoteservice\\1.0.0\\weaveremoteservice.1.0.0.nupkg.sha512"
   ],
   "logs": []
 }

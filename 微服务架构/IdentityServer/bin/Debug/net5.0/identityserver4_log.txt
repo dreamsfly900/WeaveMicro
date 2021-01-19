@@ -2235,3 +2235,4 @@ System.InvalidOperationException: No signing credential is configured. Can't cre
 2021-01-15 15:08:58.730 +08:00 [DBG] Connection id "0HM5OB5OF00U6" disconnecting.
 2021-01-15 15:08:58.730 +08:00 [DBG] Connection id "0HM5OB5OF00U6" stopped.
 2021-01-15 15:08:58.731 +08:00 [DBG] Connection id "0HM5OB5OF00U6" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-01-18 09:34:36.691 +08:00 [DBG] Hosting shutdown

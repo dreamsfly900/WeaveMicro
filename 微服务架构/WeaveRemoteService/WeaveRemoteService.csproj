@@ -5,6 +5,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Description>WeaveMicro微服务，远程API启动类库，负责连接注册中心与启动本地方法的监听</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

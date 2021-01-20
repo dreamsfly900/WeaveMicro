@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/OtsVG5boO74WaVSLZT5i6whqSeom0+047bL+E1Emga9tQeqg6eu0PJtqtzA3XsTFN8AA8l9iuskouWaUKAfKA==",
+  "dgSpecHash": "1MmYcgTvsprkKvghA3dKEror3VHATykfanuvq+ouvNZjC6FipXdeRQj//+DDT8L86Wax/F3gHTcR73QYhdIQAg==",
   "success": true,
   "projectFilePath": "D:\\WeaveMicro\\微服务架构\\testdll2\\testdll2.csproj",
   "expectedPackageFiles": [
@@ -71,8 +71,7 @@
     "C:\\Users\\xingy\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\weave.base\\2.0.17\\weave.base.2.0.17.nupkg.sha512",
-    "C:\\Users\\xingy\\.nuget\\packages\\weave.server\\2.0.18\\weave.server.2.0.18.nupkg.sha512",
-    "C:\\Users\\xingy\\.nuget\\packages\\wrpcservice\\1.0.0\\wrpcservice.1.0.0.nupkg.sha512"
+    "C:\\Users\\xingy\\.nuget\\packages\\weave.server\\2.0.18\\weave.server.2.0.18.nupkg.sha512"
   ],
   "logs": []
 }

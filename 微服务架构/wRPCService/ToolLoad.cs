@@ -133,7 +133,6 @@ namespace wRPCService
 
                         {
                             ParamAttribute ParamAttr = (ParamAttribute)Attribute.GetCustomAttribute(paramsInfo[i], typeof(ParamAttribute));
-
                             Type tType = paramsInfo[i].ParameterType;
                             FieldInfo[] fis = tType.GetFields();
                             foreach (FieldInfo fi in fis)
@@ -141,6 +140,8 @@ namespace wRPCService
                                     serv.parameterexplain[i] += fi.FieldType.Name + " " + fi.Name + ",";
                                 else
                                     serv.parameterexplain[i] += fi.FieldType.Name + ",";
+
+
                             if (ParamAttr != null)
                             {
 
@@ -148,9 +149,12 @@ namespace wRPCService
                             }
                             else
                                 serv.parameterexplain[i] += "@|";
+
+
+
                             //如果它是值类型,或者String   
 
-                            serv.parameter[i] = tType.Name;
+                            serv.parameter[i] = paramsInfo[i].Name;
 
                         }
 

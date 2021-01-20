@@ -1276,7 +1276,7 @@
           "bin/placeholder/wRPC.dll": {}
         }
       },
-      "wRPCService/1.0.0": {
+      "wRPCService/1.0.1": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -3876,7 +3876,7 @@
       "path": "../wRPC/wRPC.csproj",
       "msbuildProject": "../wRPC/wRPC.csproj"
     },
-    "wRPCService/1.0.0": {
+    "wRPCService/1.0.1": {
       "type": "project",
       "path": "../wRPCService/wRPCService.csproj",
       "msbuildProject": "../wRPCService/wRPCService.csproj"
@@ -3888,7 +3888,7 @@
       "Microsoft.Extensions.Configuration.Json >= 5.0.0",
       "Weave.Server >= 2.0.18",
       "wRPC >= 1.0.0",
-      "wRPCService >= 1.0.0"
+      "wRPCService >= 1.0.1"
     ]
   },
   "packageFolders": {

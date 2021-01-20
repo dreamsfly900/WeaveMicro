@@ -202,7 +202,7 @@
       }
     },
     "D:\\WeaveMicro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj": {
-      "version": "1.0.0",
+      "version": "1.0.1",
       "restore": {
         "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj",
         "projectName": "WeaveRemoteService",
@@ -266,7 +266,7 @@
       }
     },
     "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
-      "version": "1.0.0",
+      "version": "1.0.1",
       "restore": {
         "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
         "projectName": "wRPCService",

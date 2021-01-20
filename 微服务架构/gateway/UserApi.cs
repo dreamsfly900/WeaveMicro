@@ -89,16 +89,16 @@ namespace gateway
 
                         if (ser.services[0].Method == "NONE")
                         {
-                            if (context.Request.ContentType == "application/json")
+                            if (context.Request.ContentType.ToLower() == "application/json")
                             {
                                 objs[i] = Newtonsoft.Json.JsonConvert.DeserializeObject(contentFromBody);
                             }
-                            else if (context.Request.ContentType == "application/x-www-form-urlencoded")
+                            else if (context.Request.ContentType.ToLower() == "application/x-www-form-urlencoded")
                             {
                                 objs[i] = servicesDic[ser.services[0].parameter[i]];
                             }
                         }
-                        else if (ser.services[0].Method == "GET")
+                        else if (ser.services[0].Method.ToUpper() == "GET")
                         {
                             if (context.Request.Query == null)
                             {
@@ -109,7 +109,7 @@ namespace gateway
                                 objs[i] = context.Request.Query[ser.services[0].parameter[i]].ToString();
                             }
                         }
-                        else if (ser.services[0].Method == "POST")
+                        else if (ser.services[0].Method.ToUpper() == "POST")
                         {
                             if (!context.Request.HasFormContentType)
                             {

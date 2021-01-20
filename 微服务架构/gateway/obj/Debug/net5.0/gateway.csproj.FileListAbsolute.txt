@@ -41,7 +41,6 @@ D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\Weave.Base.dll
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\Weave.TcpSynClient.dll
 D:\WeaveMicro\微服务架构\gateway\obj\Debug\net5.0\gateway.csproj.CopyComplete
 D:\WeaveMicro\微服务架构\gateway\obj\Debug\net5.0\gateway.genruntimeconfig.cache
-D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\config.json
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\Microsoft.Build.Framework.dll
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\Microsoft.Build.Utilities.Core.dll
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\wRPC.dll

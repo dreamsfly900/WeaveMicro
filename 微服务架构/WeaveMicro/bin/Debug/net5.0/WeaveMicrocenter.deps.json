@@ -10,9 +10,9 @@
         "dependencies": {
           "Microsoft.Extensions.Configuration": "5.0.0",
           "Microsoft.Extensions.Configuration.Json": "5.0.0",
-          "Weave.Server": "2.0.13",
+          "Weave.Server": "2.0.18",
           "wRPC": "1.0.0",
-          "wRPCService": "1.0.0"
+          "wRPCService": "1.0.1"
         },
         "runtime": {
           "WeaveMicrocenter.dll": {}
@@ -950,36 +950,36 @@
           }
         }
       },
-      "Weave.Base/2.0.14": {
+      "Weave.Base/2.0.17": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.1"
         },
         "runtime": {
           "lib/netstandard2.0/Weave.Base.dll": {
-            "assemblyVersion": "2.0.14.0",
-            "fileVersion": "2.0.14.0"
+            "assemblyVersion": "2.0.17.0",
+            "fileVersion": "2.0.17.0"
           }
         }
       },
-      "Weave.Server/2.0.13": {
+      "Weave.Server/2.0.18": {
         "dependencies": {
-          "Weave.Base": "2.0.14"
+          "Weave.Base": "2.0.17"
         },
         "runtime": {
           "lib/netstandard2.0/Weave.Server.dll": {
-            "assemblyVersion": "2.0.13.0",
-            "fileVersion": "2.0.13.0"
+            "assemblyVersion": "2.0.18.0",
+            "fileVersion": "2.0.18.0"
           }
         }
       },
-      "Weave.TcpSynClient/2.0.8": {
+      "Weave.TcpSynClient/2.0.10": {
         "dependencies": {
-          "Weave.Base": "2.0.14"
+          "Weave.Base": "2.0.17"
         },
         "runtime": {
           "lib/netstandard2.0/Weave.TcpSynClient.dll": {
-            "assemblyVersion": "2.0.8.0",
-            "fileVersion": "2.0.8.0"
+            "assemblyVersion": "2.0.10.0",
+            "fileVersion": "2.0.10.0"
           }
         }
       },
@@ -989,16 +989,16 @@
           "Microsoft.Build.Framework": "16.8.0",
           "Microsoft.Build.Utilities.Core": "16.8.0",
           "Microsoft.CSharp": "4.7.0",
-          "Weave.TcpSynClient": "2.0.8"
+          "Weave.TcpSynClient": "2.0.10"
         },
         "runtime": {
           "wRPC.dll": {}
         }
       },
-      "wRPCService/1.0.0": {
+      "wRPCService/1.0.1": {
         "dependencies": {
           "Microsoft.AspNetCore": "2.2.0",
-          "Weave.Server": "2.0.13"
+          "Weave.Server": "2.0.18"
         },
         "runtime": {
           "wRPCService.dll": {}
@@ -1635,33 +1635,33 @@
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
-    "Weave.Base/2.0.14": {
+    "Weave.Base/2.0.17": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-9rQiGY3X4Q4PgtiYZQY8GUNtN7Wiy3soptBMMn5tu/vnizNh/zKMtxz/clQkSJc7mfdJzhm8w7t/+hjU7WaucQ==",
-      "path": "weave.base/2.0.14",
-      "hashPath": "weave.base.2.0.14.nupkg.sha512"
+      "sha512": "sha512-JX08K/xgdHCeyscRWag1YhQNKJieZbY4ujzuPIKA8/aMzdzAbtfr5eaoOC7LB4m7dqOWv5oIqO28P4ujsQYtJg==",
+      "path": "weave.base/2.0.17",
+      "hashPath": "weave.base.2.0.17.nupkg.sha512"
     },
-    "Weave.Server/2.0.13": {
+    "Weave.Server/2.0.18": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-dlzi0vX7dovHPhBoKkHv16WSnW7wGTRyd/EBev6Q5TTFG2zEppG2R19wFnqa7QShnq6V26RG8Pmj9fw22cf6tw==",
-      "path": "weave.server/2.0.13",
-      "hashPath": "weave.server.2.0.13.nupkg.sha512"
+      "sha512": "sha512-aDP4LbCQ2caJJlMMKIqzQSP0j8pNrgvUYahDpRv9gn2vnKtzdT0Nu47GY3K1diM6eXgP5FfkTeAKYpjF/S2uBw==",
+      "path": "weave.server/2.0.18",
+      "hashPath": "weave.server.2.0.18.nupkg.sha512"
     },
-    "Weave.TcpSynClient/2.0.8": {
+    "Weave.TcpSynClient/2.0.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mzFWLjn/qKSFHA+NjqJ6V1VKGIfKTrMo9V4PJ7Y7DASBpHdteYzHoQZWYnJHJJ83xWA8mK4FKKmKWyMAkzssfA==",
-      "path": "weave.tcpsynclient/2.0.8",
-      "hashPath": "weave.tcpsynclient.2.0.8.nupkg.sha512"
+      "sha512": "sha512-qF/F6t8jRbdKC7pS+CpGuygmYlVHc06N8WDvr+CxOtFk7SFTFiL2pcMTSOViqawbs0opv4ihYOsw2swtCp62jg==",
+      "path": "weave.tcpsynclient/2.0.10",
+      "hashPath": "weave.tcpsynclient.2.0.10.nupkg.sha512"
     },
     "wRPC/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "wRPCService/1.0.0": {
+    "wRPCService/1.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

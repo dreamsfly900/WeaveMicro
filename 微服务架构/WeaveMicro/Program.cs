@@ -113,7 +113,8 @@ namespace WeaveMicro
                     {
                         if (sers.IP == ser.IP && sers.Port == ser.Port)
                         {
-                            return;
+                            servers.Remove(ser);
+                            break;
                         }
 
                     }

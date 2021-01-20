@@ -42,7 +42,7 @@ namespace IdentityServer
                             servicesDic.Add(datastr.Split("=")[0], datastr.Split("=")[1]);
                         }
                       
-                        if (!Account.Account.GetLogin(servicesDic))
+                        if (!Account.Account.GetLogin(servicesDic, context))
                         {
                             await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 0, msg = "授权失败" }));
                             context.Abort();

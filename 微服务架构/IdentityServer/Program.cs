@@ -22,7 +22,7 @@ namespace IdentityServer
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args)
         {
-            return WebHost.CreateDefaultBuilder(args)
+            return WebHost.CreateDefaultBuilder(args).UseUrls(args[0])
                     .UseStartup<Startup>()
                     .UseSerilog((context, configuration) =>
                     {

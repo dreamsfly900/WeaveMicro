@@ -1,4 +1,3 @@
-D:\WeaveMicro\微服务架构\Test\bin\Debug\net5.0\config.json
 D:\WeaveMicro\微服务架构\Test\bin\Debug\net5.0\Test.exe
 D:\WeaveMicro\微服务架构\Test\bin\Debug\net5.0\Test.deps.json
 D:\WeaveMicro\微服务架构\Test\bin\Debug\net5.0\Test.runtimeconfig.json

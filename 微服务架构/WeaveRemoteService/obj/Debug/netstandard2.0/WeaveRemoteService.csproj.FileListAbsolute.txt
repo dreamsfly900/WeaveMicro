@@ -1,4 +1,3 @@
-D:\WeaveMicro\微服务架构\WeaveRemoteService\bin\Debug\netstandard2.0\config.json
 D:\WeaveMicro\微服务架构\WeaveRemoteService\bin\Debug\netstandard2.0\WeaveRemoteService.deps.json
 D:\WeaveMicro\微服务架构\WeaveRemoteService\bin\Debug\netstandard2.0\WeaveRemoteService.dll
 D:\WeaveMicro\微服务架构\WeaveRemoteService\bin\Debug\netstandard2.0\WeaveRemoteService.pdb

@@ -29,6 +29,7 @@ namespace testdll2
         public String ff(mode md)
         {
            object obj=  this.Cookies;
+            object obj2 = this.Headers;
          //   Console.WriteLine(md.name);
             return "Class2.ff的返回值";
         }

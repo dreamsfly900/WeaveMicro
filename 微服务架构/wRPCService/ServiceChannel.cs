@@ -42,10 +42,10 @@ namespace wRPCService
 
                 //Type tt = keyValuePairs[rpdata.Route.Replace('/', '.')];
                 //Assembly ab = Assembly.GetAssembly(tt);
-                //object obj = ab.CreateInstance(tt.FullName);
+               // object obj = ab.CreateInstance(tt.FullName);
                 object obj = keyValuePairs[rpdata.Route.Replace('/', '.')];
                 Type t = obj.GetType();
-
+                obj = t.Assembly.CreateInstance(t.FullName);
                 MethodInfo mi = t.GetMethod(rpdata.FunName);
                 if (mi != null)
                 {

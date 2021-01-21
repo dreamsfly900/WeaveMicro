@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2jNp7PtiCsQmGiXh3b2NM0XFrmiOLWiwf18xfeSxgwIAj53GZibJy/i2c/gTIqlNzvk+dbjw11GsKGLS73dJNg==",
+  "dgSpecHash": "eiOCS3gQSc9Gz1ALy8koiOa/tDz5HlJiDv9Jk0urJKPPvnreEKDDmFCzjX9PqjejNI8JpWwUVjdykR75CSMrmw==",
   "success": true,
   "projectFilePath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
   "expectedPackageFiles": [

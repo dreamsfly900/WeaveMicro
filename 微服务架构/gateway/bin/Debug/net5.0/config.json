@@ -1,8 +1,10 @@
 {
   "Authentication": true,
-  "IdentityServer": "http://116.255.241.135:5221",
+  "IdentityServer": "http://localhost:5000",
   "Audience": "api1",
   "defaultScheme": "Bearer",
   "applicationUrl": "http://localhost:1221",
-  "Microcenter": "116.255.241.135:9001"
+  "Microcenter": "127.0.0.1:9001",
+  "Cookies": [ "hh" ],
+  "Headers": ["token"]
 }

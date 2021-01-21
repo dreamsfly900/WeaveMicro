@@ -16,7 +16,8 @@ namespace wRPCclient
         String IP;
         int Port;
         Weave.Client.TcpSynClient tcpSynClient;
-        public IHeaderDictionary Headers { get; set; }
+        public Dictionary<string, String> Headers { get; set; }
+        public Dictionary<string, String> Cookies { get; set; }
         bool isline = false;
         public ClientChannel(String _IP, int port)
         {
@@ -100,7 +101,8 @@ namespace wRPCclient
             //    if (context.Request.Query != null)
             //        httpmode.Query = context.Request.Query;
             //}
-            //rpcdata.Headers = Headers;
+            rpcdata.Headers = Headers;
+            rpcdata.Cookies = Cookies;
             if (parameter is object[])
                 rpcdata.parameter = parameter as object[];
             else

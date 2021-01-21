@@ -27,3 +27,4 @@ D:\weave-micro\微服务架构\WeaveRemoteService\obj\Debug\netstandard2.0\Weave
 D:\weave-micro\微服务架构\WeaveRemoteService\obj\Debug\netstandard2.0\WeaveRemoteService.csproj.CopyComplete
 D:\weave-micro\微服务架构\WeaveRemoteService\obj\Debug\netstandard2.0\WeaveRemoteService.dll
 D:\weave-micro\微服务架构\WeaveRemoteService\obj\Debug\netstandard2.0\WeaveRemoteService.pdb
+D:\WeaveMicro\微服务架构\WeaveRemoteService\bin\Debug\netstandard2.0\config.json

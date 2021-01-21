@@ -63,6 +63,7 @@ namespace gateway
                 }
 
             }
+           
             server ser =await WeightAlgorithm.Get(servers, context.Request.Path.Value.Trim('/'));
             if (ser == null)
             {
@@ -131,7 +132,16 @@ namespace gateway
                         rl += rls[i] + "/";
                     }
                     rl = rl.Substring(0, rl.Length - 1);
-                    String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs);
+                    String[] Headers = Startup.config.GetSection("Headers").Get<String[]>();
+                    Dictionary<string, String> keysh = new Dictionary<string, string>();
+                    foreach (string hh in Headers)
+                        keysh.Add(hh, context.Request.Headers[hh]);
+                    String[] Cookies = Startup.config.GetSection("Cookies").Get<String[]>();
+                    Dictionary<string, String> keysCookies = new Dictionary<string, string>();
+                    foreach (string hh in Cookies)
+                        keysCookies.Add(hh, context.Request.Cookies[hh]);
+                    //  context.Request.Headers
+                    String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh,keysCookies);
                     //String retun =  clientChannel.Call<String>(rl, rls[rls.Length - 1], objs);
                   
                     await context.Response.WriteAsync($"{retun}");

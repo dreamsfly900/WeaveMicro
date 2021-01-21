@@ -28,7 +28,7 @@ namespace testdll2
         [InstallFun(FunAttribute.NONE, "此方法用于测试")]
         public String ff(mode md)
         {
-          
+           object obj=  this.Cookies;
          //   Console.WriteLine(md.name);
             return "Class2.ff的返回值";
         }

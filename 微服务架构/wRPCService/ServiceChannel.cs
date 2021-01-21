@@ -53,18 +53,15 @@ namespace wRPCService
                     if (myattribute != null)
                     {
                         object[] objs = rpdata.parameter;
-                        //if (obj is FunctionBase && rpdata.Headers!=null)
-                        //{
+                        if (obj is FunctionBase && rpdata.Headers != null)
+                        {
 
 
-                        //    (obj as FunctionBase).Headers = new Dictionary<string, StringValues>() ;
-                        //    foreach (String str in rpdata.Headers.Keys)
-                        //    {
-                        //        (obj as FunctionBase).Headers.Add(str, rpdata.Headers[str][0]);
-                        //    }
-                           
-                        //}
-                        
+                            (obj as FunctionBase).Headers = rpdata.Headers;
+                            (obj as FunctionBase).Cookies = rpdata.Cookies;
+
+                        }
+
                         ParameterInfo[] paramsInfo = mi.GetParameters();//得到指定方法的参数列表 
                         if (paramsInfo.Length != objs.Length)
                         { P2Server.Send(soc, 0x02, GZIP.GZipCompress("参数不正确"));return; }

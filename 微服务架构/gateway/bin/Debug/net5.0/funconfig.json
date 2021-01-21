@@ -1,1 +1,1 @@
-{"server":[{"Name":"SignalManageService","IP":"127.0.0.1","Port":10098,"services":[{"Route":"Signal/updateSignal","Method":"Get","parameter":["str"],"parameterexplain":["String,@用户名|"],"annotation":"接收上传的信号测试数据","Authorize":false}]}]}
+{"server":[]}

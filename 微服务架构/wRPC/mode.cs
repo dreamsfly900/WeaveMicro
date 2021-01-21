@@ -16,8 +16,9 @@ namespace wRPC
     }
     public class Rpcdata<T>
     {
-        public IHeaderDictionary Headers { get; set; }
-       // public httpmode HttpContext { get; set; }
+        public Dictionary<string, String> Headers { get; set; }
+        public Dictionary<string, String> Cookies { get; set; }
+        // public httpmode HttpContext { get; set; }
         public T parameter { get; set; }
         public string FunName { get; set; }
         public string Route { get; internal set; }

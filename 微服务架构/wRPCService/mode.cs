@@ -27,7 +27,9 @@ namespace wRPC
     }
     public class FunctionBase
     {
-        public IDictionary<string, StringValues> Headers { get; set; }
+        public IDictionary<string, String> Headers { get; set; }
+        public Dictionary<string, string> Cookies { get; internal set; }
+
         public service[] GetService()
         {
             List<service> listservice = new List<service>();
@@ -112,7 +114,9 @@ namespace wRPC
     public class Rpcdata<T>
     {
         //  public httpmode HttpContext { get; set; }
-        public IDictionary<string, IList<String>> Headers { get; set; }
+        public Dictionary<string, String> Headers { get; set; }
+       
+        public Dictionary<string, String> Cookies { get; set; }
         public T parameter { get; set; }
         public string FunName { get; set; }
         public string Route { get; set; }

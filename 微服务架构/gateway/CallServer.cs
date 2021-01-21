@@ -85,7 +85,7 @@ namespace gateway
         //    //}
         //    return JsonConvert.SerializeObject(new { code = 503, msg = "服务器错误" });
         //}
-        public static string CallService(server ser, String rt, String rls, object[] objs)
+        public static string CallService(server ser, String rt, String rls, object[] objs, Dictionary<string, String> Headers, Dictionary<string, String> keysCookies)
         {
             bool locked = false;
             wRPCclient.ClientChannel clientChannel = null;
@@ -98,6 +98,8 @@ namespace gateway
                 clientChannel = new wRPCclient.ClientChannel(ser.IP, ser.Port);
                 CCQ = new ClientChannelQueue();
                 CCQ.clientChannel = clientChannel;
+                clientChannel.Headers = Headers;
+                clientChannel.Cookies = keysCookies;
                 return clientChannel.Call<String>(rt, rls, objs);
             }
             catch (Exception e)

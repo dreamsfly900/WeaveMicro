@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FGoqpMc6gZmAWFXJ8TgDUmlJPGjnNx2Hk45F9ed+iqjYDDH2F9QKJ7CrC+fw1lZafBT7srw8++4TIeuXTq/KKw==",
+  "dgSpecHash": "oGDqcJkqxuX6bINeK83uDudIt9lp5UvEm+QjRpb6HVeaxON3spP3ADkX7shO30bZb/+0+gq/ShK6hK+ArFW1LQ==",
   "success": true,
   "projectFilePath": "D:\\WeaveMicro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj",
   "expectedPackageFiles": [
@@ -73,8 +73,7 @@
     "C:\\Users\\xingy\\.nuget\\packages\\weave.base\\2.0.17\\weave.base.2.0.17.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\weave.server\\2.0.18\\weave.server.2.0.18.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\weave.tcpclient\\2.0.7\\weave.tcpclient.2.0.7.nupkg.sha512",
-    "C:\\Users\\xingy\\.nuget\\packages\\weavemicroclient\\1.0.0\\weavemicroclient.1.0.0.nupkg.sha512",
-    "C:\\Users\\xingy\\.nuget\\packages\\wrpcservice\\1.0.1\\wrpcservice.1.0.1.nupkg.sha512"
+    "C:\\Users\\xingy\\.nuget\\packages\\weavemicroclient\\1.0.0\\weavemicroclient.1.0.0.nupkg.sha512"
   ],
   "logs": []
 }

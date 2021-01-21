@@ -934,7 +934,7 @@
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
           "Weave.TCPClient": "2.0.7",
-          "wRPCService": "1.0.1"
+          "wRPCService": "1.0.2"
         },
         "compile": {
           "bin/placeholder/WeaveMicroClient.dll": {}
@@ -943,7 +943,7 @@
           "bin/placeholder/WeaveMicroClient.dll": {}
         }
       },
-      "wRPCService/1.0.1": {
+      "wRPCService/1.0.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -2329,7 +2329,7 @@
       "path": "../WeaveMicroClient/WeaveMicroClient.csproj",
       "msbuildProject": "../WeaveMicroClient/WeaveMicroClient.csproj"
     },
-    "wRPCService/1.0.1": {
+    "wRPCService/1.0.2": {
       "type": "project",
       "path": "../wRPCService/wRPCService.csproj",
       "msbuildProject": "../wRPCService/wRPCService.csproj"
@@ -2339,14 +2339,14 @@
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
       "WeaveMicroClient >= 1.0.0",
-      "wRPCService >= 1.0.1"
+      "wRPCService >= 1.0.2"
     ]
   },
   "packageFolders": {
     "C:\\Users\\xingy\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.1",
+    "version": "1.0.2",
     "restore": {
       "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj",
       "projectName": "WeaveRemoteService",

@@ -916,7 +916,7 @@
           "lib/netstandard2.0/Weave.Server.dll": {}
         }
       },
-      "wRPCService/1.0.1": {
+      "wRPCService/1.0.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -2288,7 +2288,7 @@
         "weave.server.nuspec"
       ]
     },
-    "wRPCService/1.0.1": {
+    "wRPCService/1.0.2": {
       "type": "project",
       "path": "../wRPCService/wRPCService.csproj",
       "msbuildProject": "../wRPCService/wRPCService.csproj"
@@ -2297,7 +2297,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
-      "wRPCService >= 1.0.1"
+      "wRPCService >= 1.0.2"
     ]
   },
   "packageFolders": {

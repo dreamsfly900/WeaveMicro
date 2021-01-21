@@ -1612,7 +1612,7 @@
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
           "Weave.TCPClient": "2.0.7",
-          "wRPCService": "1.0.1"
+          "wRPCService": "1.0.2"
         },
         "compile": {
           "bin/placeholder/WeaveMicroClient.dll": {}
@@ -1621,7 +1621,7 @@
           "bin/placeholder/WeaveMicroClient.dll": {}
         }
       },
-      "wRPC/1.0.0": {
+      "wRPC/1.0.1": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1638,7 +1638,7 @@
           "bin/placeholder/wRPC.dll": {}
         }
       },
-      "wRPCService/1.0.1": {
+      "wRPCService/1.0.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -4820,12 +4820,12 @@
       "path": "../WeaveMicroClient/WeaveMicroClient.csproj",
       "msbuildProject": "../WeaveMicroClient/WeaveMicroClient.csproj"
     },
-    "wRPC/1.0.0": {
+    "wRPC/1.0.1": {
       "type": "project",
       "path": "../wRPC/wRPC.csproj",
       "msbuildProject": "../wRPC/wRPC.csproj"
     },
-    "wRPCService/1.0.1": {
+    "wRPCService/1.0.2": {
       "type": "project",
       "path": "../wRPCService/wRPCService.csproj",
       "msbuildProject": "../wRPCService/wRPCService.csproj"
@@ -4843,7 +4843,7 @@
       "Newtonsoft.Json >= 12.0.3",
       "Weave.TcpSynClient >= 2.0.10",
       "WeaveMicroClient >= 1.0.0",
-      "wRPC >= 1.0.0"
+      "wRPC >= 1.0.1"
     ]
   },
   "packageFolders": {

@@ -2287,7 +2287,7 @@
     "C:\\Users\\xingy\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.1",
+    "version": "1.0.2",
     "restore": {
       "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
       "projectName": "wRPCService",

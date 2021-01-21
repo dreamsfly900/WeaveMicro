@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bw+N3Mzt1u8J5BeNEdGAl7UZD82vykOXAqPRof7qH7wM3JL0/FW7WRrOTP5IO81zNBUGyiCKu7ZFSC0S9IbmZw==",
+  "dgSpecHash": "Y8V0WBplk3pr2O89phQXy/f1MyawTTTcquUoOPt0QbhpOByeMnAZ4b3UX4gRy5yQjEpzB/Dg1MNIHkMQIC64hQ==",
   "success": true,
   "projectFilePath": "D:\\WeaveMicro\\微服务架构\\gateway\\gateway.csproj",
   "expectedPackageFiles": [
@@ -113,9 +113,7 @@
     "C:\\Users\\xingy\\.nuget\\packages\\weave.server\\2.0.18\\weave.server.2.0.18.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\weave.tcpclient\\2.0.7\\weave.tcpclient.2.0.7.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\weave.tcpsynclient\\2.0.10\\weave.tcpsynclient.2.0.10.nupkg.sha512",
-    "C:\\Users\\xingy\\.nuget\\packages\\weavemicroclient\\1.0.0\\weavemicroclient.1.0.0.nupkg.sha512",
-    "C:\\Users\\xingy\\.nuget\\packages\\wrpc\\1.0.0\\wrpc.1.0.0.nupkg.sha512",
-    "C:\\Users\\xingy\\.nuget\\packages\\wrpcservice\\1.0.1\\wrpcservice.1.0.1.nupkg.sha512"
+    "C:\\Users\\xingy\\.nuget\\packages\\weavemicroclient\\1.0.0\\weavemicroclient.1.0.0.nupkg.sha512"
   ],
   "logs": []
 }

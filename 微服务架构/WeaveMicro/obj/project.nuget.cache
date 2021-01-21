@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "Aj6Qx1xixndcMJRv/81lhzxGKL8twddKr2ny4RpdKTWJ79A4X/q9gfKzCW8NY9r/KLkXTJ8N6sDNART+MC3r5Q==",
-  "success": false,
+  "dgSpecHash": "X8q5gKyKYJsxivvYMIIdSQ0joQ0Gge4iiZHb+Ucmj+7Rutgj9nV/m+0wfKl5Kh7i3kDtbIBZ+25jKYgehZMAMg==",
+  "success": true,
   "projectFilePath": "D:\\WeaveMicro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\xingy\\.nuget\\packages\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",
@@ -93,19 +93,9 @@
     "C:\\Users\\xingy\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
-    "C:\\Users\\xingy\\.nuget\\packages\\weave.base\\2.0.17\\weave.base.2.0.17.nupkg.sha512",
-    "C:\\Users\\xingy\\.nuget\\packages\\weave.server\\2.0.18\\weave.server.2.0.18.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\weave.base\\2.0.18\\weave.base.2.0.18.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\weave.server\\2.0.19\\weave.server.2.0.19.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\weave.tcpsynclient\\2.0.10\\weave.tcpsynclient.2.0.10.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "检测到包降级: Weave.Server 从 2.0.19 降级到 2.0.18。直接从项目引用包以选择不同版本。 \r\n WeaveMicrocenter -> wRPCService -> Weave.Server (>= 2.0.19) \r\n WeaveMicrocenter -> Weave.Server (>= 2.0.18)",
-      "libraryId": "Weave.Server",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  "logs": []
 }

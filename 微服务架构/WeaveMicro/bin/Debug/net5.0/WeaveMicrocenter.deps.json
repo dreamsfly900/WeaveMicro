@@ -11,8 +11,8 @@
           "Microsoft.Extensions.Configuration": "5.0.0",
           "Microsoft.Extensions.Configuration.Json": "5.0.0",
           "Weave.Server": "2.0.18",
-          "wRPC": "1.0.0",
-          "wRPCService": "1.0.1"
+          "wRPC": "1.0.1",
+          "wRPCService": "1.0.3"
         },
         "runtime": {
           "WeaveMicrocenter.dll": {}
@@ -983,7 +983,7 @@
           }
         }
       },
-      "wRPC/1.0.0": {
+      "wRPC/1.0.1": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.Build.Framework": "16.8.0",
@@ -995,7 +995,7 @@
           "wRPC.dll": {}
         }
       },
-      "wRPCService/1.0.1": {
+      "wRPCService/1.0.3": {
         "dependencies": {
           "Microsoft.AspNetCore": "2.2.0",
           "Weave.Server": "2.0.18"
@@ -1656,12 +1656,12 @@
       "path": "weave.tcpsynclient/2.0.10",
       "hashPath": "weave.tcpsynclient.2.0.10.nupkg.sha512"
     },
-    "wRPC/1.0.0": {
+    "wRPC/1.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "wRPCService/1.0.1": {
+    "wRPCService/1.0.3": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

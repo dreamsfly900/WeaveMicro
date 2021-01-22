@@ -1,1 +1,28 @@
-{"server":[{"Name":"SignalManageService","IP":"116.255.252.181","Port":10098,"services":[{"Route":"Signal/updateSignal","Method":"POST","parameter":["str"],"parameterexplain":["String,@用户名|"],"annotation":"接收上传的信号测试数据","Authorize":false},{"Route":"Signal/GrantImei","Method":"Get","parameter":["str"],"parameterexplain":["String,@用户名|"],"annotation":"上传设备信息并返回授权范围","Authorize":false}]},{"Name":"SignalManageService","IP":"127.0.0.1","Port":10098,"services":[{"Route":"Signal/updateSignal","Method":"POST","parameter":["str"],"parameterexplain":["String,@用户名|"],"annotation":"接收上传的信号测试数据","Authorize":false},{"Route":"Signal/GrantImei","Method":"Get","parameter":["str"],"parameterexplain":["String,@json 格式{imei:''}|"],"annotation":"上传设备信息并返回授权范围","Authorize":false},{"Route":"Signal/getStationNewSignal","Method":"Get","parameter":[],"parameterexplain":[],"annotation":"获取设备最新检测信号列表","Authorize":false},{"Route":"Signal/getSignalListByPager","Method":"Get","parameter":["Imei","Type","pageSize","pageIndex"],"parameterexplain":["String,@设备号|","String,@运营商：移动 CM/ 电信 CT/联通 CU|","Int32 MaxValue,Int32 MinValue,@|","Int32 MaxValue,Int32 MinValue,@|"],"annotation":"分页获取设备信号检测列表","Authorize":false},{"Route":"Signal/getSignalListByImei","Method":"Get","parameter":["Imei"],"parameterexplain":["String,@设备号|"],"annotation":"根据设备号获取设备检测列表","Authorize":false},{"Route":"Signal/getStationList","Method":"Get","parameter":["str"],"parameterexplain":["String,@设备号/名称|"],"annotation":"获取设备列表","Authorize":false}]}]}
+{
+  "server": [
+    {
+      "IP": "127.0.0.1",
+      "Port": 10098,
+      "services": [
+        {
+          "Route": "testdll2/Class1/ff",
+          "Method": "GET",
+          "parameter": [ "str" ],
+          "annotation": "�˷������ڲ���"
+        }
+      ]
+    },
+    {
+      "IP": "127.0.0.1",
+      "Port": 10098,
+      "services": [
+        {
+          "Route": "abcd/ff",
+          "Method": "NONE",
+          "parameter": [ "str" ],
+          "annotation": "�˷������ڲ���"
+        }
+      ]
+    }
+  ]
+}

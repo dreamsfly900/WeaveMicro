@@ -3,7 +3,7 @@
   "IdentityServer": "http://116.255.241.135:5000",
   "Audience": "api1",
   "defaultScheme": "Bearer",
-  "applicationUrl": "http://localhost:1221",
+  "applicationUrl": "http://116.255.241.138:1221",
   "Microcenter": "116.255.241.135:9001",
   "Cookies": [ "hh" ],
   "Headers": ["token"]

@@ -56,7 +56,7 @@ namespace gateway
         {
             try
             {
-                String datastr = Newtonsoft.Json.JsonConvert.SerializeObject(serv);
+                 String datastr = Newtonsoft.Json.JsonConvert.SerializeObject(serv);
                 
                     datastr = "{\"server\":" + datastr + "}";
                     System.IO.StreamWriter sw = new System.IO.StreamWriter("funconfig.json", false);

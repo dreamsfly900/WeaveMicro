@@ -85,44 +85,49 @@ namespace gateway
                 {
                     DateTime dt = DateTime.Now;
                     //ser.services[0].parameter
-                    object[] objs = new object[ser.services[0].parameter.Length];
-                    for (int i = 0; i < objs.Length; i++)
+                    object[] objs = new object[0];
+                    if (ser.services[0].parameter != null)
                     {
+                        objs = new object[ser.services[0].parameter.Length];
+                        for (int i = 0; i < objs.Length; i++)
+                        {
 
-                        if (ser.services[0].Method == "NONE")
-                        {
-                            if (context.Request.ContentType.ToLower() == "application/json")
+                            if (ser.services[0].Method == "NONE")
                             {
-                                objs[i] = Newtonsoft.Json.JsonConvert.DeserializeObject(contentFromBody);
+                                if (context.Request.ContentType.ToLower() == "application/json")
+                                {
+                                    objs[i] = Newtonsoft.Json.JsonConvert.DeserializeObject(contentFromBody);
+                                }
+                                else if (context.Request.ContentType.ToLower() == "application/x-www-form-urlencoded")
+                                {
+                                    objs[i] = servicesDic[ser.services[0].parameter[i]];
+                                }
                             }
-                            else if (context.Request.ContentType.ToLower() == "application/x-www-form-urlencoded")
+                            else if (ser.services[0].Method.ToUpper() == "GET")
                             {
-                                objs[i] = servicesDic[ser.services[0].parameter[i]];
-                            }
-                        }
-                        else if (ser.services[0].Method.ToUpper() == "GET")
-                        {
-                            if (context.Request.Query == null)
-                            {
+                                if (context.Request.Query == null)
+                                {
 
+                                }
+                                else
+                                {
+                                    objs[i] = context.Request.Query[ser.services[0].parameter[i]].ToString();
+                                }
                             }
-                            else
+                            else if (ser.services[0].Method.ToUpper() == "POST")
                             {
-                                objs[i] = context.Request.Query[ser.services[0].parameter[i]].ToString();
+                                if (!context.Request.HasFormContentType)
+                                {
+
+                                }
+                                else
+                                {
+                                    objs[i] = context.Request.Form[ser.services[0].parameter[i]].ToString();
+                                }
                             }
                         }
-                        else if (ser.services[0].Method.ToUpper() == "POST")
-                        {
-                            if (!context.Request.HasFormContentType)
-                            {
-                               
-                            }
-                            else
-                            {
-                                objs[i] = context.Request.Form[ser.services[0].parameter[i]].ToString();
-                            }
-                        }
-                    }
+                    } 
+
                     string datastr = Newtonsoft.Json.JsonConvert.SerializeObject(context.Request.Headers);
                     
                     String rl = context.Request.Path.Value.Trim('/');

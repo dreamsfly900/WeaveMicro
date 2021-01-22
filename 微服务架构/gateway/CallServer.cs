@@ -100,7 +100,7 @@ namespace gateway
                 CCQ.clientChannel = clientChannel;
                 clientChannel.Headers = Headers;
                 clientChannel.Cookies = keysCookies;
-                return clientChannel.Call<object>(rt, rls, objs).ToString();
+                return Newtonsoft.Json.JsonConvert.SerializeObject(clientChannel.Call<object>(rt, rls, objs));
             }
             catch (Exception e)
             {

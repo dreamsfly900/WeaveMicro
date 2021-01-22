@@ -25,7 +25,8 @@ namespace gateway
                 return;
             Dictionary<string, String> servicesDic = new Dictionary<string, String>();
             dynamic contentFromBody = "";
-           
+            //    await context.Response.WriteAsync(Encoding.GetEncoding("GB2312").ToString());
+            context.Response.ContentType = "text/plain;charset=utf-8";
             if (servers == null)
             { 
                 await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 999, msg = "非法请求" }));
@@ -142,9 +143,12 @@ namespace gateway
                         keysCookies.Add(hh, context.Request.Cookies[hh]);
                     //  context.Request.Headers
                     String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh,keysCookies);
-                    //String retun =  clientChannel.Call<String>(rl, rls[rls.Length - 1], objs);
-                  
-                    await context.Response.WriteAsync($"{retun}");
+                    ////String retun =  clientChannel.Call<String>(rl, rls[rls.Length - 1], objs);
+                    //Encoding utf8 = Encoding.ASCII;
+                    //Encoding ISO = Encoding.UTF8;//换成你想转的编码
+                    //byte[] temp = utf8.GetBytes(retun);
+                    //string result = ISO.GetString(temp);
+                    await context.Response.WriteAsync($"{ retun}");
                     DateTime dt2 = DateTime.Now;
                 //    Console.WriteLine((dt2 - dt).TotalMilliseconds);
                     return;

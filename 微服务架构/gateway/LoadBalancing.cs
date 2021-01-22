@@ -59,8 +59,8 @@ namespace wRPC
             //if (serviceList.Length == 1)
             //    return serviceList[0];
 
-            bool locked = false;
-            _spinLock.Enter(ref locked);//获取锁
+            //bool locked = false;
+            //_spinLock.Enter(ref locked);//获取锁
 
             WeightAlgorithmItem weightAlgorithmItem = null;
             if (!_serviceDic.ContainsKey(serviceName ))
@@ -105,8 +105,8 @@ namespace wRPC
             _serviceDic[serviceName ] = weightAlgorithmItem;
 
             //  Console.WriteLine(serviceName + "-----" + url);
-            if (locked) //释放锁
-                _spinLock.Exit();
+            //if (locked) //释放锁
+            //    _spinLock.Exit();
             return serviceCenter;
         }
 

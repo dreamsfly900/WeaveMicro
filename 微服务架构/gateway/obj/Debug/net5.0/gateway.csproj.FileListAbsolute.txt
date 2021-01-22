@@ -64,4 +64,3 @@ D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\WeaveMicroClient.dll
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\wRPCService.dll
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\WeaveMicroClient.pdb
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\wRPCService.pdb
-D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\config.json

@@ -113,7 +113,8 @@
     "C:\\Users\\xingy\\.nuget\\packages\\weave.server\\2.0.19\\weave.server.2.0.19.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\weave.tcpclient\\2.0.7\\weave.tcpclient.2.0.7.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\weave.tcpsynclient\\2.0.10\\weave.tcpsynclient.2.0.10.nupkg.sha512",
-    "C:\\Users\\xingy\\.nuget\\packages\\weavemicroclient\\1.0.0\\weavemicroclient.1.0.0.nupkg.sha512"
+    "C:\\Users\\xingy\\.nuget\\packages\\weavemicroclient\\1.0.0\\weavemicroclient.1.0.0.nupkg.sha512",
+    "C:\\Users\\xingy\\.nuget\\packages\\wrpcservice\\1.0.3\\wrpcservice.1.0.3.nupkg.sha512"
   ],
   "logs": []
 }

@@ -100,7 +100,7 @@ namespace gateway
                 CCQ.clientChannel = clientChannel;
                 clientChannel.Headers = Headers;
                 clientChannel.Cookies = keysCookies;
-                return clientChannel.Call<String>(rt, rls, objs);
+                return clientChannel.Call<object>(rt, rls, objs).ToString();
             }
             catch (Exception e)
             {
@@ -114,7 +114,7 @@ namespace gateway
             }
             finally
             {
-                CCQ.clientChannel.Dispose();
+                clientChannel.Dispose();
                 
             }
             

@@ -26,7 +26,7 @@ namespace gateway
             Dictionary<string, String> servicesDic = new Dictionary<string, String>();
             dynamic contentFromBody = "";
             //    await context.Response.WriteAsync(Encoding.GetEncoding("GB2312").ToString());
-            context.Response.ContentType = "text/plain;charset=utf-8";
+            context.Response.ContentType = "application/json;charset=utf-8";
             if (servers == null)
             { 
                 await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 999, msg = "非法请求" }));

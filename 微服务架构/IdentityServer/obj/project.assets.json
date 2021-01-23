@@ -7080,19 +7080,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\xingy\\.nuget\\packages\\": {}
+    "C:\\Users\\dreamsfly\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\IdentityServer\\IdentityServer.csproj",
+      "projectUniqueName": "D:\\weave-micro\\微服务架构\\IdentityServer\\IdentityServer.csproj",
       "projectName": "IdentityServer",
-      "projectPath": "D:\\WeaveMicro\\微服务架构\\IdentityServer\\IdentityServer.csproj",
-      "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
-      "outputPath": "D:\\WeaveMicro\\微服务架构\\IdentityServer\\obj\\",
+      "projectPath": "D:\\weave-micro\\微服务架构\\IdentityServer\\IdentityServer.csproj",
+      "packagesPath": "C:\\Users\\dreamsfly\\.nuget\\packages\\",
+      "outputPath": "D:\\weave-micro\\微服务架构\\IdentityServer\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dreamsfly\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7157,7 +7161,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

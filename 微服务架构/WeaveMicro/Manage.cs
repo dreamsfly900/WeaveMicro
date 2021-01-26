@@ -30,6 +30,15 @@ namespace WeaveMicrocenter
 
         }
     }
+    public class RouteLog
+    {
+        public string gayway;
+        public string RouteIP;
+        public string Route;
+        public string requestIP;
+        public string time;
+
+    }
     public class APIclient
     {
         public string Sid { get; set; }

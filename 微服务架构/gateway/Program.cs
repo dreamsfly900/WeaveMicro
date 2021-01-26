@@ -17,7 +17,8 @@ namespace gateway
 {
     class Program
     {
-         
+       public  static MicroClient mc ;
+        public static string applicationUrl;
         static void Main(string[] args)
         { 
 
@@ -26,11 +27,11 @@ namespace gateway
             Console.WriteLine("Running WeaveMicro网关.");
             var config = builder.Build();
             String mcip = config["Microcenter"];
-            MicroClient mc = new MicroClient(mcip.Split(':')[0],Convert.ToInt32( mcip.Split(':')[1]));
+            mc = new MicroClient(mcip.Split(':')[0], Convert.ToInt32(mcip.Split(':')[1]));
             mc.ReceiveEvent += Mc_ReceiveEvent;
-          bool ss=   mc.Connection(); 
+            mc.Connection(); 
             mc.RegClient("网关1");
-        
+            applicationUrl = config["applicationUrl"];
             args = new string[] { config["applicationUrl"] };
             CreateHostBuilder(args).Build().Run();
 

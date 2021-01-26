@@ -105,6 +105,8 @@ namespace WeaveMicro
                     break;
                 case 0x02:
                     //类型2
+                    RouteLog rl= Newtonsoft.Json.JsonConvert.DeserializeObject<RouteLog>(System.Text.UTF8Encoding.UTF8.GetString(data));
+                    Console.WriteLine($"网关：{rl.gayway},请求:{rl.RouteIP}+{rl.Route}，请求IP:{rl.requestIP},耗时:{rl.time}毫秒");
                     break;
                 case 0x03:
                     //类型2
@@ -132,6 +134,7 @@ namespace WeaveMicro
                     break;
             }
         }
+       
       static  List<server> GetServers(String file)
         {
             try

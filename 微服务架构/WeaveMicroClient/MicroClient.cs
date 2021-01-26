@@ -45,6 +45,12 @@ namespace WeaveMicroClient
             this.serv = serv;
             P2Pclient.Send(0x03, str);
         }
+        public void SendLog(RouteLog serv)
+        {
+            String str = Newtonsoft.Json.JsonConvert.SerializeObject(serv);
+             
+            P2Pclient.Send(0x02, str);
+        }
         public void RegClient(String Sid)
         {
             APIclient aPIclient = new APIclient();
@@ -74,6 +80,15 @@ namespace WeaveMicroClient
             }
             
         }
+    }
+    public class RouteLog
+    {
+        public string gayway;
+        public string RouteIP;
+        public string Route;
+        public string requestIP;
+        public string time;
+
     }
     public class APIclient
     {

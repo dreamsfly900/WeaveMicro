@@ -28,7 +28,7 @@ namespace gateway
             String mcip = config["Microcenter"];
             MicroClient mc = new MicroClient(mcip.Split(':')[0],Convert.ToInt32( mcip.Split(':')[1]));
             mc.ReceiveEvent += Mc_ReceiveEvent;
-            mc.Connection(); 
+          bool ss=   mc.Connection(); 
             mc.RegClient("网关1");
         
             args = new string[] { config["applicationUrl"] };
@@ -63,7 +63,9 @@ namespace gateway
                     sw.Write(datastr);
                     sw.Close();
                     Proccessor.servers = Funconfig.getConfig();
-               
+                   WeightAlgorithm._serviceDic.Clear();
+
+
             }
             catch (Exception e) { Console.WriteLine(e.Message); }
         }

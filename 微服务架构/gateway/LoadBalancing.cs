@@ -49,7 +49,7 @@ namespace wRPC
       internal class WeightAlgorithm
     {
         private static server serviceCenter = new server();
-        private static ConcurrentDictionary<string, WeightAlgorithmItem> _serviceDic = new ConcurrentDictionary<string, WeightAlgorithmItem>();
+        public static ConcurrentDictionary<string, WeightAlgorithmItem> _serviceDic = new ConcurrentDictionary<string, WeightAlgorithmItem>();
         private static SpinLock _spinLock = new SpinLock();
         public static async Task<server>  Get(server[] serviceList, string serviceName)
         {

@@ -147,6 +147,7 @@ namespace gateway
                     foreach (string hh in Cookies)
                         keysCookies.Add(hh, context.Request.Cookies[hh]);
                     //  context.Request.Headers
+                    //await context.Response.WriteAsync($"");
                     String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh,keysCookies);
                     ////String retun =  clientChannel.Call<String>(rl, rls[rls.Length - 1], objs);
                     //Encoding utf8 = Encoding.ASCII;
@@ -154,6 +155,8 @@ namespace gateway
                     //byte[] temp = utf8.GetBytes(retun);
                     //string result = ISO.GetString(temp);
                     await context.Response.WriteAsync($"{ retun}");
+
+                 // await context.Response.WriteAsync($"{ retun}{ objs.Length},{rl},{rls[rls.Length - 1]}，{ser.ToString()},{context.Request.ContentType}");
                     DateTime dt2 = DateTime.Now;
                 //    Console.WriteLine((dt2 - dt).TotalMilliseconds);
                     return;
@@ -161,6 +164,7 @@ namespace gateway
                 }
                 catch (Exception ex)
                 {
+                   
                     await context.Response.WriteAsync($" ~, {  ex.Message}");
                     return;
                 }

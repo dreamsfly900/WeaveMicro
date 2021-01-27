@@ -49,7 +49,7 @@ namespace WeaveMicroClient
         {
             String str = Newtonsoft.Json.JsonConvert.SerializeObject(serv);
 
-            if (P2Pclient.Send(0x02, str))
+            if (!P2Pclient.Send(0x02, str))
             {
                 P2Pclient_Timeoutevent();
             }

@@ -122,6 +122,7 @@ namespace WeaveMicro
         {
             try
             {
+                Console.WriteLine($"{command}");
                 switch (command)
                 {
                     case 0x01:
@@ -134,7 +135,7 @@ namespace WeaveMicro
                         break;
                     case 0x02:
                         //类型2
-                        Console.WriteLine($"0x02");
+                      
                         RouteLog rl = Newtonsoft.Json.JsonConvert.DeserializeObject<RouteLog>(System.Text.UTF8Encoding.UTF8.GetString(data));
                         Console.WriteLine($"网关：{rl.gayway},请求:{rl.RouteIP}+{rl.Route}，请求IP:{rl.requestIP},耗时:{rl.time}毫秒");
                         break;

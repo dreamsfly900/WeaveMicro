@@ -33,8 +33,29 @@ namespace WeaveMicro
             while (true)
             {
                 string command=Console.ReadLine();
-                switch (command) 
+                switch (command)
                 {
+                    case "printC":
+                        lock (APIclientlist)
+                        {
+
+                            foreach (APIclient api in APIclientlist)
+                            {
+                                Console.WriteLine($"网关:{api.socket.RemoteEndPoint.AddressFamily.ToString()}");
+
+                            }
+                        }
+                        break;
+                    case "printS":
+                        lock (servers)
+                        {
+                            foreach (server ser in servers)
+                            {
+                                Console.WriteLine($"服务:{ser.IP}:{ser.Port}");
+
+                            }
+                        }
+                        break;
                     case "exit":
                         Environment.Exit(0);
                         return; 
@@ -107,16 +128,20 @@ namespace WeaveMicro
                         APIclient client = Newtonsoft.Json.JsonConvert.DeserializeObject<APIclient>(System.Text.UTF8Encoding.UTF8.GetString(data));
                         client.socket = soc;
                         APIclientlist.Add(client);
+                        Console.WriteLine($"网关加入{client.socket.RemoteEndPoint.AddressFamily.ToString()}");
                         post();
                         break;
                     case 0x02:
                         //类型2
+                        Console.WriteLine($"0x02");
                         RouteLog rl = Newtonsoft.Json.JsonConvert.DeserializeObject<RouteLog>(System.Text.UTF8Encoding.UTF8.GetString(data));
                         Console.WriteLine($"网关：{rl.gayway},请求:{rl.RouteIP}+{rl.Route}，请求IP:{rl.requestIP},耗时:{rl.time}毫秒");
                         break;
                     case 0x03:
                         //类型2
+
                         server sers = Newtonsoft.Json.JsonConvert.DeserializeObject<server>(System.Text.UTF8Encoding.UTF8.GetString(data));
+                        Console.WriteLine($"服务加入{sers.IP}:{sers.Port}");
                         lock (servers)
                         {
                             foreach (server ser in servers)

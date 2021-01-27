@@ -48,8 +48,11 @@ namespace WeaveMicroClient
         public void SendLog(RouteLog serv)
         {
             String str = Newtonsoft.Json.JsonConvert.SerializeObject(serv);
-             
-            P2Pclient.Send(0x02, str);
+
+            if (P2Pclient.Send(0x02, str))
+            {
+                P2Pclient_Timeoutevent();
+            }
         }
         public void RegClient(String Sid)
         {

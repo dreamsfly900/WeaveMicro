@@ -53,6 +53,8 @@ namespace WeaveMicroClient
             {
                 P2Pclient_Timeoutevent();
             }
+            else
+                Console.WriteLine($"发送:log-{str}");
         }
         public void RegClient(String Sid)
         {

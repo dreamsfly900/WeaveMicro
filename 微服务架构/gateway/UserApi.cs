@@ -24,6 +24,7 @@ namespace gateway
         {
             if (context.Request.Method != "GET" && context.Request.Method != "POST")
                 return;
+            RouteLog rlog = new RouteLog();
             try
             {
                 Dictionary<string, String> servicesDic = new Dictionary<string, String>();
@@ -67,7 +68,7 @@ namespace gateway
                     }
 
                 }
-                RouteLog rlog = new RouteLog();
+             
                 rlog.Route = context.Request.Path.Value.Trim('/');
                 rlog.gayway = Program.applicationUrl;
 
@@ -180,14 +181,15 @@ namespace gateway
                     }
                     finally
                     {
-                        Program.mc.SendLog(rlog);
+                        
                     }
 
                 }
             }
-            catch
-            { }
-            finally { 
+            catch(Exception e)
+            { await context.Response.WriteAsync($" ~, {  e.Message}"); }
+            finally {
+                Program.mc.SendLog(rlog);
             }
 
 

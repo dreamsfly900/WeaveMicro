@@ -181,7 +181,7 @@ namespace gateway
                     }
                     finally
                     {
-                        
+                        Program.mc.SendLog(rlog);
                     }
 
                 }
@@ -189,7 +189,7 @@ namespace gateway
             catch(Exception e)
             { await context.Response.WriteAsync($" ~, {  e.Message}"); }
             finally {
-                Program.mc.SendLog(rlog);
+                
             }
 
 

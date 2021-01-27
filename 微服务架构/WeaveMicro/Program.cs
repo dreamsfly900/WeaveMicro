@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Text;
@@ -52,7 +53,8 @@ namespace WeaveMicro
                         {
                             foreach (server ser in servers)
                             {
-                                Console.WriteLine($"服务:{ser.IP}:{ser.Port}");
+                               
+                                Debug.WriteLine($"服务:{ser.IP}:{ser.Port}");
 
                             }
                         }
@@ -130,14 +132,14 @@ namespace WeaveMicro
                         APIclient client = Newtonsoft.Json.JsonConvert.DeserializeObject<APIclient>(System.Text.UTF8Encoding.UTF8.GetString(data));
                         client.socket = soc;
                         APIclientlist.Add(client);
-                        Console.WriteLine($"网关加入:{(client.socket.RemoteEndPoint as IPEndPoint).Address.ToString()}+{(client.socket.RemoteEndPoint as IPEndPoint).Port}");
+                        Debug.WriteLine($"网关加入:{(client.socket.RemoteEndPoint as IPEndPoint).Address.ToString()}+{(client.socket.RemoteEndPoint as IPEndPoint).Port}");
                         post();
                         break;
                     case 0x02:
                         //类型2
                       
                         RouteLog rl = Newtonsoft.Json.JsonConvert.DeserializeObject<RouteLog>(System.Text.UTF8Encoding.UTF8.GetString(data));
-                        Console.WriteLine($"网关：{rl.gayway},请求:{rl.RouteIP}+{rl.Route}，请求IP:{rl.requestIP},耗时:{rl.time}毫秒");
+                        Debug.WriteLine($"网关：{rl.gayway},请求:{rl.RouteIP}+{rl.Route}，请求IP:{rl.requestIP},耗时:{rl.time}毫秒");
                         break;
                     case 0x03:
                         //类型2
@@ -166,7 +168,7 @@ namespace WeaveMicro
                         post();
                         break;
                     default:
-                        Console.WriteLine("输入的有误，请重新输入");
+                        Debug.WriteLine("输入的有误，请重新输入");
                         break;
                 }
             }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
+using System.Net;
 using System.Text;
 using WeaveMicrocenter;
 using wRPCclient;
@@ -41,7 +42,7 @@ namespace WeaveMicro
 
                             foreach (APIclient api in APIclientlist)
                             {
-                                Console.WriteLine($"网关:{api.socket.RemoteEndPoint.AddressFamily.ToString()}");
+                                Console.WriteLine($"网关:{(api.socket.RemoteEndPoint as IPEndPoint).Address.ToString()}+{(api.socket.RemoteEndPoint as IPEndPoint).Port}");
 
                             }
                         }
@@ -128,7 +129,7 @@ namespace WeaveMicro
                         APIclient client = Newtonsoft.Json.JsonConvert.DeserializeObject<APIclient>(System.Text.UTF8Encoding.UTF8.GetString(data));
                         client.socket = soc;
                         APIclientlist.Add(client);
-                        Console.WriteLine($"网关加入{client.socket.RemoteEndPoint.AddressFamily.ToString()}");
+                        Console.WriteLine($"网关加入:{(client.socket.RemoteEndPoint as IPEndPoint).Address.ToString()}+{(client.socket.RemoteEndPoint as IPEndPoint).Port}");
                         post();
                         break;
                     case 0x02:

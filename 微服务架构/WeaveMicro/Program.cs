@@ -47,46 +47,50 @@ namespace WeaveMicro
 
         private static void WeaveP2Server_weaveDeleteSocketListEvent(System.Net.Sockets.Socket soc)
         {
-            lock (APIclientlist)
+            try
             {
-
-                foreach (APIclient api in APIclientlist)
+                lock (APIclientlist)
                 {
-                    if (api.socket.Equals(soc))
-                    {
-                        APIclientlist.Remove(api);
-                        return;
-                    }
 
-                }
-            }
-            lock (APIgateway)
-            {
-
-                foreach (APIclient api in APIgateway)
-                {
-                    if (api.socket.Equals(soc))
+                    foreach (APIclient api in APIclientlist)
                     {
-                        APIgateway.Remove(api);
-                        lock (servers)
+                        if (api.socket.Equals(soc))
                         {
-                            foreach (server ser in servers)
-                            {
-                                if (api.IP == ser.IP && api.port == ser.Port)
-                                {
-                                    servers.Remove(ser);
-                                    break;
-                                }
-
-                            }
+                            APIclientlist.Remove(api);
+                            return;
                         }
 
-                        post();
-                        return;
                     }
+                }
+                lock (APIgateway)
+                {
 
+                    foreach (APIclient api in APIgateway)
+                    {
+                        if (api.socket.Equals(soc))
+                        {
+                            APIgateway.Remove(api);
+                            lock (servers)
+                            {
+                                foreach (server ser in servers)
+                                {
+                                    if (api.IP == ser.IP && api.port == ser.Port)
+                                    {
+                                        servers.Remove(ser);
+                                        break;
+                                    }
+
+                                }
+                            }
+
+                            post();
+                            return;
+                        }
+
+                    }
                 }
             }
+            catch { }
         }
 
         static List<server> servers = new List<server>();
@@ -94,45 +98,52 @@ namespace WeaveMicro
         static List<APIclient> APIgateway = new List<APIclient>();
         private static void WeaveP2Server_weaveReceiveBitEvent(byte command, byte[] data, System.Net.Sockets.Socket soc)
         {
-            switch (command)
+            try
             {
-                case  0x01:
-                    //类型1
-                    APIclient client = Newtonsoft.Json.JsonConvert.DeserializeObject<APIclient>(System.Text.UTF8Encoding.UTF8.GetString(data));
-                    client.socket = soc;
-                    APIclientlist.Add(client);
-                    post();
-                    break;
-                case 0x02:
-                    //类型2
-                    RouteLog rl= Newtonsoft.Json.JsonConvert.DeserializeObject<RouteLog>(System.Text.UTF8Encoding.UTF8.GetString(data));
-                    Console.WriteLine($"网关：{rl.gayway},请求:{rl.RouteIP}+{rl.Route}，请求IP:{rl.requestIP},耗时:{rl.time}毫秒");
-                    break;
-                case 0x03:
-                    //类型2
-                    server sers= Newtonsoft.Json.JsonConvert.DeserializeObject<server>(System.Text.UTF8Encoding.UTF8.GetString(data));
-                    foreach (server ser in servers)
-                    {
-                        if (sers.IP == ser.IP && sers.Port == ser.Port)
-                        {
-                            servers.Remove(ser);
-                            break;
-                        }
-
-                    }
-                    servers.Add(sers);
-                    APIclient aPIclient = new APIclient();
-                    aPIclient.socket = soc;
-                    aPIclient.IP = sers.IP;
-                    aPIclient.port = sers.Port;
-                    APIgateway.Add(aPIclient);
-                    save(JsonConvert.SerializeObject(servers));
-                    post();
+                switch (command)
+                {
+                    case 0x01:
+                        //类型1
+                        APIclient client = Newtonsoft.Json.JsonConvert.DeserializeObject<APIclient>(System.Text.UTF8Encoding.UTF8.GetString(data));
+                        client.socket = soc;
+                        APIclientlist.Add(client);
+                        post();
                         break;
-                default:
-                    Console.WriteLine("输入的有误，请重新输入");
-                    break;
+                    case 0x02:
+                        //类型2
+                        RouteLog rl = Newtonsoft.Json.JsonConvert.DeserializeObject<RouteLog>(System.Text.UTF8Encoding.UTF8.GetString(data));
+                        Console.WriteLine($"网关：{rl.gayway},请求:{rl.RouteIP}+{rl.Route}，请求IP:{rl.requestIP},耗时:{rl.time}毫秒");
+                        break;
+                    case 0x03:
+                        //类型2
+                        server sers = Newtonsoft.Json.JsonConvert.DeserializeObject<server>(System.Text.UTF8Encoding.UTF8.GetString(data));
+                        lock (servers)
+                        {
+                            foreach (server ser in servers)
+                            {
+                                if (sers.IP == ser.IP && sers.Port == ser.Port)
+                                {
+                                    servers.Remove(ser);
+                                    break;
+                                }
+
+                            }
+                        }
+                        servers.Add(sers);
+                        APIclient aPIclient = new APIclient();
+                        aPIclient.socket = soc;
+                        aPIclient.IP = sers.IP;
+                        aPIclient.port = sers.Port;
+                        APIgateway.Add(aPIclient);
+                        save(JsonConvert.SerializeObject(servers));
+                        post();
+                        break;
+                    default:
+                        Console.WriteLine("输入的有误，请重新输入");
+                        break;
+                }
             }
+            catch (Exception e){ Console.WriteLine("weaveReceiveBitEvent"+e.Message); }
         }
        
       static  List<server> GetServers(String file)

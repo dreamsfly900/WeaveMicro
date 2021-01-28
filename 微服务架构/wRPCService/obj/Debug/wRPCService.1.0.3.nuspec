@@ -9,7 +9,7 @@
     <dependencies>
       <group targetFramework=".NETStandard2.0">
         <dependency id="Microsoft.AspNetCore" version="2.2.0" exclude="Build,Analyzers" />
-        <dependency id="Weave.Server" version="2.0.19" exclude="Build,Analyzers" />
+        <dependency id="Weave.Server" version="2.0.20" exclude="Build,Analyzers" />
       </group>
     </dependencies>
   </metadata>

@@ -28,7 +28,9 @@ namespace IdentityServer
             var builder = services.AddIdentityServer()
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryApiResources(Config.GetApis())
-                .AddInMemoryClients(Config.GetClients());
+                .AddResourceOwnerValidator<ResourceOwnerPasswordValidator>()
+                .AddInMemoryClients(Config.GetClients()).AddProfileService<ProfileService>();
+          
             builder.AddDeveloperSigningCredential();
             if (Environment.IsDevelopment())
             {
@@ -49,7 +51,7 @@ namespace IdentityServer
 
             // uncomment if you want to support static files
             //app.UseStaticFiles();
-             app.UseMiddleware<CorsMiddleware>();
+             //app.UseMiddleware<CorsMiddleware>();
 
              //app.Use(async (context, next) => {
               

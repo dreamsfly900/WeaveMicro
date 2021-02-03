@@ -4,15 +4,18 @@
 
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
 using System;
+using System.IO;
 
 namespace IdentityServer
 {
     public class Program
     {
+        static IConfigurationBuilder builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("config.json");
         public static void Main(string[] args)
         {
             Console.Title = "IdentityServer4";
@@ -22,7 +25,8 @@ namespace IdentityServer
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args)
         {
-            return WebHost.CreateDefaultBuilder(args).UseUrls(args[0])
+            var config = builder.Build();
+            return WebHost.CreateDefaultBuilder().UseUrls(config["applicationUrl"])
                     .UseStartup<Startup>()
                     .UseSerilog((context, configuration) =>
                     {

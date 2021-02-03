@@ -1,6 +1,6 @@
 {
   "Authentication": true,
-  "IdentityServer": "http://116.255.241.135:5000",
+  "IdentityServer": "http://116.255.241.135:5221",
   "Audience": "api1",
   "defaultScheme": "Bearer",
   "applicationUrl": "http://127.0.0.1:1221",

@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using wRPC;
 using Newtonsoft.Json;
 using WeaveMicroClient;
+using System.Linq;
 
 namespace gateway
 {
@@ -154,8 +155,15 @@ namespace gateway
                             keysh.Add(hh, context.Request.Headers[hh]);
                         String[] Cookies = Startup.config.GetSection("Cookies").Get<String[]>();
                         Dictionary<string, String> keysCookies = new Dictionary<string, string>();
-                        foreach (string hh in Cookies)
-                            keysCookies.Add(hh, context.Request.Cookies[hh]);
+                       
+                        if (context.User.Identity.IsAuthenticated)
+                        {
+                            foreach (string hh in Cookies)
+                            {
+                                if(context.User.Claims.Count(c => c.Type == hh)>0)
+                                keysCookies.Add(hh, context.User.Claims.Single(c => c.Type == hh).Value);
+                            }
+                        }
                         //  context.Request.Headers
                         //await context.Response.WriteAsync($"");
                         String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh, keysCookies);
@@ -195,7 +203,7 @@ namespace gateway
 
         }
 
-         static bool IsAuthenticated(HttpContext context, bool Authorize)
+         static bool IsAuthenticated(HttpContext context, bool Authorize )
         {
             if (Convert.ToBoolean(Startup.config["Authentication"]) )
             {
@@ -203,6 +211,8 @@ namespace gateway
                 {
                     if (!context.User.Identity.IsAuthenticated)
                     {
+                        
+
                         // await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 0, msg = "非法请求" }));
                         //  context.Abort();
                         return false;

@@ -2291,3 +2291,266 @@ System.InvalidOperationException: No signing credential is configured. Can't cre
 2021-01-21 12:51:02.293 +08:00 [DBG] Connection id "0HM5TP0F4M44F" disconnecting.
 2021-01-21 12:51:02.295 +08:00 [DBG] Connection id "0HM5TP0F4M44F" stopped.
 2021-01-21 12:51:02.299 +08:00 [DBG] Connection id "0HM5TP0F4M44F" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-02-04 10:33:24.671 +08:00 [DBG] Hosting starting
+2021-02-04 10:33:24.773 +08:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2021-02-04 10:33:24.778 +08:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2021-02-04 10:33:24.780 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2021-02-04 10:33:24.780 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2021-02-04 10:33:24.780 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2021-02-04 10:33:24.780 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2021-02-04 10:33:24.780 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2021-02-04 10:33:24.860 +08:00 [INF] User profile is available. Using 'C:\Users\xingy\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-02-04 10:33:24.866 +08:00 [DBG] Reading data from file 'C:\Users\xingy\AppData\Local\ASP.NET\DataProtection-Keys\key-197f24f7-b435-427a-93a3-feae6f19b4bf.xml'.
+2021-02-04 10:33:24.887 +08:00 [DBG] Found key "197f24f7-b435-427a-93a3-feae6f19b4bf".
+2021-02-04 10:33:24.903 +08:00 [DBG] Considering key "197f24f7-b435-427a-93a3-feae6f19b4bf" with expiration date "2021-03-25T10:41:37.3300048+00:00" as default key.
+2021-02-04 10:33:24.940 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2021-02-04 10:33:24.944 +08:00 [DBG] Decrypting secret element using Windows DPAPI.
+2021-02-04 10:33:24.945 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2021-02-04 10:33:24.949 +08:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2021-02-04 10:33:24.951 +08:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2021-02-04 10:33:24.954 +08:00 [DBG] Using key "197f24f7-b435-427a-93a3-feae6f19b4bf" as the default key.
+2021-02-04 10:33:24.955 +08:00 [DBG] Key ring with default key "197f24f7-b435-427a-93a3-feae6f19b4bf" was loaded during application startup.
+2021-02-04 10:33:25.089 +08:00 [DBG] Hosting started
+2021-02-04 10:33:25.090 +08:00 [DBG] Loaded hosting startup assembly IdentityServer
+2021-02-04 10:33:26.772 +08:00 [DBG] Hosting shutdown
+2021-02-04 10:34:01.325 +08:00 [DBG] Hosting starting
+2021-02-04 10:34:01.363 +08:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2021-02-04 10:34:01.367 +08:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2021-02-04 10:34:01.368 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2021-02-04 10:34:01.369 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2021-02-04 10:34:01.369 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2021-02-04 10:34:01.369 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2021-02-04 10:34:01.369 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2021-02-04 10:34:01.393 +08:00 [INF] User profile is available. Using 'C:\Users\xingy\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-02-04 10:34:01.399 +08:00 [DBG] Reading data from file 'C:\Users\xingy\AppData\Local\ASP.NET\DataProtection-Keys\key-197f24f7-b435-427a-93a3-feae6f19b4bf.xml'.
+2021-02-04 10:34:01.409 +08:00 [DBG] Found key "197f24f7-b435-427a-93a3-feae6f19b4bf".
+2021-02-04 10:34:01.423 +08:00 [DBG] Considering key "197f24f7-b435-427a-93a3-feae6f19b4bf" with expiration date "2021-03-25T10:41:37.3300048+00:00" as default key.
+2021-02-04 10:34:01.440 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2021-02-04 10:34:01.443 +08:00 [DBG] Decrypting secret element using Windows DPAPI.
+2021-02-04 10:34:01.445 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2021-02-04 10:34:01.450 +08:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2021-02-04 10:34:01.452 +08:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2021-02-04 10:34:01.455 +08:00 [DBG] Using key "197f24f7-b435-427a-93a3-feae6f19b4bf" as the default key.
+2021-02-04 10:34:01.456 +08:00 [DBG] Key ring with default key "197f24f7-b435-427a-93a3-feae6f19b4bf" was loaded during application startup.
+2021-02-04 10:34:01.485 +08:00 [DBG] Hosting started
+2021-02-04 10:34:01.487 +08:00 [DBG] Loaded hosting startup assembly IdentityServer
+2021-02-04 10:34:01.860 +08:00 [DBG] Connection id "0HM68MLAKMSBM" accepted.
+2021-02-04 10:34:01.861 +08:00 [DBG] Connection id "0HM68MLAKMSBM" started.
+2021-02-04 10:34:01.887 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/ - -
+2021-02-04 10:34:01.896 +08:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2021-02-04 10:34:01.909 +08:00 [DBG] Login Url: /Account/Login
+2021-02-04 10:34:01.910 +08:00 [DBG] Login Return Url Parameter: ReturnUrl
+2021-02-04 10:34:01.910 +08:00 [DBG] Logout Url: /Account/Logout
+2021-02-04 10:34:01.911 +08:00 [DBG] ConsentUrl Url: /consent
+2021-02-04 10:34:01.911 +08:00 [DBG] Consent Return Url Parameter: returnUrl
+2021-02-04 10:34:01.911 +08:00 [DBG] Error Url: /home/error
+2021-02-04 10:34:01.912 +08:00 [DBG] Error Id Parameter: errorId
+2021-02-04 10:34:01.915 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:01.920 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:01.941 +08:00 [DBG] Connection id "0HM68MLAKMSBM" completed keep alive response.
+2021-02-04 10:34:01.944 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/ - - - 404 0 - 58.8370ms
+2021-02-04 10:34:02.055 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/ - -
+2021-02-04 10:34:02.056 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.058 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.059 +08:00 [DBG] Connection id "0HM68MLAKMSBM" completed keep alive response.
+2021-02-04 10:34:02.060 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/ - - - 404 0 - 5.0674ms
+2021-02-04 10:34:02.164 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/ - -
+2021-02-04 10:34:02.167 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.169 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.169 +08:00 [DBG] Connection id "0HM68MLAKMSBM" completed keep alive response.
+2021-02-04 10:34:02.170 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/ - - - 404 0 - 6.1033ms
+2021-02-04 10:34:02.274 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/ - -
+2021-02-04 10:34:02.275 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.276 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.277 +08:00 [DBG] Connection id "0HM68MLAKMSBM" completed keep alive response.
+2021-02-04 10:34:02.278 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/ - - - 404 0 - 3.2779ms
+2021-02-04 10:34:02.388 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/ - -
+2021-02-04 10:34:02.389 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.389 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.390 +08:00 [DBG] Connection id "0HM68MLAKMSBM" completed keep alive response.
+2021-02-04 10:34:02.395 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/ - - - 404 0 - 7.4204ms
+2021-02-04 10:34:02.439 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/ - -
+2021-02-04 10:34:02.440 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.441 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.442 +08:00 [DBG] Connection id "0HM68MLAKMSBM" completed keep alive response.
+2021-02-04 10:34:02.443 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/ - - - 404 0 - 3.5679ms
+2021-02-04 10:34:02.547 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/ - -
+2021-02-04 10:34:02.547 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.548 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.549 +08:00 [DBG] Connection id "0HM68MLAKMSBM" completed keep alive response.
+2021-02-04 10:34:02.550 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/ - - - 404 0 - 3.0992ms
+2021-02-04 10:34:02.658 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/ - -
+2021-02-04 10:34:02.658 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.660 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.660 +08:00 [DBG] Connection id "0HM68MLAKMSBM" completed keep alive response.
+2021-02-04 10:34:02.661 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/ - - - 404 0 - 2.9407ms
+2021-02-04 10:34:02.770 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/ - -
+2021-02-04 10:34:02.771 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.772 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.773 +08:00 [DBG] Connection id "0HM68MLAKMSBM" completed keep alive response.
+2021-02-04 10:34:02.774 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/ - - - 404 0 - 3.5070ms
+2021-02-04 10:34:02.882 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/ - -
+2021-02-04 10:34:02.883 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.884 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.885 +08:00 [DBG] Connection id "0HM68MLAKMSBM" completed keep alive response.
+2021-02-04 10:34:02.885 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/ - - - 404 0 - 3.4154ms
+2021-02-04 10:34:02.994 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/ - -
+2021-02-04 10:34:02.996 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.997 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:34:02.997 +08:00 [DBG] Connection id "0HM68MLAKMSBM" completed keep alive response.
+2021-02-04 10:34:03.000 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/ - - - 404 0 - 6.2982ms
+2021-02-04 10:34:12.508 +08:00 [DBG] Connection id "0HM68MLAKMSBM" reset.
+2021-02-04 10:34:12.510 +08:00 [DBG] Connection id "0HM68MLAKMSBM" disconnecting.
+2021-02-04 10:34:12.512 +08:00 [DBG] Connection id "0HM68MLAKMSBM" sending FIN because: "The client closed the connection."
+2021-02-04 10:34:12.515 +08:00 [DBG] Connection id "0HM68MLAKMSBM" stopped.
+2021-02-04 10:35:34.167 +08:00 [DBG] Connection id "0HM68MLAKMSBN" accepted.
+2021-02-04 10:35:34.169 +08:00 [DBG] Connection id "0HM68MLAKMSBN" started.
+2021-02-04 10:35:34.174 +08:00 [INF] Request starting HTTP/1.1 POST http://127.0.0.1:5221/connect/token application/x-www-form-urlencoded 155
+2021-02-04 10:35:34.174 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:35:34.175 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:35:34.188 +08:00 [DBG] Request path /connect/token matched to endpoint type Token
+2021-02-04 10:35:34.194 +08:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2021-02-04 10:35:34.196 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2021-02-04 10:35:34.199 +08:00 [DBG] Start token request.
+2021-02-04 10:35:34.201 +08:00 [DBG] Start client validation
+2021-02-04 10:35:34.204 +08:00 [DBG] Start parsing Basic Authentication secret
+2021-02-04 10:35:34.205 +08:00 [DBG] Start parsing for secret in post body
+2021-02-04 10:35:34.207 +08:00 [DBG] Connection id "0HM68MLAKMSBN", Request id "0HM68MLAKMSBN:00000002": started reading request body.
+2021-02-04 10:35:34.208 +08:00 [DBG] Connection id "0HM68MLAKMSBN", Request id "0HM68MLAKMSBN:00000002": done reading request body.
+2021-02-04 10:35:34.213 +08:00 [DBG] Parser found secret: PostBodySecretParser
+2021-02-04 10:35:34.214 +08:00 [DBG] Secret id found: client
+2021-02-04 10:35:34.222 +08:00 [DBG] client configuration validation for client client succeeded.
+2021-02-04 10:35:34.230 +08:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2021-02-04 10:35:34.231 +08:00 [DBG] Client validation success
+2021-02-04 10:35:34.236 +08:00 [DBG] Start token request validation
+2021-02-04 10:35:34.240 +08:00 [DBG] Start resource owner password token request validation
+2021-02-04 10:35:34.262 +08:00 [DBG] Resource owner password token request validation success.
+2021-02-04 10:35:34.273 +08:00 [INF] Token request validation success
+{"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"api1","AuthorizationCode":null,"RefreshToken":null,"UserName":"admin","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","scope":"api1","client_Id":"client","client_secret":"***REDACTED***","username":"admin","password":"***REDACTED***","prj":"项目名称类型"},"$type":"TokenRequestValidationLog"}
+2021-02-04 10:35:34.293 +08:00 [DBG] Getting claims for access token for client: client
+2021-02-04 10:35:34.301 +08:00 [DBG] Getting claims for access token for subject: admin
+2021-02-04 10:35:34.306 +08:00 [DBG] Claim types from profile service that were filtered: ["sub","amr","idp","auth_time"]
+2021-02-04 10:35:34.549 +08:00 [DBG] Token request success.
+2021-02-04 10:35:34.558 +08:00 [DBG] Connection id "0HM68MLAKMSBN" completed keep alive response.
+2021-02-04 10:35:34.560 +08:00 [INF] Request finished HTTP/1.1 POST http://127.0.0.1:5221/connect/token application/x-www-form-urlencoded 155 - 200 - application/json;+charset=UTF-8 386.1023ms
+2021-02-04 10:37:36.104 +08:00 [DBG] Connection id "0HM68MLAKMSBN" disconnecting.
+2021-02-04 10:37:36.105 +08:00 [DBG] Connection id "0HM68MLAKMSBN" stopped.
+2021-02-04 10:37:36.107 +08:00 [DBG] Connection id "0HM68MLAKMSBN" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-02-04 10:40:35.901 +08:00 [DBG] Connection id "0HM68MLAKMSBO" accepted.
+2021-02-04 10:40:35.903 +08:00 [DBG] Connection id "0HM68MLAKMSBO" started.
+2021-02-04 10:40:35.914 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration - -
+2021-02-04 10:40:35.917 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:40:35.919 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:40:35.920 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-02-04 10:40:35.921 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-02-04 10:40:35.922 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-02-04 10:40:35.924 +08:00 [DBG] Start discovery request
+2021-02-04 10:40:35.951 +08:00 [DBG] Connection id "0HM68MLAKMSBO" completed keep alive response.
+2021-02-04 10:40:35.952 +08:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 38.4583ms
+2021-02-04 10:40:36.108 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration/jwks - -
+2021-02-04 10:40:36.109 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:40:36.110 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:40:36.110 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-02-04 10:40:36.111 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-02-04 10:40:36.112 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-02-04 10:40:36.115 +08:00 [DBG] Start key discovery request
+2021-02-04 10:40:36.128 +08:00 [DBG] Connection id "0HM68MLAKMSBO" completed keep alive response.
+2021-02-04 10:40:36.130 +08:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 22.6764ms
+2021-02-04 10:41:36.552 +08:00 [DBG] Connection id "0HM68MLAKMSBO" reset.
+2021-02-04 10:41:36.553 +08:00 [DBG] Connection id "0HM68MLAKMSBO" disconnecting.
+2021-02-04 10:41:36.555 +08:00 [DBG] Connection id "0HM68MLAKMSBO" stopped.
+2021-02-04 10:41:36.555 +08:00 [DBG] Connection id "0HM68MLAKMSBO" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-02-04 10:48:06.484 +08:00 [DBG] Connection id "0HM68MLAKMSBP" accepted.
+2021-02-04 10:48:06.485 +08:00 [DBG] Connection id "0HM68MLAKMSBP" started.
+2021-02-04 10:48:06.495 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration - -
+2021-02-04 10:48:06.496 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:48:06.497 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:48:06.498 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-02-04 10:48:06.499 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-02-04 10:48:06.499 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-02-04 10:48:06.500 +08:00 [DBG] Start discovery request
+2021-02-04 10:48:06.501 +08:00 [DBG] Connection id "0HM68MLAKMSBP" completed keep alive response.
+2021-02-04 10:48:06.502 +08:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 6.3154ms
+2021-02-04 10:48:06.636 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration/jwks - -
+2021-02-04 10:48:06.638 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:48:06.638 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 10:48:06.639 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-02-04 10:48:06.640 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-02-04 10:48:06.640 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-02-04 10:48:06.641 +08:00 [DBG] Start key discovery request
+2021-02-04 10:48:06.642 +08:00 [DBG] Connection id "0HM68MLAKMSBP" completed keep alive response.
+2021-02-04 10:48:06.642 +08:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 6.4668ms
+2021-02-04 10:50:08.429 +08:00 [DBG] Connection id "0HM68MLAKMSBP" disconnecting.
+2021-02-04 10:50:08.430 +08:00 [DBG] Connection id "0HM68MLAKMSBP" stopped.
+2021-02-04 10:50:08.432 +08:00 [DBG] Connection id "0HM68MLAKMSBP" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-02-04 11:04:28.380 +08:00 [DBG] Connection id "0HM68MLAKMSBQ" accepted.
+2021-02-04 11:04:28.382 +08:00 [DBG] Connection id "0HM68MLAKMSBQ" started.
+2021-02-04 11:04:28.398 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration - -
+2021-02-04 11:04:28.399 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 11:04:28.400 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 11:04:28.400 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-02-04 11:04:28.402 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-02-04 11:04:28.404 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-02-04 11:04:28.404 +08:00 [DBG] Start discovery request
+2021-02-04 11:04:28.405 +08:00 [DBG] Connection id "0HM68MLAKMSBQ" completed keep alive response.
+2021-02-04 11:04:28.406 +08:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 7.5448ms
+2021-02-04 11:04:28.546 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration/jwks - -
+2021-02-04 11:04:28.548 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 11:04:28.548 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 11:04:28.549 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-02-04 11:04:28.551 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-02-04 11:04:28.552 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-02-04 11:04:28.552 +08:00 [DBG] Start key discovery request
+2021-02-04 11:04:28.553 +08:00 [DBG] Connection id "0HM68MLAKMSBQ" completed keep alive response.
+2021-02-04 11:04:28.554 +08:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 7.6559ms
+2021-02-04 11:06:30.359 +08:00 [DBG] Connection id "0HM68MLAKMSBQ" disconnecting.
+2021-02-04 11:06:30.360 +08:00 [DBG] Connection id "0HM68MLAKMSBQ" stopped.
+2021-02-04 11:06:30.363 +08:00 [DBG] Connection id "0HM68MLAKMSBQ" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-02-04 11:08:00.165 +08:00 [DBG] Connection id "0HM68MLAKMSBR" accepted.
+2021-02-04 11:08:00.165 +08:00 [DBG] Connection id "0HM68MLAKMSBR" started.
+2021-02-04 11:08:00.176 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration - -
+2021-02-04 11:08:00.178 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 11:08:00.179 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 11:08:00.180 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-02-04 11:08:00.180 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-02-04 11:08:00.181 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-02-04 11:08:00.182 +08:00 [DBG] Start discovery request
+2021-02-04 11:08:00.183 +08:00 [DBG] Connection id "0HM68MLAKMSBR" completed keep alive response.
+2021-02-04 11:08:00.183 +08:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 7.0519ms
+2021-02-04 11:08:00.336 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration/jwks - -
+2021-02-04 11:08:00.338 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 11:08:00.339 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 11:08:00.339 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-02-04 11:08:00.340 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-02-04 11:08:00.341 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-02-04 11:08:00.341 +08:00 [DBG] Start key discovery request
+2021-02-04 11:08:00.342 +08:00 [DBG] Connection id "0HM68MLAKMSBR" completed keep alive response.
+2021-02-04 11:08:00.345 +08:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 8.5307ms
+2021-02-04 11:09:31.660 +08:00 [DBG] Connection id "0HM68MLAKMSBR" reset.
+2021-02-04 11:09:31.663 +08:00 [DBG] Connection id "0HM68MLAKMSBR" disconnecting.
+2021-02-04 11:09:31.664 +08:00 [DBG] Connection id "0HM68MLAKMSBR" sending FIN because: "The client closed the connection."
+2021-02-04 11:09:31.667 +08:00 [DBG] Connection id "0HM68MLAKMSBR" stopped.
+2021-02-04 11:10:43.677 +08:00 [DBG] Connection id "0HM68MLAKMSBS" accepted.
+2021-02-04 11:10:43.679 +08:00 [DBG] Connection id "0HM68MLAKMSBS" started.
+2021-02-04 11:10:43.688 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration - -
+2021-02-04 11:10:43.688 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 11:10:43.689 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 11:10:43.691 +08:00 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2021-02-04 11:10:43.692 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2021-02-04 11:10:43.692 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2021-02-04 11:10:43.693 +08:00 [DBG] Start discovery request
+2021-02-04 11:10:43.694 +08:00 [DBG] Connection id "0HM68MLAKMSBS" completed keep alive response.
+2021-02-04 11:10:43.694 +08:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration - - - 200 - application/json;+charset=UTF-8 6.8599ms
+2021-02-04 11:10:43.829 +08:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration/jwks - -
+2021-02-04 11:10:43.831 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 11:10:43.832 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2021-02-04 11:10:43.834 +08:00 [DBG] Request path /.well-known/openid-configuration/jwks matched to endpoint type Discovery
+2021-02-04 11:10:43.834 +08:00 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryKeyEndpoint
+2021-02-04 11:10:43.836 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryKeyEndpoint for /.well-known/openid-configuration/jwks
+2021-02-04 11:10:43.836 +08:00 [DBG] Start key discovery request
+2021-02-04 11:10:43.837 +08:00 [DBG] Connection id "0HM68MLAKMSBS" completed keep alive response.
+2021-02-04 11:10:43.838 +08:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5221/.well-known/openid-configuration/jwks - - - 200 - application/json;+charset=UTF-8 8.4502ms
+2021-02-04 11:10:56.839 +08:00 [DBG] Connection id "0HM68MLAKMSBS" reset.
+2021-02-04 11:10:56.841 +08:00 [DBG] Connection id "0HM68MLAKMSBS" disconnecting.
+2021-02-04 11:10:56.842 +08:00 [DBG] Connection id "0HM68MLAKMSBS" sending FIN because: "The client closed the connection."
+2021-02-04 11:10:56.843 +08:00 [DBG] Connection id "0HM68MLAKMSBS" stopped.

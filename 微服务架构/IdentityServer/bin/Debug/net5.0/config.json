@@ -3,6 +3,6 @@
   "IdentityServer": "http://localhost:5000",
   "Audience": "api1",
   "defaultScheme": "Bearer",
-  "applicationUrl": "http://localhost:1221",
+  "applicationUrl": "http://localhost:5221",
   "Microcenter": "127.0.0.1:9001"
 }

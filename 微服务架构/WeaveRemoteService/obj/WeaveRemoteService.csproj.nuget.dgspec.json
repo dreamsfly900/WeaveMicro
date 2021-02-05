@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WeaveMicro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj": {}
+    "D:\\weave-micro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj": {}
   },
   "projects": {
-    "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj": {
+    "D:\\weave-micro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj",
+        "projectUniqueName": "D:\\weave-micro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj",
         "projectName": "WeaveMicroClient",
-        "projectPath": "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj",
-        "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
-        "outputPath": "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\obj\\",
+        "projectPath": "D:\\weave-micro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\weave-micro\\微服务架构\\WeaveMicroClient\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,14 +22,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "\\\\192.168.1.100\\share\\syc\\nupkgs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
-                "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj"
+              "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj": {
+                "projectPath": "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj"
               }
             }
           }
@@ -73,17 +74,17 @@
         }
       }
     },
-    "D:\\WeaveMicro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj": {
+    "D:\\weave-micro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj": {
       "version": "1.0.3",
       "restore": {
-        "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj",
+        "projectUniqueName": "D:\\weave-micro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj",
         "projectName": "WeaveRemoteService",
-        "projectPath": "D:\\WeaveMicro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj",
-        "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
-        "outputPath": "D:\\WeaveMicro\\微服务架构\\WeaveRemoteService\\obj\\",
+        "projectPath": "D:\\weave-micro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\weave-micro\\微服务架构\\WeaveRemoteService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -91,17 +92,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "\\\\192.168.1.100\\share\\syc\\nupkgs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj": {
-                "projectPath": "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj"
+              "D:\\weave-micro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj": {
+                "projectPath": "D:\\weave-micro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj"
               },
-              "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
-                "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj"
+              "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj": {
+                "projectPath": "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj"
               }
             }
           }
@@ -137,17 +139,17 @@
         }
       }
     },
-    "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
+    "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj": {
       "version": "1.0.4",
       "restore": {
-        "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
+        "projectUniqueName": "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj",
         "projectName": "wRPCService",
-        "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
-        "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
-        "outputPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\obj\\",
+        "projectPath": "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\weave-micro\\微服务架构\\wRPCService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -155,6 +157,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "\\\\192.168.1.100\\share\\syc\\nupkgs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

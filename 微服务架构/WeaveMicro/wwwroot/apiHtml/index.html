@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div>
+            <img class="logo" src="image/API.png" alt="">
+            <span class="title">API DOC</span>
+            <p class="rigInput inBlock">
+                <input type="text" placeholder="http://example.com/api" id="url">
+                <input type="text" placeholder="api_key" id="apiKey">
+                <button id="searchBtn">查找</button>
+            </p>
+        </div>
+    </div>
+    <div class="bodyPart box-section">
+        <div>
+            <ul class="moduleList">
+                <li>
+                    <div>
+                        <span class="subTit">abcd</span>
+                        <p class="operaBtnPart inBlock fRig">
+                            <button class="showOrhide">显示/隐藏</button>
+                            <button class="showOperaOrhideOpera">展开/隐藏操作</button>
+                        </p>
+                    </div>
+                    <ul class="slideList">
+                        <li class="POST">
+                            <p class="col">
+                                <button>POST</button>
+                                <span>/api/abcd/ff</span>
+                                <span class="fRig defColor">添加数据</span>
+                            </p>
+                            <div class="operaDetails">
+                                <p>
+                                    响应Content Type
+                                    <select name="" id="">
+                                        <option value="0" selected>application/json</option>
+                                        <option value="1">text/json</option>
+                                    </select>
+                                </p>
+                                <p class="defColor">参数</p>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td>参数</td>
+                                            <td>值</td>
+                                            <td>描述</td>
+                                            <td>参数类型</td>
+                                            <td>数据类型</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>mode</td>
+                                            <td>
+                                                <textarea name="" id="" cols="30" rows="10" placeholder="(required)"></textarea>
+                                                <p>Parameter content type:</p>
+                                                <select name="" id="">
+                                                    <option value="0">application/json</option>
+                                                    <option value="1">text/json</option>
+                                                    <option value="2">application/x-www-form-urlencoded</option>
+                                                </select>
+                                            </td>
+                                            <td>参数</td>
+                                            <td>body</td>
+                                            <td>
+                                                <p>Example Value</p>
+                                                <div class="examBox">
+                                                    <pre><code>  {
+        "accesstoken": "string",
+        "observertimes": "string",
+        "yaosu": "string",
+        "datatype": "string",
+        "datacc": "string",
+        "showtype": "string"
+    }</code></pre>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="bottBtn">
+                                    <button class="tryBtn">试一下！</button>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="GET">
+                            <p class="col">
+                                <button>GET</button>
+                                <span>/api/abcd/ff1</span>
+                                <span class="fRig defColor">获取数据列表</span>
+                            </p>
+                            <div class="operaDetails">
+                                <p>
+                                    响应Content Type
+                                    <select name="" id="">
+                                        <option value="0" selected>application/json</option>
+                                        <option value="1">text/json</option>
+                                    </select>
+                                </p>
+                                <p class="defColor">参数</p>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td>参数</td>
+                                            <td>值</td>
+                                            <td>描述</td>
+                                            <td>参数类型</td>
+                                            <td>数据类型</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>areacode</td>
+                                            <td><input type="text" placeholder="(required)"></td>
+                                            <td>区域码</td>
+                                            <td>qurey</td>
+                                            <td>string</td>
+                                        </tr>
+                                        <tr>
+                                            <td>station</td>
+                                            <td><input type="text" placeholder="(required)"></td>
+                                            <td>站点</td>
+                                            <td>qurey</td>
+                                            <td>string</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="bottBtn">
+                                    <button class="tryBtn">试一下！</button>
+                                    <span class="hideResBtn defColor">隐藏响应</span>
+                                </p>
+                                <div class="resPart">
+                                    <p class="defColor">请求URL</p>
+                                    <div class="box">
+                                        http://127.0.0.1:10098/api//api/abcd/ff
+                                    </div>
+                                    <p class="defColor">响应体</p>
+                                    <div class="box">
+<pre>{
+    code:200,
+    result:[]
+    }
+</pre>
+                                    </div>
+                                    <p class="defColor">响应码</p>
+                                    <div class="box">
+                                        200
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+    <script>
+     
+    </script>
+</body>
+
+</html>

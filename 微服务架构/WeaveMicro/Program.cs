@@ -21,6 +21,7 @@ namespace WeaveMicro
     {
         static Weave.Server.WeaveP2Server weaveP2Server = new Weave.Server.WeaveP2Server(Weave.Base.WeaveDataTypeEnum.Bytes);
         static IConfigurationRoot config = null;
+        static String _Path = AppDomain.CurrentDomain.BaseDirectory;
         static void Main(string[] args)
         {
             Console.WriteLine("欢迎使用Weave微服务中心");
@@ -40,7 +41,7 @@ namespace WeaveMicro
                     servers.Add(servers[i]);
                 }
             }
-        
+
             weaveP2Server.Start(Convert.ToInt32(config["port"]));
             while (true)
             {
@@ -146,7 +147,7 @@ namespace WeaveMicro
                     case 0x01:
                         //类型1
                         APIclient client = Newtonsoft.Json.JsonConvert.DeserializeObject<APIclient>(System.Text.UTF8Encoding.UTF8.GetString(data));
-                        
+
                         client.socket = soc;
                         lock (APIclientlist)
                         {
@@ -154,13 +155,13 @@ namespace WeaveMicro
                             {
                                 if (client.IP == ser.IP && client.port == ser.port)
                                 {
-                                    APIclientlist.Remove(ser); 
+                                    APIclientlist.Remove(ser);
                                     break;
                                 }
                             }
                         }
                         APIclientlist.Add(client);
-                        Console.WriteLine($"网关加入:{client.IP}+{client.port}");
+                        Console.WriteLine($"网关加入:{client.IP}:{client.port}");
 
                         savegateway();
                         post();
@@ -169,7 +170,7 @@ namespace WeaveMicro
                         //类型2
 
                         RouteLog rl = Newtonsoft.Json.JsonConvert.DeserializeObject<RouteLog>(System.Text.UTF8Encoding.UTF8.GetString(data));
-                        Console.WriteLine($"网关：{rl.gayway},请求:{rl.RouteIP}+{rl.Route}，请求IP:{rl.requestIP},耗时:{rl.time}毫秒");
+                        Console.WriteLine($"网关：{rl.gayway},请求:{rl.RouteIP}:{rl.Route}，请求IP:{rl.requestIP},耗时:{rl.time}毫秒");
 
                         break;
                     case 0x03:
@@ -211,7 +212,7 @@ namespace WeaveMicro
             //网关
             try
             {
-                System.IO.StreamReader sw = new StreamReader("gateway.json");
+                System.IO.StreamReader sw = new StreamReader(_Path + "gateway.json");
                 String data = sw.ReadToEnd();
                 sw.Close();
                 if (data != "")
@@ -223,7 +224,7 @@ namespace WeaveMicro
             //服务
             try
             {
-                System.IO.StreamReader sw = new StreamReader("server.json");
+                System.IO.StreamReader sw = new StreamReader(_Path + "server.json");
                 String data = sw.ReadToEnd();
                 sw.Close();
                 List<server> ser = Newtonsoft.Json.JsonConvert.DeserializeObject<List<server>>(data);
@@ -237,7 +238,7 @@ namespace WeaveMicro
         {
             try
             {
-                System.IO.StreamWriter sw = new StreamWriter("server.json");
+                System.IO.StreamWriter sw = new StreamWriter(_Path + "server.json");
                 sw.Write(str);
                 sw.Close();
             }
@@ -250,7 +251,7 @@ namespace WeaveMicro
             String allstr = Newtonsoft.Json.JsonConvert.SerializeObject(temp);
             try
             {
-                System.IO.StreamWriter sw = new StreamWriter("gateway.json");
+                System.IO.StreamWriter sw = new StreamWriter(_Path + "gateway.json");
                 sw.Write(allstr);
                 sw.Close();
             }
@@ -259,7 +260,7 @@ namespace WeaveMicro
         }
         static void post()
         {
-            String allstr = Newtonsoft.Json.JsonConvert.SerializeObject(servers);           
+            String allstr = Newtonsoft.Json.JsonConvert.SerializeObject(servers);
 
             foreach (APIclient api in APIclientlist)
             {

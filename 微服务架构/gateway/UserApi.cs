@@ -58,7 +58,7 @@ namespace gateway
                         contentFromBody = body;
 
                     }
-                    else if (context.Request.ContentType == "application/x-www-form-urlencoded")
+                    else if (context.Request.ContentType .IndexOf( "application/x-www-form-urlencoded")>=0)
                     {
                         contentFromBody = body.Split("&");
 
@@ -133,6 +133,10 @@ namespace gateway
                                     }
                                     else
                                     {
+                                        if (context.Request.ContentType.ToLower().IndexOf( "application/x-www-form-urlencoded")>=0)
+                                        {
+                                            objs[i] = servicesDic[ser.services[0].parameter[i]];
+                                        }else
                                         objs[i] = context.Request.Form[ser.services[0].parameter[i]].ToString();
                                     }
                                 }

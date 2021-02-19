@@ -98,12 +98,12 @@ namespace gateway
             if (!context.Response.Headers.ContainsKey("Access-Control-Allow-Origin"))
             {
 
-                context.Response.Headers.Add("Access-Control-Allow-Methods", "GET,POST");
-                context.Response.Headers.Add("Access-Control-Allow-Headers", "Content-Type");
+                context.Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+                context.Response.Headers.Add("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
                 //context.Request.Headers.Add("Access-Control-Allow-Origin", "*");
                 context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
                 context.Response.Headers.Add("Cache-Control", "no-cache");
-                
+
             }
 
             //context.Request.ContentType = "application/json";

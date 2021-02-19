@@ -152,3 +152,39 @@ F:\Gitee Code\UDCS-weave-micro-master\weave-micro\微服务架构\WeaveMicro\obj
 F:\Gitee Code\UDCS-weave-micro-master\weave-micro\微服务架构\WeaveMicro\obj\Debug\net5.0\WeaveMicrocenter.pdb
 F:\Gitee Code\UDCS-weave-micro-master\weave-micro\微服务架构\WeaveMicro\obj\Debug\net5.0\WeaveMicrocenter.genruntimeconfig.cache
 F:\Gitee Code\UDCS-weave-micro-master\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\gateway.json
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\config.json
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\gateway.json
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\WeaveMicrocenter.exe
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\WeaveMicrocenter.deps.json
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\WeaveMicrocenter.runtimeconfig.json
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\WeaveMicrocenter.runtimeconfig.dev.json
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\WeaveMicrocenter.dll
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\ref\WeaveMicrocenter.dll
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\WeaveMicrocenter.pdb
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\Microsoft.AspNetCore.Server.Kestrel.Https.dll
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\Microsoft.Build.Framework.dll
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\Microsoft.Build.Utilities.Core.dll
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\Weave.Base.dll
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\Weave.Server.dll
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\Weave.TcpSynClient.dll
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\wRPC.dll
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\wRPCService.dll
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\wRPCService.pdb
+D:\weave-micro\微服务架构\WeaveMicro\bin\Debug\net5.0\wRPC.pdb
+D:\weave-micro\微服务架构\WeaveMicro\obj\Debug\net5.0\WeaveMicrocenter.csprojAssemblyReference.cache
+D:\weave-micro\微服务架构\WeaveMicro\obj\Debug\net5.0\WeaveMicrocenter.GeneratedMSBuildEditorConfig.editorconfig
+D:\weave-micro\微服务架构\WeaveMicro\obj\Debug\net5.0\WeaveMicrocenter.AssemblyInfoInputs.cache
+D:\weave-micro\微服务架构\WeaveMicro\obj\Debug\net5.0\WeaveMicrocenter.AssemblyInfo.cs
+D:\weave-micro\微服务架构\WeaveMicro\obj\Debug\net5.0\WeaveMicrocenter.csproj.CoreCompileInputs.cache
+D:\weave-micro\微服务架构\WeaveMicro\obj\Debug\net5.0\WeaveMicrocenter.MvcApplicationPartsAssemblyInfo.cache
+D:\weave-micro\微服务架构\WeaveMicro\obj\Debug\net5.0\staticwebassets\WeaveMicrocenter.StaticWebAssets.Manifest.cache
+D:\weave-micro\微服务架构\WeaveMicro\obj\Debug\net5.0\staticwebassets\WeaveMicrocenter.StaticWebAssets.xml
+D:\weave-micro\微服务架构\WeaveMicro\obj\Debug\net5.0\scopedcss\bundle\WeaveMicrocenter.styles.css
+D:\weave-micro\微服务架构\WeaveMicro\obj\Debug\net5.0\WeaveMicrocenter.RazorTargetAssemblyInfo.cache
+D:\weave-micro\微服务架构\WeaveMicro\obj\Debug\net5.0\WeaveMicrocenter.csproj.CopyComplete
+D:\weave-micro\微服务架构\WeaveMicro\obj\Debug\net5.0\WeaveMicrocenter.dll
+D:\weave-micro\微服务架构\WeaveMicro\obj\Debug\net5.0\ref\WeaveMicrocenter.dll
+D:\weave-micro\微服务架构\WeaveMicro\obj\Debug\net5.0\WeaveMicrocenter.pdb
+D:\weave-micro\微服务架构\WeaveMicro\obj\Debug\net5.0\WeaveMicrocenter.genruntimeconfig.cache

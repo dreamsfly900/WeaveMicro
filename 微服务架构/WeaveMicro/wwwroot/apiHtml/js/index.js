@@ -110,8 +110,7 @@ function handleRequest() {
                     }
                 });
                 var params = location.href.split("#")[1];
-                console.log(params)
-                if (params != null) {
+                if (params != null && params != undefined) {
                     var list = params.split('/');
                     $(".moduleList > li[id='resource_" + list[0] + "']").find(".slideList").show();
                     $(".slideList li[id='" + list[0] + "_" + list[1] + "']").find(".operaDetails").slideDown();
@@ -210,7 +209,7 @@ function handleRequest() {
                 headers: {
                     "Access-Control-Allow-Origin": "*",
                     "Access-Control-Allow-Credentials": "true",
-                    "Content-Type":"application/json;charset=utf8"
+                    "Content-Type": "application/json;charset=utf8"
                 },
                 ajaxGridOptions: {
                     xhrFields: {
@@ -262,10 +261,10 @@ function handleRequest() {
             ////    var u = this.header["Content-Type"]
             ////        , c = u ? u.split(";")[0] : ""
             ////};
-       
+
             //for (var ph in this.header)
             //    null != this.header[ph] && n.setRequestHeader(ph, this.header[ph]);
-                        
+
 
             //return this.parameters.responseType && (n.responseType = this.parameters.responseType),
 
@@ -312,6 +311,30 @@ function handleRequest() {
     window.ajaxRequest = new AjaxRequest();
 }
 $(function () {
+    $.ajax({
+        type: "post",
+        url: "http://127.0.0.1:1221/SignalAdmin/Login",
+        contentType: "application/json",
+        data: JSON.stringify({ LoginName: "admin", Password: "admin666!" }),
+        //async: true,
+        //ajaxGridOptions: {
+        //    xhrFields: {
+        //        withCredentials: true
+        //    }
+        //},
+        //crossDomain: true, // 发送Ajax时，Request header 中会包含跨域的额外信息，但不会含cookie（作用不明，不会影响请求头的携带）
+
+        success: function (data) {
+
+            console.log(data);
+
+        }
+
+
+    });
+
+
+
     //展示/隐藏
     $(document).on("click", ".showOrhide", function (e) {
         $(e.target).parent().parent().next(".slideList").slideToggle(300);
@@ -361,7 +384,6 @@ $(function () {
         if (e == !1) {
             return;
         }
-        debugger
         a.method = parent.find(".httpMethod").text(),
             a.url = parent.find(".httpPath").text(),
             parent.find("[name='paramContentType']") ? a.header["Content-Type"] = parent.find("[name='paramContentType']").val() : "",

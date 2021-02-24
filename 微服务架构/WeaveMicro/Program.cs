@@ -21,14 +21,14 @@ namespace WeaveMicro
     {
         static Weave.Server.WeaveP2Server weaveP2Server = new Weave.Server.WeaveP2Server(Weave.Base.WeaveDataTypeEnum.Bytes);
         static IConfigurationRoot config = null;
+
         static String _Path = AppDomain.CurrentDomain.BaseDirectory;
+        static String _currPath = Directory.GetCurrentDirectory();
         static void Main(string[] args)
         {
             Console.WriteLine("欢迎使用Weave微服务中心");
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("config.json");
             config = builder.Build();
-
-            CreateHostBuilder(args).Build().Run();
 
             weaveP2Server.weaveReceiveBitEvent += WeaveP2Server_weaveReceiveBitEvent;
             weaveP2Server.weaveDeleteSocketListEvent += WeaveP2Server_weaveDeleteSocketListEvent;
@@ -43,6 +43,11 @@ namespace WeaveMicro
             }
 
             weaveP2Server.Start(Convert.ToInt32(config["port"]));
+            CreateHostBuilder(args).Build().Run();
+          //  saveRouteLog();启用线程
+            
+
+           
             while (true)
             {
                 string command = Console.ReadLine();
@@ -100,12 +105,10 @@ namespace WeaveMicro
                             APIclientlist.Remove(api);
                             return;
                         }
-
                     }
                 }
                 lock (APIgateway)
                 {
-
                     foreach (APIclient api in APIgateway)
                     {
                         if (api.socket.Equals(soc))
@@ -134,9 +137,29 @@ namespace WeaveMicro
             catch { }
         }
 
+        /// <summary>
+        /// 保存日志
+        /// </summary>
+        private static void saveRouteLog()
+        {
+            while (true)
+            {
+                //有问题
+                using (StreamWriter sw = new StreamWriter(_Path +DateTime.Now.ToString("yyyyMMddHH") +"routelog.json", false, Encoding.UTF8))
+                {
+                    sw.Write(Newtonsoft.Json.JsonConvert.SerializeObject(Routeloglist));
+                    sw.Close();
+                    sw.Dispose();
+                }
+                Routeloglist.Clear();
+                System.Threading.Thread.Sleep(1000 * 60*60 );
+            }
+        }
+
         static List<server> servers = new List<server>();
         static List<APIclient> APIclientlist = new List<APIclient>();
         static List<APIclient> APIgateway = new List<APIclient>();
+        static List<RouteLog> Routeloglist = new List<RouteLog>();
         private static void WeaveP2Server_weaveReceiveBitEvent(byte command, byte[] data, System.Net.Sockets.Socket soc)
         {
             try
@@ -171,7 +194,10 @@ namespace WeaveMicro
 
                         RouteLog rl = Newtonsoft.Json.JsonConvert.DeserializeObject<RouteLog>(System.Text.UTF8Encoding.UTF8.GetString(data));
                         Console.WriteLine($"网关：{rl.gayway},请求:{rl.RouteIP}:{rl.Route}，请求IP:{rl.requestIP},耗时:{rl.time}毫秒");
-
+                        if (rl != null)
+                        {
+                            Routeloglist.Add(rl);
+                        }
                         break;
                     case 0x03:
                         //类型3
@@ -209,6 +235,17 @@ namespace WeaveMicro
 
         static List<server> GetServers(String file)
         {
+            //服务
+            try
+            {
+                System.IO.StreamReader sw = new StreamReader(_Path + "temp.json");
+                String data = sw.ReadToEnd();
+                sw.Close();
+                List<server> ser = Newtonsoft.Json.JsonConvert.DeserializeObject<List<server>>(data);
+                return ser;
+            }
+            catch { }
+
             //网关
             try
             {
@@ -221,16 +258,7 @@ namespace WeaveMicro
                 }
             }
             catch { }
-            //服务
-            try
-            {
-                System.IO.StreamReader sw = new StreamReader(_Path + "server.json");
-                String data = sw.ReadToEnd();
-                sw.Close();
-                List<server> ser = Newtonsoft.Json.JsonConvert.DeserializeObject<List<server>>(data);
-                return ser;
-            }
-            catch { }
+
             return null;
         }
 
@@ -238,7 +266,7 @@ namespace WeaveMicro
         {
             try
             {
-                System.IO.StreamWriter sw = new StreamWriter(_Path + "server.json");
+                System.IO.StreamWriter sw = new StreamWriter(_Path + "temp.json");
                 sw.Write(str);
                 sw.Close();
             }

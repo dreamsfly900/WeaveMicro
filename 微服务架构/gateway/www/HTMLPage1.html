@@ -6,17 +6,40 @@
     <meta charset="utf-8" />
     <title></title>
     <script>
-
+        (null != (a = (n.escape || t && t.escape || n.helperMissing).call(o, null != t ? t.sampleJSON : t, {
+            name: "escape",
+            hash: {},
+            data: i
+        })) ? a : "")
         function send() {
-            $.ajax({
-                url: "http://localhost:1221/SignalAdmin/Login", // 目标资源
-                type: "post",
-                data:{LoginName:"admin",Password:"admin666!"},
+            //$.ajax({
+            //    url: "http://localhost:1221/SignalAdmin/Login", // 目标资源
+            //    type: "post",
+            //    data:{LoginName:"admin",Password:"admin666!"},
                
-                success: function (data) {
-                    console.log(data)
-                }
-            })
+            //    success: function (data) {
+            //        console.log(data)
+            //    }
+            //})
+            getXhr();
+        }
+        function getXhr() {
+            var n = new XMLHttpRequest();
+            n.onreadystatechange = function () {
+
+            }
+            n.open("post", "http://localhost:1221/SignalAdmin/Login", !0)
+            headers = {
+                "Accept": "application/json",
+                "Content-Type": "application/x-www-form-urlencoded"
+            };
+            var p = JSON.stringify({ LoginName: "admin", Password: "admin666!" });
+            p = "LoginName=admin&Password=admin666!";
+
+            for (var ph in headers) {
+                null != headers[ph] && n.setRequestHeader(ph, headers[ph]);
+            }
+            n.send("undefined" != typeof p ? p : null)
         }
 
    //$.ajax({

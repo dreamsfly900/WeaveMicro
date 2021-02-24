@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -49,7 +48,7 @@ namespace WeaveMicro
 
             string reqPath = runRoot.Replace(contentRoot, "").Replace("\\","/").TrimEnd('/');
             //  app.UseHttpsRedirection();
-            app.UseMiddleware<CorsMiddleware>();
+            //app.UseMiddleware<CorsMiddleware>();
             app.UseStaticFiles()
                 .UseStaticFiles(new StaticFileOptions
                 {
@@ -70,35 +69,6 @@ namespace WeaveMicro
             {
                 endpoints.MapRazorPages();
             });
-        }
-    }
-    public class CorsMiddleware
-    {
-        private readonly RequestDelegate _next;
-        public CorsMiddleware(RequestDelegate next)
-        {
-            _next = next;
-        }
-
-        public async Task Invoke(HttpContext context)
-        {
-            if (!context.Response.Headers.ContainsKey("Access-Control-Allow-Origin"))
-            {
-
-                context.Response.Headers.Add("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
-                context.Response.Headers.Add("Access-Control-Allow-Headers", "Origin,X-Requested-With,Content-Type,Accept,Authorization");
-                //context.Request.Headers.Add("Access-Control-Allow-Origin", "*");
-                context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
-                context.Response.Headers.Add("Cache-Control", "no-cache");
-
-            }
-
-            //context.Request.ContentType = "application/json";
-            //Stream inputstream = context.Request.Body;
-            //byte[] b = new byte[inputstream.Length];
-            //inputstream.Read(b, 0, (int)inputstream.Length);
-            //string inputstr = UTF8Encoding.UTF8.GetString(b);
-            await _next(context);
         }
     }
 }

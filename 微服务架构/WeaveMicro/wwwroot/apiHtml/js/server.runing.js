@@ -1,11 +1,11 @@
 ﻿//服务中心
 var ServRuning = {
     //服务列表
+    filepath:"/bin/Debug/net5.0",
     serverlist() {
         var e = this;
-        e.readTextFile("/bin/Debug/net5.0/temp.json", function (text) {
+        e.readTextFile(this.filepath+"/temp.json", function (text) {
             var data = JSON.parse(text);
-            console.log(data);
             var source = "";
             $("div[name=\"服务\"] .server-items").remove();
             if (data && data != null) {
@@ -33,9 +33,8 @@ var ServRuning = {
     //网关
     geteway() {
         var e = this;
-        e.readTextFile("/bin/Debug/net5.0/gateway.json", function (text) {
+        e.readTextFile(this.filepath +"/gateway.json", function (text) {
             var data = JSON.parse(text);
-            console.log(data);
             var source = "";
             $("div[name=\"网关\"] .server-items").remove();
             if (data && data != null) {

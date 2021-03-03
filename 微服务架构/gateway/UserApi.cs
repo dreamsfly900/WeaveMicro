@@ -12,11 +12,12 @@ using Microsoft.Extensions.Configuration;
 using wRPC;
 using Newtonsoft.Json;
 using WeaveMicroClient;
+using System.Linq;
 
 namespace gateway
 {
 
-  
+
     public static class Proccessor
     {
         public static server[] servers;
@@ -57,7 +58,7 @@ namespace gateway
                         contentFromBody = body;
 
                     }
-                    else if (context.Request.ContentType == "application/x-www-form-urlencoded")
+                    else if (context.Request.ContentType.IndexOf("application/x-www-form-urlencoded") >= 0)
                     {
                         contentFromBody = body.Split("&");
 
@@ -68,7 +69,7 @@ namespace gateway
                     }
 
                 }
-             
+
                 rlog.Route = context.Request.Path.Value.Trim('/');
                 rlog.gayway = Program.applicationUrl;
 
@@ -132,7 +133,12 @@ namespace gateway
                                     }
                                     else
                                     {
-                                        objs[i] = context.Request.Form[ser.services[0].parameter[i]].ToString();
+                                        if (context.Request.ContentType.ToLower().IndexOf("application/x-www-form-urlencoded") >= 0)
+                                        {
+                                            objs[i] = servicesDic[ser.services[0].parameter[i]];
+                                        }
+                                        else
+                                            objs[i] = context.Request.Form[ser.services[0].parameter[i]].ToString();
                                     }
                                 }
                             }
@@ -154,8 +160,15 @@ namespace gateway
                             keysh.Add(hh, context.Request.Headers[hh]);
                         String[] Cookies = Startup.config.GetSection("Cookies").Get<String[]>();
                         Dictionary<string, String> keysCookies = new Dictionary<string, string>();
-                        foreach (string hh in Cookies)
-                            keysCookies.Add(hh, context.Request.Cookies[hh]);
+
+                        if (context.User.Identity.IsAuthenticated)
+                        {
+                            foreach (string hh in Cookies)
+                            {
+                                if (context.User.Claims.Count(c => c.Type == hh) > 0)
+                                    keysCookies.Add(hh, context.User.Claims.Single(c => c.Type == hh).Value);
+                            }
+                        }
                         //  context.Request.Headers
                         //await context.Response.WriteAsync($"");
                         String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh, keysCookies);
@@ -186,23 +199,26 @@ namespace gateway
 
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             { await context.Response.WriteAsync($" ~, {  e.Message}"); }
-            finally {
-                
+            finally
+            {
+
             }
 
 
         }
 
-         static bool IsAuthenticated(HttpContext context, bool Authorize)
+        static bool IsAuthenticated(HttpContext context, bool Authorize)
         {
-            if (Convert.ToBoolean(Startup.config["Authentication"]) )
+            if (Convert.ToBoolean(Startup.config["Authentication"]))
             {
                 if (Authorize)
                 {
                     if (!context.User.Identity.IsAuthenticated)
                     {
+
+
                         // await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 0, msg = "非法请求" }));
                         //  context.Abort();
                         return false;
@@ -212,8 +228,9 @@ namespace gateway
                 }
                 else
                     return true;
-            }else
-            return true;
+            }
+            else
+                return true;
         }
     }
 }

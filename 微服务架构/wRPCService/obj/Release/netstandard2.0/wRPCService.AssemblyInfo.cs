@@ -13,11 +13,12 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("wRPCService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("wRPC 服务端类库")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.4.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.4")]
 [assembly: System.Reflection.AssemblyProductAttribute("wRPCService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("wRPCService")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.4.0")]
 
 // 由 MSBuild WriteCodeFragment 类生成。
 

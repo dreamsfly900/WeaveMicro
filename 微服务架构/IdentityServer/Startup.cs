@@ -30,15 +30,15 @@ namespace IdentityServer
                 .AddInMemoryApiResources(Config.GetApis())
                 .AddResourceOwnerValidator<ResourceOwnerPasswordValidator>()
                 .AddInMemoryClients(Config.GetClients()).AddProfileService<ProfileService>();
-          
+
             builder.AddDeveloperSigningCredential();
             if (Environment.IsDevelopment())
             {
-                
+
             }
             else
             {
-              //  throw new Exception("need to configure key material");
+                //  throw new Exception("need to configure key material");
             }
         }
 
@@ -51,15 +51,15 @@ namespace IdentityServer
 
             // uncomment if you want to support static files
             //app.UseStaticFiles();
-             //app.UseMiddleware<CorsMiddleware>();
+            app.UseMiddleware<CorsMiddleware>();
 
-             //app.Use(async (context, next) => {
-              
-             //    await next.Invoke();
-             //});
+            //app.Use(async (context, next) => {
+
+            //    await next.Invoke();
+            //});
 
             app.UseIdentityServer();
-             
+
             // app.Run(Proccessor.agent);
             //app.UseStaticFiles();
             //app.UseMvcWithDefaultRoute();
@@ -68,5 +68,5 @@ namespace IdentityServer
         }
     }
 
-    
+
 }

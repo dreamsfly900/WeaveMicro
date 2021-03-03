@@ -5,6 +5,6 @@
   "defaultScheme": "Bearer",
   "applicationUrl": "http://localhost:1221",
   "Microcenter": "127.0.0.1:9001",
-  "Cookies": [ "hh" ],
-  "Headers": ["token"]
+  "Cookies": [ "Role", "UserId", "Name", "Phone" ],
+  "Headers": [ "token" ]
 }

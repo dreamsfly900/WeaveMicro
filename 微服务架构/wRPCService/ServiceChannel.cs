@@ -58,10 +58,17 @@ namespace wRPCService
 
 
                             (obj as FunctionBase).Headers = rpdata.Headers;
+                             
+
+                        }
+                        if (obj is FunctionBase && rpdata.Cookies != null)
+                        {
+
+
+                             
                             (obj as FunctionBase).Cookies = rpdata.Cookies;
 
                         }
-
                         ParameterInfo[] paramsInfo = mi.GetParameters();//得到指定方法的参数列表 
                         if (paramsInfo.Length != objs.Length)
                         { P2Server.Send(soc, 0x02, GZIP.GZipCompress("参数不正确"));return; }

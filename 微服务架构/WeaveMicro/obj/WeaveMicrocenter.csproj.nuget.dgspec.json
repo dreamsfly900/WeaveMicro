@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WeaveMicro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj": {}
+    "D:\\weave-micro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj": {}
   },
   "projects": {
-    "D:\\WeaveMicro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj": {
+    "D:\\weave-micro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj",
+        "projectUniqueName": "D:\\weave-micro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj",
         "projectName": "WeaveMicrocenter",
-        "projectPath": "D:\\WeaveMicro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj",
-        "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
-        "outputPath": "D:\\WeaveMicro\\微服务架构\\WeaveMicro\\obj\\",
+        "projectPath": "D:\\weave-micro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\weave-micro\\微服务架构\\WeaveMicro\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
-                "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj"
+              "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj": {
+                "projectPath": "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj"
               },
-              "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj": {
-                "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj"
+              "D:\\weave-micro\\微服务架构\\wRPC\\wRPC.csproj": {
+                "projectPath": "D:\\weave-micro\\微服务架构\\wRPC\\wRPC.csproj"
               }
             }
           }
@@ -47,11 +47,19 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[5.0.0, )"
             },
             "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Hosting": {
               "target": "Package",
               "version": "[5.0.0, )"
             }
@@ -67,6 +75,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -75,17 +86,17 @@
         }
       }
     },
-    "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
-      "version": "1.0.4",
+    "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj": {
+      "version": "1.0.5",
       "restore": {
-        "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
+        "projectUniqueName": "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj",
         "projectName": "wRPCService",
-        "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
-        "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
-        "outputPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\obj\\",
+        "projectPath": "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\weave-micro\\微服务架构\\wRPCService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -140,17 +151,17 @@
         }
       }
     },
-    "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj": {
+    "D:\\weave-micro\\微服务架构\\wRPC\\wRPC.csproj": {
       "version": "1.0.1",
       "restore": {
-        "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj",
+        "projectUniqueName": "D:\\weave-micro\\微服务架构\\wRPC\\wRPC.csproj",
         "projectName": "wRPC",
-        "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj",
-        "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
-        "outputPath": "D:\\WeaveMicro\\微服务架构\\wRPC\\obj\\",
+        "projectPath": "D:\\weave-micro\\微服务架构\\wRPC\\wRPC.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\weave-micro\\微服务架构\\wRPC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

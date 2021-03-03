@@ -1,0 +1,9 @@
+D:\weave-micro\微服务架构\wRPCService\bin\Release\netstandard2.0\wRPCService.deps.json
+D:\weave-micro\微服务架构\wRPCService\bin\Release\netstandard2.0\wRPCService.dll
+D:\weave-micro\微服务架构\wRPCService\bin\Release\netstandard2.0\wRPCService.pdb
+D:\weave-micro\微服务架构\wRPCService\obj\Release\netstandard2.0\wRPCService.csprojAssemblyReference.cache
+D:\weave-micro\微服务架构\wRPCService\obj\Release\netstandard2.0\wRPCService.AssemblyInfoInputs.cache
+D:\weave-micro\微服务架构\wRPCService\obj\Release\netstandard2.0\wRPCService.AssemblyInfo.cs
+D:\weave-micro\微服务架构\wRPCService\obj\Release\netstandard2.0\wRPCService.csproj.CoreCompileInputs.cache
+D:\weave-micro\微服务架构\wRPCService\obj\Release\netstandard2.0\wRPCService.dll
+D:\weave-micro\微服务架构\wRPCService\obj\Release\netstandard2.0\wRPCService.pdb

@@ -17,53 +17,58 @@ namespace IdentityServer
         {
             _next = next;
         }
-         
+
         public async Task Invoke(HttpContext context)
         {
-            if (context.Request.Path == "/connect/token")
-            {
-                if (context.Request.ContentLength != null)
-                {
-                    context.Request.EnableBuffering();
-                    string[] data;
-                    using (var mem = new MemoryStream())
-                    using (var reader = new StreamReader(mem))
-                    {
-                        // 
-                        await context.Request.Body.CopyToAsync(mem);
-                        context.Request.Body.Seek(0, SeekOrigin.Begin);
-                        mem.Seek(0, SeekOrigin.Begin);
-                        var body = reader.ReadToEnd();
-                        data = body.Split("&");
-                    }
-                    Dictionary<string, String> servicesDic = new Dictionary<string, String>();
-                        foreach(string datastr in data)
-                        {
-                            servicesDic.Add(datastr.Split("=")[0], datastr.Split("=")[1]);
-                        }
-                      
-                        if (!Account.Account.GetLogin(servicesDic, context))
-                        {
-                            await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 0, msg = "授权失败" }));
-                            context.Abort();
-                           
-                         
-                          
-                           
-                        }
-                        //Console.WriteLine(body);
+            //if (!context.Response.Headers.ContainsKey("Access-Control-Allow-Origin"))
+            //{
+                context.Response.Headers.Add("Access-Control-Allow-Methods", "GET,POST");
+                context.Response.Headers.Add("Access-Control-Allow-Headers", "*");
+                context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+                context.Response.Headers.Add("Cache-Control", "no-cache");
+                //token为自定义响应头
+                context.Response.Headers.Add("Access-Control-Expose-Headers", "token");
+          //  }
+            //if (context.Request.Path == "/connect/token")
+            //{
+            //    if (context.Request.ContentLength != null)
+            //    {
+            //        context.Request.EnableBuffering();
+            //        string[] data;
+            //        using (var mem = new MemoryStream())
+            //        using (var reader = new StreamReader(mem))
+            //        {
+            //            // 
+            //            await context.Request.Body.CopyToAsync(mem);
+            //            context.Request.Body.Seek(0, SeekOrigin.Begin);
+            //            mem.Seek(0, SeekOrigin.Begin);
+            //            var body = reader.ReadToEnd();
+            //            data = body.Split("&");
+            //        }
+            //        Dictionary<string, String> servicesDic = new Dictionary<string, String>();
+            //        foreach (string datastr in data)
+            //        {
+            //            servicesDic.Add(datastr.Split("=")[0], datastr.Split("=")[1]);
+            //        }
 
-                        // Do something
-                   
-                   
+            //        if (!Account.Account.GetLogin(servicesDic, context))
+            //        {
+            //            await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 0, msg = "授权失败" }));
+            //            //context.Abort();                            
+            //        }
+            //        //Console.WriteLine(body);
 
-                }
-            }
+            //        // Do something
 
 
-             await _next(context);
+
+            //    }
+            //}
+
+
+            await _next(context);
         }
     }
 
-     
+
 }

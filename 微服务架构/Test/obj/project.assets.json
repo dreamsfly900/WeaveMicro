@@ -1273,7 +1273,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "wRPCService": "1.0.4"
+          "wRPCService": "1.0.5"
         },
         "compile": {
           "bin/placeholder/testdll2.dll": {}
@@ -1288,7 +1288,7 @@
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
           "Weave.TCPClient": "2.0.9",
-          "wRPCService": "1.0.4"
+          "wRPCService": "1.0.5"
         },
         "compile": {
           "bin/placeholder/WeaveMicroClient.dll": {}
@@ -1302,7 +1302,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "WeaveMicroClient": "1.0.0",
-          "wRPCService": "1.0.4"
+          "wRPCService": "1.0.5"
         },
         "compile": {
           "bin/placeholder/WeaveRemoteService.dll": {}
@@ -1328,7 +1328,7 @@
           "bin/placeholder/wRPC.dll": {}
         }
       },
-      "wRPCService/1.0.4": {
+      "wRPCService/1.0.5": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -3890,7 +3890,7 @@
       "path": "../wRPC/wRPC.csproj",
       "msbuildProject": "../wRPC/wRPC.csproj"
     },
-    "wRPCService/1.0.4": {
+    "wRPCService/1.0.5": {
       "type": "project",
       "path": "../wRPCService/wRPCService.csproj",
       "msbuildProject": "../wRPCService/wRPCService.csproj"
@@ -3905,19 +3905,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\xingy\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\Test\\Test.csproj",
+      "projectUniqueName": "D:\\weave-micro\\微服务架构\\Test\\Test.csproj",
       "projectName": "Test",
-      "projectPath": "D:\\WeaveMicro\\微服务架构\\Test\\Test.csproj",
-      "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
-      "outputPath": "D:\\WeaveMicro\\微服务架构\\Test\\obj\\",
+      "projectPath": "D:\\weave-micro\\微服务架构\\Test\\Test.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\weave-micro\\微服务架构\\Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3931,17 +3931,17 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\WeaveMicro\\微服务架构\\testdll2\\testdll2.csproj": {
-              "projectPath": "D:\\WeaveMicro\\微服务架构\\testdll2\\testdll2.csproj"
+            "D:\\weave-micro\\微服务架构\\testdll2\\testdll2.csproj": {
+              "projectPath": "D:\\weave-micro\\微服务架构\\testdll2\\testdll2.csproj"
             },
-            "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj": {
-              "projectPath": "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj"
+            "D:\\weave-micro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj": {
+              "projectPath": "D:\\weave-micro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj"
             },
-            "D:\\WeaveMicro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj": {
-              "projectPath": "D:\\WeaveMicro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj"
+            "D:\\weave-micro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj": {
+              "projectPath": "D:\\weave-micro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj"
             },
-            "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj": {
-              "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj"
+            "D:\\weave-micro\\微服务架构\\wRPC\\wRPC.csproj": {
+              "projectPath": "D:\\weave-micro\\微服务架构\\wRPC\\wRPC.csproj"
             }
           }
         }

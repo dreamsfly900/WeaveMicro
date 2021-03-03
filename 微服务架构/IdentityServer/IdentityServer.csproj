@@ -12,4 +12,13 @@
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
     <PackageReference Include="Serilog.Sinks.File" Version="4.0.0" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="SignalDAL">
+      <HintPath>F:\SVN\信号宝平台\SignalDAL\bin\Debug\SignalDAL.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalModel">
+      <HintPath>F:\SVN\信号宝平台\SignalModel\bin\Debug\SignalModel.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

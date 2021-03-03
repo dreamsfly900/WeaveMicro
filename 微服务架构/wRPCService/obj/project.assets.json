@@ -2284,19 +2284,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\xingy\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.4",
+    "version": "1.0.5",
     "restore": {
-      "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
+      "projectUniqueName": "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj",
       "projectName": "wRPCService",
-      "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
-      "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
-      "outputPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\obj\\",
+      "projectPath": "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\weave-micro\\微服务架构\\wRPCService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

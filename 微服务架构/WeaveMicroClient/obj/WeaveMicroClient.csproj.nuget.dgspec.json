@@ -69,11 +69,15 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
+<<<<<<< HEAD
     "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj": {
+=======
+    "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
+>>>>>>> 280080ca740eea403a3f84dcc8b090fb93f1d33f
       "version": "1.0.5",
       "restore": {
         "projectUniqueName": "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj",
@@ -134,7 +138,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

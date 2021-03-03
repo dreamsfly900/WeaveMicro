@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "K+0Sls0uHYjXg20rVjtAxWo2h+VHvaZqrloFXZAYevyDi4CdV0JcBZiXpgrBplH0FEs4WdEP/49/BxyGS56L9g==",
+=======
+  "dgSpecHash": "o6c/F0LFQoi9josi0x89EvXx72NXAjGERQMFT70n6GfoNYlqr14lhqHjVaX/hei/448nkTE2miTpZNTzRlWMkA==",
+>>>>>>> 280080ca740eea403a3f84dcc8b090fb93f1d33f
   "success": true,
   "projectFilePath": "D:\\weave-micro\\微服务架构\\Test\\Test.csproj",
   "expectedPackageFiles": [

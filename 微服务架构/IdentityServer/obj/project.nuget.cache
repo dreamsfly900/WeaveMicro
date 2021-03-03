@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "Irks7+r/6Wsas2oitiw8rZp+6lT+yiiNmwslNNvDv+hssW9XXy7qSr2XhjsJy67FxcDbIV6q7gFbEnTKEWlHXw==",
+=======
+  "dgSpecHash": "r37peIBZWMnv3f8gKCp8RQdsOcdlTqxCjlCg+ZgU1y1MMX2odnbRShpF27ZUdNo6UMCuJwTdqoj6BvxZEMglDw==",
+>>>>>>> 280080ca740eea403a3f84dcc8b090fb93f1d33f
   "success": true,
   "projectFilePath": "D:\\weave-micro\\微服务架构\\IdentityServer\\IdentityServer.csproj",
   "expectedPackageFiles": [

@@ -60,6 +60,10 @@ D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\Serilog.Extension
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\Serilog.Sinks.Console.dll
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\Serilog.Sinks.File.dll
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+<<<<<<< HEAD
+=======
+D:\weave-micro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.csprojAssemblyReference.cache
+>>>>>>> 280080ca740eea403a3f84dcc8b090fb93f1d33f
 D:\weave-micro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.GeneratedMSBuildEditorConfig.editorconfig
 D:\weave-micro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.AssemblyInfoInputs.cache
 D:\weave-micro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.AssemblyInfo.cs
@@ -74,7 +78,10 @@ D:\weave-micro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.dl
 D:\weave-micro\微服务架构\IdentityServer\obj\Debug\net5.0\ref\IdentityServer.dll
 D:\weave-micro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.pdb
 D:\weave-micro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.genruntimeconfig.cache
+<<<<<<< HEAD
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\SignalDAL.dll
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\SignalModel.dll
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\SignalDAL.pdb
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\SignalModel.pdb
+=======
+>>>>>>> 280080ca740eea403a3f84dcc8b090fb93f1d33f

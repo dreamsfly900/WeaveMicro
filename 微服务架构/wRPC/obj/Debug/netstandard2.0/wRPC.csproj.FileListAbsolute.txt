@@ -24,4 +24,7 @@ D:\weave-micro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.csproj.CoreCom
 D:\weave-micro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.dll
 D:\weave-micro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.pdb
 D:\WeaveMicro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.csprojAssemblyReference.cache
+<<<<<<< HEAD
 D:\weave-micro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.csprojAssemblyReference.cache
+=======
+>>>>>>> 280080ca740eea403a3f84dcc8b090fb93f1d33f

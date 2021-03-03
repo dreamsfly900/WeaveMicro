@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "saAZ+pkzKGOk1OtM65/cFrGLxQQpdEWSWFRef13dGHcZ+/qSL9Wxll7R6qy5IvWqxjsHEV65ihd48T4rNEwiYA==",
+  "dgSpecHash": "jLe/Il0qW0O/ofnWHhiLt6rX2QL6vZbV+V+kGB1w5qCZhHib9/y5YurLjChvg0mAqf24U9g4mOKKjzLLy4pXig==",
   "success": true,
   "projectFilePath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
   "expectedPackageFiles": [
@@ -73,12 +73,5 @@
     "C:\\Users\\xingy\\.nuget\\packages\\weave.base\\2.0.19\\weave.base.2.0.19.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\weave.server\\2.0.20\\weave.server.2.0.20.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "读取缓存文件 D:\\WeaveMicro\\微服务架构\\wRPCService\\obj\\project.nuget.cache 时遇到问题: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

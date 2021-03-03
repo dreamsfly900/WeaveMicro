@@ -928,7 +928,7 @@
           "lib/netstandard2.0/Weave.TCPClient.dll": {}
         }
       },
-      "wRPCService/1.0.4": {
+      "wRPCService/1.0.5": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -2309,7 +2309,7 @@
         "weave.tcpclient.nuspec"
       ]
     },
-    "wRPCService/1.0.4": {
+    "wRPCService/1.0.5": {
       "type": "project",
       "path": "../wRPCService/wRPCService.csproj",
       "msbuildProject": "../wRPCService/wRPCService.csproj"
@@ -2320,7 +2320,7 @@
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.3",
       "Weave.TCPClient >= 2.0.9",
-      "wRPCService >= 1.0.4"
+      "wRPCService >= 1.0.5"
     ]
   },
   "packageFolders": {
@@ -2394,13 +2394,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "读取缓存文件 D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\obj\\project.nuget.cache 时遇到问题: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

@@ -934,7 +934,7 @@
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
           "Weave.TCPClient": "2.0.9",
-          "wRPCService": "1.0.4"
+          "wRPCService": "1.0.5"
         },
         "compile": {
           "bin/placeholder/WeaveMicroClient.dll": {}
@@ -943,7 +943,7 @@
           "bin/placeholder/WeaveMicroClient.dll": {}
         }
       },
-      "wRPCService/1.0.4": {
+      "wRPCService/1.0.5": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -2329,7 +2329,7 @@
       "path": "../WeaveMicroClient/WeaveMicroClient.csproj",
       "msbuildProject": "../WeaveMicroClient/WeaveMicroClient.csproj"
     },
-    "wRPCService/1.0.4": {
+    "wRPCService/1.0.5": {
       "type": "project",
       "path": "../wRPCService/wRPCService.csproj",
       "msbuildProject": "../wRPCService/wRPCService.csproj"
@@ -2339,7 +2339,7 @@
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
       "WeaveMicroClient >= 1.0.0",
-      "wRPCService >= 1.0.4"
+      "wRPCService >= 1.0.5"
     ]
   },
   "packageFolders": {
@@ -2408,13 +2408,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "读取缓存文件 D:\\WeaveMicro\\微服务架构\\WeaveRemoteService\\obj\\project.nuget.cache 时遇到问题: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

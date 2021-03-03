@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "10OF0t70KyaEtm/tPD6xaIsP7Ee1x6c5UjQLiNoFXpK3TbU+e9GFr2rm85BOA6CGkeaJ7cQ7DmyENKt0hflIAQ==",
+  "dgSpecHash": "7vc1UPDzs3PpY2hfo3dQnl5/cEhc8bA/xKtRhjGmflibvXGDzvX7ME1iIwxUKIGXiJiKFE2bLn/gdV87tNPXHw==",
   "success": true,
   "projectFilePath": "D:\\WeaveMicro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj",
   "expectedPackageFiles": [
@@ -73,15 +73,7 @@
     "C:\\Users\\xingy\\.nuget\\packages\\weave.base\\2.0.19\\weave.base.2.0.19.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\weave.server\\2.0.20\\weave.server.2.0.20.nupkg.sha512",
     "C:\\Users\\xingy\\.nuget\\packages\\weave.tcpclient\\2.0.9\\weave.tcpclient.2.0.9.nupkg.sha512",
-    "C:\\Users\\xingy\\.nuget\\packages\\weavemicroclient\\1.0.0\\weavemicroclient.1.0.0.nupkg.sha512",
-    "C:\\Users\\xingy\\.nuget\\packages\\wrpcservice\\1.0.4\\wrpcservice.1.0.4.nupkg.sha512"
+    "C:\\Users\\xingy\\.nuget\\packages\\weavemicroclient\\1.0.0\\weavemicroclient.1.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "读取缓存文件 D:\\WeaveMicro\\微服务架构\\WeaveRemoteService\\obj\\project.nuget.cache 时遇到问题: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

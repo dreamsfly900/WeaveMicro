@@ -61,7 +61,7 @@ namespace wRPCService
                              
 
                         }
-                        if (obj is FunctionBase && rpdata.Headers != null)
+                        if (obj is FunctionBase && rpdata.Cookies != null)
                         {
 
 

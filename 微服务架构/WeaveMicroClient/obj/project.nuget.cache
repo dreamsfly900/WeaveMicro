@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "VQ9PXjtLavHJ+z6cSnwEXptcTDJ5lSn6ToUL7AMAcFYllpk4537XK/aLivpsIvvAl8/tKlNnYiFUTbtF1PGk5Q==",
-=======
-  "dgSpecHash": "yWm7zYlWbLlnZoW0+bVQKc01iEolEOPoYbrKBmInOFlgTpkf0hKyirOg6RRixO0k1LVrdH0F2Un4mLOSv6YL2Q==",
->>>>>>> 280080ca740eea403a3f84dcc8b090fb93f1d33f
   "success": true,
   "projectFilePath": "D:\\weave-micro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj",
   "expectedPackageFiles": [

@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "mxonjKimDPEWqtHwLgtED68uH2l2cQK7iCpxjn2uVBdXpybe1Ci3g7xhT43MLRZl9CNTD8a5fOAVcFt/90LbAQ==",
-=======
-  "dgSpecHash": "GetLxqBJ5WeeqFLq/oma+Mr4+eaMKomCSqKw5DYudFUN1YwoX7CWQyts9vew+159NTebV0guyXkdoFbOo87s3A==",
->>>>>>> 280080ca740eea403a3f84dcc8b090fb93f1d33f
   "success": true,
   "projectFilePath": "D:\\weave-micro\\微服务架构\\testdll2\\testdll2.csproj",
   "expectedPackageFiles": [

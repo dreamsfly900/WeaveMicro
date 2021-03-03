@@ -9,11 +9,11 @@
     <dependencies>
       <group targetFramework=".NETStandard2.0">
         <dependency id="WeaveMicroClient" version="1.0.0" exclude="Build,Analyzers" />
-        <dependency id="wRPCService" version="1.0.4" exclude="Build,Analyzers" />
+        <dependency id="wRPCService" version="1.0.5" exclude="Build,Analyzers" />
       </group>
     </dependencies>
   </metadata>
   <files>
-    <file src="D:\WeaveMicro\微服务架构\WeaveRemoteService\bin\Debug\netstandard2.0\WeaveRemoteService.dll" target="lib\netstandard2.0\WeaveRemoteService.dll" />
+    <file src="D:\weave-micro\微服务架构\WeaveRemoteService\bin\Debug\netstandard2.0\WeaveRemoteService.dll" target="lib\netstandard2.0\WeaveRemoteService.dll" />
   </files>
 </package>

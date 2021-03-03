@@ -103,7 +103,7 @@ namespace gateway
                 //context.Request.Headers.Add("Access-Control-Allow-Origin", "*");
                 context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
                 context.Response.Headers.Add("Cache-Control", "no-cache");
-                
+                context.Response.Headers.Add("Access-Control-Expose-Headers", "Authorization");
             }
 
             //context.Request.ContentType = "application/json";

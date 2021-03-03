@@ -9,7 +9,7 @@ function handleRequest() {
             dataType: "json",
             success: function (jsonData) {
                 var apiUrl = "http://" + jsonData[0].IP + ":" + jsonData[0].Port + "/";
-                $("#url").val("http://116.255.241.138:1221/");
+                $("#url").val(apiUrl);//"http://116.255.241.138:1221/"
                 var itemArr = [];
                 $.each(jsonData, function (i, api) {
                     for (var item of api.services) {

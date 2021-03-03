@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+yQKIoAJzwo8qJZgNY4oa5ZCeHfkIE2dHtkxMUF0GXFIE35Pex/sgLLXUKtlD0R9jLKwc3tn94de8/jGp2XZ7g==",
+  "dgSpecHash": "r37peIBZWMnv3f8gKCp8RQdsOcdlTqxCjlCg+ZgU1y1MMX2odnbRShpF27ZUdNo6UMCuJwTdqoj6BvxZEMglDw==",
   "success": true,
   "projectFilePath": "D:\\WeaveMicro\\微服务架构\\IdentityServer\\IdentityServer.csproj",
   "expectedPackageFiles": [

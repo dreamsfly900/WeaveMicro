@@ -2554,3 +2554,4 @@ System.InvalidOperationException: No signing credential is configured. Can't cre
 2021-02-04 11:10:56.841 +08:00 [DBG] Connection id "0HM68MLAKMSBS" disconnecting.
 2021-02-04 11:10:56.842 +08:00 [DBG] Connection id "0HM68MLAKMSBS" sending FIN because: "The client closed the connection."
 2021-02-04 11:10:56.843 +08:00 [DBG] Connection id "0HM68MLAKMSBS" stopped.
+2021-02-04 11:14:59.735 +08:00 [DBG] Hosting shutdown

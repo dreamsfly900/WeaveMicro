@@ -17,19 +17,19 @@ namespace gateway
 {
     class Program
     {
-       public  static MicroClient mc ;
+        public static MicroClient mc;
         public static string applicationUrl;
         static void Main(string[] args)
-        { 
+        {
 
-           //server[] servers= Funconfig.getConfig();
-           // server ser= WeightAlgorithm.Get(servers, "abcd/ff");
+            //server[] servers= Funconfig.getConfig();
+            // server ser= WeightAlgorithm.Get(servers, "abcd/ff");
             Console.WriteLine("Running WeaveMicro网关.");
             var config = builder.Build();
             String mcip = config["Microcenter"];
             mc = new MicroClient(mcip.Split(':')[0], Convert.ToInt32(mcip.Split(':')[1]));
             mc.ReceiveEvent += Mc_ReceiveEvent;
-            mc.Connection(); 
+            mc.Connection();
             mc.RegClient("网关1");
             applicationUrl = config["applicationUrl"];
             args = new string[] { config["applicationUrl"] };
@@ -57,14 +57,14 @@ namespace gateway
         {
             try
             {
-                 String datastr = Newtonsoft.Json.JsonConvert.SerializeObject(serv);
-                
-                    datastr = "{\"server\":" + datastr + "}";
-                    System.IO.StreamWriter sw = new System.IO.StreamWriter("funconfig.json", false);
-                    sw.Write(datastr);
-                    sw.Close();
-                    Proccessor.servers = Funconfig.getConfig();
-                   WeightAlgorithm._serviceDic.Clear();
+                String datastr = Newtonsoft.Json.JsonConvert.SerializeObject(serv);
+
+                datastr = "{\"server\":" + datastr + "}";
+                System.IO.StreamWriter sw = new System.IO.StreamWriter("funconfig.json", false);
+                sw.Write(datastr);
+                sw.Close();
+                Proccessor.servers = Funconfig.getConfig();
+                WeightAlgorithm._serviceDic.Clear();
 
 
             }
@@ -74,9 +74,9 @@ namespace gateway
         static IConfigurationBuilder builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("config.json");
 
         public static IWebHostBuilder CreateHostBuilder(string[] args) =>
-           
+
             WebHost.CreateDefaultBuilder().UseUrls(args[0]).UseStartup<Startup>();
 
-        
+
     }
 }

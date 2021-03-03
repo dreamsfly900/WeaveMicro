@@ -4084,19 +4084,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\xingy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\weave-micro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj",
+      "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj",
       "projectName": "WeaveMicrocenter",
-      "projectPath": "D:\\weave-micro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\weave-micro\\微服务架构\\WeaveMicro\\obj\\",
+      "projectPath": "D:\\WeaveMicro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj",
+      "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
+      "outputPath": "D:\\WeaveMicro\\微服务架构\\WeaveMicro\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4104,18 +4104,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "\\\\192.168.1.100\\share\\syc\\nupkgs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj": {
-              "projectPath": "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj"
+            "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
+              "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj"
             },
-            "D:\\weave-micro\\微服务架构\\wRPC\\wRPC.csproj": {
-              "projectPath": "D:\\weave-micro\\微服务架构\\wRPC\\wRPC.csproj"
+            "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj": {
+              "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj"
             }
           }
         }
@@ -4168,5 +4167,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "读取缓存文件 D:\\WeaveMicro\\微服务架构\\WeaveMicro\\obj\\project.nuget.cache 时遇到问题: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

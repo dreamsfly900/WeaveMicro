@@ -1,94 +1,88 @@
 //加载json
 function handleRequest() {
     $(".moduleList").empty();
+    var search = location.search;
+    var controllName = "all";
+    if (search && search.length > 1) {
+        controllName = search.split("&")[1];
+    }
     try {
         $.ajax({
             type: "get",
             async: true,
-            url: "json/temp.json",
+            url: "/temp.json",
             dataType: "json",
             success: function (jsonData) {
                 var apiUrl = "http://" + jsonData[0].IP + ":" + jsonData[0].Port + "/";
                 $("#url").val(apiUrl);//"http://116.255.241.138:1221/"
                 var itemArr = [];
                 $.each(jsonData, function (i, api) {
-                    for (var item of api.services) {
-                        var name = item.Route.split("/")[0],
-                            ind = $.inArray(name, itemArr);
-                        if (ind == -1) {
-                            itemArr.push(name);
-                            ind = itemArr.length - 1;
-                            $(".moduleList").append(`<li class="resource" id="resource_${name}">
-                    <div>
-                        <span class="subTit routename">${name}</span>
-                        <p class="operaBtnPart inBlock fRig">
-                            <button class="showOrhide">显示/隐藏</button>
-                            <button class="showOperaOrhideOpera">展开/隐藏操作</button>
-                        </p>
-                    </div>
-                    <ul class="slideList">  </ul>
-                    </li>`);
-                        }
-                        var liHtml = "";
-                        //请求 参数
-                        var Params_post = new Object(), Params_get = "";
-                        var parameters = item.parameter;
-                        var parameterstr = item.parameterexplain;
-
-                        $.each(parameters, function (i, pp) {
-                            var descText = parameterstr[i].split("|")[0].replace("@", "");
-                            var _fieldtype = descText.split(',')[1];
-                            if (_fieldtype.indexOf("Int32") != -1) {
-                                _fieldtype = 0;
+                    if (api.Name == controllName || controllName == "all") {
+                        for (var item of api.services) {
+                            var name = item.Route.split("/")[0], ind = $.inArray(name, itemArr);
+                            if (ind == -1) {
+                                itemArr.push(name);
+                                ind = itemArr.length - 1;
+                                $(".moduleList").append(`<li class="resource" id="resource_${name}"><div><span class="subTit routename">${name}</span><p class="operaBtnPart inBlock fRig"><button class="showOrhide mr-1">显示/隐藏</button><button class="showOperaOrhideOpera">展开/隐藏操作</button></p></div><ul class="slideList">  </ul></li>`);
                             }
-                            Params_get += ` <tr> <td>${pp}</td><td><input type="text" placeholder="(required)" class="parameter required" minlenth="1" name="${pp}"></td><td>${_fieldtype}</td><td>query</td><td>${descText.split(',')[0]}</td></tr>`
-                            Params_post[pp] = _fieldtype;
-                        });
+                            var liHtml = "";
+                            //请求 参数
+                            var Params_post = new Object(), Params_get = "";
+                            var parameters = item.parameter;
+                            var parameterstr = item.parameterexplain;
 
-                        var contentTypes = { post: '<option value="application/x-www-form-urlencoded">application/x-www-form-urlencoded</option>', none: '<option value="application/json">application/json</option>' }
-                        if (["post", "POST", "NONE"].includes(item.Method.toUpperCase())) {
-                            liHtml = `<li class="${item.Method} operation" id="${item.Route.replace("/", "_")}">
-                    <p class="col hander">
-                        <button class="httpMethod">${item.Method}</button>
+                            $.each(parameters, function (i, pp) {
+                                var descText = parameterstr[i].split("|")[0].replace("@", "");
+                                var _fieldtype = descText.split(',')[1];
+                                if (_fieldtype && _fieldtype.indexOf("Int32") != -1) {
+                                    _fieldtype = 0;
+                                }
+                                Params_get += ` <tr> <td>${pp}</td><td><input type="text" placeholder="(required)" class="parameter required" minlenth="1" name="${pp}"></td><td>${_fieldtype}</td><td>query</td><td>${descText.split(',')[0]}</td></tr>`
+                                Params_post[pp] = _fieldtype;
+                            });
 
-
-                        <span class="httpPath"><a href="#${item.Route}" class="routepath">${item.Route}</a></span>
-                        <span class="fRig defColor httpOptions">${item.annotation}</span>
-                    </p>
-                    <div class="operaDetails">
-                        <p>响应Content Type 
-                            <select name="respContentType"><option value="application/json">application/json</option><option value="text/json">text/json</option></select>
-                        </p>
-                        <p class="defColor">参数</p>
-                        <table class="tableParameters">
-                            <thead><tr><td width="100px">参数</td><td width="300px">值</td><td width="200px">描述</td><td width="100px">参数类型</td><td width="200px">数据类型</td></tr></thead>
-                            <tbody>
-                                <tr>
-                                    <td>mode</td>
-                                    <td>
-                                        <textarea name="mode" class="body-textarea required" cols="30" rows="10" placeholder="(required)"></textarea>
-                                        <p>Parameter content type:</p><select name="paramContentType">${contentTypes[item.Method.toLowerCase()]}</select>
-                                    </td>
-                                    <td>参数</td>
-                                    <td>body</td>
-                                    <td>
-                                        <p>Example Value</p>
-                                        <div class="examBox"><pre><code> ${JSON.stringify(Params_post, null, 4)}</code></pre></div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <p class="bottBtn"><button class="tryBtn">试一下！</button></p>
-                        <div class="resPart reponse_body" style="display:none;">
-                            <p class="defColor">请求URL</p><div class="box request_url">${apiUrl + item.Route}</div>
-                            <p class="defColor">响应体</p><div class="box response_body"></div> 
-                            <p class="defColor">响应码</p><div class="box response_code"></div> 
-                        </div>
-                    </div>
-                </li>`;
-                        } else {
-                            var className = "GET";
-                            liHtml = ` <li class="${className} operation" id="${item.Route.replace("/", "_")}">
+                            var contentTypes = { post: '<option value="application/x-www-form-urlencoded">application/x-www-form-urlencoded</option>', none: '<option value="application/json">application/json</option>' }
+                            if (["post", "POST", "NONE"].includes(item.Method.toUpperCase())) {
+                                liHtml = `<li class="${item.Method} operation" id="${item.Route.replace("/", "_")}" Authorize="${item.Authorize}">
+                                <p class="col hander">
+                                    <button class="httpMethod">${item.Method}</button>
+                                    <span class="httpPath"><a href="#${item.Route}" class="routepath">${item.Route}</a></span>
+                                    <span class="fRig defColor httpOptions">${item.annotation}</span>
+                                </p>
+                                <div class="operaDetails">
+                                    <p>响应Content Type 
+                                        <select name="respContentType"><option value="application/json">application/json</option><option value="text/json">text/json</option></select>
+                                    </p>
+                                    <p class="defColor">参数</p>
+                                    <table class="tableParameters">
+                                        <thead><tr><td width="100px">参数</td><td width="300px">值</td><td width="200px">描述</td><td width="100px">参数类型</td><td width="200px">数据类型</td></tr></thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>mode</td>
+                                                <td>
+                                                    <textarea name="mode" class="body-textarea required" cols="30" rows="10" placeholder="(required)"></textarea>
+                                                    <p>Parameter content type:</p><select name="paramContentType">${contentTypes[item.Method.toLowerCase()]}</select>
+                                                </td>
+                                                <td>参数</td>
+                                                <td>body</td>
+                                                <td>
+                                                    <p>Example Value</p>
+                                                    <div class="examBox"><pre><code> ${JSON.stringify(Params_post, null, 4)}</code></pre></div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p class="bottBtn"><button class="tryBtn">试一下！</button></p>
+                                    <div class="resPart reponse_body" style="display:none;">
+                                        <p class="defColor">请求URL</p><div class="box request_url">${apiUrl + item.Route}</div>
+                                        <p class="defColor">响应体</p><div class="box response_body"></div> 
+                                        <p class="defColor">响应码</p><div class="box response_code"></div> 
+                                    </div>
+                                </div>
+                            </li>`;
+                            } else {
+                                var className = "GET";
+                                liHtml = ` <li class="${className} operation" id="${item.Route.replace("/", "_")}" Authorize="${item.Authorize}">
                     <p class="col hander">
                         <button class="httpMethod">${item.Method}</button>
                         <span class="httpPath"><a href="#${item.Route}" class="routepath">${item.Route}</a></span>
@@ -110,8 +104,9 @@ function handleRequest() {
                     </div>
                 </li>`;
 
+                            }
+                            $(".moduleList>li:eq(" + ind + ") .slideList").append(liHtml);
                         }
-                        $(".moduleList>li:eq(" + ind + ") .slideList").append(liHtml);
                     }
                 });
                 var params = location.href.split("#")[1];
@@ -144,8 +139,7 @@ function handleRequest() {
         return type;
     };
     var d, v = {};
-    "undefined" != typeof window ? d = window : "undefined" != typeof self ? d = self : (console.warn("Using browser-only version of superagent in non-browser environment"),
-        d = this);
+    "undefined" != typeof window ? d = window : "undefined" != typeof self ? d = self : (console.warn("Using browser-only version of superagent in non-browser environment"), d = this);
 
     function s(e) {
         var t, n, r, i, a = e.split(/\r?\n/), o = {};
@@ -226,34 +220,6 @@ function handleRequest() {
             this.method = p.method;
             this.headers = p.headers;
 
-            //var settings = {
-            //    type: this.method,
-            //    url: this.url,
-            //    //beforeSend: function (request) {
-            //    //    for (var ph in t.header)
-            //    //        null != t.header[ph] && request.setRequestHeader(ph, t.header[ph]);
-            //    //},
-            //    //async: true,
-            //    //crossDomain: true, // 发送Ajax时，Request header 中会包含跨域的额外信息，但不会含cookie（作用不明，不会影响请求头的携带）
-            //    success: function (data) {
-            //        console.log(data);
-            //    },
-            //    complete: function (xhr, data) {
-            //        console.log(data);
-            //    }
-            //}
-            //设置发送headers
-            //for (var ph in t.headers) {
-            //    if (!settings.headers) settings.headers = {};
-            //    null != t.headers[ph] && (settings.headers[ph] = t.headers[ph]);
-            //}
-
-            //if (this.method.toUpperCase() == "GET" && "HEAD" != this.method) {
-            //    this.appendQueryString()
-            //} else {
-            //    settings.data = JSON.parse(p.data);
-            //}
-            //$.ajax(settings);
             n.onreadystatechange = function () {
                 if (4 == n.readyState) {
                     var e;
@@ -331,6 +297,20 @@ function handleRequest() {
     window.ajaxRequest = new AjaxRequest();
 }
 $(function () {
+    //查找
+    $(document).on("click", "#searchBtn", function (e) {
+        var keyword = $("#apiKey").val();
+        if (keyword == "" || keyword == null) {
+            return;
+        }
+        var node = $(".slideList li[id$='" + keyword + "']");
+        if (node.length) {
+            $(".slideList .operaDetails").hide();
+            node.closest(".resource").find(".slideList").show(); node.find(".operaDetails").slideDown();
+        } else {
+            layer.msg("未查到相关接口信息");
+        }
+    })
     //展示/隐藏
     $(document).on("click", ".showOrhide", function (e) {
         $(e.target).parent().parent().next(".slideList").slideToggle(300);
@@ -374,7 +354,6 @@ $(function () {
             data: body,
             headers: {}
         };
-
         if (e == !1) {
             return;
         }
@@ -386,5 +365,4 @@ $(function () {
         ajaxRequest.send(a);
     })
     handleRequest();
-
 })

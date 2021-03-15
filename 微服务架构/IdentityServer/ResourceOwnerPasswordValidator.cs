@@ -42,11 +42,11 @@ namespace IdentityServer
                     {
                         TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
 
-                        string sign = "appid=" + Loginname + "&timestamp=" + Math.Round(ts.TotalMilliseconds, 0).ToString() + "&proj="+ type;
+                        string sign = "appid=" + Loginname + "&timestamp=" + Math.Round(ts.TotalMilliseconds, 0).ToString() + "&proj=" + type;
 
                         string authTicket = getSha256(sign);
                         aDal.UpdateTicket(admin.Id, authTicket);
-            
+
                         //验证成功
                         context.Result = new GrantValidationResult(
                              subject: context.UserName,
@@ -55,20 +55,25 @@ namespace IdentityServer
                                 new Claim("UserId", admin.Id.ToString()),
                                 new Claim("Name",admin.LoginName),
                                 new Claim("Phone", admin.Phone),
-                                new Claim("Role","")
+                                new Claim("Role",admin.Areacode)
                              });
                     }
                     else
                     {
                         //验证失败
+                        //context.Result = new GrantValidationResult()
+                        //{
+                        //    IsError = true,
+                        //    Error = "用户名或密码不正确"
+                        //};
                         context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "用户名或密码不正确");
                     }
                 }
             }
             catch (Exception e)
             {
-                //验证失败
-                context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "invalid custom credential");
+                //验证失败                
+                context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "invalid custom credential:" + e.Message);
             }
 
             //if (context.UserName == "admin" && context.Password == "123")
@@ -90,7 +95,7 @@ namespace IdentityServer
             try
             {
                 byte[] bytValue = System.Text.Encoding.UTF8.GetBytes(strData);
-                
+
                 SHA256 sha256 = new SHA256CryptoServiceProvider();
                 byte[] retVal = sha256.ComputeHash(bytValue);
                 StringBuilder sb = new StringBuilder();

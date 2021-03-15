@@ -4,10 +4,17 @@
 
 using System;
 using System.IO;
+using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 
 namespace IdentityServer
 {
@@ -19,19 +26,31 @@ namespace IdentityServer
         {
             Environment = environment;
         }
-
+        public IConfiguration Configuration { get; }
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
         public void ConfigureServices(IServiceCollection services)
         {
             // uncomment, if you wan to add an MVC-based UI
             //services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
 
+            #region 内存方式
             var builder = services.AddIdentityServer()
+                .AddDeveloperSigningCredential()
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryApiResources(Config.GetApis())
                 .AddResourceOwnerValidator<ResourceOwnerPasswordValidator>()
                 .AddInMemoryClients(Config.GetClients()).AddProfileService<ProfileService>();
+            #endregion
 
-            builder.AddDeveloperSigningCredential();
             if (Environment.IsDevelopment())
             {
 
@@ -51,22 +70,22 @@ namespace IdentityServer
 
             // uncomment if you want to support static files
             //app.UseStaticFiles();
+
             app.UseMiddleware<CorsMiddleware>();
 
             //app.Use(async (context, next) => {
 
             //    await next.Invoke();
             //});
+            app.UseIdentityServer(); //启用identityServer中间件
 
-            app.UseIdentityServer();
-
+            //app.UseAuthentication();
+  
             // app.Run(Proccessor.agent);
-            //app.UseStaticFiles();
             //app.UseMvcWithDefaultRoute();
             // uncomment, if you wan to add an MVC-based UI
             //app.UseMvcWithDefaultRoute();
         }
+
     }
-
-
 }

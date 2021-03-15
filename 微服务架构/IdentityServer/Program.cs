@@ -18,7 +18,7 @@ namespace IdentityServer
         static IConfigurationBuilder builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("config.json");
         public static void Main(string[] args)
         {
-            Console.Title = "IdentityServer4";
+            Console.Title = "IdentityServer4 - 认证中心";
 
             CreateWebHostBuilder(args).Build().Run();
         }

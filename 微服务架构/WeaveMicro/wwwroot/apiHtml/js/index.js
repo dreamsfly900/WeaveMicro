@@ -10,7 +10,7 @@ function handleRequest() {
         $.ajax({
             type: "get",
             async: true,
-            url: "/temp.json",
+            url: "temp.json",
             dataType: "json",
             success: function (jsonData) {
                 var apiUrl = "http://" + jsonData[0].IP + ":" + jsonData[0].Port + "/";

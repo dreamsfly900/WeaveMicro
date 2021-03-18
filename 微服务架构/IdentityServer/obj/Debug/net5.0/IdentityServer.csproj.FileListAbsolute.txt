@@ -37,6 +37,7 @@ D:\WeaveMicro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.pdb
 D:\WeaveMicro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.genruntimeconfig.cache
 D:\WeaveMicro\微服务架构\IdentityServer\bin\Debug\net5.0\config.json
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\config.json
+D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\SQLConn.json
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\IdentityServer.exe
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\IdentityServer.deps.json
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\IdentityServer.runtimeconfig.json
@@ -47,6 +48,7 @@ D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\IdentityServer.pd
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\IdentityModel.dll
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\IdentityServer4.dll
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\IdentityServer4.Storage.dll
+D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
@@ -59,11 +61,17 @@ D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\Serilog.AspNetCor
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\Serilog.Extensions.Logging.dll
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\Serilog.Sinks.Console.dll
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\Serilog.Sinks.File.dll
+D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\System.Data.SqlClient.dll
 D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
-<<<<<<< HEAD
-=======
-D:\weave-micro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.csprojAssemblyReference.cache
->>>>>>> 280080ca740eea403a3f84dcc8b090fb93f1d33f
+D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\SignalDAL.dll
+D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\SignalModel.dll
+D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\SignalDAL.pdb
+D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\SignalModel.pdb
 D:\weave-micro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.GeneratedMSBuildEditorConfig.editorconfig
 D:\weave-micro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.AssemblyInfoInputs.cache
 D:\weave-micro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.AssemblyInfo.cs
@@ -78,10 +86,3 @@ D:\weave-micro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.dl
 D:\weave-micro\微服务架构\IdentityServer\obj\Debug\net5.0\ref\IdentityServer.dll
 D:\weave-micro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.pdb
 D:\weave-micro\微服务架构\IdentityServer\obj\Debug\net5.0\IdentityServer.genruntimeconfig.cache
-<<<<<<< HEAD
-D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\SignalDAL.dll
-D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\SignalModel.dll
-D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\SignalDAL.pdb
-D:\weave-micro\微服务架构\IdentityServer\bin\Debug\net5.0\SignalModel.pdb
-=======
->>>>>>> 280080ca740eea403a3f84dcc8b090fb93f1d33f

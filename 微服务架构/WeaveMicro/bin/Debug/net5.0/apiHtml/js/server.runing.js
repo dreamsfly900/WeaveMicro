@@ -1,11 +1,11 @@
 ﻿//服务中心
 var ServRuning = {
     //服务列表
+    filepath: "",
     serverlist() {
         var e = this;
-        e.readTextFile("/temp.json", function (text) {
+        e.readTextFile(this.filepath + "/temp.json", function (text) {
             var data = JSON.parse(text);
-            console.log(data);
             var source = "";
             $("div[name=\"服务\"] .server-items").remove();
             if (data && data != null) {
@@ -13,7 +13,7 @@ var ServRuning = {
                     source += `<div class="col-lg-4 col-md-6 col-sm-6 server-items">
                     <div class="card card-block card-stretch card-height">
                         <div class="card-body image-thumb">
-                            <a href="index.html?api=${item.IP}:${item.Port}" data-toggle="modal" data-target="#index">
+                            <a href="index.html?api=${item.IP}:${item.Port}&${item.Name}" data-toggle="modal" data-target="#index">
                                 <div class="mb-4 text-center p-3 rounded iq-thumb">
                                     <div class="iq-image-overlay"></div><img src="image/server.png" class="img-fluid" alt="${item.Name}">
                                 </div>
@@ -33,9 +33,8 @@ var ServRuning = {
     //网关
     geteway() {
         var e = this;
-        e.readTextFile("/gateway.json", function (text) {
+        e.readTextFile(this.filepath + "/gateway.json", function (text) {
             var data = JSON.parse(text);
-            console.log(data);
             var source = "";
             $("div[name=\"网关\"] .server-items").remove();
             if (data && data != null) {

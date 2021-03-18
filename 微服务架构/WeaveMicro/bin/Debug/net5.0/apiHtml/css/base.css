@@ -7,43 +7,33 @@ html {
     font-size: 16px;
     /* background:#fff; */
 }
-
-* {
-    color: #fff;
-}
-
 .inBlock {
     display: inline-block;
 }
-
 .fRig {
     float: right;
 }
-
-div,
-p,
-ul,
-li {
+div,p,ul,li {
     padding: 0;
     margin: 0;
 }
-
 a {
     color: #fff;
     text-decoration: none;
 }
-
 ul li {
     list-style: none;
 }
 
 button {
+    color:#fff;
     border: none;
     background: #0078D7;
     border-radius: 3px;
     padding: 0 10px;
     height: 32px;
     line-height: 32px;
+    font-size:0.9rem;
 }
 
 input[type=text] {
@@ -56,21 +46,17 @@ input[type=text] {
     line-height: 30px;
     width: 250px;
 }
-
 input[type=text]:focus {
     border-color: #0078D7;
 }
-
 button:focus {
     border-color: #0078D7 !important;
 }
-
 select {
-    line-height: 22px;
-    height: 22px;
+    line-height: 30px;
+    height: 30px;
     padding: 0 5px;
 }
-
 textarea {
     display: inline-block;
     margin-top: 5px;

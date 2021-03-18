@@ -21,6 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\apiHtml\bak.html" />
+    <Content Remove="wwwroot\apiHtml\css\base.css" />
+    <Content Remove="wwwroot\apiHtml\js\index.js" />
     <Content Remove="wwwroot\apiHtml\js\jquery-3.2.1.min.js" />
   </ItemGroup>
 
@@ -43,7 +46,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\apiHtml\js\index.js" />
     <None Include="wwwroot\apiHtml\js\theme\default\font\iconfont.svg" />
   </ItemGroup>
 

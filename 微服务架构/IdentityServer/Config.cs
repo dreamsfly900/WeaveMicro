@@ -60,7 +60,7 @@ namespace IdentityServer
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile
                     },
-                    AccessTokenLifetime = 3600 * 24 //失效时间
+                    AccessTokenLifetime = 3600 * 10 //失效时间
                 }
             };
         }

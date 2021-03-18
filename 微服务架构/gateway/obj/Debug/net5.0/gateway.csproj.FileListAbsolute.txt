@@ -109,3 +109,4 @@ D:\weave-micro\微服务架构\gateway\obj\Debug\net5.0\gateway.dll
 D:\weave-micro\微服务架构\gateway\obj\Debug\net5.0\ref\gateway.dll
 D:\weave-micro\微服务架构\gateway\obj\Debug\net5.0\gateway.pdb
 D:\weave-micro\微服务架构\gateway\obj\Debug\net5.0\gateway.genruntimeconfig.cache
+D:\weave-micro\微服务架构\gateway\bin\Debug\net5.0\config.json

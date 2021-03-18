@@ -52,7 +52,7 @@ namespace gateway
                         body = reader.ReadToEnd();
 
                     }
-                    if (context.Request.ContentType == "application/json")
+                    if (context.Request.ContentType.IndexOf("application/json")>=0)
                     {
 
                         contentFromBody = body;
@@ -87,7 +87,7 @@ namespace gateway
                     rlog.RouteIP = ser.IP + ser.Port;
                     if (!IsAuthenticated(context, ser.services[0].Authorize))
                     {
-                        await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 0, msg = "非法请求" }));
+                        await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 401, msg = "非法请求" }));
                         // context.Abort();
                         return;
                     }
@@ -105,7 +105,7 @@ namespace gateway
 
                                 if (ser.services[0].Method == "NONE")
                                 {
-                                    if (context.Request.ContentType.ToLower() == "application/json")
+                                    if (context.Request.ContentType.ToLower().Contains("application/json"))
                                     {
                                         objs[i] = Newtonsoft.Json.JsonConvert.DeserializeObject(contentFromBody);
                                     }

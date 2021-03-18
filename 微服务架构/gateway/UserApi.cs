@@ -23,7 +23,7 @@ namespace gateway
     {
         private static string _noSafe = "and|exec|execute|insert|select|delete|update|count|chr|mid|master|" +
                                                    "char|declare|sitename|net user|xp_cmdshell|or|create|drop|table|from|grant|use|group_concat|column_name|" +
-                                                   "information_schema.columns|table_schema|union|where|select|delete|update|orderhaving|having|by|count|*|truncate|like|'|;|--|\'|\"|/*|%|#";//查询时危险字符；
+                                                   "information_schema.columns|table_schema|union|where|select|delete|update|orderhaving|having|by|count|truncate|like|%|;|--|#";//查询时危险字符；
         public static server[] servers;
         public async static Task agent(HttpContext context)
         {
@@ -174,7 +174,7 @@ namespace gateway
                         foreach (string hh in Headers)
                         {
                             Regex reg = new Regex(_noSafe, RegexOptions.IgnoreCase);
-                            if (reg.IsMatch(context.Request.Headers[hh]))
+                            if (reg.IsMatch(context.Request.Headers[hh].ToString()))
                             {
                                 await context.Response.WriteAsync($" ~, {  "警告！！不安全SELECT!已记录IP，等待报警"}");
                                 return;

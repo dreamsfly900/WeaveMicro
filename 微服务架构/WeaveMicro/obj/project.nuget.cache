@@ -101,5 +101,12 @@
     "C:\\Users\\Admin\\.nuget\\packages\\wrpc\\1.0.1\\wrpc.1.0.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\wrpcservice\\1.0.5\\wrpcservice.1.0.5.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "读取缓存文件 D:\\weave-micro\\微服务架构\\WeaveMicro\\obj\\project.nuget.cache 时遇到问题: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

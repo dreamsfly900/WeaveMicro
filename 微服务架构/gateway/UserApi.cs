@@ -13,6 +13,7 @@ using wRPC;
 using Newtonsoft.Json;
 using WeaveMicroClient;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace gateway
 {
@@ -20,6 +21,9 @@ namespace gateway
 
     public static class Proccessor
     {
+        private static string _noSafe = "and|exec|execute|insert|select|delete|update|count|chr|mid|master|" +
+                                                   "char|declare|sitename|net user|xp_cmdshell|or|create|drop|table|from|grant|use|group_concat|column_name|" +
+                                                   "information_schema.columns|table_schema|union|where|select|delete|update|orderhaving|having|by|count|truncate|like|%|;|--|#";//查询时危险字符；
         public static server[] servers;
         public async static Task agent(HttpContext context)
         {
@@ -141,7 +145,18 @@ namespace gateway
                                             objs[i] = context.Request.Form[ser.services[0].parameter[i]].ToString();
                                     }
                                 }
+                                if (context.Request.ContentType.ToLower() != "application/json")
+                                {
+                                    Regex reg = new Regex(_noSafe, RegexOptions.IgnoreCase);
+                                    if (reg.IsMatch(objs[i].ToString()))
+                                    {
+                                        await context.Response.WriteAsync($" ~, {  "警告！！不安全SELECT!已记录IP，等待报警"}");
+                                        return;
+                                       
+                                    }
+                                }
                             }
+
                         }
 
                         string datastr = Newtonsoft.Json.JsonConvert.SerializeObject(context.Request.Headers);
@@ -157,7 +172,16 @@ namespace gateway
                         String[] Headers = Startup.config.GetSection("Headers").Get<String[]>();
                         Dictionary<string, String> keysh = new Dictionary<string, string>();
                         foreach (string hh in Headers)
+                        {
+                            Regex reg = new Regex(_noSafe, RegexOptions.IgnoreCase);
+                            if (reg.IsMatch(context.Request.Headers[hh].ToString()))
+                            {
+                                await context.Response.WriteAsync($" ~, {  "警告！！不安全SELECT!已记录IP，等待报警"}");
+                                return;
+
+                            }
                             keysh.Add(hh, context.Request.Headers[hh]);
+                        }
                         String[] Cookies = Startup.config.GetSection("Cookies").Get<String[]>();
                         Dictionary<string, String> keysCookies = new Dictionary<string, string>();
 
@@ -166,7 +190,10 @@ namespace gateway
                             foreach (string hh in Cookies)
                             {
                                 if (context.User.Claims.Count(c => c.Type == hh) > 0)
+                                {
+                                    
                                     keysCookies.Add(hh, context.User.Claims.Single(c => c.Type == hh).Value);
+                                }
                             }
                         }
                         //  context.Request.Headers

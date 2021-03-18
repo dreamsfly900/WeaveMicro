@@ -1,6 +1,5 @@
 {
   "Authentication": true,
-<<<<<<< HEAD
   "IdentityServer": "http://localhost:1221",
   "Audience": "api1",
   "defaultScheme": "Bearer",
@@ -8,13 +7,4 @@
   "Microcenter": "116.255.241.135:9002",
   "Cookies": [ "Role", "UserId", "Name", "Phone" ],
   "Headers": [ "token" ]
-=======
-  "IdentityServer": "http://127.0.0.1:1221",
-  "Audience": "api1",
-  "defaultScheme": "Bearer",
-  "applicationUrl": "http://127.0.0.1:1222",
-  "Microcenter": "116.255.241.135:9001",
-  "Cookies": ["Name"],
-  "Headers": ["token"]
->>>>>>> 4daa397eeae2035f7ae033fa2300b8de8747be80
 }

@@ -145,14 +145,18 @@ namespace gateway
                                             objs[i] = context.Request.Form[ser.services[0].parameter[i]].ToString();
                                     }
                                 }
-                                if (context.Request.ContentType.ToLower() != "application/json")
+                                if (context.Request.ContentType != null && !context.Request.ContentType.ToLower().Contains("application/json"))
+                                {
+                                    continue;
+                                }
+                                else 
                                 {
                                     Regex reg = new Regex(_noSafe, RegexOptions.IgnoreCase);
                                     if (reg.IsMatch(objs[i].ToString()))
                                     {
                                         await context.Response.WriteAsync($" ~, {  "警告！！不安全SELECT!已记录IP，等待报警"}");
                                         return;
-                                       
+
                                     }
                                 }
                             }

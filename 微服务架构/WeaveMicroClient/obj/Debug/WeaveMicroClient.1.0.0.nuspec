@@ -15,6 +15,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="D:\WeaveMicro\微服务架构\WeaveMicroClient\bin\Debug\netstandard2.0\WeaveMicroClient.dll" target="lib\netstandard2.0\WeaveMicroClient.dll" />
+    <file src="D:\weave-micro\微服务架构\WeaveMicroClient\bin\Debug\netstandard2.0\WeaveMicroClient.dll" target="lib\netstandard2.0\WeaveMicroClient.dll" />
   </files>
 </package>

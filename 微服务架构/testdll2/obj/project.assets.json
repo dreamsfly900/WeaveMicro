@@ -2301,19 +2301,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\xingy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\weave-micro\\微服务架构\\testdll2\\testdll2.csproj",
+      "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\testdll2\\testdll2.csproj",
       "projectName": "testdll2",
-      "projectPath": "D:\\weave-micro\\微服务架构\\testdll2\\testdll2.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\weave-micro\\微服务架构\\testdll2\\obj\\",
+      "projectPath": "D:\\WeaveMicro\\微服务架构\\testdll2\\testdll2.csproj",
+      "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
+      "outputPath": "D:\\WeaveMicro\\微服务架构\\testdll2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2321,15 +2321,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "\\\\192.168.1.100\\share\\shenyc\\nupkgs\\20210315": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj": {
-              "projectPath": "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj"
+            "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
+              "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj"
             }
           }
         }
@@ -2361,16 +2360,8 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "读取缓存文件 D:\\weave-micro\\微服务架构\\testdll2\\obj\\project.nuget.cache 时遇到问题: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

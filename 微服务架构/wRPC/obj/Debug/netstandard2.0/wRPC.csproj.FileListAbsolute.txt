@@ -1,14 +1,3 @@
-D:\weave-micro\微服务架构\wRPC\bin\Debug\netstandard2.0\wRPC.deps.json
-D:\weave-micro\微服务架构\wRPC\bin\Debug\netstandard2.0\wRPC.dll
-D:\weave-micro\微服务架构\wRPC\bin\Debug\netstandard2.0\wRPC.pdb
-D:\weave-micro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.AssemblyInfoInputs.cache
-D:\weave-micro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.AssemblyInfo.cs
-D:\weave-micro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.csproj.CoreCompileInputs.cache
-D:\weave-micro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.dll
-D:\weave-micro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.pdb
-<<<<<<< HEAD
-=======
-D:\weave-micro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.csprojAssemblyReference.cache
 D:\WeaveMicro\微服务架构\wRPC\bin\Debug\netstandard2.0\wRPC.deps.json
 D:\WeaveMicro\微服务架构\wRPC\bin\Debug\netstandard2.0\wRPC.dll
 D:\WeaveMicro\微服务架构\wRPC\bin\Debug\netstandard2.0\wRPC.pdb
@@ -18,4 +7,3 @@ D:\WeaveMicro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.AssemblyInfo.cs
 D:\WeaveMicro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.csproj.CoreCompileInputs.cache
 D:\WeaveMicro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.dll
 D:\WeaveMicro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.pdb
->>>>>>> 4daa397eeae2035f7ae033fa2300b8de8747be80

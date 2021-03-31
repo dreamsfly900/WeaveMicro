@@ -1348,7 +1348,7 @@
           "bin/placeholder/wRPC.dll": {}
         }
       },
-      "wRPCService/1.0.5": {
+      "wRPCService/1.0.6": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -4068,7 +4068,7 @@
       "path": "../wRPC/wRPC.csproj",
       "msbuildProject": "../wRPC/wRPC.csproj"
     },
-    "wRPCService/1.0.5": {
+    "wRPCService/1.0.6": {
       "type": "project",
       "path": "../wRPCService/wRPCService.csproj",
       "msbuildProject": "../wRPCService/wRPCService.csproj"
@@ -4081,7 +4081,7 @@
       "Microsoft.Extensions.Configuration.Json >= 5.0.0",
       "Microsoft.Extensions.Hosting >= 5.0.0",
       "wRPC >= 1.0.1",
-      "wRPCService >= 1.0.5"
+      "wRPCService >= 1.0.6"
     ]
   },
   "packageFolders": {

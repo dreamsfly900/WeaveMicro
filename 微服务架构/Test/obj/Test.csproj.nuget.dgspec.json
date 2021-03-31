@@ -266,7 +266,7 @@
       }
     },
     "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
-      "version": "1.0.5",
+      "version": "1.0.6",
       "restore": {
         "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
         "projectName": "wRPCService",

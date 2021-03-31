@@ -58,19 +58,22 @@ namespace gateway
                         body = reader.ReadToEnd();
 
                     }
-                    if (context.Request.ContentType.IndexOf("application/json")>=0)
+                    if (context.Request.ContentType != null)
                     {
-
-                        contentFromBody = body;
-
-                    }
-                    else if (context.Request.ContentType.IndexOf("application/x-www-form-urlencoded") >= 0)
-                    {
-                        contentFromBody = body.Split("&");
-
-                        foreach (string datastr in contentFromBody)
+                        if (context.Request.ContentType.IndexOf("application/json") >= 0)
                         {
-                            servicesDic.Add(datastr.Split("=")[0], datastr.Split("=")[1]);
+
+                            contentFromBody = body;
+
+                        }
+                        else if (context.Request.ContentType.IndexOf("application/x-www-form-urlencoded") >= 0)
+                        {
+                            contentFromBody = body.Split("&");
+
+                            foreach (string datastr in contentFromBody)
+                            {
+                                servicesDic.Add(datastr.Split("=")[0], datastr.Split("=")[1]);
+                            }
                         }
                     }
 

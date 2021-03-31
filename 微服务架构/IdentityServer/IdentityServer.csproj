@@ -15,13 +15,4 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
   </ItemGroup>
-  
-  <ItemGroup>
-    <Reference Include="SignalDAL">
-      <HintPath>F:\SVN\信号宝平台\SignalDAL\bin\Debug\SignalDAL.dll</HintPath>
-    </Reference>
-    <Reference Include="SignalModel">
-      <HintPath>F:\SVN\信号宝平台\SignalModel\bin\Debug\SignalModel.dll</HintPath>
-    </Reference>
-  </ItemGroup>
 </Project>

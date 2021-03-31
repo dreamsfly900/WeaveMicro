@@ -147,7 +147,7 @@ namespace gateway
                                             objs[i] = context.Request.Form[ser.services[0].parameter[i]].ToString();
                                     }
                                 }
-                                if (context.Request.ContentType != null && !context.Request.ContentType.ToLower().Contains("application/json"))
+                                if (context.Request.ContentType != null && context.Request.ContentType.ToLower().Contains("application/json"))
                                 {
                                     continue;
                                 }

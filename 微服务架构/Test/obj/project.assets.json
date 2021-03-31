@@ -1297,7 +1297,7 @@
           "bin/placeholder/WeaveMicroClient.dll": {}
         }
       },
-      "WeaveRemoteService/1.0.3": {
+      "WeaveRemoteService/1.0.4": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -3880,7 +3880,7 @@
       "path": "../WeaveMicroClient/WeaveMicroClient.csproj",
       "msbuildProject": "../WeaveMicroClient/WeaveMicroClient.csproj"
     },
-    "WeaveRemoteService/1.0.3": {
+    "WeaveRemoteService/1.0.4": {
       "type": "project",
       "path": "../WeaveRemoteService/WeaveRemoteService.csproj",
       "msbuildProject": "../WeaveRemoteService/WeaveRemoteService.csproj"
@@ -3899,7 +3899,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "WeaveMicroClient >= 1.0.0",
-      "WeaveRemoteService >= 1.0.3",
+      "WeaveRemoteService >= 1.0.4",
       "testdll2 >= 1.0.0",
       "wRPC >= 1.0.1"
     ]

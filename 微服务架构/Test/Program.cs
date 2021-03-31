@@ -24,15 +24,15 @@ namespace Test
             RemoteService remoteService = new RemoteService("TEST");
             remoteService.Start();
              MM_BeginPeriod(1);//设置休眠精度
-            while (true)
-            {
-                System.Threading.Thread.Sleep(10);
-                DateTime dt = DateTime.Now;
-                bb();
+            //while (true)
+            //{
+            //    System.Threading.Thread.Sleep(10);
+            //    DateTime dt = DateTime.Now;
+            //    bb();
 
-                DateTime dt2 = DateTime.Now;
-                Console.WriteLine("Main:" + (dt2 - dt).TotalMilliseconds);
-            }
+            //    DateTime dt2 = DateTime.Now;
+            //    Console.WriteLine("Main:" + (dt2 - dt).TotalMilliseconds);
+            //}
             while (true)
             {
                 System.Threading.Thread.Sleep(10);
@@ -54,7 +54,7 @@ namespace Test
         static void bb()
         {
            
-               String retun =  clientChannel.Call<String>("abcd", "ff",  new { name = "gghhss", age = 0 } );
+            //   String retun =  clientChannel.Call<String>("abcd", "ff",  new { name = "gghhss", age = 0 } );
           //  Console.WriteLine("ceshi:"+retun);
              
         }

@@ -15,14 +15,14 @@ namespace testdll2
     }
     public class Class1
     {
-        [InstallFun(FunAttribute.NONE, "此方法用于测试")]
+        [InstallFun(FunAttribute.Get, "此方法用于测试")]
         public void ff(string str)
         {
 
             Console.WriteLine(str);
         }
     }
-    [Route("abcd")]
+    [Route("api/abcd")]
     public class Class2: FunctionBase
     {
         [InstallFun(FunAttribute.NONE, "此方法用于测试")]

@@ -33,7 +33,7 @@ namespace wRPCService
                  
                 String rdata = GZIP.GZipDecompress(data);
                 Rpcdata<Object[]> rpdata = Newtonsoft.Json.JsonConvert.DeserializeObject<Rpcdata<Object[]>>(rdata);
-                if (!keyValuePairs.ContainsKey(rpdata.Route.Replace('/', '.')))
+                if (!keyValuePairs.ContainsKey(rpdata.Route))
 
                 {
                     P2Server.Send(soc, 0x05, GZIP.GZipCompress( "server Route error"));
@@ -43,7 +43,7 @@ namespace wRPCService
                 //Type tt = keyValuePairs[rpdata.Route.Replace('/', '.')];
                 //Assembly ab = Assembly.GetAssembly(tt);
                // object obj = ab.CreateInstance(tt.FullName);
-                object obj = keyValuePairs[rpdata.Route.Replace('/', '.')];
+                object obj = keyValuePairs[rpdata.Route];
                 Type t = obj.GetType();
                 obj = t.Assembly.CreateInstance(t.FullName);
                 MethodInfo mi = t.GetMethod(rpdata.FunName);

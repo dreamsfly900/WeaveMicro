@@ -1282,7 +1282,7 @@
           "bin/placeholder/testdll2.dll": {}
         }
       },
-      "WeaveMicroClient/1.0.0": {
+      "WeaveMicroClient/1.0.1": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1301,7 +1301,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "WeaveMicroClient": "1.0.0",
+          "WeaveMicroClient": "1.0.1",
           "wRPCService": "1.0.6"
         },
         "compile": {
@@ -3875,7 +3875,7 @@
       "path": "../testdll2/testdll2.csproj",
       "msbuildProject": "../testdll2/testdll2.csproj"
     },
-    "WeaveMicroClient/1.0.0": {
+    "WeaveMicroClient/1.0.1": {
       "type": "project",
       "path": "../WeaveMicroClient/WeaveMicroClient.csproj",
       "msbuildProject": "../WeaveMicroClient/WeaveMicroClient.csproj"
@@ -3898,7 +3898,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "WeaveMicroClient >= 1.0.0",
+      "WeaveMicroClient >= 1.0.1",
       "WeaveRemoteService >= 1.0.4",
       "testdll2 >= 1.0.0",
       "wRPC >= 1.0.1"

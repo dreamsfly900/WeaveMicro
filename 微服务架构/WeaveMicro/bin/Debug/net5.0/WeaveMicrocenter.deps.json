@@ -31,7 +31,7 @@
           "Microsoft.Extensions.Configuration.Json": "5.0.0",
           "Microsoft.Extensions.Hosting": "5.0.0",
           "wRPC": "1.0.1",
-          "wRPCService": "1.0.5",
+          "wRPCService": "1.0.6",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -1013,7 +1013,7 @@
           "wRPC.dll": {}
         }
       },
-      "wRPCService/1.0.5": {
+      "wRPCService/1.0.6": {
         "dependencies": {
           "Microsoft.AspNetCore": "2.2.0",
           "Weave.Server": "2.0.20"
@@ -3394,7 +3394,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "wRPCService/1.0.5": {
+    "wRPCService/1.0.6": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

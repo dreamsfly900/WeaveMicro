@@ -928,7 +928,7 @@
           "lib/netstandard2.0/Weave.TCPClient.dll": {}
         }
       },
-      "WeaveMicroClient/1.0.0": {
+      "WeaveMicroClient/1.0.1": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -2324,7 +2324,7 @@
         "weave.tcpclient.nuspec"
       ]
     },
-    "WeaveMicroClient/1.0.0": {
+    "WeaveMicroClient/1.0.1": {
       "type": "project",
       "path": "../WeaveMicroClient/WeaveMicroClient.csproj",
       "msbuildProject": "../WeaveMicroClient/WeaveMicroClient.csproj"
@@ -2338,7 +2338,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
-      "WeaveMicroClient >= 1.0.0",
+      "WeaveMicroClient >= 1.0.1",
       "wRPCService >= 1.0.6"
     ]
   },

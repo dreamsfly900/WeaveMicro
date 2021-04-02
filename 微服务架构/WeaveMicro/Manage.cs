@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
@@ -44,6 +45,7 @@ namespace WeaveMicrocenter
         public string Sid { get; set; }
         public string IP { get; set; }
         public int port { get; set; }
+        [JsonIgnore]
         public Socket socket { get; set; }
     }
     public class server

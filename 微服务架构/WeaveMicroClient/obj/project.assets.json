@@ -2327,7 +2327,7 @@
     "C:\\Users\\xingy\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "restore": {
       "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj",
       "projectName": "WeaveMicroClient",

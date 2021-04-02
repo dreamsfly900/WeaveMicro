@@ -44,10 +44,10 @@ namespace WeaveMicro
 
             weaveP2Server.Start(Convert.ToInt32(config["port"]));
             CreateHostBuilder(args).Build().Run();
-          //  saveRouteLog();启用线程
-            
+            //  saveRouteLog();启用线程
 
-           
+
+
             while (true)
             {
                 string command = Console.ReadLine();

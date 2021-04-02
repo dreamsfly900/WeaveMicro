@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using wRPC;
 
 namespace WeaveMicroClient
@@ -36,8 +37,9 @@ namespace WeaveMicroClient
             }
             if (serv != null)
                 RegService(serv);
-            if (aPIclient != null)
-                RegClient(aPIclient.Sid);
+            if (listaPIclient.Count>0)
+                foreach(APIclient apic in listaPIclient)
+                RegClient(apic.Sid, apic.IP, apic.port,false);
         }
         public void RegService(server serv)
         {
@@ -56,13 +58,16 @@ namespace WeaveMicroClient
             else
                 Console.WriteLine($"发送:log-{str}");
         }
-        public void RegClient(String Sid)
+        List<APIclient> listaPIclient = new List<APIclient>();
+        public void RegClient(String Sid,String IP,int port,bool add=true)
         {
             APIclient aPIclient = new APIclient();
             aPIclient.IP = IP;
             aPIclient.port = port;
             aPIclient.Sid = Sid;
             this.aPIclient = aPIclient;
+            if(add)
+            listaPIclient.Add(aPIclient);
                String str = Newtonsoft.Json.JsonConvert.SerializeObject(aPIclient);
             P2Pclient.Send(0x01, str);
         }

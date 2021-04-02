@@ -123,7 +123,7 @@
             var _token = localStorage.getItem("authtoken") || "";
             return l.createElement("table", {
                 class: "table responses-table Authorization",
-            }, "<thead><tr class=\"responses-header\"><th class=\"col_header response-col_status\">名称</th><th class=\"col_header response-col_description\" style=\"width:90%\">数据值</th></tr></thead><tbody><tr><td class=\"response-col_status\">Header Prefix</td><td class=\"response-col_description\"><div><input type=\"text\" class=\"parameter required\" value=\"Bearer\" required placeholder=\"Bearer\" name=\"HeaderPrefix\" style=\"width:300px\" /></div></td></tr><tr><td class=\"response-col_status\">Access Token</td><td class=\"response-col_description\"><div><textarea name=\"Authorization\" class=\"parameter required\" required placeholder=\"(required)\">" + _token+"</textarea></div></td></tr></tbody>")
+            }, "<thead><tr class=\"responses-header\"><th class=\"col_header response-col_status\">名称</th><th class=\"col_header response-col_description\" style=\"width:90%\">数据值</th></tr></thead><tbody><tr><td class=\"response-col_status\">Header Prefix</td><td class=\"response-col_description\"><div><input type=\"text\" class=\"parameter required\" value=\"Bearer\" required placeholder=\"Bearer\" name=\"HeaderPrefix\" style=\"width:300px\" /></div></td></tr><tr><td class=\"response-col_status\">Access Token</td><td class=\"response-col_description\"><div><textarea name=\"Authorization\" class=\"parameter required\" required placeholder=\"(required)\">" + _token + "</textarea></div></td></tr></tbody>")
         },
         curl: function (i) {
             return l.createElement("div", {
@@ -156,7 +156,6 @@
                 bodyUI && (bodyUI.innerHTML = "");
                 if (jsonData && jsonData != null) {
                     $.each(jsonData, function (i, api) {
-                        $("#Url").val("http://" + api.IP + ":" + api.Port + "/");
                         if (api.Name == serviceName || serviceName == "all") {
                             var tag, el = l.createElement("div", { class: "block col-12 block-desktop col-12-desktop" }, l.createElement("div", null, tag = that.et["operations-tag"](api.Name, "list")));
                             bodyUI.appendChild(el);
@@ -411,9 +410,36 @@
     }
 
     jQuery(function () {
-        $.getJSON("/temp.json", function (data) {
+        $.getJSON("temp.json", function (data) {
             ui.init(data, ServiceName);
-        })
+        });
+
+        var htmladdObject = $(".gatewaylist");
+        ////网关列表
+        $.getJSON("gateway.json", function (data) {
+            $.each(data, function (i, gt) {
+                var url = "http://" + gt.IP + ":" + gt.port + "/";
+                i == 0 && $("#Url").val(url), htmladdObject.append("<li class=\"item-gateway\"><a href=\"#\">" + url + "</a></li>");
+            });
+        });
+
+        $(".customeUrl").click(function () {
+            var left = $(this).offset().left;
+            if ($(".gatewaylist").is(":visible")) htmladdObject.css("left", left + "px").hide(); else htmladdObject.css("left", left + "px").slideDown(300);
+        });
+      
+        $(document).on("click", ".gatewaylist li a", function () {
+            $("#Url").val($(this).html()); htmladdObject.hide();
+        });
+        $(document).on("click", function (event) {//点击空白处，设置的弹框消失
+            event.stopPropagation();
+            if ($(event.target).find(".gatewaylist").length !== 0) {
+                $(htmladdObject).hide();
+            }
+            if ($(event.target).find(".gatewaylist").length == 0 && (!$(event.target).hasClass("customeUrl") && !$(event.target).hasClass("gatewaylist"))) {
+                $(htmladdObject).hide();
+            }
+        });
 
         jQuery(document).on("click", ".example.microlight", function (e) {
             e.preventDefault();

@@ -176,8 +176,10 @@ namespace WeaveMicro
                     case 0x01:
                         //类型1
                         APIclient client = Newtonsoft.Json.JsonConvert.DeserializeObject<APIclient>(System.Text.UTF8Encoding.UTF8.GetString(data));
-
                         client.socket = soc;
+                        //Console.WriteLine($"网关info:{(client.socket.RemoteEndPoint as IPEndPoint).Address.ToString()}:{(client.socket.RemoteEndPoint as IPEndPoint).Port} {(client.socket.LocalEndPoint as IPEndPoint).Address.ToString()}:{(client.socket.LocalEndPoint as IPEndPoint).Port}");
+                        Console.WriteLine($"网关加入 {client.Sid} {client.IP}:{client.port}");
+
                         lock (APIclientlist)
                         {
                             foreach (APIclient ser in APIclientlist)
@@ -190,7 +192,6 @@ namespace WeaveMicro
                             }
                         }
                         APIclientlist.Add(client);
-                        Console.WriteLine($"网关加入 {client.Sid} {client.IP}:{client.port}");
 
                         savegateway();
                         post();

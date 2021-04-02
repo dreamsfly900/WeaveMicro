@@ -190,7 +190,7 @@ namespace WeaveMicro
                             }
                         }
                         APIclientlist.Add(client);
-                        Console.WriteLine($"网关加入:{client.IP}:{client.port}");
+                        Console.WriteLine($"网关加入 {client.Sid} {client.IP}:{client.port}");
 
                         savegateway();
                         post();
@@ -209,7 +209,7 @@ namespace WeaveMicro
                         //类型3
 
                         server sers = Newtonsoft.Json.JsonConvert.DeserializeObject<server>(System.Text.UTF8Encoding.UTF8.GetString(data));
-                        Console.WriteLine($"服务加入{sers.IP}:{sers.Port}");
+                        Console.WriteLine($"服务加入{sers.Name} {sers.IP}:{sers.Port}");
                         lock (servers)
                         {
                             foreach (server ser in servers)

@@ -275,6 +275,8 @@
                     url: $("#Url").val(),
                     headers: {}
                 }
+                _parent.find(".loading-container").remove();
+
                 a.method = _parent.find(".opblock-summary-method").text(),
                     a.path = _parent.find(".opblock-summary-path").attr("data-path"),
                     _parent.find(".content-type").length ? a.headers["Content-Type"] = _parent.find(".content-type").val() : "";

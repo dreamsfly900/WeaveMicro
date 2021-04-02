@@ -47,7 +47,7 @@ var ServRuning = {
                                     <div class="iq-image-overlay"></div><img src="image/server.png" class="img-fluid" alt="${item.IP}">
                                 </div>
                                 <p class="mb-2 port text-success">IP<span class="float-right">${item.IP}</span></p>
-                                <p class="mb-2 port text-success">端口<span class="float-right">${item.Port}</span></p>
+                                <p class="mb-2 port text-success">端口<span class="float-right">${item.port}</span></p>
                                 <p class="mb-0 status text-success">状态<span class="float-right">运行中</span></p>
                             </a>
                         </div>

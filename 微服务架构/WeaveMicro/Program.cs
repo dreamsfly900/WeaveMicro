@@ -41,11 +41,12 @@ namespace WeaveMicro
                     servers.Add(servers[i]);
                 }
             }
+            //  saveRouteLog();启用线程
+            System.Threading.Thread goroute = new System.Threading.Thread(saveRouteLog);
+            goroute.Start();
 
             weaveP2Server.Start(Convert.ToInt32(config["port"]));
             CreateHostBuilder(args).Build().Run();
-            //  saveRouteLog();启用线程
-
 
 
             while (true)
@@ -141,17 +142,23 @@ namespace WeaveMicro
         /// </summary>
         private static void saveRouteLog()
         {
+            if (!Directory.Exists(_Path + "route\\"))
+            {
+                Directory.CreateDirectory(_Path + "route\\");
+            }
             while (true)
             {
-                //有问题
-                using (StreamWriter sw = new StreamWriter(_Path +DateTime.Now.ToString("yyyyMMddHH") +"routelog.json", false, Encoding.UTF8))
+                if (Routeloglist.Count > 0)
                 {
-                    sw.Write(Newtonsoft.Json.JsonConvert.SerializeObject(Routeloglist));
-                    sw.Close();
-                    sw.Dispose();
+                    using (StreamWriter sw = new StreamWriter(_Path + "route\\" + DateTime.Now.ToString("yyyyMMddHH") + "_log.json", false, Encoding.UTF8))
+                    {
+                        sw.Write(Newtonsoft.Json.JsonConvert.SerializeObject(Routeloglist));
+                        sw.Close();
+                        sw.Dispose();
+                    }
+                    Routeloglist.Clear();
                 }
-                Routeloglist.Clear();
-                System.Threading.Thread.Sleep(1000 * 60*60 );
+                System.Threading.Thread.Sleep(1000 * 60 * 60);
             }
         }
 

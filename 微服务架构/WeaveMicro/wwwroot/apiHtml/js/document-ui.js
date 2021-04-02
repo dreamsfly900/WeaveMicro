@@ -119,9 +119,12 @@
             }, "<thead><tr class=\"responses-header\"><th class=\"col_header response-col_status\" style=\"width:20%;\">名称</th><th class=\"col_header response-col_description\" style=\"width:30%;\">数据值</th><th class=\"col col_header response-col_links\" style=\"width:20%;\">描述</td><td class=\"col col_header response-col_links\" style=\"width:20%;\">参数类型</th><th class=\"col col_header response-col_links\" style=\"width:20%;\">数据类型</th></tr></thead><tbody>" + t + "</tbody>")
         },
         //验证table
-        auth_table: l.createElement("table", {
-            class: "table responses-table Authorization",
-        }, "<thead><tr class=\"responses-header\"><th class=\"col_header response-col_status\">名称</th><th class=\"col_header response-col_description\" style=\"width:90%\">数据值</th></tr></thead><tbody><tr><td class=\"response-col_status\">Header Prefix</td><td class=\"response-col_description\"><div><input type=\"text\" class=\"parameter required\" value=\"Bearer\" required placeholder=\"Bearer\" name=\"HeaderPrefix\" style=\"width:300px\" /></div></td></tr><tr><td class=\"response-col_status\">Access Token</td><td class=\"response-col_description\"><div><textarea name=\"Authorization\" class=\"parameter required\" required placeholder=\"(required)\"></textarea></div></td></tr></tbody>"),
+        auth_table: function () {
+            var _token = localStorage.getItem("authtoken") || "";
+            return l.createElement("table", {
+                class: "table responses-table Authorization",
+            }, "<thead><tr class=\"responses-header\"><th class=\"col_header response-col_status\">名称</th><th class=\"col_header response-col_description\" style=\"width:90%\">数据值</th></tr></thead><tbody><tr><td class=\"response-col_status\">Header Prefix</td><td class=\"response-col_description\"><div><input type=\"text\" class=\"parameter required\" value=\"Bearer\" required placeholder=\"Bearer\" name=\"HeaderPrefix\" style=\"width:300px\" /></div></td></tr><tr><td class=\"response-col_status\">Access Token</td><td class=\"response-col_description\"><div><textarea name=\"Authorization\" class=\"parameter required\" required placeholder=\"(required)\">" + _token+"</textarea></div></td></tr></tbody>")
+        },
         curl: function (i) {
             return l.createElement("div", {
                 class: "curl-command"
@@ -167,7 +170,7 @@
                                 var opbody = l.createElement("div", { class: "no-margin request-section" }, l.createElement("div", { class: "opblock-body" },
                                     //需要验证
                                     [server.Authorize == true ? l.createElement("div", { class: "opblock-section" }, [l.createElement("div", { class: "opblock-section-header" }, [l.createElement("div", { class: "tab-header" }, l.createElement("div", { class: "tab-item active" }, "<h4 class=\"opblock-title\"><span>Authorization</span></h4>"))]),
-                                    l.createElement("div", { class: "parameters-container" }, l.createElement("div", { class: "opblock-description-wrapper" }, that.et.auth_table))]) : l.createElement("div")
+                                    l.createElement("div", { class: "parameters-container" }, l.createElement("div", { class: "opblock-description-wrapper" }, that.et.auth_table()))]) : l.createElement("div")
                                         , section = l.createElement("div", { class: "opblock-section" }, l.createElement("div", { class: "opblock-section-header" }, [l.createElement("div", { class: "tab-header" }, l.createElement("div", { class: "tab-item active" }, "<h4 class=\"opblock-title\"><span>Parameters</span></h4>")), l.createElement("div", { class: "try-out" }, l.createElement("button", { class: "btn try-out__btn", onClick: ui.send }, "Try it out "))]))]
                                 ));
                                 opblock.appendChild(opbody), tag.appendChild(eldiv);
@@ -406,7 +409,7 @@
     }
 
     jQuery(function () {
-        $.getJSON("temp.json", function (data) {
+        $.getJSON("/temp.json", function (data) {
             ui.init(data, ServiceName);
         })
 

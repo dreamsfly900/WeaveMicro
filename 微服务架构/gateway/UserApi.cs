@@ -21,9 +21,9 @@ namespace gateway
 
     public static class Proccessor
     {
-        private static string _noSafe = "and|exec|execute|insert|select|delete|update|count|chr|mid|master|" +
-                                                   "char|declare|sitename|net user|xp_cmdshell|or|create|drop|table|from|grant|use|group_concat|column_name|" +
-                                                   "information_schema.columns|table_schema|union|where|select|delete|update|orderhaving|having|by|count|truncate|like|%|;|--|#|\'";//查询时危险字符；
+        private static string _noSafe = "exec|execute|insert|select|delete|update|count|master|" +
+                                                   "declare|sitename|net user|xp_cmdshell|create|drop|table|from|grant|group_concat|column_name|" +
+                                                   "information_schema.columns|table_schema|union|where|select|delete|update|orderhaving|having|count|truncate|like|%|;|--|#|\'";//查询时危险字符；
         public static server[] servers;
         public async static Task agent(HttpContext context)
         {

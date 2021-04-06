@@ -32,42 +32,18 @@ namespace IdentityServer
             }
             try
             {
-                if (type == "Signal")//信号宝
+                if (context.UserName == "admin" && context.Password == "123")
                 {
-                    SignalDAL.AdminService aDal = new SignalDAL.AdminService();
+                    context.Result = new GrantValidationResult(
+                     subject: context.UserName,
+                     authenticationMethod: "custom",
+                     claims: GetUserClaims());
+                }
+                else
+                {
 
-                    SignalModel.T_Admin admin = aDal.GetAdmin(Loginname);//获取账户信息
-
-                    if (admin != null && admin.Password == WebStructure.DBUtility.MD5Helper.GetMD5(Password))
-                    {
-                        TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
-
-                        string sign = "appid=" + Loginname + "&timestamp=" + Math.Round(ts.TotalMilliseconds, 0).ToString() + "&proj=" + type;
-
-                        string authTicket = getSha256(sign);
-                        aDal.UpdateTicket(admin.Id, authTicket);
-
-                        //验证成功
-                        context.Result = new GrantValidationResult(
-                             subject: context.UserName,
-                             authenticationMethod: "custom",
-                             claims: new Claim[] {
-                                new Claim("UserId", admin.Id.ToString()),
-                                new Claim("Name",admin.LoginName),
-                                new Claim("Phone", admin.Phone),
-                                new Claim("Role",admin.Areacode)
-                             });
-                    }
-                    else
-                    {
-                        //验证失败
-                        //context.Result = new GrantValidationResult()
-                        //{
-                        //    IsError = true,
-                        //    Error = "用户名或密码不正确"
-                        //};
-                        context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "用户名或密码不正确");
-                    }
+                    //验证失败
+                    context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "invalid custom credential");
                 }
             }
             catch (Exception e)
@@ -76,19 +52,7 @@ namespace IdentityServer
                 context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "invalid custom credential:" + e.Message);
             }
 
-            //if (context.UserName == "admin" && context.Password == "123")
-            //{
-            //    context.Result = new GrantValidationResult(
-            //     subject: context.UserName,
-            //     authenticationMethod: "custom",
-            //     claims: GetUserClaims());
-            //}
-            //else
-            //{
-
-            //    //验证失败
-            //    context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "invalid custom credential");
-            //}
+           
         }
         public static String getSha256(String strData)
         {

@@ -205,6 +205,8 @@ namespace gateway
                                 }
                             }
                         }
+                        ser.IP = "127.0.0.1";
+                        ser.Port = 10199;
                         //  context.Request.Headers
                         //await context.Response.WriteAsync($"");
                         String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh, keysCookies);

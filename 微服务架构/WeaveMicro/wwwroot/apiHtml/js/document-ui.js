@@ -184,12 +184,13 @@
                                     var parameterstr = server.parameterexplain;
                                     $.each(parameters, function (pi, pp) {
                                         var descText = parameterstr[pi].split("|")[0].replace("@", "");
-                                        var _fieldtype = descText//.split(',')[1];
+                                        var _fieldtype = descText.split(',')[0]
+                                        var _fieldDesc = descText.substring(_fieldtype.length + 1);
                                         if (_fieldtype && _fieldtype.toLocaleLowerCase().indexOf("int32") != -1) {
-                                            _fieldtype = 0;
+                                            _fieldDesc = descText.replace(/\,|[int32]|[minvalue]|[maxvalue]/ig, "");
                                         }
-                                        Params_body[pp] = _fieldtype;
-                                        Params_get += "<tr class=\"response\"><td class=\"response-col_links\">" + pp + "</td><td class=\"col_description\"><div class=\"model-example\"><div><div><input type=\"text\" class=\"parameter required\" autocomplete=\"off\" required placeholder=\"(required)\" name=\"" + pp + "\" /></div></div></div></td><td class=\"response-col_links\"><i>" + _fieldtype + "</i></td><td class=\"response-col_links\"><i>query</i></td><td class=\"response-col_links\"><i>" + descText.split(',')[0] + "</i></td></tr>";
+                                        Params_body[pp] = _fieldDesc;
+                                        Params_get += "<tr class=\"response\"><td class=\"response-col_links\">" + pp + "</td><td class=\"col_description\"><div class=\"model-example\"><div><div><input type=\"text\" class=\"parameter required\" autocomplete=\"off\" required placeholder=\"(required)\" name=\"" + pp + "\" /></div></div></div></td><td class=\"response-col_links\"><i>" + _fieldDesc + "</i></td><td class=\"response-col_links\"><i>query</i></td><td class=\"response-col_links\"><i>" + _fieldtype + "</i></td></tr>";
                                     })
                                     var html = '<tr class="response"><td class="response-col_status">#td1#</td><td class="response-col_description"><div class="model-example"><div><div><div class="highlight-code"><textarea name="mode" class="body-textarea required" placeholder="(required)"></textarea></div></div></div></div>#ContentType#</td>#td#<td class="response-col_links"><i>body</i></td><td class="response-col_links"> <div><div class="highlight-code"><pre class="example microlight" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: white;"><code>' + JSON.stringify(Params_body, null, 4) + '</code></pre></div></div></td></tr>'
 

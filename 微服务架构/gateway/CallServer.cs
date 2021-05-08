@@ -12,10 +12,10 @@ namespace gateway
 {
     public class CallServer
     {
-      static  ConcurrentDictionary<string, ClientChannelQueue> _serviceDic = new ConcurrentDictionary<string, ClientChannelQueue>();
+        static ConcurrentDictionary<string, ClientChannelQueue> _serviceDic = new ConcurrentDictionary<string, ClientChannelQueue>();
         public static void heartbeat()
         {
-          //  System.Threading.ThreadPool.QueueUserWorkItem(new WaitCallback(keep),null);
+            //  System.Threading.ThreadPool.QueueUserWorkItem(new WaitCallback(keep),null);
         }
         //public static void keep(object obj)
         //{
@@ -28,14 +28,14 @@ namespace gateway
         //                ClientChannelQueue CCQ = _serviceDic[key];
         //                bool locked = false;
         //                CCQ._spinLock.Enter(ref locked);//获取锁
-                         
+
         //                if (locked) //释放锁
         //                    CCQ._spinLock.Exit();
         //            }
         //        }
         //        System.Threading.Thread.Sleep(3000);
         //    }
-            
+
         //}
         //public static string CallService(server ser, String rt, String rls, object[] objs)
         //{
@@ -66,7 +66,7 @@ namespace gateway
         //    {
         //        //if (!CCQ.clientChannel.connection())
         //        //{
-                    
+
         //        //}
         //        _serviceDic.TryRemove(ser.IP + ":" + ser.Port, out CCQ);
 
@@ -91,7 +91,7 @@ namespace gateway
             wRPCclient.ClientChannel clientChannel = null;
 
             ClientChannelQueue CCQ = null;
-           
+
             try
             {
 
@@ -114,16 +114,17 @@ namespace gateway
             }
             finally
             {
-                clientChannel.Dispose();
-                
+                if (clientChannel != null)
+                    clientChannel.Dispose();
+
             }
-            
+
             return JsonConvert.SerializeObject(new { code = 503, msg = "服务器错误" });
         }
     }
     public class ClientChannelQueue
     {
         public ClientChannel clientChannel;
-        public  SpinLock _spinLock = new SpinLock();
+        public SpinLock _spinLock = new SpinLock();
     }
 }

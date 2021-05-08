@@ -34,7 +34,7 @@
                     var response = xhr.responseJSON;
                     if (response != null && response.access_token) {
                         var token = response.access_token;
-                        localStorage.setItem("authtoken", token);
+                        sessionStorage.setItem("authtoken", token);
                         localStorage.setItem("userInfo", JSON.stringify(response));
                         $(".parameter[name='Authorization']").val(token);
 

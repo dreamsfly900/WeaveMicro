@@ -120,7 +120,7 @@
         },
         //验证table
         auth_table: function () {
-            var _token = localStorage.getItem("authtoken") || "";
+            var _token = sessionStorage.getItem("authtoken") || "";
             return l.createElement("table", {
                 class: "table responses-table Authorization",
             }, "<thead><tr class=\"responses-header\"><th class=\"col_header response-col_status\">名称</th><th class=\"col_header response-col_description\" style=\"width:90%\">数据值</th></tr></thead><tbody><tr><td class=\"response-col_status\">Header Prefix</td><td class=\"response-col_description\"><div><input type=\"text\" class=\"parameter required\" value=\"Bearer\" required placeholder=\"Bearer\" name=\"HeaderPrefix\" style=\"width:300px\" /></div></td></tr><tr><td class=\"response-col_status\">Access Token</td><td class=\"response-col_description\"><div><textarea name=\"Authorization\" class=\"parameter required\" required placeholder=\"(required)\">" + _token + "</textarea></div></td></tr></tbody>")
@@ -184,7 +184,7 @@
                                     var parameterstr = server.parameterexplain;
                                     $.each(parameters, function (pi, pp) {
                                         var descText = parameterstr[pi].split("|")[0].replace("@", "");
-                                        var _fieldtype = descText.split(',')[1];
+                                        var _fieldtype = descText//.split(',')[1];
                                         if (_fieldtype && _fieldtype.toLocaleLowerCase().indexOf("int32") != -1) {
                                             _fieldtype = 0;
                                         }
@@ -299,6 +299,7 @@
                     });
                 }
                 if (a.method.toUpperCase() == "POST" || a.method.toUpperCase() == "NONE") {
+                    a.method = "POST";
                     var t = _parent.find(".paramsTable textarea.required");
                     if (t.length > 0) {
                         t.removeClass("error"), ("" === t.val() || null === t.val()) && (t.addClass("error"), e = !1);
@@ -414,8 +415,10 @@
             ui.init(data, ServiceName);
         });
 
-        var htmladdObject = $(".gatewaylist");
         ////网关列表
+        var htmladd = "<ul class=\"gatewaylist\"><li class=\"item-gateway\"><a href=\"#\">http://127.0.0.1:1221/</a></li> </ul>";
+        var htmladdObject = $(htmladd);
+
         $.getJSON("gateway.json", function (data) {
             $.each(data, function (i, gt) {
                 var url = "http://" + gt.IP + ":" + gt.port + "/";
@@ -423,23 +426,26 @@
             });
         });
 
-        $(".customeUrl").click(function () {
-            var left = $(this).offset().left;
-            if ($(".gatewaylist").is(":visible")) htmladdObject.css("left", left + "px").hide(); else htmladdObject.css("left", left + "px").slideDown(300);
-        });
-      
-        $(document).on("click", ".gatewaylist li a", function () {
-            $("#Url").val($(this).html()); htmladdObject.hide();
-        });
-        $(document).on("click", function (event) {//点击空白处，设置的弹框消失
-            event.stopPropagation();
-            if ($(event.target).find(".gatewaylist").length !== 0) {
-                $(htmladdObject).hide();
-            }
-            if ($(event.target).find(".gatewaylist").length == 0 && (!$(event.target).hasClass("customeUrl") && !$(event.target).hasClass("gatewaylist"))) {
-                $(htmladdObject).hide();
-            }
-        });
+        $(".customeUrl").focus(function () {
+            $(".gatewaylist").remove();//清楚底部内容
+            
+            $(this).after(htmladdObject.css("left", $(this).offset().left + "px"));
+            $(htmladdObject).slideDown(300);
+
+            $(".gatewaylist li a").click(function () {
+                $("#Url").val($(this).html()); $(htmladdObject).hide();
+            }); 
+
+            $(document).on("click", function (event) {//点击空白处，设置的弹框消失
+                event.stopPropagation();
+                if ($(event.target).find(".gatewaylist").length !== 0) {
+                    $(htmladdObject).hide();
+                }
+                if ($(event.target).find(".gatewaylist").length == 0 && (!$(event.target).hasClass("customeUrl") && !$(event.target).hasClass("gatewaylist"))) {
+                    $(htmladdObject).hide();
+                }
+            });
+        });             
 
         jQuery(document).on("click", ".example.microlight", function (e) {
             e.preventDefault();

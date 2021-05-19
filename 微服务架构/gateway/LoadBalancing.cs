@@ -48,65 +48,73 @@ namespace wRPC
         /// </summary>
       internal class WeightAlgorithm
     {
-        private static server serviceCenter = new server();
+        
         public static ConcurrentDictionary<string, WeightAlgorithmItem> _serviceDic = new ConcurrentDictionary<string, WeightAlgorithmItem>();
         private static SpinLock _spinLock = new SpinLock();
-        public static async Task<server>  Get(server[] serviceList, string serviceName)
+        public static server  Get(server[] serviceList, string serviceName)
         {
-            
-            if (serviceList == null)
-                return null;
+
+            server serviceCenter = new server();
             //if (serviceList.Length == 1)
             //    return serviceList[0];
 
             //bool locked = false;
             //_spinLock.Enter(ref locked);//获取锁
-
-            WeightAlgorithmItem weightAlgorithmItem = null;
-            if (!_serviceDic.ContainsKey(serviceName ))
+            try
             {
-                weightAlgorithmItem = new WeightAlgorithmItem()
-                {
-                    Index = -1,
-                    Urls = new List<string>(),
-                    Port = new List<int>()
-                };
-                BuildWeightAlgorithmItem(weightAlgorithmItem, serviceList, serviceName);
-                if (weightAlgorithmItem.Urls.Count == 0)
+                if (serviceList == null)
                     return null;
-                _serviceDic.TryAdd(serviceName, weightAlgorithmItem);
-            }
-            else
-            {
-                _serviceDic.TryGetValue(serviceName , out weightAlgorithmItem);
-                //weightAlgorithmItem.Urls.Clear();
-                //weightAlgorithmItem.Port.Clear();
-                //BuildWeightAlgorithmItem(weightAlgorithmItem, serviceList, serviceName, Method);
-            }
+                WeightAlgorithmItem weightAlgorithmItem = null;
+                if (!_serviceDic.ContainsKey(serviceName))
+                {
+                    weightAlgorithmItem = new WeightAlgorithmItem()
+                    {
+                        Index = -1,
+                        Urls = new List<string>(),
+                        Port = new List<int>()
+                    };
+                    BuildWeightAlgorithmItem(weightAlgorithmItem, serviceList, serviceName);
+                    if (weightAlgorithmItem.Urls.Count == 0)
+                        return null;
+                    _serviceDic.TryAdd(serviceName, weightAlgorithmItem);
+                }
+                else
+                {
+                    _serviceDic.TryGetValue(serviceName, out weightAlgorithmItem);
+                    //weightAlgorithmItem.Urls.Clear();
+                    //weightAlgorithmItem.Port.Clear();
+                    //BuildWeightAlgorithmItem(weightAlgorithmItem, serviceList, serviceName, Method);
+                }
 
-            string url = string.Empty;
-            ++weightAlgorithmItem.Index;
+                string url = string.Empty;
+                ++weightAlgorithmItem.Index;
+
+                if (weightAlgorithmItem.Index > weightAlgorithmItem.Urls.Count - 1) //当前索引 > 最新服务最大索引
+                {
+                    weightAlgorithmItem.Index = 0;
+                    serviceCenter.IP = weightAlgorithmItem.Urls[0];
+                    serviceCenter.Port = weightAlgorithmItem.Port[0];
+                    serviceCenter.services = new service[] { weightAlgorithmItem.servic };
+                    //url = serviceList[0].Url;
+                }
+                else
+                {
+                    // url = weightAlgorithmItem.Urls[weightAlgorithmItem.Index];
+                    serviceCenter.IP = weightAlgorithmItem.Urls[weightAlgorithmItem.Index];
+                    serviceCenter.Port = weightAlgorithmItem.Port[weightAlgorithmItem.Index];
+                    serviceCenter.services = new service[] { weightAlgorithmItem.servic };
+                }
+                _serviceDic[serviceName] = weightAlgorithmItem;
+
+                //  Console.WriteLine(serviceName + "-----" + url);
+            }
+            catch { }
+            finally
+            {
+                //if (locked) //释放锁
+                //    _spinLock.Exit();
+            }
           
-            if (weightAlgorithmItem.Index > weightAlgorithmItem.Urls.Count - 1) //当前索引 > 最新服务最大索引
-            {
-                weightAlgorithmItem.Index = 0;
-                serviceCenter.IP = weightAlgorithmItem.Urls[0];
-                serviceCenter.Port = weightAlgorithmItem.Port[0];
-                serviceCenter.services = new service[] { weightAlgorithmItem.servic };
-                //url = serviceList[0].Url;
-            }
-            else
-            {
-               // url = weightAlgorithmItem.Urls[weightAlgorithmItem.Index];
-                serviceCenter.IP = weightAlgorithmItem.Urls[weightAlgorithmItem.Index];
-                serviceCenter.Port = weightAlgorithmItem.Port[weightAlgorithmItem.Index];
-                serviceCenter.services = new service[] { weightAlgorithmItem.servic };
-            }
-            _serviceDic[serviceName ] = weightAlgorithmItem;
-
-            //  Console.WriteLine(serviceName + "-----" + url);
-            //if (locked) //释放锁
-            //    _spinLock.Exit();
             return serviceCenter;
         }
 

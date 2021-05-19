@@ -30,9 +30,9 @@ namespace gateway
             mc = new MicroClient(mcip.Split(':')[0], Convert.ToInt32(mcip.Split(':')[1]));
             mc.ReceiveEvent += Mc_ReceiveEvent;
             mc.Connection();
-            String[] applicationUrls = config["applicationUrl"].Replace("http://", "").Split(',');
-            foreach (string applicationUrl in applicationUrls)
-                mc.RegClient("网关1", applicationUrl.Split(':')[0], Convert.ToInt32(applicationUrl.Split(':')[1]));
+            String[] applicationUrls = config["applicationUrl"].Replace("http://","").Split(',');
+            foreach(string applicationUrl in applicationUrls)
+            mc.RegClient("网关1", applicationUrl.Split(':')[0], Convert.ToInt32( applicationUrl.Split(':')[1]));
             applicationUrl = config["applicationUrl"];
             args = new string[] { config["applicationUrl"] };
             CreateHostBuilder(args).Build().Run();

@@ -8,8 +8,8 @@
     ".NETCoreApp,Version=v5.0": {
       "Test/1.0.0": {
         "dependencies": {
-          "WeaveMicroClient": "1.0.1",
-          "WeaveRemoteService": "1.0.4",
+          "WeaveMicroClient": "1.0.0",
+          "WeaveRemoteService": "1.0.3",
           "testdll2": "1.0.0",
           "wRPC": "1.0.1"
         },
@@ -993,26 +993,26 @@
       },
       "testdll2/1.0.0": {
         "dependencies": {
-          "wRPCService": "1.0.6"
+          "wRPCService": "1.0.5"
         },
         "runtime": {
           "testdll2.dll": {}
         }
       },
-      "WeaveMicroClient/1.0.1": {
+      "WeaveMicroClient/1.0.0": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
           "Weave.TCPClient": "2.0.9",
-          "wRPCService": "1.0.6"
+          "wRPCService": "1.0.5"
         },
         "runtime": {
           "WeaveMicroClient.dll": {}
         }
       },
-      "WeaveRemoteService/1.0.4": {
+      "WeaveRemoteService/1.0.3": {
         "dependencies": {
-          "WeaveMicroClient": "1.0.1",
-          "wRPCService": "1.0.6"
+          "WeaveMicroClient": "1.0.0",
+          "wRPCService": "1.0.5"
         },
         "runtime": {
           "WeaveRemoteService.dll": {}
@@ -1030,7 +1030,7 @@
           "wRPC.dll": {}
         }
       },
-      "wRPCService/1.0.6": {
+      "wRPCService/1.0.5": {
         "dependencies": {
           "Microsoft.AspNetCore": "2.2.0",
           "Weave.Server": "2.0.20"
@@ -1703,12 +1703,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "WeaveMicroClient/1.0.1": {
+    "WeaveMicroClient/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "WeaveRemoteService/1.0.4": {
+    "WeaveRemoteService/1.0.3": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1718,7 +1718,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "wRPCService/1.0.6": {
+    "wRPCService/1.0.5": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

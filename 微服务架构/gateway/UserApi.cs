@@ -78,13 +78,16 @@ namespace gateway
                     }
 
                 }
-
-                rlog.Route = context.Request.Path.Value.Trim('/');
+                String rl = context.Request.Path.Value.Trim('/');
+                rlog.Route = rl;
                 rlog.gayway = Program.applicationUrl;
-
+               
                 rlog.requestIP = context.Connection.RemoteIpAddress.ToString();
-                server ser = await WeightAlgorithm.Get(servers, context.Request.Path.Value.Trim('/'));
-
+                server ser =  WeightAlgorithm.Get(servers, rl);
+                //if (ser.services[0].Route != rl)
+                //{ 
+                
+                //}
                 if (ser == null)
                 {
                     await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 404, msg = "非法请求" }));
@@ -131,7 +134,7 @@ namespace gateway
                                     }
                                     else
                                     {
-                                        objs[i] = context.Request.Query[ser.services[0].parameter[i]].ToString();
+                                        if (ser.services[0].parameter != null) objs[i] = context.Request.Query[ser.services[0].parameter[i]].ToString();
                                     }
                                 }
                                 else if (ser.services[0].Method.ToUpper() == "POST")
@@ -154,10 +157,11 @@ namespace gateway
                                 {
                                     continue;
                                 }
-                                else 
+                                else
                                 {
                                     Regex reg = new Regex(_noSafe, RegexOptions.IgnoreCase);
-                                    if (reg.IsMatch(objs[i].ToString()))
+
+                                    if (objs[i] != null && reg.IsMatch(objs[i].ToString()))
                                     {
                                         await context.Response.WriteAsync($" ~, {  "警告！！不安全SELECT!已记录IP，等待报警"}");
                                         return;
@@ -170,14 +174,14 @@ namespace gateway
 
                         string datastr = Newtonsoft.Json.JsonConvert.SerializeObject(context.Request.Headers);
 
-                        String rl = context.Request.Path.Value.Trim('/');
+                       
                         String[] rls = rl.Split('/');
-                        rl = "";
+                      string   rlhrad = "";
                         for (int i = 0; i < rls.Length - 1; i++)
                         {
-                            rl += rls[i] + "/";
+                            rlhrad += rls[i] + "/";
                         }
-                        rl = rl.Substring(0, rl.Length - 1);
+                        rlhrad = rlhrad.Substring(0, rlhrad.Length - 1);
                         String[] Headers = Startup.config.GetSection("Headers").Get<String[]>();
                         Dictionary<string, String> keysh = new Dictionary<string, string>();
                         foreach (string hh in Headers)
@@ -200,16 +204,19 @@ namespace gateway
                             {
                                 if (context.User.Claims.Count(c => c.Type == hh) > 0)
                                 {
-                                    
+
                                     keysCookies.Add(hh, context.User.Claims.Single(c => c.Type == hh).Value);
                                 }
                             }
                         }
-                        ser.IP = "127.0.0.1";
-                        ser.Port = 10199;
+                        //ser.IP = "192.168.1.110";
+                        //ser.Port = 10298;
                         //  context.Request.Headers
                         //await context.Response.WriteAsync($"");
-                        String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh, keysCookies);
+                        CallServer callServer = new CallServer();
+                       
+                            String retun = callServer.CallService(ser, rlhrad, rls[rls.Length - 1], objs, keysh, keysCookies);
+                       
                         ////String retun =  clientChannel.Call<String>(rl, rls[rls.Length - 1], objs);
                         //Encoding utf8 = Encoding.ASCII;
                         //Encoding ISO = Encoding.UTF8;//换成你想转的编码

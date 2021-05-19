@@ -1,10 +1,10 @@
 {
   "Authentication": true,
-  "IdentityServer": "http://127.0.0.1:1221",
+  "IdentityServer": "http://192.168.1.110:1221",
   "Audience": "api1",
   "defaultScheme": "Bearer",
-  "applicationUrl": "http://127.0.0.1:5221",
+  "applicationUrl": "http://192.168.1.110:5221",
   "Microcenter": "116.255.241.135:9002",
-  "Cookies": [ "project", "Areacode","Role", "UserId", "Name", "Phone" ],
+  "Cookies": [ "Role", "UserId", "Name", "Phone","Areacode" ],
   "Headers": [ "token" ]
 }

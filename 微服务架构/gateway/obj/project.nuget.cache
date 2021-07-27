@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lEvvUtpOQRBnMZgekSKLe0+xOtvgmdwXiQyCnFWnoiuVIGU+Niz3eO5ig0rMPOLScF/8Nk6zWdmP/ROS3/oCnQ==",
+  "dgSpecHash": "3WJgZM8l/YH5ZKnq4IDiJYABOXGD1X4EhFgccK5X7mpT4yy8WIk6QwkGMmii6vAOkUNhfGEE0HuJLCOpXo3IdQ==",
   "success": true,
   "projectFilePath": "D:\\WeaveMicro\\微服务架构\\gateway\\gateway.csproj",
   "expectedPackageFiles": [

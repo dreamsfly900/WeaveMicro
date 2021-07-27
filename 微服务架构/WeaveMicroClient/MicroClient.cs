@@ -86,7 +86,11 @@ namespace WeaveMicroClient
                     //sw.Close();
                 }
                 catch(Exception e) 
-                { throw  new  Exception( e.Message); }
+                {  Console.WriteLine(  e.Message);
+                    System.Threading.Thread.Sleep(1000);
+                    if (serv != null)
+                        RegService(serv);
+                }
             }
             
         }

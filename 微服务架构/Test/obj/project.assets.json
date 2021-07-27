@@ -1282,7 +1282,7 @@
           "bin/placeholder/testdll2.dll": {}
         }
       },
-      "WeaveMicroClient/1.0.1": {
+      "WeaveMicroClient/1.0.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1301,7 +1301,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "WeaveMicroClient": "1.0.1",
+          "WeaveMicroClient": "1.0.2",
           "wRPCService": "1.0.6"
         },
         "compile": {
@@ -2158,6 +2158,7 @@
       "path": "microsoft.win32.registry/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/net46/Microsoft.Win32.Registry.dll",
@@ -2276,6 +2277,7 @@
       "path": "system.collections/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2519,6 +2521,7 @@
       "path": "system.globalization/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2586,6 +2589,7 @@
       "path": "system.io/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2760,6 +2764,7 @@
       "path": "system.reflection/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2861,6 +2866,7 @@
       "path": "system.reflection.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2917,6 +2923,7 @@
       "path": "system.resources.resourcemanager/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2973,6 +2980,7 @@
       "path": "system.runtime/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3089,6 +3097,7 @@
       "path": "system.runtime.extensions/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3169,6 +3178,7 @@
       "path": "system.runtime.handles/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3206,6 +3216,7 @@
       "path": "system.runtime.interopservices/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3488,6 +3499,7 @@
       "path": "system.text.encoding/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3613,6 +3625,7 @@
       "path": "system.threading/4.0.11",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3683,6 +3696,7 @@
       "path": "system.threading.tasks/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3875,7 +3889,7 @@
       "path": "../testdll2/testdll2.csproj",
       "msbuildProject": "../testdll2/testdll2.csproj"
     },
-    "WeaveMicroClient/1.0.1": {
+    "WeaveMicroClient/1.0.2": {
       "type": "project",
       "path": "../WeaveMicroClient/WeaveMicroClient.csproj",
       "msbuildProject": "../WeaveMicroClient/WeaveMicroClient.csproj"
@@ -3898,69 +3912,56 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "WeaveMicroClient >= 1.0.1",
+      "WeaveMicroClient >= 1.0.2",
       "WeaveRemoteService >= 1.0.4",
       "testdll2 >= 1.0.0",
       "wRPC >= 1.0.1"
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\xingy\\.nuget\\packages\\": {},
     "D:\\Microsoft\\Xamarin\\NuGet\\": {}
-=======
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
->>>>>>> 2d128aedb159dbb3c13bcd599ebb641e82803b0e
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\weave-micro\\微服务架构\\Test\\Test.csproj",
+      "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\Test\\Test.csproj",
       "projectName": "Test",
-      "projectPath": "D:\\weave-micro\\微服务架构\\Test\\Test.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\weave-micro\\微服务架构\\Test\\obj\\",
+      "projectPath": "D:\\WeaveMicro\\微服务架构\\Test\\Test.csproj",
+      "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
+      "outputPath": "D:\\WeaveMicro\\微服务架构\\Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-=======
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> 2d128aedb159dbb3c13bcd599ebb641e82803b0e
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-<<<<<<< HEAD
         "Z:\\shenyc\\nupkgs\\20210523": {},
-=======
-        "\\\\192.168.1.100\\share\\shenyc\\nupkgs\\20210512": {},
->>>>>>> 2d128aedb159dbb3c13bcd599ebb641e82803b0e
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\weave-micro\\微服务架构\\testdll2\\testdll2.csproj": {
-              "projectPath": "D:\\weave-micro\\微服务架构\\testdll2\\testdll2.csproj"
+            "D:\\WeaveMicro\\微服务架构\\testdll2\\testdll2.csproj": {
+              "projectPath": "D:\\WeaveMicro\\微服务架构\\testdll2\\testdll2.csproj"
             },
-            "D:\\weave-micro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj": {
-              "projectPath": "D:\\weave-micro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj"
+            "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj": {
+              "projectPath": "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj"
             },
-            "D:\\weave-micro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj": {
-              "projectPath": "D:\\weave-micro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj"
+            "D:\\WeaveMicro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj": {
+              "projectPath": "D:\\WeaveMicro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj"
             },
-            "D:\\weave-micro\\微服务架构\\wRPC\\wRPC.csproj": {
-              "projectPath": "D:\\weave-micro\\微服务架构\\wRPC\\wRPC.csproj"
+            "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj": {
+              "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj"
             }
           }
         }
@@ -3989,7 +3990,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

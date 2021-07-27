@@ -3,7 +3,6 @@ D:\WeaveMicro\微服务架构\WeaveMicroClient\bin\Debug\netstandard2.0\WeaveMic
 D:\WeaveMicro\微服务架构\WeaveMicroClient\bin\Debug\netstandard2.0\WeaveMicroClient.pdb
 D:\WeaveMicro\微服务架构\WeaveMicroClient\bin\Debug\netstandard2.0\wRPCService.dll
 D:\WeaveMicro\微服务架构\WeaveMicroClient\bin\Debug\netstandard2.0\wRPCService.pdb
-D:\WeaveMicro\微服务架构\WeaveMicroClient\obj\Debug\netstandard2.0\WeaveMicroClient.csprojAssemblyReference.cache
 D:\WeaveMicro\微服务架构\WeaveMicroClient\obj\Debug\netstandard2.0\WeaveMicroClient.AssemblyInfoInputs.cache
 D:\WeaveMicro\微服务架构\WeaveMicroClient\obj\Debug\netstandard2.0\WeaveMicroClient.AssemblyInfo.cs
 D:\WeaveMicro\微服务架构\WeaveMicroClient\obj\Debug\netstandard2.0\WeaveMicroClient.csproj.CoreCompileInputs.cache
@@ -22,3 +21,4 @@ D:\weave-micro\微服务架构\WeaveMicroClient\obj\Debug\netstandard2.0\WeaveMi
 D:\weave-micro\微服务架构\WeaveMicroClient\obj\Debug\netstandard2.0\WeaveMicroClient.dll
 D:\weave-micro\微服务架构\WeaveMicroClient\obj\Debug\netstandard2.0\WeaveMicroClient.pdb
 D:\weave-micro\微服务架构\WeaveMicroClient\obj\Debug\netstandard2.0\WeaveMicroClient.csprojAssemblyReference.cache
+D:\WeaveMicro\微服务架构\WeaveMicroClient\obj\Debug\netstandard2.0\WeaveMicroClient.csprojAssemblyReference.cache

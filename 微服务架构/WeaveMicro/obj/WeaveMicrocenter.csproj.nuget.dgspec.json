@@ -1,52 +1,43 @@
 {
   "format": 1,
   "restore": {
-    "D:\\weave-micro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj": {}
+    "D:\\WeaveMicro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj": {}
   },
   "projects": {
-    "D:\\weave-micro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj": {
+    "D:\\WeaveMicro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\weave-micro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj",
+        "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj",
         "projectName": "WeaveMicrocenter",
-        "projectPath": "D:\\weave-micro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\weave-micro\\微服务架构\\WeaveMicro\\obj\\",
+        "projectPath": "D:\\WeaveMicro\\微服务架构\\WeaveMicro\\WeaveMicrocenter.csproj",
+        "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
+        "outputPath": "D:\\WeaveMicro\\微服务架构\\WeaveMicro\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-=======
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> 2d128aedb159dbb3c13bcd599ebb641e82803b0e
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-<<<<<<< HEAD
           "Z:\\shenyc\\nupkgs\\20210523": {},
-=======
-          "\\\\192.168.1.100\\share\\shenyc\\nupkgs\\20210512": {},
->>>>>>> 2d128aedb159dbb3c13bcd599ebb641e82803b0e
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj": {
-                "projectPath": "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj"
+              "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
+                "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj"
               },
-              "D:\\weave-micro\\微服务架构\\wRPC\\wRPC.csproj": {
-                "projectPath": "D:\\weave-micro\\微服务架构\\wRPC\\wRPC.csproj"
+              "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj": {
+                "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj"
               }
             }
           }
@@ -96,42 +87,33 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj": {
+    "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
       "version": "1.0.6",
       "restore": {
-        "projectUniqueName": "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj",
+        "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
         "projectName": "wRPCService",
-        "projectPath": "D:\\weave-micro\\微服务架构\\wRPCService\\wRPCService.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\weave-micro\\微服务架构\\wRPCService\\obj\\",
+        "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
+        "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
+        "outputPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-=======
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> 2d128aedb159dbb3c13bcd599ebb641e82803b0e
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-<<<<<<< HEAD
           "Z:\\shenyc\\nupkgs\\20210523": {},
-=======
-          "\\\\192.168.1.100\\share\\shenyc\\nupkgs\\20210512": {},
->>>>>>> 2d128aedb159dbb3c13bcd599ebb641e82803b0e
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -175,42 +157,33 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\weave-micro\\微服务架构\\wRPC\\wRPC.csproj": {
+    "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj": {
       "version": "1.0.1",
       "restore": {
-        "projectUniqueName": "D:\\weave-micro\\微服务架构\\wRPC\\wRPC.csproj",
+        "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj",
         "projectName": "wRPC",
-        "projectPath": "D:\\weave-micro\\微服务架构\\wRPC\\wRPC.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\weave-micro\\微服务架构\\wRPC\\obj\\",
+        "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj",
+        "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
+        "outputPath": "D:\\WeaveMicro\\微服务架构\\wRPC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-=======
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> 2d128aedb159dbb3c13bcd599ebb641e82803b0e
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-<<<<<<< HEAD
           "Z:\\shenyc\\nupkgs\\20210523": {},
-=======
-          "\\\\192.168.1.100\\share\\shenyc\\nupkgs\\20210512": {},
->>>>>>> 2d128aedb159dbb3c13bcd599ebb641e82803b0e
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -266,7 +239,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -32,7 +32,9 @@
             min-width: 1000px;
             background: #fafafa;
         }
-
+        .document-ui i, .document-ui em {
+            font-style: normal;
+        }
         .document-ui .btn.btn-normal {
             display: inline;
             height: 33px;
@@ -76,6 +78,21 @@
         .document-ui > .document-body {
             padding-top: 70px;
         }
+        .gatewaylist {
+            width: 240px;min-height:35px;
+            position: absolute;z-index:1001;
+            top: 46px;
+            list-style: none;
+            background: #FFF;
+            border: 1px solid #62a03f;
+            display: none;
+            padding: 5px 0;margin:0; 
+            overflow:hidden;overflow-y:auto;max-height:300px;
+        }
+        .gatewaylist li{margin:0px;padding:6px;font-size: 14px;}
+        .gatewaylist li a{font-weight:500!important;color:#333!important;font-size:1.1em!important;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+        .gatewaylist li:nth-of-type(even){background:rgba(206, 231, 255, 0.3)}
+        .gatewaylist li.active,.gatewaylist li:hover{ background:#CEE7FF;}
     </style>
 </head>
 <body>
@@ -89,10 +106,13 @@
                         </a>
                         <form class="download-url-wrapper">
                             <label class="select-label" for="Url" style="justify-content:flex-end;align-content:flex-end;align-items:flex-end;">
-                                <input type="text" autocomplete="off" id="Url" class="mr-2 w-10-m" style="width:240px;" placeholder="http://127.0.0.1:1221/" /> <input type="text" autocomplete="off" id="query_keyword" style="width:240px;" placeholder="方法名称" />
+                                <input type="text" autocomplete="off" id="Url" class="mr-2 w-10-m customeUrl" style="width:240px;" placeholder="http://127.0.0.1:1221/" /> <input type="text" autocomplete="off" id="query_keyword" style="width:240px;" placeholder="方法名称" />
                                 <button class="btn btn-normal ml-2" id="btnSearch">查询</button><button class="btn btn-normal ml-2" id="exportBtn">导出至word</button>
                                 <button class="btn btn-normal ml-2" id="LoginBtn">登录</button>
                             </label>
+                            <ul class="gatewaylist">
+                                 <li class="item-gateway"><a href="#">http://127.0.0.1:1221/</a></li> 
+                            </ul>
                         </form>
                     </div>
                 </div>

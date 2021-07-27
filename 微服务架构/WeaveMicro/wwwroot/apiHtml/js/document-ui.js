@@ -17,6 +17,21 @@
                 return !1
         }
     }
+    function isJSON(value) {
+        if (value === '{}') {
+            return true;
+        } else {
+            try {
+                if (Object.prototype.toString.call(eval('(' + value + ')')) === '[object Object]') {
+                    return true
+                } else {
+                    return false
+                }
+            } catch (e) {
+                return false
+            }
+        }
+    }
     const isPathParam = word => word.includes('{') || word.includes('}');
     // 去除括号
     const delBrackets = word => word.replace(/{|}/g, '');
@@ -119,9 +134,12 @@
             }, "<thead><tr class=\"responses-header\"><th class=\"col_header response-col_status\" style=\"width:20%;\">名称</th><th class=\"col_header response-col_description\" style=\"width:30%;\">数据值</th><th class=\"col col_header response-col_links\" style=\"width:20%;\">描述</td><td class=\"col col_header response-col_links\" style=\"width:20%;\">参数类型</th><th class=\"col col_header response-col_links\" style=\"width:20%;\">数据类型</th></tr></thead><tbody>" + t + "</tbody>")
         },
         //验证table
-        auth_table: l.createElement("table", {
-            class: "table responses-table Authorization",
-        }, "<thead><tr class=\"responses-header\"><th class=\"col_header response-col_status\">名称</th><th class=\"col_header response-col_description\" style=\"width:90%\">数据值</th></tr></thead><tbody><tr><td class=\"response-col_status\">Header Prefix</td><td class=\"response-col_description\"><div><input type=\"text\" class=\"parameter required\" value=\"Bearer\" required placeholder=\"Bearer\" name=\"HeaderPrefix\" style=\"width:300px\" /></div></td></tr><tr><td class=\"response-col_status\">Access Token</td><td class=\"response-col_description\"><div><textarea name=\"Authorization\" class=\"parameter required\" required placeholder=\"(required)\"></textarea></div></td></tr></tbody>"),
+        auth_table: function () {
+            var _token = sessionStorage.getItem("authtoken") || "";
+            return l.createElement("table", {
+                class: "table responses-table Authorization",
+            }, "<thead><tr class=\"responses-header\"><th class=\"col_header response-col_status\">名称</th><th class=\"col_header response-col_description\" style=\"width:90%\">数据值</th></tr></thead><tbody><tr><td class=\"response-col_status\">Header Prefix</td><td class=\"response-col_description\"><div><input type=\"text\" class=\"parameter required\" value=\"Bearer\" required placeholder=\"Bearer\" name=\"HeaderPrefix\" style=\"width:300px\" /></div></td></tr><tr><td class=\"response-col_status\">Access Token</td><td class=\"response-col_description\"><div><textarea name=\"Authorization\" class=\"parameter required\" required placeholder=\"(required)\">" + _token + "</textarea></div></td></tr></tbody>")
+        },
         curl: function (i) {
             return l.createElement("div", {
                 class: "curl-command"
@@ -153,7 +171,6 @@
                 bodyUI && (bodyUI.innerHTML = "");
                 if (jsonData && jsonData != null) {
                     $.each(jsonData, function (i, api) {
-                        $("#Url").val("http://" + api.IP + ":" + api.Port + "/");
                         if (api.Name == serviceName || serviceName == "all") {
                             var tag, el = l.createElement("div", { class: "block col-12 block-desktop col-12-desktop" }, l.createElement("div", null, tag = that.et["operations-tag"](api.Name, "list")));
                             bodyUI.appendChild(el);
@@ -167,7 +184,7 @@
                                 var opbody = l.createElement("div", { class: "no-margin request-section" }, l.createElement("div", { class: "opblock-body" },
                                     //需要验证
                                     [server.Authorize == true ? l.createElement("div", { class: "opblock-section" }, [l.createElement("div", { class: "opblock-section-header" }, [l.createElement("div", { class: "tab-header" }, l.createElement("div", { class: "tab-item active" }, "<h4 class=\"opblock-title\"><span>Authorization</span></h4>"))]),
-                                    l.createElement("div", { class: "parameters-container" }, l.createElement("div", { class: "opblock-description-wrapper" }, that.et.auth_table))]) : l.createElement("div")
+                                    l.createElement("div", { class: "parameters-container" }, l.createElement("div", { class: "opblock-description-wrapper" }, that.et.auth_table()))]) : l.createElement("div")
                                         , section = l.createElement("div", { class: "opblock-section" }, l.createElement("div", { class: "opblock-section-header" }, [l.createElement("div", { class: "tab-header" }, l.createElement("div", { class: "tab-item active" }, "<h4 class=\"opblock-title\"><span>Parameters</span></h4>")), l.createElement("div", { class: "try-out" }, l.createElement("button", { class: "btn try-out__btn", onClick: ui.send }, "Try it out "))]))]
                                 ));
                                 opblock.appendChild(opbody), tag.appendChild(eldiv);
@@ -180,36 +197,44 @@
                                 } else {
                                     var parameters = server.parameter;
                                     var parameterstr = server.parameterexplain;
-                                    $.each(parameters, function (pi, pp) {
-                                        var descText = parameterstr[pi].split("|")[0].replace("@", "");
-                                        var _fieldtype = descText.split(',')[1];
-                                        if (_fieldtype && _fieldtype.toLocaleLowerCase().indexOf("int32") != -1) {
-                                            _fieldtype = 0;
-                                        }
-                                        Params_body[pp] = _fieldtype;
-                                        Params_get += "<tr class=\"response\"><td class=\"response-col_links\">" + pp + "</td><td class=\"col_description\"><div class=\"model-example\"><div><div><input type=\"text\" class=\"parameter required\" autocomplete=\"off\" required placeholder=\"(required)\" name=\"" + pp + "\" /></div></div></div></td><td class=\"response-col_links\"><i>" + _fieldtype + "</i></td><td class=\"response-col_links\"><i>query</i></td><td class=\"response-col_links\"><i>" + descText.split(',')[0] + "</i></td></tr>";
-                                    })
-                                    var html = '<tr class="response"><td class="response-col_status">#td1#</td><td class="response-col_description"><div class="model-example"><div><div><div class="highlight-code"><textarea name="mode" class="body-textarea required" placeholder="(required)"></textarea></div></div></div></div>#ContentType#</td>#td#<td class="response-col_links"><i>body</i></td><td class="response-col_links"> <div><div class="highlight-code"><pre class="example microlight" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: white;"><code>' + JSON.stringify(Params_body, null, 4) + '</code></pre></div></div></td></tr>'
+                                    var html = '<tr class="response"><td class="response-col_status">#td1#</td><td class="response-col_description"><div class="model-example"><div><div><div class="highlight-code"><textarea name="mode" class="body-textarea required" placeholder="(required)"></textarea></div></div></div></div>#ContentType#</td>#td#<td class="response-col_links"> <div><div class="highlight-code"><pre class="example microlight" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: white;"><code>#code#</code></pre></div></div></td><td class="response-col_links"><i>body</i></td></tr>'
 
                                     if (server.Method.toLocaleLowerCase() == "none") {
-                                        html = html.replace("#td1#", "model").replace("#td#", '').replace("#ContentType#", ui.et.application_json);
+                                        var model = parameterstr[0].replace(/[\|]|[\@]/ig, "");
+                                        if (!isJSON(model)) {
+                                            model = "{" + model+"}"
+                                        }
+                                        html = html.replace("#td1#", "model").replace("#code#", model).replace("#td#", '').replace("#ContentType#", ui.et.application_json);
                                         var p = l.createElement("div", { class: "parameters-container" }, l.createElement("div", { class: "opblock-description-wrapper" }, that.et.get_table(html)));
                                         section.appendChild(p);
-                                    }
-                                    if (server.Method.toLocaleLowerCase() == "post") {
-                                        var p;
-                                        if (parameters.length > 1) {
-                                            Params_get += '<tr><td></td><td colspan="4">' + ui.et.x_www_form_urlencoded + '</td></tr>';
-                                            p = l.createElement("div", { class: "parameters-container" }, l.createElement("div", { class: "opblock-description-wrapper" }, that.et.get_table(Params_get)));
-                                        } else {
-                                            html = html.replace("#td1#", parameters[0]).replace("#td#", '<td class="response-col_links"><i>' + parameterstr[0] + '</i></td>').replace("#ContentType#", ui.et.x_www_form_urlencoded);;
-                                            p = l.createElement("div", { class: "parameters-container" }, l.createElement("div", { class: "opblock-description-wrapper" }, that.et.get_table(html)));
+                                    } else {
+                                        $.each(parameters, function (pi, pp) {
+                                            var descText = parameterstr[pi].split("|")[0].replace("@", "");
+                                            var _fieldtype = descText.split(',')[0]
+                                            var _fieldDesc = descText.substring(_fieldtype.length + 1);
+                                            if (_fieldtype && _fieldtype.toLocaleLowerCase().indexOf("int32") != -1) {
+                                                _fieldDesc = descText.replace(/\,|[int32]|[minvalue]|[maxvalue]/ig, "");
+                                            }
+                                            Params_body[pp] = _fieldDesc;
+                                            Params_get += "<tr class=\"response\"><td class=\"response-col_links\">" + pp + "</td><td class=\"col_description\"><div class=\"model-example\"><div><div><input type=\"text\" class=\"parameter required\" autocomplete=\"off\" required placeholder=\"(required)\" name=\"" + pp + "\" /></div></div></div></td><td class=\"response-col_links\"><i>" + _fieldDesc + "</i></td><td class=\"response-col_links\"><i>query</i></td><td class=\"response-col_links\"><i>" + _fieldtype + "</i></td></tr>";
+                                        })
+                                        html = html.replace("#code#", JSON.stringify(Params_body, null, 4));
+
+                                        if (server.Method.toLocaleLowerCase() == "post") {
+                                            var p;
+                                            if (parameters.length > 1) {
+                                                Params_get += '<tr><td></td><td colspan="4">' + ui.et.x_www_form_urlencoded + '</td></tr>';
+                                                p = l.createElement("div", { class: "parameters-container" }, l.createElement("div", { class: "opblock-description-wrapper" }, that.et.get_table(Params_get)));
+                                            } else {
+                                                html = html.replace("#td1#", parameters[0]).replace("#td#", '<td class="response-col_links"><i>' + parameterstr[0] + '</i></td>').replace("#ContentType#", ui.et.x_www_form_urlencoded);;
+                                                p = l.createElement("div", { class: "parameters-container" }, l.createElement("div", { class: "opblock-description-wrapper" }, that.et.get_table(html)));
+                                            }
+                                            p && section.appendChild(p);
                                         }
-                                        p && section.appendChild(p);
-                                    }
-                                    if (server.Method.toLocaleLowerCase() == "get") {
-                                        var p = l.createElement("div", { class: "parameters-container" }, l.createElement("div", { class: "opblock-description-wrapper" }, that.et.get_table(Params_get)));
-                                        section.appendChild(p);
+                                        if (server.Method.toLocaleLowerCase() == "get") {
+                                            var p = l.createElement("div", { class: "parameters-container" }, l.createElement("div", { class: "opblock-description-wrapper" }, that.et.get_table(Params_get)));
+                                            section.appendChild(p);
+                                        }
                                     }
                                 }
                             })
@@ -272,6 +297,8 @@
                     url: $("#Url").val(),
                     headers: {}
                 }
+                _parent.find(".loading-container").remove();
+
                 a.method = _parent.find(".opblock-summary-method").text(),
                     a.path = _parent.find(".opblock-summary-path").attr("data-path"),
                     _parent.find(".content-type").length ? a.headers["Content-Type"] = _parent.find(".content-type").val() : "";
@@ -295,6 +322,7 @@
                     });
                 }
                 if (a.method.toUpperCase() == "POST" || a.method.toUpperCase() == "NONE") {
+                    a.method = "POST";
                     var t = _parent.find(".paramsTable textarea.required");
                     if (t.length > 0) {
                         t.removeClass("error"), ("" === t.val() || null === t.val()) && (t.addClass("error"), e = !1);
@@ -406,9 +434,36 @@
     }
 
     jQuery(function () {
-        $.getJSON("temp.json", function (data) {
+        $.getJSON("/temp.json", function (data) {
             ui.init(data, ServiceName);
-        })
+        });
+
+        var htmladdObject = $(".gatewaylist");
+        ////网关列表
+        $.getJSON("/gateway.json", function (data) {
+            $.each(data, function (i, gt) {
+                var url = "http://" + gt.IP + ":" + gt.port + "/";
+                i == 0 && $("#Url").val(url), htmladdObject.append("<li class=\"item-gateway\"><a href=\"#\">" + url + "</a></li>");
+            });
+        });
+
+        $(".customeUrl").click(function () {
+            var left = $(this).offset().left;
+            if ($(".gatewaylist").is(":visible")) htmladdObject.css("left", left + "px").hide(); else htmladdObject.css("left", left + "px").slideDown(300);
+        });
+
+        $(document).on("click", ".gatewaylist li a", function () {
+            $("#Url").val($(this).html()); htmladdObject.hide();
+        });
+        $(document).on("click", function (event) {//点击空白处，设置的弹框消失
+            event.stopPropagation();
+            if ($(event.target).find(".gatewaylist").length !== 0) {
+                $(htmladdObject).hide();
+            }
+            if ($(event.target).find(".gatewaylist").length == 0 && (!$(event.target).hasClass("customeUrl") && !$(event.target).hasClass("gatewaylist"))) {
+                $(htmladdObject).hide();
+            }
+        });
 
         jQuery(document).on("click", ".example.microlight", function (e) {
             e.preventDefault();

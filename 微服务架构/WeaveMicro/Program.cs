@@ -41,11 +41,12 @@ namespace WeaveMicro
                     servers.Add(servers[i]);
                 }
             }
+            //  saveRouteLog();启用线程
+            System.Threading.Thread goroute = new System.Threading.Thread(saveRouteLog);
+            goroute.Start();
 
             weaveP2Server.Start(Convert.ToInt32(config["port"]));
             CreateHostBuilder(args).Build().Run();
-            //  saveRouteLog();启用线程
-
 
 
             while (true)
@@ -141,17 +142,23 @@ namespace WeaveMicro
         /// </summary>
         private static void saveRouteLog()
         {
+            if (!Directory.Exists(_Path + "route\\"))
+            {
+                Directory.CreateDirectory(_Path + "route\\");
+            }
             while (true)
             {
-                //有问题
-                using (StreamWriter sw = new StreamWriter(_Path +DateTime.Now.ToString("yyyyMMddHH") +"routelog.json", false, Encoding.UTF8))
+                if (Routeloglist.Count > 0)
                 {
-                    sw.Write(Newtonsoft.Json.JsonConvert.SerializeObject(Routeloglist));
-                    sw.Close();
-                    sw.Dispose();
+                    using (StreamWriter sw = new StreamWriter(_Path + "route\\" + DateTime.Now.ToString("yyyyMMddHH") + "_log.json", false, Encoding.UTF8))
+                    {
+                        sw.Write(Newtonsoft.Json.JsonConvert.SerializeObject(Routeloglist));
+                        sw.Close();
+                        sw.Dispose();
+                    }
+                    Routeloglist.Clear();
                 }
-                Routeloglist.Clear();
-                System.Threading.Thread.Sleep(1000 * 60*60 );
+                System.Threading.Thread.Sleep(1000 * 60 * 60);
             }
         }
 
@@ -169,8 +176,10 @@ namespace WeaveMicro
                     case 0x01:
                         //类型1
                         APIclient client = Newtonsoft.Json.JsonConvert.DeserializeObject<APIclient>(System.Text.UTF8Encoding.UTF8.GetString(data));
-
                         client.socket = soc;
+                        //Console.WriteLine($"网关info:{(client.socket.RemoteEndPoint as IPEndPoint).Address.ToString()}:{(client.socket.RemoteEndPoint as IPEndPoint).Port} {(client.socket.LocalEndPoint as IPEndPoint).Address.ToString()}:{(client.socket.LocalEndPoint as IPEndPoint).Port}");
+                        Console.WriteLine($"网关加入 {client.Sid} {client.IP}:{client.port}");
+
                         lock (APIclientlist)
                         {
                             foreach (APIclient ser in APIclientlist)
@@ -183,7 +192,6 @@ namespace WeaveMicro
                             }
                         }
                         APIclientlist.Add(client);
-                        Console.WriteLine($"网关加入:{client.IP}:{client.port}");
 
                         savegateway();
                         post();
@@ -202,7 +210,7 @@ namespace WeaveMicro
                         //类型3
 
                         server sers = Newtonsoft.Json.JsonConvert.DeserializeObject<server>(System.Text.UTF8Encoding.UTF8.GetString(data));
-                        Console.WriteLine($"服务加入{sers.IP}:{sers.Port}");
+                        Console.WriteLine($"服务加入{sers.Name} {sers.IP}:{sers.Port}");
                         lock (servers)
                         {
                             foreach (server ser in servers)

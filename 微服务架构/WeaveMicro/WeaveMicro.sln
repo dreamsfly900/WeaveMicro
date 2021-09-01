@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "..\Identi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeaveRemoteService", "..\WeaveRemoteService\WeaveRemoteService.csproj", "{29C0639D-93F5-46CD-9C69-7B514C3DB53C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Launcher", "..\Launcher\Launcher.csproj", "{4A1C40CE-0CB0-4955-BB9C-D041D35000F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{29C0639D-93F5-46CD-9C69-7B514C3DB53C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29C0639D-93F5-46CD-9C69-7B514C3DB53C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29C0639D-93F5-46CD-9C69-7B514C3DB53C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A1C40CE-0CB0-4955-BB9C-D041D35000F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A1C40CE-0CB0-4955-BB9C-D041D35000F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A1C40CE-0CB0-4955-BB9C-D041D35000F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A1C40CE-0CB0-4955-BB9C-D041D35000F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

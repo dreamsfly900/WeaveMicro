@@ -42,7 +42,7 @@ namespace WeaveMicro
                 app.UseHsts();
             }
 
-            string contentRoot = Directory.GetCurrentDirectory();
+            string contentRoot = AppDomain.CurrentDomain.BaseDirectory;
             string runRoot = AppDomain.CurrentDomain.BaseDirectory;
             IFileProvider fileProvider = new PhysicalFileProvider(Path.Combine(contentRoot, @"doc"));//静态文件存储目录
             IFileProvider runProvider = new PhysicalFileProvider(runRoot);//运行目录

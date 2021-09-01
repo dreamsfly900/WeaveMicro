@@ -27,7 +27,7 @@ namespace WeaveMicro
         static void Main(string[] args)
         {
             Console.WriteLine("欢迎使用Weave微服务中心");
-            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("config.json");
+            var builder = new ConfigurationBuilder().SetBasePath(_Path).AddJsonFile("config.json");
             config = builder.Build();
 
             weaveP2Server.weaveReceiveBitEvent += WeaveP2Server_weaveReceiveBitEvent;

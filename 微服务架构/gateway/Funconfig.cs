@@ -11,7 +11,7 @@ namespace gateway
 {
     public static class Funconfig
     {
-        static IConfigurationBuilder builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("funconfig.json");
+        static IConfigurationBuilder builder = new ConfigurationBuilder().SetBasePath(AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("funconfig.json");
 
 
 

@@ -18,7 +18,7 @@ namespace gateway
 {
     public class Startup
     {
-        static IConfigurationBuilder builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("config.json");
+        static IConfigurationBuilder builder = new ConfigurationBuilder().SetBasePath(AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("config.json");
 
         public Startup(IConfiguration configuration)
         {

@@ -32,43 +32,21 @@ namespace IdentityServer
             }
             try
             {
-                if (type == "Signal")//信号宝
-                {
-                    SignalDAL.AdminService aDal = new SignalDAL.AdminService();
-
-                    SignalModel.T_Admin admin = aDal.GetAdmin(Loginname);//获取账户信息
-
-                    if (admin != null && admin.Password == WebStructure.DBUtility.MD5Helper.GetMD5(Password))
-                    {
-                        TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
-
-                        string sign = "appid=" + Loginname + "&timestamp=" + Math.Round(ts.TotalMilliseconds, 0).ToString() + "&proj=" + type;
-
-                        string authTicket = getSha256(sign);
-                        aDal.UpdateTicket(admin.Id, authTicket);
-
+                
+                   
                         //验证成功
                         context.Result = new GrantValidationResult(
                              subject: context.UserName,
                              authenticationMethod: "custom",
                              claims: new Claim[] {
-                                new Claim("UserId", admin.Id.ToString()),
-                                new Claim("Name",admin.LoginName),
-                                new Claim("Phone", admin.Phone),
-                                new Claim("Role",admin.Areacode)
+                                new Claim("UserId", "ceshi123"),
+                                new Claim("Name","ceshi"),
+                                new Claim("Phone", "135135"),
+                                new Claim("Role","admin"),
+                                 new Claim("Area","41")
                              });
-                    }
-                    else
-                    {
-                        //验证失败
-                        //context.Result = new GrantValidationResult()
-                        //{
-                        //    IsError = true,
-                        //    Error = "用户名或密码不正确"
-                        //};
-                        context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "用户名或密码不正确");
-                    }
-                }
+                   
+                
             }
             catch (Exception e)
             {

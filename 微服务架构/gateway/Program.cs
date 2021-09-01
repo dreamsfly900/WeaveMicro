@@ -62,7 +62,7 @@ namespace gateway
                 String datastr = Newtonsoft.Json.JsonConvert.SerializeObject(serv);
 
                 datastr = "{\"server\":" + datastr + "}";
-                System.IO.StreamWriter sw = new System.IO.StreamWriter("funconfig.json", false);
+                System.IO.StreamWriter sw = new System.IO.StreamWriter(AppDomain.CurrentDomain.BaseDirectory+"funconfig.json", false);
                 sw.Write(datastr);
                 sw.Close();
                 Proccessor.servers = Funconfig.getConfig();
@@ -73,7 +73,7 @@ namespace gateway
             catch (Exception e) { Console.WriteLine(e.Message); }
         }
 
-        static IConfigurationBuilder builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("config.json");
+        static IConfigurationBuilder builder = new ConfigurationBuilder().SetBasePath(AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("config.json");
 
         public static IWebHostBuilder CreateHostBuilder(string[] args) =>
 

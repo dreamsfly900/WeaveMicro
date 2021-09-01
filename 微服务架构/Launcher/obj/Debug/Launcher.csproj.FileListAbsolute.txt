@@ -1,0 +1,13 @@
+D:\WeaveMicro\微服务架构\Launcher\bin\Debug\Launcher.exe.config
+D:\WeaveMicro\微服务架构\Launcher\bin\Debug\Launcher.exe
+D:\WeaveMicro\微服务架构\Launcher\bin\Debug\Launcher.pdb
+D:\WeaveMicro\微服务架构\Launcher\obj\Debug\Launcher.csprojAssemblyReference.cache
+D:\WeaveMicro\微服务架构\Launcher\obj\Debug\Launcher.Form1.resources
+D:\WeaveMicro\微服务架构\Launcher\obj\Debug\Launcher.Properties.Resources.resources
+D:\WeaveMicro\微服务架构\Launcher\obj\Debug\Launcher.csproj.GenerateResource.cache
+D:\WeaveMicro\微服务架构\Launcher\obj\Debug\Launcher.csproj.CoreCompileInputs.cache
+D:\WeaveMicro\微服务架构\Launcher\obj\Debug\Launcher.exe
+D:\WeaveMicro\微服务架构\Launcher\obj\Debug\Launcher.pdb
+D:\WeaveMicro\微服务架构\Launcher\bin\Debug\Newtonsoft.Json.dll
+D:\WeaveMicro\微服务架构\Launcher\bin\Debug\Newtonsoft.Json.xml
+D:\WeaveMicro\微服务架构\Launcher\obj\Debug\Launcher.csproj.CopyComplete

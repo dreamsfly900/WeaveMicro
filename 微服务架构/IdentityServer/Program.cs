@@ -15,7 +15,7 @@ namespace IdentityServer
 {
     public class Program
     {
-        static IConfigurationBuilder builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("config.json");
+        static IConfigurationBuilder builder = new ConfigurationBuilder().SetBasePath(AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("config.json");
         public static void Main(string[] args)
         {
             Console.Title = "IdentityServer4 - 认证中心";

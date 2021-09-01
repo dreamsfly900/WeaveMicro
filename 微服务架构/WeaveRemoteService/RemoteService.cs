@@ -10,7 +10,7 @@ namespace WeaveRemoteService
     public class RemoteService:IDisposable
     {
         ServiceChannel service ;
-        IConfigurationBuilder builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("config.json");
+        IConfigurationBuilder builder = new ConfigurationBuilder().SetBasePath(AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("config.json");
         service[] sric;
         MicroClient mc;
         server ser;

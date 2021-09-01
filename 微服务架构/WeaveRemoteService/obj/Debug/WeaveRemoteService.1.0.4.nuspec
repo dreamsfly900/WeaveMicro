@@ -8,7 +8,7 @@
     <description>WeaveMicro微服务，远程API启动类库，负责连接注册中心与启动本地方法的监听</description>
     <dependencies>
       <group targetFramework=".NETStandard2.0">
-        <dependency id="WeaveMicroClient" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="WeaveMicroClient" version="1.0.2" exclude="Build,Analyzers" />
         <dependency id="wRPCService" version="1.0.6" exclude="Build,Analyzers" />
       </group>
     </dependencies>

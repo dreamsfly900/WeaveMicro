@@ -11930,3 +11930,85 @@ System.IO.IOException: Failed to bind to address http://127.0.0.1:1221: address 
 2021-03-15 19:57:02.566 +08:00 [DBG] Connection id "0HM77H7K64LGO" disconnecting.
 2021-03-15 19:57:02.575 +08:00 [DBG] Connection id "0HM77H7K64LGO" stopped.
 2021-03-15 19:57:03.975 +08:00 [DBG] Hosting shutdown
+2021-11-01 18:42:07.161 +08:00 [DBG] Hosting starting
+2021-11-01 18:42:07.283 +08:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2021-11-01 18:42:07.291 +08:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2021-11-01 18:42:07.292 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2021-11-01 18:42:07.293 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2021-11-01 18:42:07.293 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2021-11-01 18:42:07.293 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2021-11-01 18:42:07.293 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2021-11-01 18:42:07.386 +08:00 [INF] User profile is available. Using 'C:\Users\xingy\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-11-01 18:42:07.395 +08:00 [DBG] Reading data from file 'C:\Users\xingy\AppData\Local\ASP.NET\DataProtection-Keys\key-5e1e562f-8d9c-4594-b65b-14b2b3448d53.xml'.
+2021-11-01 18:42:07.445 +08:00 [DBG] Reading data from file 'C:\Users\xingy\AppData\Local\ASP.NET\DataProtection-Keys\key-bdc80a61-18aa-4e35-956b-85358d072620.xml'.
+2021-11-01 18:42:07.467 +08:00 [DBG] Found key "5e1e562f-8d9c-4594-b65b-14b2b3448d53".
+2021-11-01 18:42:07.485 +08:00 [DBG] Found key "bdc80a61-18aa-4e35-956b-85358d072620".
+2021-11-01 18:42:07.495 +08:00 [DBG] Considering key "5e1e562f-8d9c-4594-b65b-14b2b3448d53" with expiration date "2021-09-13T02:07:37.4385085+00:00" as default key.
+2021-11-01 18:42:07.496 +08:00 [DBG] Key "5e1e562f-8d9c-4594-b65b-14b2b3448d53" is no longer under consideration as default key because it is expired, revoked, or cannot be deciphered.
+2021-11-01 18:42:07.540 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2021-11-01 18:42:07.544 +08:00 [DBG] Decrypting secret element using Windows DPAPI.
+2021-11-01 18:42:07.545 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2021-11-01 18:42:07.549 +08:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2021-11-01 18:42:07.552 +08:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2021-11-01 18:42:07.555 +08:00 [DBG] Repository contains no viable default key. Caller should generate a key with immediate activation.
+2021-11-01 18:42:07.555 +08:00 [DBG] Policy resolution states that a new key should be added to the key ring.
+2021-11-01 18:42:07.560 +08:00 [INF] Creating key "fe52e8e5-d805-4e50-8716-5cdbecfd084a" with creation date "2021-11-01T10:42:07.5566990+00:00", activation date "2021-11-01T10:42:07.3882615+00:00", and expiration date "2022-01-30T10:42:07.3882615+00:00".
+2021-11-01 18:42:07.566 +08:00 [DBG] Descriptor deserializer type for key "fe52e8e5-d805-4e50-8716-5cdbecfd084a" is 'Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'.
+2021-11-01 18:42:07.568 +08:00 [DBG] No key escrow sink found. Not writing key "fe52e8e5-d805-4e50-8716-5cdbecfd084a" to escrow.
+2021-11-01 18:42:07.592 +08:00 [DBG] Encrypting to Windows DPAPI for current user account (DESKTOP-357OU5G\xingy).
+2021-11-01 18:42:07.595 +08:00 [INF] Writing data to file 'C:\Users\xingy\AppData\Local\ASP.NET\DataProtection-Keys\key-fe52e8e5-d805-4e50-8716-5cdbecfd084a.xml'.
+2021-11-01 18:42:07.597 +08:00 [DBG] Key cache expiration token triggered by 'CreateNewKey' operation.
+2021-11-01 18:42:07.598 +08:00 [DBG] Reading data from file 'C:\Users\xingy\AppData\Local\ASP.NET\DataProtection-Keys\key-5e1e562f-8d9c-4594-b65b-14b2b3448d53.xml'.
+2021-11-01 18:42:07.599 +08:00 [DBG] Reading data from file 'C:\Users\xingy\AppData\Local\ASP.NET\DataProtection-Keys\key-bdc80a61-18aa-4e35-956b-85358d072620.xml'.
+2021-11-01 18:42:07.600 +08:00 [DBG] Reading data from file 'C:\Users\xingy\AppData\Local\ASP.NET\DataProtection-Keys\key-fe52e8e5-d805-4e50-8716-5cdbecfd084a.xml'.
+2021-11-01 18:42:07.606 +08:00 [DBG] Found key "5e1e562f-8d9c-4594-b65b-14b2b3448d53".
+2021-11-01 18:42:07.606 +08:00 [DBG] Found key "bdc80a61-18aa-4e35-956b-85358d072620".
+2021-11-01 18:42:07.607 +08:00 [DBG] Found key "fe52e8e5-d805-4e50-8716-5cdbecfd084a".
+2021-11-01 18:42:07.610 +08:00 [DBG] Considering key "fe52e8e5-d805-4e50-8716-5cdbecfd084a" with expiration date "2022-01-30T10:42:07.3882615+00:00" as default key.
+2021-11-01 18:42:07.613 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2021-11-01 18:42:07.614 +08:00 [DBG] Decrypting secret element using Windows DPAPI.
+2021-11-01 18:42:07.615 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2021-11-01 18:42:07.617 +08:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2021-11-01 18:42:07.617 +08:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2021-11-01 18:42:07.619 +08:00 [DBG] Using key "fe52e8e5-d805-4e50-8716-5cdbecfd084a" as the default key.
+2021-11-01 18:42:07.620 +08:00 [DBG] Key ring with default key "fe52e8e5-d805-4e50-8716-5cdbecfd084a" was loaded during application startup.
+2021-11-01 18:42:07.805 +08:00 [DBG] Using development certificate: CN=localhost (Thumbprint: AA4369410F4F65C9144083E530501991817E3E04)
+2021-11-01 18:42:07.881 +08:00 [DBG] Hosting started
+2021-11-01 18:42:07.882 +08:00 [DBG] Loaded hosting startup assembly IdentityServer
+2021-11-01 18:42:08.309 +08:00 [DBG] Connection id "0HMCT4H0EIJKI" accepted.
+2021-11-01 18:42:08.311 +08:00 [DBG] Connection id "0HMCT4H0EIJKI" started.
+2021-11-01 18:42:08.424 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Cannot determine the frame size or a corrupted frame was received.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2021-11-01 18:42:08.529 +08:00 [DBG] Connection id "0HMCT4H0EIJKI" stopped.
+2021-11-01 18:42:08.532 +08:00 [DBG] Connection id "0HMCT4H0EIJKI" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-11-01 18:42:08.538 +08:00 [DBG] Connection id "0HMCT4H0EIJKJ" accepted.
+2021-11-01 18:42:08.543 +08:00 [DBG] Connection id "0HMCT4H0EIJKJ" started.
+2021-11-01 18:42:08.636 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Cannot determine the frame size or a corrupted frame was received.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2021-11-01 18:42:08.638 +08:00 [DBG] Connection id "0HMCT4H0EIJKJ" stopped.
+2021-11-01 18:42:08.639 +08:00 [DBG] Connection id "0HMCT4H0EIJKJ" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-11-01 18:42:08.742 +08:00 [DBG] Connection id "0HMCT4H0EIJKK" accepted.
+2021-11-01 18:42:08.743 +08:00 [DBG] Connection id "0HMCT4H0EIJKK" started.
+2021-11-01 18:42:08.800 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Cannot determine the frame size or a corrupted frame was received.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2021-11-01 18:42:08.803 +08:00 [DBG] Connection id "0HMCT4H0EIJKK" stopped.
+2021-11-01 18:42:08.805 +08:00 [DBG] Connection id "0HMCT4H0EIJKK" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-11-01 18:42:08.824 +08:00 [DBG] Connection id "0HMCT4H0EIJKL" accepted.
+2021-11-01 18:42:08.832 +08:00 [DBG] Connection id "0HMCT4H0EIJKL" started.
+2021-11-01 18:42:08.901 +08:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Cannot determine the frame size or a corrupted frame was received.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2021-11-01 18:42:08.904 +08:00 [DBG] Connection id "0HMCT4H0EIJKL" stopped.
+2021-11-01 18:42:08.905 +08:00 [DBG] Connection id "0HMCT4H0EIJKL" sending FIN because: "The Socket transport's send loop completed gracefully."
+2021-11-01 18:49:05.738 +08:00 [DBG] Hosting shutdown

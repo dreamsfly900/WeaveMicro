@@ -6,4 +6,3 @@ D:\WeaveMicro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.AssemblyInfo.cs
 D:\WeaveMicro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.csproj.CoreCompileInputs.cache
 D:\WeaveMicro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.dll
 D:\WeaveMicro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.pdb
-D:\WeaveMicro\微服务架构\wRPC\obj\Debug\netstandard2.0\wRPC.csprojAssemblyReference.cache

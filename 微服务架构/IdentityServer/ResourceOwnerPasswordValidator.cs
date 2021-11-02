@@ -24,7 +24,7 @@ namespace IdentityServer
             string Loginname = context.UserName.Trim();//用户名
             string Password = context.Password.Trim();//密码
             string type = context.Request.Raw["prj"].Trim();//项目名称
-
+            
             if (string.IsNullOrEmpty(type))
             {
                 context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "The requested resource does not exist");

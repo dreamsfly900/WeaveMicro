@@ -43,12 +43,14 @@ namespace IdentityServer
             });
 
             #region 内存方式
-            var builder = services.AddIdentityServer()
+            var builder = services.AddIdentityServer()// (x => x.IssuerUri = "http://111.12.2.21:8000")
                 .AddDeveloperSigningCredential()
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryApiResources(Config.GetApis())
                 .AddResourceOwnerValidator<ResourceOwnerPasswordValidator>()
                 .AddInMemoryClients(Config.GetClients()).AddProfileService<ProfileService>();
+                
+           
             #endregion
 
             if (Environment.IsDevelopment())

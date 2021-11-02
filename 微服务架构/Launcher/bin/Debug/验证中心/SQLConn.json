@@ -1,4 +1,0 @@
-﻿{
-  "Connection": "Data Source=116.255.241.135;Initial Catalog=SignalData;Persist Security Info=True;User ID=sa;Password=dreamsfly900",
-  "ConnectionNY": "Data Source=116.255.241.135;Initial Catalog=nayang;Persist Security Info=True;User ID=sa;Password=dreamsfly900"
-}

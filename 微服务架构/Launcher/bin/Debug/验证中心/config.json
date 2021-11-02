@@ -1,8 +1,0 @@
-{
-  "Authentication": true,
-  "IdentityServer": "http://localhost:5000",
-  "Audience": "api1",
-  "defaultScheme": "Bearer",
-  "applicationUrl": "http://localhost:1221",
-  "Microcenter": "116.255.241.135:9002"
-}

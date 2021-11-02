@@ -1,0 +1,238 @@
+body{
+    overflow:hidden;
+}
+.header {
+    position:relative;width:100%;
+    background: #00965E;
+    height: 60px;
+    line-height: 60px;
+}
+
+.header div {
+    width: 960px;
+    margin: 0 auto;
+    height: 100%;
+    line-height: 60px;
+}
+
+.header div .logo {
+    position: relative;
+    top: 5px;
+    float: left;
+    margin-right: 10px;
+}
+
+.header div .title {
+    font-size: 26px;color:#fff;
+}
+
+.header div .rigInput {
+    float: right;
+}
+.layui-layer-btn {
+    background: rgb(247, 247, 247);
+}
+.table thead th {
+    background: rgb(218,227,243);
+}
+/* 主体部分 */
+.bodyPart {
+    width: 100%;
+    height: calc(100% - 80px);*height:90%;
+    overflow:hidden;overflow-y: auto;
+}
+
+.bodyPart>div {
+    width: 960px;
+    margin: 10px auto;
+    /* background: #43C998; */
+    line-height: 35px;
+}
+
+/* 模块列表 */
+.moduleList {}
+
+.moduleList > li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+.moduleList > li .slideList,.moduleList > li .slideList .operaDetails{
+    display:none;
+}
+.subTit {
+    color: #000; font-weight: bold; font-size: 20px;position:relative;padding-left:15px;
+}
+.subTit:before {
+   content:"";width:10px;height:10px;display:inline-block;position:absolute;left:0;border:2px solid #c3e8d1;top:9px;transform:rotate(45deg);-o-transform:rotate(45deg);
+}
+/* 下拉列表 */
+.slideList {}
+.slideList li {
+    line-height: 30px;
+    margin: 5px auto;
+    border-radius: 3px;
+    background: #E7F0F7;border: 1px solid #C3D9EC;
+    box-sizing: border-box;
+}
+
+.slideList li .col>span {
+    color: #000;
+    cursor: pointer;
+}
+.slideList li .col>span a{
+    color: #000;
+}
+.slideList li .col>span a:hover{
+    text-decoration:underline;  
+}
+.slideList li button {
+    height: 32px;line-height:32px;
+    text-align: center;font-size:0.9em;    
+    position: relative;
+    top: -1px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.slideList li p{
+    margin:0!important;padding:0!important;
+}
+.slideList li span.defColor {
+    font-size: 14px;padding-right: 10px;color: #0F6AB4;
+}
+.slideList li.NONE,
+.slideList li.post,
+.slideList li.POST {
+    background: #E7F6EC;border: 1px solid #C3E8D1;
+}
+.slideList li.NONE button,
+.slideList li.post button,
+.slideList li.POST button {
+    background: #10A54A;
+}
+.slideList li.NONE .defColor,
+.slideList li.post .defColor,
+.slideList li.POST .defColor {
+    color: #10A54A;
+}
+.slideList li.Get,
+.slideList li.get,
+.slideList li.GET {
+    background: #E7F0F7;border: 1px solid #C3D9EC;
+}
+.slideList li.Get .defColor,
+.slideList li.get .defColor,
+.slideList li.GET .defColor {
+    color: #0F6AB4;
+}
+.slideList li.Get button,
+.slideList li.get button,
+.slideList li.GET button {
+    background: #0F6AB4;
+}
+.slideList li.get .operaDetails,
+.slideList li.GET .operaDetails {
+    border-top: 1px solid #C3D9EC;
+}
+.slideList li.NONE .operaDetails,
+.slideList li.post .operaDetails,
+.slideList li.POST .operaDetails {
+    border-top: 1px solid #C3E8D1;
+}
+.slideList li .operaDetails {
+    width: 100%; padding: 10px; box-sizing: border-box;
+}
+.slideList li .operaDetails * {
+    color: #000;
+}
+.slideList li .operaDetails table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+.slideList li .operaDetails table td {
+    padding-left: 5px;
+    vertical-align: top;
+}
+.slideList li .operaDetails table thead tr td {
+    border-bottom: 1px solid #999999;
+    color: #999;
+}
+.slideList li .tryBtn {
+    border: 1px solid #767676;
+    background: #EFEFEF !important;
+    color: #000000;
+}
+.slideList li .bottBtn {
+    margin-top: 10px;
+}
+.slideList li .examBox {
+    border: 1px solid #E5E0C6;
+    background: #FFFFDD;
+    cursor: pointer;
+}
+.slideList li table tr {
+    padding: 10px 0;
+}
+.slideList li table tr td input {
+    height: 25px;
+    line-height: 25px;
+    border-color: #AAAAAA;
+    width: 90%;
+}
+.slideList li table tbody tr td {
+    padding: 5px 0 10px;
+}
+.slideList li table tr:not(:last-child) td {
+    border-bottom: 1px solid #CCCCCC;
+}
+.hideResBtn,.hander{
+    cursor:pointer;
+}
+.box {
+    border: 1px solid #E5E0C6;
+    background: #FCF6DB;
+    padding: 2px 10px;
+    font-size: 14px !important;
+}
+.box .body-input{
+    width:100%;height:30px;line-height:36px;background:none;-moz-appearance:none;outline:none;
+    border:none;
+}
+.box-section .error {
+    outline-color: #cc0000;
+    background-color: #f2dede;
+}
+.box-section input[type='text'].error {
+    outline: 2px solid black;
+    outline-color: #cc0000;
+}
+.box-section .body-textarea {
+    width: 300px;
+    height: 100px;
+    border: 1px solid #aaa;
+}
+.box-section .required {
+    font-weight: bold;
+}
+.box-section pre {
+    font-family: "Microsoft YaHei", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
+    font-size: .85em;
+    line-height: 1.5em;
+    overflow: auto;
+    cursor: pointer;
+    padding:5px;
+}
+.box-section pre code {
+    display: block;line-height:1.6em;
+    padding: 0.5em;
+    background: none;
+}
+div.reponse_body pre {
+    max-height: 400px;
+    overflow-y: auto;
+    line-height: 20px !important;
+    padding: 10px;
+    margin: 0;
+    font: inherit;
+    vertical-align: baseline;
+}

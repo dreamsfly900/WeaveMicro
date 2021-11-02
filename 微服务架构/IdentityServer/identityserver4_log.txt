@@ -12012,6 +12012,7 @@ System.IO.IOException: Cannot determine the frame size or a corrupted frame was 
 2021-11-01 18:42:08.904 +08:00 [DBG] Connection id "0HMCT4H0EIJKL" stopped.
 2021-11-01 18:42:08.905 +08:00 [DBG] Connection id "0HMCT4H0EIJKL" sending FIN because: "The Socket transport's send loop completed gracefully."
 2021-11-01 18:49:05.738 +08:00 [DBG] Hosting shutdown
+<<<<<<< HEAD
 2021-11-02 09:45:06.009 +08:00 [DBG] Hosting starting
 2021-11-02 09:45:06.166 +08:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
 2021-11-02 09:45:06.175 +08:00 [INF] Using the default authentication scheme idsrv for IdentityServer
@@ -14482,3 +14483,5 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2021-11-02 10:56:45.058 +08:00 [ERR] No client identifier found
 2021-11-02 10:56:45.059 +08:00 [DBG] Connection id "0HMCTLDM5CR23" completed keep alive response.
 2021-11-02 10:56:45.060 +08:00 [INF] Request finished HTTP/1.1 POST https://localhost:1221/connect/token application/x-www-form-urlencoded 97 - 400 - application/json;+charset=UTF-8 55.5443ms
+=======
+>>>>>>> e967637c90ead4491b1d4e9fcce79172d59ae2e2

@@ -4,6 +4,9 @@
   "Audience": "api1",
   "defaultScheme": "Bearer",
   "applicationUrl": "https://localhost:1221",
+<<<<<<< HEAD
   "httpspassword": "linezero",
+=======
+>>>>>>> e967637c90ead4491b1d4e9fcce79172d59ae2e2
   "Microcenter": "116.255.241.135:9002"
 }

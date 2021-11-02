@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using WeaveMicroClient;
 using wRPC;
@@ -30,12 +31,16 @@ namespace gateway
             mc = new MicroClient(mcip.Split(':')[0], Convert.ToInt32(mcip.Split(':')[1]));
             mc.ReceiveEvent += Mc_ReceiveEvent;
             mc.Connection();
-            String[] applicationUrls = config["applicationUrl"].Replace("http://","").Split(',');
+            String[] applicationUrls = config["applicationUrl"].Replace("http://","").Replace("https://", "").Split(',');
             foreach(string applicationUrl in applicationUrls)
             mc.RegClient("网关1", applicationUrl.Split(':')[0], Convert.ToInt32( applicationUrl.Split(':')[1]));
             applicationUrl = config["applicationUrl"];
             args = new string[] { config["applicationUrl"] };
-            CreateHostBuilder(args).Build().Run();
+            var certificate = new X509Certificate2("server.pfx", config["httpspassword"]);
+            CreateHostBuilder(args).UseKestrel(options =>
+            {
+                options.ConfigureHttpsDefaults(options => { options.ServerCertificate = certificate; });
+            }).Build().Run();
 
             //mainthread loop
             while (true)

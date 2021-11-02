@@ -44,3 +44,4 @@ D:\WeaveMicro\微服务架构\gateway\obj\Debug\net5.0\gateway.dll
 D:\WeaveMicro\微服务架构\gateway\obj\Debug\net5.0\ref\gateway.dll
 D:\WeaveMicro\微服务架构\gateway\obj\Debug\net5.0\gateway.pdb
 D:\WeaveMicro\微服务架构\gateway\obj\Debug\net5.0\gateway.genruntimeconfig.cache
+D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\server.pfx

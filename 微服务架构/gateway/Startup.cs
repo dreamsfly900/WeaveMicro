@@ -38,6 +38,8 @@ namespace gateway
                 services.AddAuthentication(config["defaultScheme"])
                   .AddJwtBearer(config["defaultScheme"], options =>
                   {
+                      options.TokenValidationParameters.ValidateIssuer = false;
+                    //  options.TokenValidationParameters.RequireAudience = false;
                       options.Authority = config["IdentityServer"];
                       options.RequireHttpsMetadata = false;
 

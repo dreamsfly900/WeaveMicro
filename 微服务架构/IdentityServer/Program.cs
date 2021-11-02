@@ -10,6 +10,7 @@ using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
 using System;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 
 namespace IdentityServer
 {
@@ -26,8 +27,12 @@ namespace IdentityServer
         public static IWebHostBuilder CreateWebHostBuilder(string[] args)
         {
             var config = builder.Build();
+            var certificate = new X509Certificate2("server.pfx", config["httpspassword"]);
             return WebHost.CreateDefaultBuilder().UseUrls(config["applicationUrl"])
-                    .UseStartup<Startup>()
+                    .UseStartup<Startup>().UseKestrel(options =>
+                    {
+                        options.ConfigureHttpsDefaults(options => { options.ServerCertificate = certificate; });
+                    })
                     .UseSerilog((context, configuration) =>
                     {
                         configuration

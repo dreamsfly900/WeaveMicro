@@ -1,1 +1,0 @@
-[{"name":"注册中心服务","type":"注册中心","port":0,"url":"","CD":"注册中心\\WeaveMicrocenter.exe"},{"name":"本地网关服务","type":"网关","port":0,"url":"","CD":"网关\\gateway.exe"},{"name":"验证中心服务","type":"验证中心","port":0,"url":"","CD":"验证中心\\IdentityServer.exe"}]

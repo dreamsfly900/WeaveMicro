@@ -41,14 +41,16 @@ namespace IdentityServer
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
+          
             #region 内存方式
-            var builder = services.AddIdentityServer()
+            var builder = services.AddIdentityServer()// (x => x.IssuerUri = "http://111.12.2.21:8000")
                 .AddDeveloperSigningCredential()
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryApiResources(Config.GetApis())
                 .AddResourceOwnerValidator<ResourceOwnerPasswordValidator>()
                 .AddInMemoryClients(Config.GetClients()).AddProfileService<ProfileService>();
+            
+         
             #endregion
 
             if (Environment.IsDevelopment())
@@ -78,7 +80,7 @@ namespace IdentityServer
             //    await next.Invoke();
             //});
             app.UseIdentityServer(); //启用identityServer中间件
-
+           
             //app.UseAuthentication();
   
             // app.Run(Proccessor.agent);

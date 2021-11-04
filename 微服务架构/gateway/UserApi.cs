@@ -114,6 +114,7 @@ namespace gateway
 
                                 if (ser.services[0].Method == "NONE")
                                 {
+                                    if(context.Request.ContentType!=null)
                                     if (context.Request.ContentType.ToLower().Contains("application/json"))
                                     {
                                         objs[i] = Newtonsoft.Json.JsonConvert.DeserializeObject(contentFromBody);

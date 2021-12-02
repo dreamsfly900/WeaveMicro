@@ -101,12 +101,23 @@ namespace gateway
             {
 
                 context.Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS,NONE");
-                context.Response.Headers.Add("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-                //context.Request.Headers.Add("Access-Control-Allow-Origin", "*");
+                context.Response.Headers.Add("Access-Control-Allow-Headers", "*"); 
                 context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
                 context.Response.Headers.Add("Cache-Control", "no-cache");
                 context.Response.Headers.Add("Access-Control-Expose-Headers", "Authorization");
+                //token为自定义响应头
+                context.Response.Headers.Add("Access-Control-Expose-Headers", "token");
             }
+            //else
+            //{
+            //    context.Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS,NONE");
+            //    context.Response.Headers.Add("Access-Control-Allow-Headers", "*");
+
+            //    context.Response.Headers.Add("Cache-Control", "no-cache");
+            //    context.Response.Headers.Add("Access-Control-Expose-Headers", "Authorization");
+            //    //token为自定义响应头
+            //    context.Response.Headers.Add("Access-Control-Expose-Headers", "token");
+            //}
 
             //context.Request.ContentType = "application/json";
             //Stream inputstream = context.Request.Body;

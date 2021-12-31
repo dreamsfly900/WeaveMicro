@@ -20,15 +20,15 @@ namespace IdentityServer
 
         public async Task Invoke(HttpContext context)
         {
-            //if (!context.Response.Headers.ContainsKey("Access-Control-Allow-Origin"))
-            //{
+            if (!context.Response.Headers.ContainsKey("Access-Control-Allow-Origin"))
+            {
                 context.Response.Headers.Add("Access-Control-Allow-Methods", "GET,POST");
                 context.Response.Headers.Add("Access-Control-Allow-Headers", "*");
                 context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
                 context.Response.Headers.Add("Cache-Control", "no-cache");
                 //token为自定义响应头
                 context.Response.Headers.Add("Access-Control-Expose-Headers", "token");
-          //  }
+            }
             //if (context.Request.Path == "/connect/token")
             //{
             //    if (context.Request.ContentLength != null)

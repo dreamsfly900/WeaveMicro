@@ -97,17 +97,21 @@ namespace gateway
 
         public async Task Invoke(HttpContext context)
         {
-            if (!context.Response.Headers.ContainsKey("Access-Control-Allow-Origin"))
-            {
 
-                context.Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS,NONE");
-                context.Response.Headers.Add("Access-Control-Allow-Headers", "*"); 
+                context.Response.Headers.Remove("Access-Control-Allow-Origin");
+                context.Response.Headers.Remove("Access-Control-Allow-Methods");
+                context.Response.Headers.Remove("Access-Control-Allow-Headers");
+                context.Response.Headers.Remove("Cache-Control");
+               context.Response.Headers.Remove("Access-Control-Expose-Headers");
+              context.Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS,NONE");
+                context.Response.Headers.Add("Access-Control-Allow-Headers", "*");
                 context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
                 context.Response.Headers.Add("Cache-Control", "no-cache");
-                context.Response.Headers.Add("Access-Control-Expose-Headers", "Authorization");
+
+                context.Response.Headers.Append("Access-Control-Expose-Headers", "Authorization");
                 //token为自定义响应头
-                context.Response.Headers.Add("Access-Control-Expose-Headers", "token");
-            }
+                context.Response.Headers.Append("Access-Control-Expose-Headers", "token");
+            
             //else
             //{
             //    context.Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS,NONE");

@@ -148,17 +148,20 @@ namespace WeaveMicro
             }
             while (true)
             {
+                RouteLog[] routeLogs = new RouteLog[Routeloglist.Count];
+                Routeloglist.CopyTo(0, routeLogs, 0, routeLogs.Length);
                 if (Routeloglist.Count > 0)
                 {
-                    using (StreamWriter sw = new StreamWriter(_Path + "route\\" + DateTime.Now.ToString("yyyyMMddHH") + "_log.json", false, Encoding.UTF8))
+                    using (StreamWriter sw = new StreamWriter(_Path + "route\\" + DateTime.Now.ToString("yyyyMMddHH") + "_log.json", true, Encoding.UTF8))
                     {
-                        sw.Write(Newtonsoft.Json.JsonConvert.SerializeObject(Routeloglist));
+                        sw.Write(Newtonsoft.Json.JsonConvert.SerializeObject(routeLogs));
                         sw.Close();
                         sw.Dispose();
                     }
-                    Routeloglist.Clear();
+                    lock(Routeloglist)
+                     Routeloglist.Clear();
                 }
-                System.Threading.Thread.Sleep(1000 * 60 * 60);
+                System.Threading.Thread.Sleep(1000 * 60 );
             }
         }
 

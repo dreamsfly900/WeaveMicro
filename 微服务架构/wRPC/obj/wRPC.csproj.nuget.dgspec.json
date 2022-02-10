@@ -1,32 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj": {}
+    "D:\\weavemicro\\微服务架构\\wRPC\\wRPC.csproj": {}
   },
   "projects": {
-    "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj": {
+    "D:\\weavemicro\\微服务架构\\wRPC\\wRPC.csproj": {
       "version": "1.0.1",
       "restore": {
-        "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj",
+        "projectUniqueName": "D:\\weavemicro\\微服务架构\\wRPC\\wRPC.csproj",
         "projectName": "wRPC",
-        "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj",
-        "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
-        "outputPath": "D:\\WeaveMicro\\微服务架构\\wRPC\\obj\\",
+        "projectPath": "D:\\weavemicro\\微服务架构\\wRPC\\wRPC.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\weavemicro\\微服务架构\\wRPC\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "D:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "Z:\\shenyc\\nupkgs\\20210523": {},
+          "F:\\SVN\\色斑图-雷达-遥感存储库\\雷达同步\\ConsoleApp1\\packages": {},
+          "\\\\192.168.1.100\\share\\shenyc\\nupkgs\\20210413": {},
+          "\\\\192.168.1.100\\share\\shenyc\\nupkgs\\common": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -82,7 +80,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

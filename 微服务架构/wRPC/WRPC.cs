@@ -25,12 +25,15 @@ namespace wRPCclient
             Port = port;
             tcpSynClient = new TcpSynClient(Weave.Client.DataType.bytes, IP, Port);
             isline = tcpSynClient.Start();
-            if(!isline)
+            
+            if (!isline)
                 throw new Exception("无法连接服务器");
         }
         public bool connection()
         {
+          
             return isline=tcpSynClient.Start();
+
         }
         public bool IsLine()
         {

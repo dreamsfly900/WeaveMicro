@@ -48,7 +48,7 @@ namespace wRPC
         /// </summary>
       internal class WeightAlgorithm
     {
-        private static server serviceCenter = new server();
+        
         public static ConcurrentDictionary<string, WeightAlgorithmItem> _serviceDic = new ConcurrentDictionary<string, WeightAlgorithmItem>();
         private static SpinLock _spinLock = new SpinLock();
         public static async Task<server>  Get(server[] serviceList, string serviceName)
@@ -56,6 +56,7 @@ namespace wRPC
             
             if (serviceList == null)
                 return null;
+            server serviceCenter = new server();
             //if (serviceList.Length == 1)
             //    return serviceList[0];
 

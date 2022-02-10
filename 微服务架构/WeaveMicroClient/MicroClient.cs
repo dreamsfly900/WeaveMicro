@@ -18,6 +18,8 @@ namespace WeaveMicroClient
             this.IP = IP;this.port = port;
             P2Pclient.ReceiveServerEventbit += P2Pclient_ReceiveServerEventbit;
             P2Pclient.Timeoutevent += P2Pclient_Timeoutevent;
+            P2Pclient.resttime = 1;
+            P2Pclient.ReceivesSpeedMode = Weave.Base.WeaveReceivesSpeedMode.middle;
         }
         public void Stop()
         {

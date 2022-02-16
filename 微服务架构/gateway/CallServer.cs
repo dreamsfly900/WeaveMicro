@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using wRPCclient;
-
+using wRPC;
 namespace gateway
 {
     public class CallServer
@@ -85,7 +85,8 @@ namespace gateway
         //    //}
         //    return JsonConvert.SerializeObject(new { code = 503, msg = "服务器错误" });
         //}
-        public static string CallService(server ser, String rt, String rls, object[] objs, Dictionary<string, String> Headers, Dictionary<string, String> keysCookies)
+        public static string CallService(server ser, String rt, String rls, object[] objs,
+            Dictionary<string, String> Headers, Dictionary<string, String> keysCookies, wRPCclient.filedata fd =null)
         {
             bool locked = false;
             wRPCclient.ClientChannel clientChannel = null;
@@ -94,12 +95,17 @@ namespace gateway
            
             try
             {
-
+                
                 clientChannel = new wRPCclient.ClientChannel(ser.IP, ser.Port);
                 CCQ = new ClientChannelQueue();
                 CCQ.clientChannel = clientChannel;
                 clientChannel.Headers = Headers;
                 clientChannel.Cookies = keysCookies;
+                if (fd != null) {
+                    clientChannel.Filedata = fd;
+                  
+                }
+                
                 return Newtonsoft.Json.JsonConvert.SerializeObject(clientChannel.Call<object>(rt, rls, objs));
             }
             catch (Exception e)
@@ -114,6 +120,7 @@ namespace gateway
             }
             finally
             {
+                if(clientChannel!=null)
                 clientChannel.Dispose();
                 
             }

@@ -32,6 +32,7 @@ namespace gateway
             if (context.Request.Method != "GET" && context.Request.Method != "POST")
                 return;
             RouteLog rlog = new RouteLog();
+           wRPCclient.filedata FDATA = new wRPCclient.filedata();
             try
             {
                 Dictionary<string, String> servicesDic = new Dictionary<string, String>();
@@ -45,17 +46,60 @@ namespace gateway
                 }
                 if (context.Request.ContentLength != null)
                 {
-
+                  
                     var body = "";
+                    var filebyte = new byte[0];
+                
                     context.Request.EnableBuffering();
                     using (var mem = new MemoryStream())
                     using (var reader = new StreamReader(mem))
                     {
-                        // 
                         context.Request.Body.Seek(0, SeekOrigin.Begin);
                         await context.Request.Body.CopyToAsync(mem);
                         mem.Seek(0, SeekOrigin.Begin);
-                        body = reader.ReadToEnd();
+                        if (context.Request.ContentType.IndexOf("multipart/form-data") >= 0)
+                        {
+
+                            string WebKitForm = reader.ReadLine() ;
+                            String[] Content_Disposition = reader.ReadLine().Split(";");
+                            String[] Content_Type = reader.ReadLine().Split(":");
+                            try
+                            {
+                                foreach (String sstype in Content_Disposition)
+                                {
+                                    if (sstype.Split("=")[0].Trim() == "filename")
+                                    {
+                                        FDATA.filename = sstype.Split("=")[1].Replace("\"", "");
+                                        FDATA.filetype = FDATA.filename.Substring(FDATA.filename.LastIndexOf("."));
+                                    }
+                                }
+                            }
+                            catch
+                            {
+                                await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 510, msg = "传输非法文件" }));
+                                //context.Abort();
+                                return;
+                            }
+                            reader.ReadLine();
+
+
+                            String str = reader.ReadToEnd() ;
+                            String tempstr=str.Split("\r\n" + WebKitForm+ "--")[0];
+                            filebyte = System.Text.Encoding.Default.GetBytes(tempstr);
+                            FDATA.data = filebyte;
+                              //  reader.ReadLine();
+
+                            string endWebKitForm = WebKitForm+"--";
+                        }
+                        else
+                        {
+                            
+                            body = reader.ReadToEnd();
+
+                        }
+                        // 
+                       
+                        
 
                     }
                     if (context.Request.ContentType != null)
@@ -208,7 +252,7 @@ namespace gateway
                         }
                         //  context.Request.Headers
                         //await context.Response.WriteAsync($"");
-                        String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh, keysCookies);
+                        String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh, keysCookies, FDATA);
                         ////String retun =  clientChannel.Call<String>(rl, rls[rls.Length - 1], objs);
                         //Encoding utf8 = Encoding.ASCII;
                         //Encoding ISO = Encoding.UTF8;//换成你想转的编码
@@ -226,11 +270,12 @@ namespace gateway
                     catch (Exception ex)
                     {
 
-                        await context.Response.WriteAsync($" ~, {  ex.Message}");
+                        await context.Response.WriteAsync($" ~服务调用 异常");
                         return;
                     }
                     finally
                     {
+                        if (Program.mc!=null)
                         Program.mc.SendLog(rlog);
                     }
 

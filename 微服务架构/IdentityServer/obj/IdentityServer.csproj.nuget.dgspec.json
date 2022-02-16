@@ -1,30 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "D:\\weavemicro\\微服务架构\\IdentityServer\\IdentityServer.csproj": {}
+    "D:\\WeaveMicro\\微服务架构\\IdentityServer\\IdentityServer.csproj": {}
   },
   "projects": {
-    "D:\\weavemicro\\微服务架构\\IdentityServer\\IdentityServer.csproj": {
+    "D:\\WeaveMicro\\微服务架构\\IdentityServer\\IdentityServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\weavemicro\\微服务架构\\IdentityServer\\IdentityServer.csproj",
+        "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\IdentityServer\\IdentityServer.csproj",
         "projectName": "IdentityServer",
-        "projectPath": "D:\\weavemicro\\微服务架构\\IdentityServer\\IdentityServer.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\weavemicro\\微服务架构\\IdentityServer\\obj\\",
+        "projectPath": "D:\\WeaveMicro\\微服务架构\\IdentityServer\\IdentityServer.csproj",
+        "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
+        "outputPath": "D:\\WeaveMicro\\微服务架构\\IdentityServer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "F:\\SVN\\色斑图-雷达-遥感存储库\\雷达同步\\ConsoleApp1\\packages": {},
-          "\\\\192.168.1.100\\share\\shenyc\\nupkgs\\20210413": {},
-          "\\\\192.168.1.100\\share\\shenyc\\nupkgs\\common": {},
+          "Z:\\shenyc\\nupkgs\\20210523": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -94,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

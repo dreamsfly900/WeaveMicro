@@ -10,7 +10,7 @@ using wRPC;
 namespace wRPCclient
 {
 
-
+   
     public class ClientChannel : IDisposable
     {
         String IP;
@@ -18,6 +18,7 @@ namespace wRPCclient
         Weave.Client.TcpSynClient tcpSynClient;
         public Dictionary<string, String> Headers { get; set; }
         public Dictionary<string, String> Cookies { get; set; }
+        public filedata Filedata { get; set; }
         bool isline = false;
         public ClientChannel(String _IP, int port)
         {
@@ -29,6 +30,7 @@ namespace wRPCclient
             if (!isline)
                 throw new Exception("无法连接服务器");
         }
+       
         public bool connection()
         {
           
@@ -110,9 +112,11 @@ namespace wRPCclient
                 rpcdata.parameter = parameter as object[];
             else
              rpcdata.parameter =new object[] { parameter };
+            rpcdata.Filedata = Filedata;
             rpcdata.FunName = callfun;
             rpcdata.Route = Route;
             rpcdata.type = 1;
+            
             string datastr = Newtonsoft.Json.JsonConvert.SerializeObject(rpcdata);
             return datastr;
         }

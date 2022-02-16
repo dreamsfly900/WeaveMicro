@@ -27,12 +27,16 @@ namespace WeaveRemoteService
             sw.Close();
             Console.WriteLine("更新funconfig.json");
             String mcip = config["Microcenter"];
-             mc = new MicroClient(mcip.Split(':')[0], Convert.ToInt32(mcip.Split(':')[1]));
-             ser = new server();
+            if (mcip != "")
+            {
+                mc = new MicroClient(mcip.Split(':')[0], Convert.ToInt32(mcip.Split(':')[1]));
+            }
+            ser = new server();
             ser.Name = Name;
             ser.services = sric;
             ser.IP = config["ServerIP"] ;
             ser.Port = Convert.ToInt32(config["Port"]);
+            
             
         }
 
@@ -41,10 +45,11 @@ namespace WeaveRemoteService
             var config = builder.Build();
             service.Start();
             Console.WriteLine("成功绑定开放端口" + config["Port"]);
-            if (mc.Connection())
+            if(mc != null)
+            if (  mc.Connection())
             {
                 Console.WriteLine("成功连接到注册中心");
-
+                if(mc!=null)
                 mc.RegService(ser);
                 Console.WriteLine("已经注册service到注册中心");
             }

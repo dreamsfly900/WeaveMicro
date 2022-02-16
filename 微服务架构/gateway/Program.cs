@@ -28,12 +28,24 @@ namespace gateway
             Console.WriteLine("Running WeaveMicro网关.");
             var config = builder.Build();
             String mcip = config["Microcenter"];
-            mc = new MicroClient(mcip.Split(':')[0], Convert.ToInt32(mcip.Split(':')[1]));
-            mc.ReceiveEvent += Mc_ReceiveEvent;
-            mc.Connection();
+            if (mcip != "")
+            {
+                mc = new MicroClient(mcip.Split(':')[0], Convert.ToInt32(mcip.Split(':')[1]));
+                mc.ReceiveEvent += Mc_ReceiveEvent;
+                mc.Connection();
+            }
+            else
+            {
+                 
+                Proccessor.servers = Funconfig.getConfig();
+            }
             String[] applicationUrls = config["applicationUrl"].Replace("http://","").Replace("https://", "").Split(',');
-            foreach(string applicationUrl in applicationUrls)
-            mc.RegClient("网关1", applicationUrl.Split(':')[0], Convert.ToInt32( applicationUrl.Split(':')[1]));
+            if (mcip != "")
+            {
+                foreach (string applicationUrl in applicationUrls)
+                    mc.RegClient("网关1", applicationUrl.Split(':')[0], Convert.ToInt32(applicationUrl.Split(':')[1]));
+            }
+                
             applicationUrl = config["applicationUrl"];
             args = new string[] { config["applicationUrl"] };
             var certificate = new X509Certificate2("server.pfx", config["httpspassword"]);
@@ -55,6 +67,7 @@ namespace gateway
                         continue;
                 }
             }
+            if(mc!=null)
             mc.Stop();
 
 

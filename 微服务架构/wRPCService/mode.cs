@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Reflection;
 using System.Text;
+using wRPC;
 
 namespace wRPC
 {
@@ -29,7 +30,7 @@ namespace wRPC
     {
         public IDictionary<string, String> Headers { get; set; }
         public Dictionary<string, string> Cookies { get; internal set; }
-
+        public filedata Filedata { get; set; }
         public service[] GetService()
         {
             List<service> listservice = new List<service>();
@@ -115,16 +116,23 @@ namespace wRPC
     {
         //  public httpmode HttpContext { get; set; }
         public Dictionary<string, String> Headers { get; set; }
-       
+        
         public Dictionary<string, String> Cookies { get; set; }
+        public filedata Filedata { get; set; }
         public T parameter { get; set; }
         public string FunName { get; set; }
         public string Route { get; set; }
-
+      
         /// <summary>
         /// 0为泛型参数，1为多参数
         /// </summary>
         public FunAttribute type = 0;
 
+    }
+    public class filedata
+    {
+        public string filename { get; set; }
+        public byte[] data { get; set; }
+        public string filetype { get; set; }
     }
 }

@@ -1,38 +1,40 @@
 {
   "format": 1,
   "restore": {
-    "D:\\weavemicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj": {}
+    "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj": {}
   },
   "projects": {
-    "D:\\weavemicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj": {
+    "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj": {
       "version": "1.0.2",
       "restore": {
-        "projectUniqueName": "D:\\weavemicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj",
+        "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj",
         "projectName": "WeaveMicroClient",
-        "projectPath": "D:\\weavemicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\weavemicro\\微服务架构\\WeaveMicroClient\\obj\\",
+        "projectPath": "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj",
+        "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
+        "outputPath": "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "F:\\SVN\\色斑图-雷达-遥感存储库\\雷达同步\\ConsoleApp1\\packages": {},
-          "\\\\192.168.1.100\\share\\shenyc\\nupkgs\\20210413": {},
-          "\\\\192.168.1.100\\share\\shenyc\\nupkgs\\common": {},
+          "Z:\\shenyc\\nupkgs\\20210523": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "D:\\weavemicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
-                "projectPath": "D:\\weavemicro\\微服务架构\\wRPCService\\wRPCService.csproj"
+              "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
+                "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj"
               }
             }
           }
@@ -72,31 +74,33 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\weavemicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
+    "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
       "version": "1.0.6",
       "restore": {
-        "projectUniqueName": "D:\\weavemicro\\微服务架构\\wRPCService\\wRPCService.csproj",
+        "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
         "projectName": "wRPCService",
-        "projectPath": "D:\\weavemicro\\微服务架构\\wRPCService\\wRPCService.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\weavemicro\\微服务架构\\wRPCService\\obj\\",
+        "projectPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
+        "packagesPath": "C:\\Users\\xingy\\.nuget\\packages\\",
+        "outputPath": "D:\\WeaveMicro\\微服务架构\\wRPCService\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\xingy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "F:\\SVN\\色斑图-雷达-遥感存储库\\雷达同步\\ConsoleApp1\\packages": {},
-          "\\\\192.168.1.100\\share\\shenyc\\nupkgs\\20210413": {},
-          "\\\\192.168.1.100\\share\\shenyc\\nupkgs\\common": {},
+          "Z:\\shenyc\\nupkgs\\20210523": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -140,7 +144,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

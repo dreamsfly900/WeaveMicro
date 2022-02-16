@@ -25,13 +25,14 @@ namespace testdll2
     [Route("api/abcd")]
     public class Class2: FunctionBase
     {
-        [InstallFun(FunAttribute.NONE, "此方法用于测试")]
-        public String ff(mode md)
+        [InstallFun(FunAttribute.file, "此方法用于测试")]
+        public String ff()
         {
-           object obj=  this.Cookies;
-            object obj2 = this.Headers;
+           object obj=  this.Cookies;            object obj2 = this.Headers;
+            
+
          //   Console.WriteLine(md.name);
-            return "Class2.ff的返回值";
+            return this.Filedata.filename;
         }
         [Authorize]
         [InstallFun(FunAttribute.NONE, "此方法用于测试")]

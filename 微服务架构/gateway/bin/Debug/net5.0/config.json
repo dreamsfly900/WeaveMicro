@@ -5,6 +5,7 @@
   "defaultScheme": "Bearer",
   "applicationUrl": "http://127.0.0.1:1221",
   "Microcenter": "",
+ "filetype": ".jpg,.png,.doc,.txt",
   "httpspassword": "linezero",
   "Cookies": [ "Areacode", "Role", "UserId", "Name", "Phone" ],
   "Headers": [ "token" ]

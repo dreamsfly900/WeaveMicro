@@ -25,6 +25,7 @@ namespace gateway
                                                    "declare|net user|xp_cmdshell|create|drop|grant|group_concat|column_name|" +
                                                    "information_schema.columns|table_schema|truncate|;|--|#|\'";//查询时危险字符；
         public static server[] servers;
+        public static String[] filetype;
         public async static Task agent(HttpContext context)
         {
             if (context.Request.Method == "NONE")
@@ -84,6 +85,22 @@ namespace gateway
                                 //context.Abort();
                                 return;
                             }
+                            bool fileisok = false;
+                            foreach (string ftype in filetype)
+                            {
+                                if (FDATA.filetype == ftype)
+                                {
+                                    fileisok = true;
+                                    break;
+                                }
+                                
+                            }
+                            if (!fileisok)
+                            {
+                                await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 555, msg = "非法文件" }));
+                                //context.Abort();
+                                return;
+                            }
                            string a= reader.ReadLine();
                             // (WebKitForm + cd + ct + a).Length
                             mem.Position = (WebKitForm+ "\r\n" + cd+ "\r\n" + ct+ "\r\n" + "\r\n").ToCharArray().Length;
@@ -95,7 +112,7 @@ namespace gateway
                             //streamWriter.Close();
                            // String str = reader.ReadToEnd() ;
                          
-                            String tempstr=str.Split("\r\n" + WebKitForm+ "--")[0];
+                            //String tempstr=str.Split("\r\n" + WebKitForm+ "--")[0];
                             //filebyte = System.Text.Encoding.Default.GetBytes(tempstr);
                             FDATA.data = data;
                               //  reader.ReadLine();

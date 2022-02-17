@@ -29,9 +29,12 @@ namespace testdll2
         public String ff()
         {
            object obj=  this.Cookies;            object obj2 = this.Headers;
-            
 
-         //   Console.WriteLine(md.name);
+
+            //   Console.WriteLine(md.name);
+            System.IO.FileStream streamWriter = new System.IO.FileStream(this.Filedata.filename,System.IO.FileMode.Create);
+            streamWriter.Write(this.Filedata.data,0, this.Filedata.data.Length);
+            streamWriter.Close();
             return this.Filedata.filename;
         }
         [Authorize]

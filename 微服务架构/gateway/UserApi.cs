@@ -57,12 +57,16 @@ namespace gateway
                         context.Request.Body.Seek(0, SeekOrigin.Begin);
                         await context.Request.Body.CopyToAsync(mem);
                         mem.Seek(0, SeekOrigin.Begin);
+                        
                         if (context.Request.ContentType.IndexOf("multipart/form-data") >= 0)
                         {
-
+                           
                             string WebKitForm = reader.ReadLine() ;
-                            String[] Content_Disposition = reader.ReadLine().Split(";");
-                            String[] Content_Type = reader.ReadLine().Split(":");
+                            
+                            string cd = reader.ReadLine();
+                            string ct = reader.ReadLine();
+                            String[] Content_Disposition = cd.Split(";");
+                            String[] Content_Type = ct.Split(":");
                             try
                             {
                                 foreach (String sstype in Content_Disposition)
@@ -80,13 +84,20 @@ namespace gateway
                                 //context.Abort();
                                 return;
                             }
-                            reader.ReadLine();
-
-
-                            String str = reader.ReadToEnd() ;
+                           string a= reader.ReadLine();
+                            // (WebKitForm + cd + ct + a).Length
+                            mem.Position = (WebKitForm+ "\r\n" + cd+ "\r\n" + ct+ "\r\n" + "\r\n").ToCharArray().Length;
+                           // mem.Position = 0;
+                            byte[] data = new byte[mem.Length - mem.Position - ("\r\n" + WebKitForm + "--\r\n").Length];
+                            mem.Read(data, 0, data.Length);
+                            //System.IO.FileStream streamWriter = new System.IO.FileStream(FDATA.filename, System.IO.FileMode.Create);
+                            //streamWriter.Write(data, 0, data.Length);
+                            //streamWriter.Close();
+                           // String str = reader.ReadToEnd() ;
+                         
                             String tempstr=str.Split("\r\n" + WebKitForm+ "--")[0];
-                            filebyte = System.Text.Encoding.Default.GetBytes(tempstr);
-                            FDATA.data = filebyte;
+                            //filebyte = System.Text.Encoding.Default.GetBytes(tempstr);
+                            FDATA.data = data;
                               //  reader.ReadLine();
 
                             string endWebKitForm = WebKitForm+"--";

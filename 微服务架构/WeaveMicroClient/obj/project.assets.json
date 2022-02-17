@@ -928,7 +928,7 @@
           "lib/netstandard2.0/Weave.TCPClient.dll": {}
         }
       },
-      "wRPCService/1.0.6": {
+      "wRPCService/1.0.7": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -2309,7 +2309,7 @@
         "weave.tcpclient.nuspec"
       ]
     },
-    "wRPCService/1.0.6": {
+    "wRPCService/1.0.7": {
       "type": "project",
       "path": "../wRPCService/wRPCService.csproj",
       "msbuildProject": "../wRPCService/wRPCService.csproj"
@@ -2320,7 +2320,7 @@
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.3",
       "Weave.TCPClient >= 2.0.9",
-      "wRPCService >= 1.0.6"
+      "wRPCService >= 1.0.7"
     ]
   },
   "packageFolders": {
@@ -2328,7 +2328,7 @@
     "D:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
-    "version": "1.0.2",
+    "version": "1.0.3",
     "restore": {
       "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj",
       "projectName": "WeaveMicroClient",

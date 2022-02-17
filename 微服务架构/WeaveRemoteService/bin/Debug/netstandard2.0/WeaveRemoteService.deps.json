@@ -7,11 +7,11 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "WeaveRemoteService/1.0.4": {
+      "WeaveRemoteService/1.0.5": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
-          "WeaveMicroClient": "1.0.2",
-          "wRPCService": "1.0.6"
+          "WeaveMicroClient": "1.0.3",
+          "wRPCService": "1.0.7"
         },
         "runtime": {
           "WeaveRemoteService.dll": {}
@@ -837,17 +837,17 @@
           }
         }
       },
-      "WeaveMicroClient/1.0.2": {
+      "WeaveMicroClient/1.0.3": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
           "Weave.TCPClient": "2.0.9",
-          "wRPCService": "1.0.6"
+          "wRPCService": "1.0.7"
         },
         "runtime": {
           "WeaveMicroClient.dll": {}
         }
       },
-      "wRPCService/1.0.6": {
+      "wRPCService/1.0.7": {
         "dependencies": {
           "Microsoft.AspNetCore": "2.2.0",
           "Weave.Server": "2.0.20"
@@ -859,7 +859,7 @@
     }
   },
   "libraries": {
-    "WeaveRemoteService/1.0.4": {
+    "WeaveRemoteService/1.0.5": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1347,12 +1347,12 @@
       "path": "weave.tcpclient/2.0.9",
       "hashPath": "weave.tcpclient.2.0.9.nupkg.sha512"
     },
-    "WeaveMicroClient/1.0.2": {
+    "WeaveMicroClient/1.0.3": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "wRPCService/1.0.6": {
+    "wRPCService/1.0.7": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

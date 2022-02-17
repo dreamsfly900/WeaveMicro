@@ -2288,7 +2288,7 @@
     "D:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
-    "version": "1.0.6",
+    "version": "1.0.7",
     "restore": {
       "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
       "projectName": "wRPCService",

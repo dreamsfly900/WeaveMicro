@@ -1331,7 +1331,7 @@
           "lib/netstandard2.0/Weave.TcpSynClient.dll": {}
         }
       },
-      "wRPC/1.0.1": {
+      "wRPC/1.0.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1348,7 +1348,7 @@
           "bin/placeholder/wRPC.dll": {}
         }
       },
-      "wRPCService/1.0.6": {
+      "wRPCService/1.0.7": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -4062,12 +4062,12 @@
         "weave.tcpsynclient.nuspec"
       ]
     },
-    "wRPC/1.0.1": {
+    "wRPC/1.0.2": {
       "type": "project",
       "path": "../wRPC/wRPC.csproj",
       "msbuildProject": "../wRPC/wRPC.csproj"
     },
-    "wRPCService/1.0.6": {
+    "wRPCService/1.0.7": {
       "type": "project",
       "path": "../wRPCService/wRPCService.csproj",
       "msbuildProject": "../wRPCService/wRPCService.csproj"
@@ -4079,8 +4079,8 @@
       "Microsoft.Extensions.Configuration >= 5.0.0",
       "Microsoft.Extensions.Configuration.Json >= 5.0.0",
       "Microsoft.Extensions.Hosting >= 5.0.0",
-      "wRPC >= 1.0.1",
-      "wRPCService >= 1.0.6"
+      "wRPC >= 1.0.2",
+      "wRPCService >= 1.0.7"
     ]
   },
   "packageFolders": {

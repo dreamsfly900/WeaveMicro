@@ -143,7 +143,7 @@
       }
     },
     "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj": {
-      "version": "1.0.2",
+      "version": "1.0.3",
       "restore": {
         "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\WeaveMicroClient\\WeaveMicroClient.csproj",
         "projectName": "WeaveMicroClient",
@@ -217,7 +217,7 @@
       }
     },
     "D:\\WeaveMicro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj": {
-      "version": "1.0.4",
+      "version": "1.0.5",
       "restore": {
         "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\WeaveRemoteService\\WeaveRemoteService.csproj",
         "projectName": "WeaveRemoteService",
@@ -286,7 +286,7 @@
       }
     },
     "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj": {
-      "version": "1.0.6",
+      "version": "1.0.7",
       "restore": {
         "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
         "projectName": "wRPCService",
@@ -356,7 +356,7 @@
       }
     },
     "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj": {
-      "version": "1.0.1",
+      "version": "1.0.2",
       "restore": {
         "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\wRPC\\wRPC.csproj",
         "projectName": "wRPC",

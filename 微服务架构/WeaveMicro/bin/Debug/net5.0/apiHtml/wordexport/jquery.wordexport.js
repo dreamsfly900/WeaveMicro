@@ -1,22 +1,22 @@
 if (typeof jQuery !== "undefined" && typeof saveAs !== "undefined") {
-    (function ($) {
-        $.fn.wordExport = function (fileName, style) {
+    (function($) {
+        $.fn.wordExport = function(fileName,style) {
             fileName = typeof fileName !== 'undefined' ? fileName : "jQuery-Word-Export";
             var static = {
                 mhtml: {
-                    top: "Mime-Version: 1.0\nContent-Base: " + location.href + "\nContent-Type: Multipart/related; boundary=\"NEXT.ITEM-BOUNDARY\";type=\"text/html\"\n\n--NEXT.ITEM-BOUNDARY\nContent-Type: text/html; charset=\"utf-8\"\nContent-Location: " + location.href + "\n\n<!DOCTYPE html>\n<html>\n_html_</html>",
-                    head: "xmlns:v='urn:schemas-microsoft-com:vml'xmlns:o='urn:schemas-microsoft-com:office:office'xmlns:w='urn:schemas-microsoft-com:office:word'xmlns:m='http://schemas.microsoft.com/office/2004/12/omml'xmlns='http://www.w3.org/TR/REC-html40'  xmlns='http://www.w3.org/1999/xhtml' <head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n<style>\n_styles_\n</style>\n<!--[ifgtemso9]><xml><w:WordDocument><w:View>Print</w:View><w:TrackMoves>false</w:TrackMoves><w:TrackFormatting/><w:ValidateAgainstSchemas/><w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid><w:IgnoreMixedContent>false</w:IgnoreMixedContent><w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText><w:DoNotPromoteQF/><w:LidThemeOther>EN-US</w:LidThemeOther><w:LidThemeAsian>ZH-CN</w:LidThemeAsian><w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript><w:Compatibility><w:BreakWrappedTables/><w:SnapToGridInCell/><w:WrapTextWithPunct/><w:UseAsianBreakRules/><w:DontGrowAutofit/><w:SplitPgBreakAndParaMark/><w:DontVertAlignCellWithSp/><w:DontBreakConstrainedForcedTables/><w:DontVertAlignInTxbx/><w:Word11KerningPairs/><w:CachedColBalance/><w:UseFELayout/></w:Compatibility><w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel><m:mathPr><m:mathFontm:val=\"CambriaMath\"/><m:brkBinm:val=\"before\"/><m:brkBinSubm:val=\"--\"/><m:smallFracm:val=\"off\"/><m:dispDef/><m:lMarginm:val=\"0\"/><m:rMarginm:val=\"0\"/><m:defJcm:val=\"centerGroup\"/><m:wrapIndentm:val=\"1440\"/><m:intLimm:val=\"subSup\"/><m:naryLimm:val=\"undOvr\"/></m:mathPr></w:WordDocument></xml><![endif]--></head>\n",
-                    body: "<body>_body_</body>"
+                    top: "Mime-Version: 1.0\nContent-Base: " + location.href + "\nContent-Type: Multipart/related; boundary=\"NEXT.ITEM-BOUNDARY\";type=\"text/html\"\n\n--NEXT.ITEM-BOUNDARY\nContent-Type: text/html; charset=\"utf-8\"\nContent-Location: " + location.href + "\n\n<!DOCTYPE html>\n<html xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:w=\"urn:schemas-microsoft-com:office:word\" xmlns:m=\"http://schemas.microsoft.com/office/2004/12/omml\" xmlns=\"http://www.w3.org/TR/REC-html40\">\n_html_</html>",
+                    head: "<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"><!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:TrackMoves>false</w:TrackMoves><w:TrackFormatting/><w:ValidateAgainstSchemas/><w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid><w:IgnoreMixedContent>false</w:IgnoreMixedContent><w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText><w:DoNotPromoteQF/><w:LidThemeOther>EN-US</w:LidThemeOther><w:LidThemeAsian>ZH-CN</w:LidThemeAsian><w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript><w:Compatibility><w:BreakWrappedTables/><w:SnapToGridInCell/><w:WrapTextWithPunct/><w:UseAsianBreakRules/><w:DontGrowAutofit/><w:SplitPgBreakAndParaMark/><w:DontVertAlignCellWithSp/><w:DontBreakConstrainedForcedTables/><w:DontVertAlignInTxbx/><w:Word11KerningPairs/><w:CachedColBalance/><w:UseFELayout/></w:Compatibility><w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel><m:mathPr><m:mathFont m:val=\"Cambria Math\"/><m:brkBin m:val=\"before\"/><m:brkBinSub m:val=\"--\"/><m:smallFrac m:val=\"off\"/><m:dispDef/><m:lMargin m:val=\"0\"/> <m:rMargin m:val=\"0\"/><m:defJc m:val=\"centerGroup\"/><m:wrapIndent m:val=\"1440\"/><m:intLim m:val=\"subSup\"/><m:naryLim m:val=\"undOvr\"/></m:mathPr></w:WordDocument></xml><![endif]-->\n<style>\n_styles_\n</style>\n</head>\n",
+                    body: "<body>_body_</body>" 
                 }
             };
             var options = {
-                maxWidth: 624
+                maxWidth: 624, defaultLength: 300 //默认高度
             };
             // Clone selected element before manipulating it
             var markup = $(this).clone();
 
             // Remove hidden elements from the output
-            markup.each(function () {
+            markup.each(function() {
                 var self = $(this);
                 if (self.is(':hidden'))
                     self.remove();
@@ -29,15 +29,15 @@ if (typeof jQuery !== "undefined" && typeof saveAs !== "undefined") {
                 // Calculate dimensions of output image
                 var w = Math.min(img[i].width, options.maxWidth);
                 var h = img[i].height * (w / img[i].width);
-                img[i].crossOrigin = "Anonymous";//跨域必须使用，且后台也得设置允许跨域
+                img[i].setAttribute("crossOrigin", 'Anonymous');
                 // Create canvas for converting image to data URL
                 var canvas = document.createElement("canvas");
                 canvas.width = w;
                 canvas.height = h;
                 // Draw image to canvas
                 // 修改代码 ------------start
-                var img_id = "#" + img[i].id;
-                img[i].src = img[i].src.replace("https", "http"); //处理导出不显示的问题
+                var img_id = "#"+img[i].id;
+                img[i].src = img[i].src.replace("https","http"); //处理导出不显示的问题
                 $(canvas).attr("id", "test_word_img_" + i).width(w).height(h).insertAfter(img_id);
                 // 修改代码 ------------end
 
@@ -89,6 +89,7 @@ if (typeof jQuery !== "undefined" && typeof saveAs !== "undefined") {
         console.error("jQuery Word Export: missing dependency (FileSaver.js)");
     }
 }
+
 function getBase64(url, charImg) {
     var Img = new Image();
     Img.crossOrigin = "Anonymous";//跨域必须使用，且后台也得设置允许跨域

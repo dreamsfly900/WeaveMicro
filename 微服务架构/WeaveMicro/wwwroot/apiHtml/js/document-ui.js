@@ -200,7 +200,7 @@
                                     var html = '<tr class="response"><td class="response-col_status">#td1#</td><td class="response-col_description"><div class="model-example"><div><div><div class="highlight-code"><textarea name="mode" class="body-textarea required" placeholder="(required)"></textarea></div></div></div></div>#ContentType#</td>#td#<td class="response-col_links"> <div><div class="highlight-code"><pre class="example microlight" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: white;"><code>#code#</code></pre></div></div></td><td class="response-col_links"><i>body</i></td></tr>'
 
                                     if (server.Method.toLocaleLowerCase() == "none") {
-                                        var model = parameterstr[0].replace(/[\|]|[\@]/ig, "");
+                                        var model = parameterstr[0].replace(/[\|]|[\@]|[{|}]/ig, "");
                                         if (!isJSON(model)) {
                                             model = "{" + model+"}"
                                         }

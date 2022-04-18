@@ -3,6 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>a8991b35-c479-4ab0-ac67-e8206009a1c3</UserSecretsId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -14,9 +15,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\**" />
     <Compile Remove="wwwroot\apiHtml\wordexport\xls\**" />
+    <Content Remove="Controllers\**" />
     <Content Remove="wwwroot\apiHtml\wordexport\xls\**" />
+    <EmbeddedResource Remove="Controllers\**" />
     <EmbeddedResource Remove="wwwroot\apiHtml\wordexport\xls\**" />
+    <None Remove="Controllers\**" />
     <None Remove="wwwroot\apiHtml\wordexport\xls\**" />
   </ItemGroup>
 
@@ -47,10 +52,6 @@
 
   <ItemGroup>
     <None Include="wwwroot\apiHtml\js\theme\default\font\iconfont.svg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

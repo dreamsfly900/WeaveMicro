@@ -1,5 +1,5 @@
 # WeaveMicro
-支持.net core 2.x-5.x，正常使用
+支持.net core 2.x-5.x，正常使用 ，业务逻辑类 搜索nuget包，wRPCService。执行业务逻辑，搜索WeaveRemoteService包
 #### 介绍
 Weave微服务架构
 主要目的，尽量简化和减少开发复杂度和难度，尽量双击可使用。
@@ -18,9 +18,12 @@ Weave微服务架构
 
 ```
 {
-  "port": 9001 //监听端口
+  "port": 9001,
+  "url": "http://127.0.0.1:5022"
 }
 ```
+注册中心启动后，可以通过http://127.0.0.1:5022/apiHtml/server.html  查看和管理注册的网关和 API 内容，并可以通过页面进行API接口测试
+![输入图片说明](%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220823145117.png)
 
 2.  验证中心
 
@@ -39,12 +42,16 @@ Weave微服务架构
 找到config.json文件 修改配置
 ```
 {
-  "Authentication": true,//是否开启验证
-  "IdentityServer": "http://localhost:5000",//验证中心地址
-  "Audience": "api1",
+  "Authentication": true,//开启登录认证
+  "IdentityServer": "http://10.1.65.226",//登录认证地址
+  "Audience": "ac-cloud",
   "defaultScheme": "Bearer",
-  "applicationUrl": "http://localhost:1221",//网关地址
-  "Microcenter": "127.0.0.1:9001"//注册中心地址
+  "applicationUrl": "http://127.0.0.1:5221",//网关请求地址
+  "Microcenter": "127.0.0.1:9002",//注册中心
+  "filetype": ".jpg,.png,.doc,.txt",//指定可上传文件的后缀
+  "httpspassword": "linezero",//https证书密码
+  "Cookies": [ "Role", "UserId", "Name", "Phone" ],//开启认证后，token中所包含的指定信息，可明文带入远程服务中
+  "Headers": [ "token" ]//http指定头部内容可以带入，远程服务中
 }
 ```
 4.编写自己的API方法
@@ -56,7 +63,7 @@ Weave微服务架构
     public class Class2: FunctionBase//FunctionBase可以继承，也可以不继承，方便以后扩展功能
     {
         [InstallFun(FunAttribute.NONE, "此方法用于测试")]//指定方法为远程方法， 
-       //FunAttribute { NONE,Get,POST } 包含三种请求类型，为方法写注释
+       //FunAttribute { NONE,Get,POST ，file} 包含四种请求类型，为方法写注释
         public String ff(mode md)
         {
           
@@ -72,7 +79,20 @@ Weave微服务架构
             return "Class2.f2f22的返回值";
         }
     }
+[InstallFun(FunAttribute.file, "此方法用于测试")]
+        public String ff()//接收文件并保存
+        {
+           object obj=  this.Cookies;            object obj2 = this.Headers;
+
+
+            //   Console.WriteLine(md.name);
+            System.IO.FileStream streamWriter = new System.IO.FileStream(this.Filedata.filename,System.IO.FileMode.Create);
+            streamWriter.Write(this.Filedata.data,0, this.Filedata.data.Length);
+            streamWriter.Close();
+            return this.Filedata.filename;
+        }
 ```
+
 
 5.  RPC服务
 找到config.json文件 修改配置

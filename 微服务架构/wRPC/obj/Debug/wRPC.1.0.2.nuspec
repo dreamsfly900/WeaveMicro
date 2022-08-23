@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>wRPC</id>
+    <version>1.0.2</version>
+    <authors>wRPC</authors>
+    <description>wRPC 客户端类库</description>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.AspNetCore.Http.Abstractions" version="2.2.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Build.Framework" version="16.8.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Build.Utilities.Core" version="16.8.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.CSharp" version="4.7.0" exclude="Build,Analyzers" />
+        <dependency id="Weave.TcpSynClient" version="2.0.10" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\weavemicro\微服务架构\wRPC\bin\Debug\netstandard2.0\wRPC.dll" target="lib\netstandard2.0\wRPC.dll" />
+  </files>
+</package>

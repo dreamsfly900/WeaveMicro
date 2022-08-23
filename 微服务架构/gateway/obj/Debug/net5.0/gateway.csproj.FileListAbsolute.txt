@@ -5,7 +5,6 @@ D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\gateway.deps.json
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\gateway.runtimeconfig.json
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\gateway.runtimeconfig.dev.json
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\gateway.dll
-D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\ref\gateway.dll
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\gateway.pdb
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\IdentityModel.dll
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\IdentityServer4.dll
@@ -34,7 +33,6 @@ D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\wRPCService.dll
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\WeaveMicroClient.pdb
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\wRPC.pdb
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\wRPCService.pdb
-D:\WeaveMicro\微服务架构\gateway\obj\Debug\net5.0\gateway.csprojAssemblyReference.cache
 D:\WeaveMicro\微服务架构\gateway\obj\Debug\net5.0\gateway.GeneratedMSBuildEditorConfig.editorconfig
 D:\WeaveMicro\微服务架构\gateway\obj\Debug\net5.0\gateway.AssemblyInfoInputs.cache
 D:\WeaveMicro\微服务架构\gateway\obj\Debug\net5.0\gateway.AssemblyInfo.cs
@@ -45,3 +43,4 @@ D:\WeaveMicro\微服务架构\gateway\obj\Debug\net5.0\ref\gateway.dll
 D:\WeaveMicro\微服务架构\gateway\obj\Debug\net5.0\gateway.pdb
 D:\WeaveMicro\微服务架构\gateway\obj\Debug\net5.0\gateway.genruntimeconfig.cache
 D:\WeaveMicro\微服务架构\gateway\bin\Debug\net5.0\server.pfx
+D:\weavemicro\微服务架构\gateway\bin\Debug\net5.0\ref\gateway.dll

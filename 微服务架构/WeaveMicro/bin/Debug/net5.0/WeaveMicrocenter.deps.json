@@ -30,8 +30,8 @@
           "Microsoft.Extensions.Configuration": "5.0.0",
           "Microsoft.Extensions.Configuration.Json": "5.0.0",
           "Microsoft.Extensions.Hosting": "5.0.0",
-          "wRPC": "1.0.1",
-          "wRPCService": "1.0.6",
+          "wRPC": "1.0.2",
+          "wRPCService": "1.0.7",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -998,7 +998,7 @@
           "lib/netstandard2.0/Weave.TcpSynClient.dll": {}
         }
       },
-      "wRPC/1.0.1": {
+      "wRPC/1.0.2": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.Build.Framework": "16.8.0",
@@ -1013,7 +1013,7 @@
           "wRPC.dll": {}
         }
       },
-      "wRPCService/1.0.6": {
+      "wRPCService/1.0.7": {
         "dependencies": {
           "Microsoft.AspNetCore": "2.2.0",
           "Weave.Server": "2.0.20"
@@ -3389,12 +3389,12 @@
       "path": "weave.tcpsynclient/2.0.10",
       "hashPath": "weave.tcpsynclient.2.0.10.nupkg.sha512"
     },
-    "wRPC/1.0.1": {
+    "wRPC/1.0.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "wRPCService/1.0.6": {
+    "wRPCService/1.0.7": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

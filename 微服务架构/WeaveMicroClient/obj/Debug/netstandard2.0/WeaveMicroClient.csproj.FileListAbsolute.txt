@@ -21,4 +21,5 @@ D:\weave-micro\微服务架构\WeaveMicroClient\obj\Debug\netstandard2.0\WeaveMi
 D:\weave-micro\微服务架构\WeaveMicroClient\obj\Debug\netstandard2.0\WeaveMicroClient.dll
 D:\weave-micro\微服务架构\WeaveMicroClient\obj\Debug\netstandard2.0\WeaveMicroClient.pdb
 D:\weave-micro\微服务架构\WeaveMicroClient\obj\Debug\netstandard2.0\WeaveMicroClient.csprojAssemblyReference.cache
-D:\WeaveMicro\微服务架构\WeaveMicroClient\obj\Debug\netstandard2.0\WeaveMicroClient.csprojAssemblyReference.cache
+D:\weavemicro\微服务架构\WeaveMicroClient\obj\Debug\netstandard2.0\WeaveMicroClient.csproj.AssemblyReference.cache
+D:\weavemicro\微服务架构\WeaveMicroClient\obj\Debug\netstandard2.0\WeaveMicroClient.GeneratedMSBuildEditorConfig.editorconfig

@@ -1,10 +1,10 @@
 {
   "Authentication": true,
-  "IdentityServer": "http://127.0.0.1:5221",
+  "IdentityServer": "http://192.168.1.110:10093",
   "Audience": "api1",
   "defaultScheme": "Bearer",
-  "applicationUrl": "http://127.0.0.1:1221",
-  "Microcenter": "",
+  "applicationUrl": "http://192.168.1.110:10092",
+  "Microcenter": "192.168.1.110:9002",
  "filetype": ".jpg,.png,.doc,.txt",
   "httpspassword": "linezero",
   "Cookies": [ "Areacode", "Role", "UserId", "Name", "Phone" ],

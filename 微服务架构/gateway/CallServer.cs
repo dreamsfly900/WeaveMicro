@@ -105,8 +105,8 @@ namespace gateway
                     clientChannel.Filedata = fd;
                   
                 }
-                
-                return Newtonsoft.Json.JsonConvert.SerializeObject(clientChannel.Call<object>(rt, rls, objs));
+              var data=  clientChannel.Call<object>(rt, rls, objs);
+                return Newtonsoft.Json.JsonConvert.SerializeObject(data);
             }
             catch (Exception e)
             {
@@ -114,7 +114,7 @@ namespace gateway
                 //{
 
                 //}
-                _serviceDic.TryRemove(ser.IP + ":" + ser.Port, out CCQ);
+               // _serviceDic.TryRemove(ser.IP + ":" + ser.Port, out CCQ);
 
                 return JsonConvert.SerializeObject(new { code = 503, msg = "服务器错误" });
             }

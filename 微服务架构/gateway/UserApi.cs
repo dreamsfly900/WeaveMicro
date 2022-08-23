@@ -33,7 +33,7 @@ namespace gateway
             if (context.Request.Method != "GET" && context.Request.Method != "POST")
                 return;
             RouteLog rlog = new RouteLog();
-           wRPCclient.filedata FDATA = new wRPCclient.filedata();
+            wRPCclient.filedata FDATA = new wRPCclient.filedata();
             try
             {
                 Dictionary<string, String> servicesDic = new Dictionary<string, String>();
@@ -47,10 +47,10 @@ namespace gateway
                 }
                 if (context.Request.ContentLength != null)
                 {
-                  
+
                     var body = "";
                     var filebyte = new byte[0];
-                
+
                     context.Request.EnableBuffering();
                     using (var mem = new MemoryStream())
                     using (var reader = new StreamReader(mem))
@@ -58,12 +58,11 @@ namespace gateway
                         context.Request.Body.Seek(0, SeekOrigin.Begin);
                         await context.Request.Body.CopyToAsync(mem);
                         mem.Seek(0, SeekOrigin.Begin);
-                        
+
                         if (context.Request.ContentType.IndexOf("multipart/form-data") >= 0)
                         {
-                           
-                            string WebKitForm = reader.ReadLine() ;
-                            
+                            string WebKitForm = reader.ReadLine();
+
                             string cd = reader.ReadLine();
                             string ct = reader.ReadLine();
                             String[] Content_Disposition = cd.Split(";");
@@ -79,7 +78,7 @@ namespace gateway
                                     }
                                 }
                             }
-                            catch
+                            catch (Exception ex)
                             {
                                 await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 510, msg = "传输非法文件" }));
                                 //context.Abort();
@@ -93,7 +92,7 @@ namespace gateway
                                     fileisok = true;
                                     break;
                                 }
-                                
+
                             }
                             if (!fileisok)
                             {
@@ -101,42 +100,36 @@ namespace gateway
                                 //context.Abort();
                                 return;
                             }
-                           string a= reader.ReadLine();
-                            // (WebKitForm + cd + ct + a).Length
-                            mem.Position = (WebKitForm+ "\r\n" + cd+ "\r\n" + ct+ "\r\n" + "\r\n").ToCharArray().Length;
-                           // mem.Position = 0;
-                            byte[] data = new byte[mem.Length - mem.Position - ("\r\n" + WebKitForm + "--\r\n").Length];
+
+                            string a = reader.ReadLine();
+                            mem.Position =System.Text.UTF8Encoding.UTF8.GetBytes (WebKitForm + "\r\n" + cd + "\r\n" + ct + "\r\n" + "\r\n").Length ;
+
+                            byte[] data = new byte[mem.Length - mem.Position - System.Text.UTF8Encoding.UTF8.GetBytes("\r\n" + WebKitForm + "--\r\n").Length];
                             mem.Read(data, 0, data.Length);
                             //System.IO.FileStream streamWriter = new System.IO.FileStream(FDATA.filename, System.IO.FileMode.Create);
                             //streamWriter.Write(data, 0, data.Length);
                             //streamWriter.Close();
-                           // String str = reader.ReadToEnd() ;
-                         
+                            // String str = reader.ReadToEnd() ;
+
                             //String tempstr=str.Split("\r\n" + WebKitForm+ "--")[0];
                             //filebyte = System.Text.Encoding.Default.GetBytes(tempstr);
                             FDATA.data = data;
-                              //  reader.ReadLine();
+                            //  reader.ReadLine();
 
-                            string endWebKitForm = WebKitForm+"--";
+                            string endWebKitForm = WebKitForm + "--";
                         }
                         else
                         {
-                            
+
                             body = reader.ReadToEnd();
 
                         }
-                        // 
-                       
-                        
-
                     }
                     if (context.Request.ContentType != null)
                     {
                         if (context.Request.ContentType.IndexOf("application/json") >= 0)
                         {
-
                             contentFromBody = body;
-
                         }
                         else if (context.Request.ContentType.IndexOf("application/x-www-form-urlencoded") >= 0)
                         {
@@ -145,6 +138,18 @@ namespace gateway
                             foreach (string datastr in contentFromBody)
                             {
                                 servicesDic.Add(datastr.Split("=")[0], datastr.Split("=")[1]);
+                            }
+                        }
+                        else if (context.Request.ContentType.IndexOf("multipart/form-data") >= 0)
+                        {
+                            if (context.Request.QueryString.ToString().Length > 1)
+                            {
+                                contentFromBody = context.Request.QueryString.ToString().Substring(1).Split("&");
+
+                                foreach (string datastr in contentFromBody)
+                                {
+                                    servicesDic.Add(datastr.Split("=")[0], datastr.Split("=")[1]);
+                                }
                             }
                         }
                     }
@@ -186,15 +191,15 @@ namespace gateway
 
                                 if (ser.services[0].Method == "NONE")
                                 {
-                                    if(context.Request.ContentType!=null)
-                                    if (context.Request.ContentType.ToLower().Contains("application/json"))
-                                    {
-                                        objs[i] = Newtonsoft.Json.JsonConvert.DeserializeObject(contentFromBody);
-                                    }
-                                    else if (context.Request.ContentType.ToLower() == "application/x-www-form-urlencoded")
-                                    {
-                                        objs[i] = servicesDic[ser.services[0].parameter[i]];
-                                    }
+                                    if (context.Request.ContentType != null)
+                                        if (context.Request.ContentType.ToLower().Contains("application/json"))
+                                        {
+                                            objs[i] = Newtonsoft.Json.JsonConvert.DeserializeObject(contentFromBody);
+                                        }
+                                        else if (context.Request.ContentType.ToLower() == "application/x-www-form-urlencoded")
+                                        {
+                                            objs[i] = servicesDic[ser.services[0].parameter[i]];
+                                        }
                                 }
                                 else if (ser.services[0].Method.ToUpper() == "GET")
                                 {
@@ -223,16 +228,24 @@ namespace gateway
                                             objs[i] = context.Request.Form[ser.services[0].parameter[i]].ToString();
                                     }
                                 }
+                                else if (ser.services[0].Method.ToUpper() == "FILE")
+                                {
+                                    if (context.Request.ContentType.IndexOf("multipart/form-data") >= 0)
+                                    {
+                                        if (servicesDic.Count > 0)
+                                            objs[i] = servicesDic[ser.services[0].parameter[i]];
+                                    }
+                                }
                                 if (context.Request.ContentType != null && context.Request.ContentType.ToLower().Contains("application/json"))
                                 {
                                     continue;
                                 }
-                                else 
+                                else
                                 {
                                     Regex reg = new Regex(_noSafe, RegexOptions.IgnoreCase);
-                                    if (reg.IsMatch(objs[i].ToString()))
+                                    if (objs[i] != null && reg.IsMatch(objs[i].ToString()))
                                     {
-                                        await context.Response.WriteAsync($" ~, {  "警告！！不安全SELECT!已记录IP，等待报警"}");
+                                        await context.Response.WriteAsync($" ~, {"警告！！不安全SELECT!已记录IP，等待报警"}");
                                         return;
 
                                     }
@@ -258,7 +271,7 @@ namespace gateway
                             Regex reg = new Regex(_noSafe, RegexOptions.IgnoreCase);
                             if (reg.IsMatch(context.Request.Headers[hh].ToString()))
                             {
-                                await context.Response.WriteAsync($" ~, {  "警告！！不安全SELECT!已记录IP，等待报警"}");
+                                await context.Response.WriteAsync($" ~, {"警告！！不安全SELECT!已记录IP，等待报警"}");
                                 return;
 
                             }
@@ -273,7 +286,7 @@ namespace gateway
                             {
                                 if (context.User.Claims.Count(c => c.Type == hh) > 0)
                                 {
-                                    
+
                                     keysCookies.Add(hh, context.User.Claims.Single(c => c.Type == hh).Value);
                                 }
                             }
@@ -286,7 +299,7 @@ namespace gateway
                         //Encoding ISO = Encoding.UTF8;//换成你想转的编码
                         //byte[] temp = utf8.GetBytes(retun);
                         //string result = ISO.GetString(temp);
-                        await context.Response.WriteAsync($"{ retun}");
+                        await context.Response.WriteAsync($"{retun}");
 
                         // await context.Response.WriteAsync($"{ retun}{ objs.Length},{rl},{rls[rls.Length - 1]}，{ser.ToString()},{context.Request.ContentType}");
                         DateTime dt2 = DateTime.Now;
@@ -303,14 +316,14 @@ namespace gateway
                     }
                     finally
                     {
-                        if (Program.mc!=null)
-                        Program.mc.SendLog(rlog);
+                        if (Program.mc != null)
+                            Program.mc.SendLog(rlog);
                     }
 
                 }
             }
             catch (Exception e)
-            { await context.Response.WriteAsync($" ~, {  e.Message}"); }
+            { await context.Response.WriteAsync($" ~, {e.Message}"); }
             finally
             {
 

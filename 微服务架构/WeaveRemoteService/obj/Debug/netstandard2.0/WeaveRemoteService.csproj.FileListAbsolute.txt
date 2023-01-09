@@ -5,7 +5,6 @@ D:\WeaveMicro\微服务架构\WeaveRemoteService\bin\Debug\netstandard2.0\WeaveM
 D:\WeaveMicro\微服务架构\WeaveRemoteService\bin\Debug\netstandard2.0\wRPCService.dll
 D:\WeaveMicro\微服务架构\WeaveRemoteService\bin\Debug\netstandard2.0\WeaveMicroClient.pdb
 D:\WeaveMicro\微服务架构\WeaveRemoteService\bin\Debug\netstandard2.0\wRPCService.pdb
-D:\WeaveMicro\微服务架构\WeaveRemoteService\obj\Debug\netstandard2.0\WeaveRemoteService.csprojAssemblyReference.cache
 D:\WeaveMicro\微服务架构\WeaveRemoteService\obj\Debug\netstandard2.0\WeaveRemoteService.AssemblyInfoInputs.cache
 D:\WeaveMicro\微服务架构\WeaveRemoteService\obj\Debug\netstandard2.0\WeaveRemoteService.AssemblyInfo.cs
 D:\WeaveMicro\微服务架构\WeaveRemoteService\obj\Debug\netstandard2.0\WeaveRemoteService.csproj.CoreCompileInputs.cache
@@ -28,3 +27,5 @@ D:\weave-micro\微服务架构\WeaveRemoteService\obj\Debug\netstandard2.0\Weave
 D:\weave-micro\微服务架构\WeaveRemoteService\obj\Debug\netstandard2.0\WeaveRemoteService.dll
 D:\weave-micro\微服务架构\WeaveRemoteService\obj\Debug\netstandard2.0\WeaveRemoteService.pdb
 D:\WeaveMicro\微服务架构\WeaveRemoteService\bin\Debug\netstandard2.0\config.json
+D:\WeaveMicro\微服务架构\WeaveRemoteService\obj\Debug\netstandard2.0\WeaveRemoteService.csproj.AssemblyReference.cache
+D:\WeaveMicro\微服务架构\WeaveRemoteService\obj\Debug\netstandard2.0\WeaveRemoteService.GeneratedMSBuildEditorConfig.editorconfig

@@ -1172,7 +1172,7 @@
           }
         }
       },
-      "wRPCService/1.0.7": {
+      "wRPCService/1.0.8": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -2544,7 +2544,7 @@
         "weave.server.nuspec"
       ]
     },
-    "wRPCService/1.0.7": {
+    "wRPCService/1.0.8": {
       "type": "project",
       "path": "../wRPCService/wRPCService.csproj",
       "msbuildProject": "../wRPCService/wRPCService.csproj"
@@ -2553,7 +2553,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
-      "wRPCService >= 1.0.7"
+      "wRPCService >= 1.0.8"
     ]
   },
   "packageFolders": {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "F5D2g6XDcA2F1p/oHLnrsCBHmL93G3UNgr4iAaiNnZcYWskZZAHldF2UopFr1z6zq2J5Thfr+2v4EriNQR6HMQ==",
+  "dgSpecHash": "ABOf0xVn9cVvjqvds8S365DqCpb+EevTuKsBIv18IHE35oVsrLdB52kQVHtFILQDN3kUDGYrGKkzXAsQPWAbsQ==",
   "success": true,
   "projectFilePath": "D:\\WeaveMicro\\微服务架构\\testdll2\\testdll2.csproj",
   "expectedPackageFiles": [
@@ -71,8 +71,7 @@
     "C:\\Users\\gejie\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\gejie\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512",
     "C:\\Users\\gejie\\.nuget\\packages\\weave.base\\2.0.19\\weave.base.2.0.19.nupkg.sha512",
-    "C:\\Users\\gejie\\.nuget\\packages\\weave.server\\2.0.20\\weave.server.2.0.20.nupkg.sha512",
-    "C:\\Users\\gejie\\.nuget\\packages\\wrpcservice\\1.0.7\\wrpcservice.1.0.7.nupkg.sha512"
+    "C:\\Users\\gejie\\.nuget\\packages\\weave.server\\2.0.20\\weave.server.2.0.20.nupkg.sha512"
   ],
   "logs": []
 }

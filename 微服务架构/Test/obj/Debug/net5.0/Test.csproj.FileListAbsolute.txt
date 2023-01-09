@@ -3,7 +3,6 @@ D:\WeaveMicro\微服务架构\Test\bin\Debug\net5.0\Test.deps.json
 D:\WeaveMicro\微服务架构\Test\bin\Debug\net5.0\Test.runtimeconfig.json
 D:\WeaveMicro\微服务架构\Test\bin\Debug\net5.0\Test.runtimeconfig.dev.json
 D:\WeaveMicro\微服务架构\Test\bin\Debug\net5.0\Test.dll
-D:\WeaveMicro\微服务架构\Test\bin\Debug\net5.0\ref\Test.dll
 D:\WeaveMicro\微服务架构\Test\bin\Debug\net5.0\Test.pdb
 D:\WeaveMicro\微服务架构\Test\bin\Debug\net5.0\Microsoft.AspNetCore.dll
 D:\WeaveMicro\微服务架构\Test\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.Abstractions.dll
@@ -83,7 +82,6 @@ D:\WeaveMicro\微服务架构\Test\bin\Debug\net5.0\WeaveMicroClient.pdb
 D:\WeaveMicro\微服务架构\Test\bin\Debug\net5.0\WeaveRemoteService.pdb
 D:\WeaveMicro\微服务架构\Test\bin\Debug\net5.0\wRPC.pdb
 D:\WeaveMicro\微服务架构\Test\bin\Debug\net5.0\wRPCService.pdb
-D:\WeaveMicro\微服务架构\Test\obj\Debug\net5.0\Test.csprojAssemblyReference.cache
 D:\WeaveMicro\微服务架构\Test\obj\Debug\net5.0\Test.GeneratedMSBuildEditorConfig.editorconfig
 D:\WeaveMicro\微服务架构\Test\obj\Debug\net5.0\Test.AssemblyInfoInputs.cache
 D:\WeaveMicro\微服务架构\Test\obj\Debug\net5.0\Test.AssemblyInfo.cs
@@ -190,3 +188,5 @@ D:\weave-micro\微服务架构\Test\obj\Debug\net5.0\Test.pdb
 D:\weave-micro\微服务架构\Test\obj\Debug\net5.0\Test.genruntimeconfig.cache
 D:\weave-micro\微服务架构\Test\bin\Debug\net5.0\Weave.Server.dll
 D:\WeaveMicro\微服务架构\Test\bin\Debug\net5.0\config.json
+D:\WeaveMicro\微服务架构\Test\obj\Debug\net5.0\Test.csproj.AssemblyReference.cache
+D:\WeaveMicro\微服务架构\Test\obj\Debug\net5.0\refint\Test.dll

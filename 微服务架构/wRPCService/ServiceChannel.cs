@@ -3,7 +3,9 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using wRPC;
 using static wRPC.FunctionBase;
 
@@ -26,7 +28,7 @@ namespace wRPCService
             
         }
 
-        private void P2Server_weaveReceiveBitEvent(byte command, byte[] data, System.Net.Sockets.Socket soc)
+        private async void P2Server_weaveReceiveBitEvent(byte command, byte[] data, System.Net.Sockets.Socket soc)
         {
             try
             {
@@ -106,7 +108,20 @@ namespace wRPCService
                             }
 
                         }
-                        object rpcdata = mi.Invoke(obj, objs);
+                        AsyncStateMachineAttribute Asyncmyattribute = (AsyncStateMachineAttribute)Attribute.GetCustomAttribute(mi, typeof(AsyncStateMachineAttribute));
+                        object rpcdata;
+                        if (Asyncmyattribute != null)
+                        {
+                            var task = (mi.Invoke(obj, objs) as Task);
+                          //  task.Wait();
+                            var resultProperty = task.GetType().GetProperty("Result");
+                           
+                            rpcdata = resultProperty.GetValue(task);
+                            //tassk.Wait();
+                            //rpcdata = tassk.Result;
+                        }
+                        else
+                            rpcdata = mi.Invoke(obj, objs);
                         byte[] outdata = GZIP.GZipCompress(Newtonsoft.Json.JsonConvert.SerializeObject(rpcdata));
                      
                         P2Server.Send(soc, 0x01, outdata);

@@ -2543,7 +2543,7 @@
     "C:\\Users\\gejie\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.7",
+    "version": "1.0.8",
     "restore": {
       "projectUniqueName": "D:\\WeaveMicro\\微服务架构\\wRPCService\\wRPCService.csproj",
       "projectName": "wRPCService",

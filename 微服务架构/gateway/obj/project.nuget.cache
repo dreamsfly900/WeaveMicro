@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7yPm8X5JTo3kkXKalTxOs6kk8kyngFT2IagaU5YGnuZZAK5vRyvwDTUSxtoksIulnRyMb/n57bU77aR/OomyBw==",
+  "dgSpecHash": "jR5vHIDO53JIk8MGTEy0w4k4XDl+/MgYsE/dlz6v2JfJicm35+PjCeOkAA5crpg/eA58GxGIo259bV4RGeiE+Q==",
   "success": true,
   "projectFilePath": "D:\\WeaveMicro\\微服务架构\\gateway\\gateway.csproj",
   "expectedPackageFiles": [
@@ -113,8 +113,7 @@
     "C:\\Users\\gejie\\.nuget\\packages\\weave.server\\2.0.20\\weave.server.2.0.20.nupkg.sha512",
     "C:\\Users\\gejie\\.nuget\\packages\\weave.tcpclient\\2.0.9\\weave.tcpclient.2.0.9.nupkg.sha512",
     "C:\\Users\\gejie\\.nuget\\packages\\weave.tcpsynclient\\2.0.10\\weave.tcpsynclient.2.0.10.nupkg.sha512",
-    "C:\\Users\\gejie\\.nuget\\packages\\weavemicroclient\\1.0.3\\weavemicroclient.1.0.3.nupkg.sha512",
-    "C:\\Users\\gejie\\.nuget\\packages\\wrpcservice\\1.0.7\\wrpcservice.1.0.7.nupkg.sha512"
+    "C:\\Users\\gejie\\.nuget\\packages\\weavemicroclient\\1.0.3\\weavemicroclient.1.0.3.nupkg.sha512"
   ],
   "logs": []
 }

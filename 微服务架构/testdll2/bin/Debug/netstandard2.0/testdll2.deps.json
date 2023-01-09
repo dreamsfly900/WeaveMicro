@@ -10,7 +10,7 @@
       "testdll2/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
-          "wRPCService": "1.0.6"
+          "wRPCService": "1.0.7"
         },
         "runtime": {
           "testdll2.dll": {}
@@ -825,7 +825,7 @@
           }
         }
       },
-      "wRPCService/1.0.6": {
+      "wRPCService/1.0.7": {
         "dependencies": {
           "Microsoft.AspNetCore": "2.2.0",
           "Weave.Server": "2.0.20"
@@ -1318,7 +1318,7 @@
       "path": "weave.server/2.0.20",
       "hashPath": "weave.server.2.0.20.nupkg.sha512"
     },
-    "wRPCService/1.0.6": {
+    "wRPCService/1.0.7": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -33,7 +33,8 @@ namespace Test
             //    DateTime dt2 = DateTime.Now;
             //    Console.WriteLine("Main:" + (dt2 - dt).TotalMilliseconds);
             //}
-            String retun = clientChannel.Call<String>("api/abcd", "ff");
+            String retun = clientChannel.Call<String>("api/abcd", "ff2","asdasd");
+             retun = clientChannel.Call<String>("api/abcd", "ff");
             while (true)
             {
                 System.Threading.Thread.Sleep(10);

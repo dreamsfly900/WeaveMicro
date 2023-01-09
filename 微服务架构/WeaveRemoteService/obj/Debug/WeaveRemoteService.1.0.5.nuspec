@@ -8,7 +8,7 @@
     <dependencies>
       <group targetFramework=".NETStandard2.0">
         <dependency id="WeaveMicroClient" version="1.0.3" exclude="Build,Analyzers" />
-        <dependency id="wRPCService" version="1.0.7" exclude="Build,Analyzers" />
+        <dependency id="wRPCService" version="1.0.8" exclude="Build,Analyzers" />
       </group>
     </dependencies>
   </metadata>

@@ -993,7 +993,7 @@
       },
       "testdll2/1.0.0": {
         "dependencies": {
-          "wRPCService": "1.0.7"
+          "wRPCService": "1.0.8"
         },
         "runtime": {
           "testdll2.dll": {}
@@ -1003,7 +1003,7 @@
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
           "Weave.TCPClient": "2.0.9",
-          "wRPCService": "1.0.7"
+          "wRPCService": "1.0.8"
         },
         "runtime": {
           "WeaveMicroClient.dll": {}
@@ -1012,7 +1012,7 @@
       "WeaveRemoteService/1.0.5": {
         "dependencies": {
           "WeaveMicroClient": "1.0.3",
-          "wRPCService": "1.0.7"
+          "wRPCService": "1.0.8"
         },
         "runtime": {
           "WeaveRemoteService.dll": {}
@@ -1030,7 +1030,7 @@
           "wRPC.dll": {}
         }
       },
-      "wRPCService/1.0.7": {
+      "wRPCService/1.0.8": {
         "dependencies": {
           "Microsoft.AspNetCore": "2.2.0",
           "Weave.Server": "2.0.20"
@@ -1718,7 +1718,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "wRPCService/1.0.7": {
+    "wRPCService/1.0.8": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

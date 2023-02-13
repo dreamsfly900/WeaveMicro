@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
+using WeaveDoc;
 using WeaveMicroClient;
 using wRPC;
 using wRPCService;
@@ -20,6 +21,8 @@ namespace WeaveRemoteService
             Console.WriteLine("成功加载配置文档config.json");
             service = new ServiceChannel(Convert.ToInt32( config["Port"]));
             sric = ToolLoad.GetService();
+            //注册API文档路由
+            ApiDocGen.AddRoute(Name, ref sric, service);
             Console.WriteLine("成功加载DLL服务");
             String ss = Newtonsoft.Json.JsonConvert.SerializeObject(sric);
             System.IO.StreamWriter sw = new System.IO.StreamWriter("funconfig.json");

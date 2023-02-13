@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WeaveDoc\WeaveDoc.csproj" />
     <ProjectReference Include="..\WeaveMicroClient\WeaveMicroClient.csproj" />
     <ProjectReference Include="..\wRPCService\wRPCService.csproj" />
   </ItemGroup>

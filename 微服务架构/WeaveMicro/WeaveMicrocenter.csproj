@@ -40,12 +40,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WeaveDoc\WeaveDoc.csproj" />
     <ProjectReference Include="..\wRPCService\wRPCService.csproj" />
     <ProjectReference Include="..\wRPC\wRPC.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="doc\ajax-loader-0.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

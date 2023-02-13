@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using WeaveDoc;
 
 namespace WeaveMicro
 {
@@ -75,6 +76,8 @@ namespace WeaveMicro
             {
                 endpoints.MapRazorPages();
             });
+            //Ê¹ÓÃAPIÎÄµµ
+            app.UseDoc();
         }
     }
 }

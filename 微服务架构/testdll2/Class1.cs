@@ -26,6 +26,10 @@ namespace testdll2
     [Route("api/abcd")]
     public class Class2: FunctionBase
     {
+        /// <summary>
+        /// 此方法用于测试XML注释（需要生成XML文档）
+        /// </summary>
+        /// <returns></returns>
         [InstallFun(FunAttribute.file, "此方法用于测试")]
         public async Task<String> ff()
         {

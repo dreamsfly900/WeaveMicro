@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeaveMicrocenter", "WeaveMicrocenter.csproj", "{8FB0EC51-9FB0-4279-B888-57F0E0125997}"
 EndProject
@@ -32,6 +32,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeaveRemoteService", "..\WeaveRemoteService\WeaveRemoteService.csproj", "{29C0639D-93F5-46CD-9C69-7B514C3DB53C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Launcher", "..\Launcher\Launcher.csproj", "{4A1C40CE-0CB0-4955-BB9C-D041D35000F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeaveDoc", "..\WeaveDoc\WeaveDoc.csproj", "{17963C9C-8D70-4D03-904E-5EA3600F9989}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +81,10 @@ Global
 		{4A1C40CE-0CB0-4955-BB9C-D041D35000F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A1C40CE-0CB0-4955-BB9C-D041D35000F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A1C40CE-0CB0-4955-BB9C-D041D35000F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17963C9C-8D70-4D03-904E-5EA3600F9989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17963C9C-8D70-4D03-904E-5EA3600F9989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17963C9C-8D70-4D03-904E-5EA3600F9989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17963C9C-8D70-4D03-904E-5EA3600F9989}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,6 +99,7 @@ Global
 		{516DA043-38A9-4658-92ED-EF1B656CFD38} = {138A2AE9-0353-400E-8815-45B5DE270354}
 		{E6C5D213-0465-46E1-B604-3706E6FA6E24} = {E63E9A4D-FF14-4F19-B987-E8FD0182C0B5}
 		{29C0639D-93F5-46CD-9C69-7B514C3DB53C} = {138A2AE9-0353-400E-8815-45B5DE270354}
+		{17963C9C-8D70-4D03-904E-5EA3600F9989} = {138A2AE9-0353-400E-8815-45B5DE270354}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BE42CF0F-8DC1-4D69-9064-DA8AE6D15756}

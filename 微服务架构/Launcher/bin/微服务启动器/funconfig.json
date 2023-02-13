@@ -1,1 +1,0 @@
-[{"Route":"api/abcd/ff","Method":"NONE","parameter":["md"],"parameterexplain":["String name,Int32 age,@|"],"annotation":"此方法用于测试","Authorize":false},{"Route":"api/abcd/ff2","Method":"NONE","parameter":["name"],"parameterexplain":["String,@用户名|"],"annotation":"此方法用于测试","Authorize":true}]

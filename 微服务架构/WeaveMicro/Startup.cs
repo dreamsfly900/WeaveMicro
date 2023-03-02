@@ -42,21 +42,23 @@ namespace WeaveMicro
                 app.UseHsts();
             }
 
+            string contentRoot = AppDomain.CurrentDomain.BaseDirectory;
             string runRoot = AppDomain.CurrentDomain.BaseDirectory;
-            //静态文件存储目录
-            IFileProvider fileProvider = new PhysicalFileProvider(Path.Combine(runRoot, @"public"));
+            IFileProvider fileProvider = new PhysicalFileProvider(Path.Combine(contentRoot, @"doc"));//静态文件存储目录
             IFileProvider runProvider = new PhysicalFileProvider(runRoot);//运行目录
 
-            //app.UseHttpsRedirection();
+            string reqPath = runRoot.Replace(contentRoot, "").Replace("\\", "/").TrimEnd('/');
+            //  app.UseHttpsRedirection();
             //app.UseMiddleware<CorsMiddleware>();
             app.UseStaticFiles();
             app.UseStaticFiles(new StaticFileOptions
-            //{
-            //    FileProvider = fileProvider,
-            //    RequestPath = "/public"
-            //}).UseStaticFiles(new StaticFileOptions
             {
-                FileProvider = runProvider
+                FileProvider = fileProvider,
+                RequestPath = "/documents"
+            }).UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = runProvider,
+                RequestPath = reqPath
             });
             //app.UseFileServer(new FileServerOptions()//提供文件目录访问形式
             //{

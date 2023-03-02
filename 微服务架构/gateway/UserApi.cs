@@ -21,7 +21,7 @@ namespace gateway
 
     public static class Proccessor
     {
-        private static string _noSafe = "exec|execute|insert|select|delete|update|" +
+        private static string _noSafe = "exec|execute|insert|select|delete|" +
                                                    "declare|net user|xp_cmdshell|create|drop|grant|group_concat|column_name|" +
                                                    "information_schema.columns|table_schema|truncate|;|--|#|\'";//查询时危险字符；
         public static server[] servers;

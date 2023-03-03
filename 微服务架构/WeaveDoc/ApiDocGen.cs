@@ -89,9 +89,37 @@ namespace WeaveDoc
 
             //组合文档内容
             var doc = new StringWriter();
-            SwaggerGen.CreateGen(apis, options, schemaOptions)
-                .GetSwagger("v1")
-                .SerializeAsV3(new OpenApiJsonWriter(doc));
+
+            try
+            {
+                SwaggerGen.CreateGen(apis, options, schemaOptions)
+                    .GetSwagger("v1")
+                    .SerializeAsV3(new OpenApiJsonWriter(doc));
+            }
+            catch (Exception err)
+            {
+                //不加不影响使用，加了生活会更美好
+                Console.ForegroundColor = ConsoleColor.Red;
+                var errResult = new JObject { { "code", 503 }, { "msg", "服务器错误" } };
+                //判断异步Api方法中忘记在TRY的return前加await
+                string msg = "Failed to generate Operation for action - ";
+                int offset = err.Message.IndexOf(msg);
+                if (offset > -1 && err.GetBaseException()?.Message
+                    ?.Contains("The same schemaId is already used for type \"$TResult\"") == true)
+                {
+                    msg = err.Message.Substring(offset + msg.Length, err.Message.IndexOf(" (", offset) - msg.Length);
+                    msg = $"无法创建API（{msg}）,是否异步Api方法中忘记在TRY的return前加await了？";
+                    Console.WriteLine($"ERR: {msg}");
+                    errResult["msg"] += "：" + msg;
+                }
+                else
+                {
+                    Console.WriteLine(err);
+                    errResult["msg"] += "：" + err;
+                }
+                Console.ResetColor();
+                return errResult;
+            }
             //缓存API文档并返回
             json = JObject.Parse(doc.ToString());
             return json;
@@ -166,7 +194,7 @@ namespace WeaveDoc
                 //应用参数的描述（当XML注释不存在时）
                 if (string.IsNullOrWhiteSpace(pp.Description)) pp.Description = p.GetCustomAttribute<wRPC.ParamAttribute>()?.explain;
                 //应用POST/NONE/FILE的请求体的 描述、示例、和其他特性，因为其参数列表最终要从Parameters中删除
-                if (installFunAttr.Type != FunAttribute.Get)operation.ApplyToRequestBody(paramsList, p, pp);
+                if (installFunAttr.Type != FunAttribute.Get) operation.ApplyToRequestBody(paramsList, p, pp);
             }
             //POST/NONE/FILE的参数都放到请求体中去了，因此参数列表清空。（未考虑到全局参数的影响）
             if (installFunAttr.Type != FunAttribute.Get) operation.Parameters.Clear();

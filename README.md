@@ -19,11 +19,12 @@ Weave微服务架构
 ```
 {
   "port": 9001,
-  "url": "http://127.0.0.1:5022"
+  "url": "http://*:5022"
 }
 ```
 注册中心启动后，可以通过http://127.0.0.1:5022/apiHtml/server.html  查看和管理注册的网关和 API 内容，并可以通过页面进行API接口测试
 ![输入图片说明](%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220823145117.png)
+也可通过http://127.0.0.1:5022 直接查看和测试API
 
 2.  验证中心
 
@@ -46,7 +47,8 @@ Weave微服务架构
   "IdentityServer": "http://10.1.65.226",//登录认证地址
   "Audience": "ac-cloud",
   "defaultScheme": "Bearer",
-  "applicationUrl": "http://127.0.0.1:5221",//网关请求地址
+  "applicationUrl": "http://*:5221",//网关请求地址
+  "bindIP": "127.0.0.1",
   "Microcenter": "127.0.0.1:9002",//注册中心
   "filetype": ".jpg,.png,.doc,.txt",//指定可上传文件的后缀
   "httpspassword": "linezero",//https证书密码
@@ -54,6 +56,7 @@ Weave微服务架构
   "Headers": [ "token" ]//http指定头部内容可以带入，远程服务中
 }
 ```
+网关请求地址支持IP写为*，但必须增加配置bindIP告知服务中心网关实际请求地址，用于在复杂环境下的部署
 4.编写自己的API方法
 
 新建CLASS或者类库
@@ -92,7 +95,33 @@ Weave微服务架构
             return this.Filedata.filename;
         }
 ```
-
+（可选）如果需要统一API响应格式，可通过继承IApiResult接口，定义返回格式。系统会自动获取T的类型并展示到Swagger文档中
+```
+    /// <summary>
+    /// Api返回结果
+    /// </summary>
+    public class ApiResult<T> : IApiResult
+    {
+        /// <summary>
+        /// 状态码：200成功500异常0操作失败
+        /// </summary>
+        public int code { get; set; }
+        /// <summary>
+        /// 状态描述
+        /// </summary>
+        public string message { get; set; }
+        /// <summary>
+        /// 返回数据
+        /// </summary>
+        public T data { get; set; }
+        /// <summary>
+        /// 异常数据
+        /// </summary>
+        public dynamic errData { get; set; }
+    }
+    //API签名可以这样写（wRPCService v1.0.8 以上版本）
+    public async Task<IApiResult> Update(T_DisasterCase o)...
+```
 
 5.  RPC服务
 找到config.json文件 修改配置
@@ -110,6 +139,25 @@ Weave微服务架构
 ```
  RemoteService remoteService = new RemoteService("TEST");//初始化服务
             remoteService.Start();//启动服务
+```
+
+6. API文档使用
+
+找到config.json文件 修改配置
+```
+{
+  "port": 9001,
+  "url": "http://*:5022",
+  "SwaggerPath": "swagger"
+}
+```
+可使用SwaggerPath配置文档查看地址，默认为根目录（无此配置或设置为空字符串同等效果），如不启用API文档，修改配置如下
+```
+{
+  "port": 9001,
+  "url": "http://*:5022",
+  "SwaggerPath": null
+}
 ```
 
 

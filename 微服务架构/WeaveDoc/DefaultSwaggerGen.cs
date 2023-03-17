@@ -12,9 +12,10 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
 using System.Xml.XPath;
+using wRPC;
 /*
- 本文件定义的方法进行的操作是符合标准的，框架自定义的部分适配方法，在ApiDocGen中（主要在ZOperationFilter中操作）
- */
+本文件定义的方法进行的操作是符合标准的，框架自定义的部分适配方法，在ApiDocGen中（主要在ZOperationFilter中操作）
+*/
 namespace WeaveDoc
 {
     /// <summary>
@@ -34,6 +35,7 @@ namespace WeaveDoc
             SwaggerGeneratorOptions options = null,
             SchemaGeneratorOptions schemaOptions = null)
         {
+            schemaOptions.UseAllOfForInheritance = true;
             return new SwaggerGenerator(options ?? new SwaggerGeneratorOptions()
                 , new ApiGroupProvider(apiDescriptions)
                 , new SchemaGenerator(schemaOptions ?? new SchemaGeneratorOptions(), new JsonSerializerDataContractResolver(new JsonSerializerOptions()))
@@ -75,6 +77,19 @@ namespace WeaveDoc
             var returnType = methodInfo.GetCustomAttribute<AsyncStateMachineAttribute>() != null
                 ? methodInfo.ReturnType.GetGenericArguments().FirstOrDefault()
                 : methodInfo.ReturnType;
+            //如果是框架定义的返回类型
+            if (returnType == typeof(IApiResult))
+            {
+                //通过IL获取到定义的临时变量,从中获取最终可能返回的类型
+                var localType = methodInfo.GetMethodBody().LocalVariables
+                    ?.Select(v => v.LocalType
+                        .FindMembers(MemberTypes.All, BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public, null, null)
+                        .Select(m => (m as FieldInfo)?.FieldType)
+                        .Where(d => typeof(IApiResult).IsAssignableFrom(d)))
+                    ?.FirstOrDefault(d => d.Count() > 0)
+                    ?.FirstOrDefault();
+                if (localType != null) returnType = localType;
+            }
             api.SupportedResponseTypes.Add(new ApiResponseType()
             {
                 StatusCode = 200,

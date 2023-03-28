@@ -9,6 +9,8 @@ using Newtonsoft.Json.Linq;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -29,6 +31,10 @@ namespace WeaveDoc
         /// 控制器列表缓存
         /// </summary>
         private static Dictionary<string, object> Controllers = ToolLoad.Load(new Dictionary<string, object>());
+        /// <summary>
+        /// 文档引用的类型
+        /// </summary>
+        private static Dictionary<string, int> Types = new Dictionary<string, int>();
         /// <summary>
         /// 文档名称缓存，在注册路由时获取，在生成文档时使用
         /// </summary>
@@ -86,6 +92,25 @@ namespace WeaveDoc
             options.AddOAuths(gatewaysAndOAuths);
             //应用自定义过滤器,以适应自有框架特性
             options.OperationFilters.Add(new ZOperationFilter());
+            //防止类型重名
+            schemaOptions.SchemaIdSelector = type =>
+            {
+                string name = type.ToString();
+                if (Types.ContainsKey(name)) { return name + "_" + Types[name]; }
+                else { Types.Add(name, 0); return name; }
+            };
+            //DataTable等不支持的类型直接返回Object
+            schemaOptions.CustomTypeMappings.Add(typeof(DataTable), () => new OpenApiSchema() { Type = "object", Title = nameof(DataTable), });
+            schemaOptions.CustomTypeMappings.Add(typeof(DataSet), () => new OpenApiSchema() { Type = "object", Title = nameof(DataSet), });
+            schemaOptions.CustomTypeMappings.Add(typeof(ExpandoObject), () => new OpenApiSchema() { Type = "object", Title = nameof(ExpandoObject), });
+            schemaOptions.CustomTypeMappings.Add(typeof(IDictionary<,>), () => new OpenApiSchema() { Type = "object", Title = "IDictionary", });
+            schemaOptions.CustomTypeMappings.Add(typeof(Dictionary<,>), () => new OpenApiSchema() { Type = "object", Title = "Dictionary", });
+            /*
+            bool noSupportType = returnType == typeof(DataTable)
+                || returnType == typeof(DataSet)
+                || returnType == typeof(ExpandoObject)
+                || returnType.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IDictionary<,>))
+                ;*/
 
             //组合文档内容
             var doc = new StringWriter();

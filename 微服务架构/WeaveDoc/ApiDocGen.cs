@@ -100,11 +100,11 @@ namespace WeaveDoc
                 else { Types.Add(name, 0); return name; }
             };
             //DataTable等不支持的类型直接返回Object
-            schemaOptions.CustomTypeMappings.Add(typeof(DataTable), () => new OpenApiSchema() { Type = "object", Title = nameof(DataTable), });
-            schemaOptions.CustomTypeMappings.Add(typeof(DataSet), () => new OpenApiSchema() { Type = "object", Title = nameof(DataSet), });
-            schemaOptions.CustomTypeMappings.Add(typeof(ExpandoObject), () => new OpenApiSchema() { Type = "object", Title = nameof(ExpandoObject), });
-            schemaOptions.CustomTypeMappings.Add(typeof(IDictionary<,>), () => new OpenApiSchema() { Type = "object", Title = "IDictionary", });
-            schemaOptions.CustomTypeMappings.Add(typeof(Dictionary<,>), () => new OpenApiSchema() { Type = "object", Title = "Dictionary", });
+            schemaOptions.CustomTypeMappings.Add(typeof(DataTable), () => new OpenApiSchema() { Type = "object", Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = nameof(DataTable) } });
+            schemaOptions.CustomTypeMappings.Add(typeof(DataSet), () => new OpenApiSchema() { Type = "object", Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = nameof(DataSet) } });
+            schemaOptions.CustomTypeMappings.Add(typeof(ExpandoObject), () => new OpenApiSchema() { Type = "object", Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = nameof(ExpandoObject) } });
+            schemaOptions.CustomTypeMappings.Add(typeof(IDictionary<,>), () => new OpenApiSchema() { Type = "object", Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = "IDictionary<,>" } });
+            schemaOptions.CustomTypeMappings.Add(typeof(Dictionary<,>), () => new OpenApiSchema() { Type = "object", Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = "Dictionary<,>" } });
             /*
             bool noSupportType = returnType == typeof(DataTable)
                 || returnType == typeof(DataSet)

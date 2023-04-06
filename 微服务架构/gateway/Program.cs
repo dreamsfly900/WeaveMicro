@@ -41,7 +41,8 @@ namespace gateway
 
             applicationUrl = config["applicationUrl"];
             args = new string[] { config["applicationUrl"] };
-            var certificate = new X509Certificate2("server.pfx", config["httpspassword"]);
+            Console.WriteLine(AppDomain.CurrentDomain.BaseDirectory + "server.pfx");
+            var certificate = new X509Certificate2(AppDomain.CurrentDomain.BaseDirectory+"server.pfx", config["httpspassword"]);
             Proccessor.filetype = config["filetype"].Split(",");
             CreateHostBuilder(args).UseKestrel(options =>
             {

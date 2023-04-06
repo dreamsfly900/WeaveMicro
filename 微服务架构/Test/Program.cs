@@ -23,7 +23,7 @@ namespace Test
         {
             RemoteService remoteService = new RemoteService("TEST");
             remoteService.Start();
-             MM_BeginPeriod(1);//设置休眠精度
+            // MM_BeginPeriod(1);//设置休眠精度
                                //while (true)
                                //{
                                //    System.Threading.Thread.Sleep(10);

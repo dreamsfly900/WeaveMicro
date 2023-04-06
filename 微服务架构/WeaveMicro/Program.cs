@@ -142,9 +142,9 @@ namespace WeaveMicro
         /// </summary>
         private static void saveRouteLog()
         {
-            if (!Directory.Exists(_Path + "route\\"))
+            if (!Directory.Exists(_Path + "route/"))
             {
-                Directory.CreateDirectory(_Path + "route\\");
+                Directory.CreateDirectory(_Path + "route/");
             }
             while (true)
             {
@@ -152,7 +152,7 @@ namespace WeaveMicro
                 Routeloglist.CopyTo(0, routeLogs, 0, routeLogs.Length);
                 if (Routeloglist.Count > 0)
                 {
-                    using (StreamWriter sw = new StreamWriter(_Path + "route\\" + DateTime.Now.ToString("yyyyMMddHH") + "_log.json", true, Encoding.UTF8))
+                    using (StreamWriter sw = new StreamWriter(_Path + "route/" + DateTime.Now.ToString("yyyyMMddHH") + "_log.json", true, Encoding.UTF8))
                     {
                         sw.Write(Newtonsoft.Json.JsonConvert.SerializeObject(routeLogs));
                         sw.Close();

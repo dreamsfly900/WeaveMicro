@@ -64,11 +64,11 @@ namespace WeaveDoc
         /// <summary>
         /// 网关信息列表
         /// </summary>
-        public static IEnumerable<Gateway> Gateways { get; } = GetJson<List<Gateway>>("gateway.json");
+        public static IEnumerable<Gateway> Gateways { get { return GetJson<List<Gateway>>("gateway.json"); } }
         /// <summary>
         /// API服务信息列表
         /// </summary>
-        public static IEnumerable<Server> Servers { get; } = GetJson<List<Server>>("temp.json");
+        public static IEnumerable<Server> Servers { get { return GetJson<List<Server>>("temp.json"); } }
         /// <summary>
         /// 认证服务列表，当前未启用。
         /// <code>
@@ -80,7 +80,7 @@ namespace WeaveDoc
         /// //3.也可以保存到config.json中
         /// </code>
         /// </summary>
-        public static IEnumerable<string> AuthServers { get; } = GetJson<List<string>>("auth.json");
+        public static IEnumerable<string> AuthServers { get { return GetJson<List<string>>("auth.json"); } }
         /// <summary>
         /// API文档资源列表，每个服务一条数据
         /// </summary>

@@ -8,6 +8,7 @@ using Microsoft.OpenApi.Writers;
 using Newtonsoft.Json.Linq;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Data;
 using System.Dynamic;
@@ -34,7 +35,7 @@ namespace WeaveDoc
         /// <summary>
         /// 文档引用的类型
         /// </summary>
-        private static Dictionary<string, int> Types = new Dictionary<string, int>();
+        private static ConcurrentDictionary<string, int> Types = new ConcurrentDictionary<string, int>();
         /// <summary>
         /// 文档名称缓存，在注册路由时获取，在生成文档时使用
         /// </summary>
@@ -44,6 +45,10 @@ namespace WeaveDoc
         /// </summary>
         private static JObject json = null;
         /// <summary>
+        /// API文档传入参数，发生变化时需要重新生成
+        /// </summary>
+        private static string infoData = null;
+        /// <summary>
         /// 生成API文档OpenApi3格式，需要先使用AddRoute中先行注册
         /// </summary>
         /// <param name="data">网关及认证服务器列表数据，格式为json字符串的Base64编码</param>
@@ -51,6 +56,8 @@ namespace WeaveDoc
         [InstallFun(FunAttribute.Get, "Api文档生成")]
         public JObject info(string data)
         {
+            //当传入参数变化时，清空缓存，记录参数
+            if (data != infoData) { infoData = data; json = null; }
             //如果有缓存，则直接返回
             if (json != null && json.HasValues) return json;
 
@@ -97,7 +104,7 @@ namespace WeaveDoc
             {
                 string name = type.ToString();
                 if (Types.ContainsKey(name)) { return name + "_" + Types[name]; }
-                else { Types.Add(name, 0); return name; }
+                else { Types.TryAdd(name, 0); return name; }
             };
             //DataTable等不支持的类型直接返回Object
             schemaOptions.CustomTypeMappings.Add(typeof(DataTable), () => new OpenApiSchema() { Type = "object", Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = nameof(DataTable) } });

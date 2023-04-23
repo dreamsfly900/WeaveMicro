@@ -51,8 +51,8 @@ namespace wRPCService
                         }
                     }
                 }
-                catch
-                { }
+                catch (Exception e)
+                { Console.WriteLine(e.Message); }
             }
             return keyValuePairs;
         }
@@ -73,27 +73,54 @@ namespace wRPCService
                     Type[] ts = assembly.GetTypes();
                     foreach (Type tt in ts)
                     {
-                        RouteAttribute RouteAttr = (RouteAttribute)Attribute.GetCustomAttribute(tt, typeof(RouteAttribute));
-                        //  MethodInfo[] mis = tt.GetMethods();
-                        if (RouteAttr != null)
+                        try
                         {
-                            object obj = assembly.CreateInstance(tt.FullName);
-                            if (obj is FunctionBase)
+                            RouteAttribute RouteAttr = (RouteAttribute)Attribute.GetCustomAttribute(tt, typeof(RouteAttribute));
+                            //  MethodInfo[] mis = tt.GetMethods();
+                            if (RouteAttr != null)
                             {
-                                service[] services = (obj as FunctionBase).GetService();
-                                listservice.AddRange(services);
+
+                                object obj = assembly.CreateInstance(tt.FullName);
+                                if (obj is FunctionBase)
+                                {
+                                    try
+                                    {
+                                        service[] services = (obj as FunctionBase).GetService();
+
+                                        listservice.AddRange(services);
+                                    }
+                                    catch (Exception ee)
+                                    {
+                                        Console.WriteLine("GetService--eee-" + ee.Message);
+                                    }
+
+                                }
+                                else
+                                {
+                                    try
+                                    {
+                                        service[] services = GetService(obj);
+                                        listservice.AddRange(services);
+                                    }
+                                    catch (Exception ee)
+                                    {
+                                        Console.WriteLine("GetService--eee-" + ee.Message);
+                                    }
+
+                                }
+                                //Console.WriteLine("aaa:end" );
                             }
-                            else
-                            {
-                                service[] services = GetService(obj);
-                                listservice.AddRange(services);
-                            }
+                        }
+                        catch (Exception ee2)
+                        {
+                            Console.WriteLine(tt.FullName+ "GetService22---" + ee2.Message);
                         }
 
                     }
                 }
-                catch
-                { }
+                catch(Exception e)
+                { //Console.WriteLine(file+"---GetService---" +e.Message); 
+                }
             }
             return listservice.ToArray();
         }

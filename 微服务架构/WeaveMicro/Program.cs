@@ -14,6 +14,7 @@ using System.Text;
 using WeaveMicrocenter;
 using wRPCclient;
 using System.Linq;
+using Weave.Server;
 
 namespace WeaveMicro
 {
@@ -29,7 +30,7 @@ namespace WeaveMicro
             Console.WriteLine("欢迎使用Weave微服务中心");
             var builder = new ConfigurationBuilder().SetBasePath(_Path).AddJsonFile("config.json");
             config = builder.Build();
-
+            weaveP2Server.resttime = 0;
             weaveP2Server.weaveReceiveBitEvent += WeaveP2Server_weaveReceiveBitEvent;
             weaveP2Server.weaveDeleteSocketListEvent += WeaveP2Server_weaveDeleteSocketListEvent;
             List<server> tempservers = GetServers("temp.json");

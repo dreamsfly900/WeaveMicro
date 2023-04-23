@@ -36,67 +36,79 @@ namespace wRPC
             List<service> listservice = new List<service>();
             Type tt = this.GetType();
             MethodInfo[] mis = tt.GetMethods();
+           
             foreach (MethodInfo mi in mis)
             {
-
+                //if (tt.FullName == "Forecast_Query.Forecast")
+                //{ 
+                //    Console.WriteLine("---999-:" + mis.Length);
+                //    Console.WriteLine("---999-:" + mi.Name);
+                //}
+                 
                 if (mi != null)
                 {
-                   
 
-                    InstallFunAttribute myattribute = (InstallFunAttribute)Attribute.GetCustomAttribute(mi, typeof(InstallFunAttribute));
-
-                    if (myattribute != null)
+                 
+                    try
                     {
-                        service serv = new service();
-                        AuthorizeAttribute Authorizeattribute = (AuthorizeAttribute)Attribute.GetCustomAttribute(mi, typeof(AuthorizeAttribute));
-                        if (Authorizeattribute != null)
-                            serv.Authorize = true;
-                        else
-                            serv.Authorize = false;
+                        InstallFunAttribute myattribute = (InstallFunAttribute)Attribute.GetCustomAttribute(mi, typeof(InstallFunAttribute));
 
-                        RouteAttribute RouteAttr = (RouteAttribute)Attribute.GetCustomAttribute(tt, typeof(RouteAttribute));
-                        if (RouteAttr != null)
-                            serv.Route = RouteAttr.Route+"/"+ mi.Name;
-                        else
-                            serv.Route = tt.FullName.Replace(".", @"/")+"/"+ mi.Name;
-                        serv.annotation = myattribute.Annotation;
-                        serv.Method = myattribute.Type.ToString();
-                        ParameterInfo[] paramsInfo = mi.GetParameters();//得到指定方法的参数列表 
-                        serv.parameter = new string[paramsInfo.Length];
-                        serv.parameterexplain = new string[paramsInfo.Length];
-                        for (int i = 0; i < paramsInfo.Length; i++)
-
+                        if (myattribute != null)
                         {
-                            ParamAttribute ParamAttr = (ParamAttribute)Attribute.GetCustomAttribute(paramsInfo[i], typeof(ParamAttribute));
-                            Type tType = paramsInfo[i].ParameterType;
-                            FieldInfo[] fis = tType.GetFields();
-                            foreach (FieldInfo fi in fis)
-                                if (fi.Name != "Empty")
-                                    serv.parameterexplain[i] += fi.FieldType.Name + " " + fi.Name + ",";
-                                else
-                                    serv.parameterexplain[i] += fi.FieldType.Name + ",";
-
-
-                            if (ParamAttr != null)
-                            {
-
-                                serv.parameterexplain[i] += "@" + ParamAttr.explain + "|";
-                            }
+                            service serv = new service();
+                            AuthorizeAttribute Authorizeattribute = (AuthorizeAttribute)Attribute.GetCustomAttribute(mi, typeof(AuthorizeAttribute));
+                            if (Authorizeattribute != null)
+                                serv.Authorize = true;
                             else
-                                serv.parameterexplain[i] += "@|";
+                                serv.Authorize = false;
+
+                            RouteAttribute RouteAttr = (RouteAttribute)Attribute.GetCustomAttribute(tt, typeof(RouteAttribute));
+                            if (RouteAttr != null)
+                                serv.Route = RouteAttr.Route + "/" + mi.Name;
+                            else
+                                serv.Route = tt.FullName.Replace(".", @"/") + "/" + mi.Name;
+                            serv.annotation = myattribute.Annotation;
+                            serv.Method = myattribute.Type.ToString();
+                            ParameterInfo[] paramsInfo = mi.GetParameters();//得到指定方法的参数列表 
+                            serv.parameter = new string[paramsInfo.Length];
+                            serv.parameterexplain = new string[paramsInfo.Length];
+                            for (int i = 0; i < paramsInfo.Length; i++)
+
+                            {
+                                ParamAttribute ParamAttr = (ParamAttribute)Attribute.GetCustomAttribute(paramsInfo[i], typeof(ParamAttribute));
+                                Type tType = paramsInfo[i].ParameterType;
+                                FieldInfo[] fis = tType.GetFields();
+                                foreach (FieldInfo fi in fis)
+                                    if (fi.Name != "Empty")
+                                        serv.parameterexplain[i] += fi.FieldType.Name + " " + fi.Name + ",";
+                                    else
+                                        serv.parameterexplain[i] += fi.FieldType.Name + ",";
+
+
+                                if (ParamAttr != null)
+                                {
+
+                                    serv.parameterexplain[i] += "@" + ParamAttr.explain + "|";
+                                }
+                                else
+                                    serv.parameterexplain[i] += "@|";
 
 
 
-                            //如果它是值类型,或者String   
+                                //如果它是值类型,或者String   
 
-                            serv.parameter[i] = paramsInfo[i].Name;
+                                serv.parameter[i] = paramsInfo[i].Name;
 
+                            }
+
+                            listservice.Add(serv);
                         }
 
-                        listservice.Add(serv);
                     }
-                
-
+                    catch (Exception ee)
+                    {
+                        Console.WriteLine(mi.Name+"-特别说明：" +ee.Message);
+                    }
                 }
             }
 

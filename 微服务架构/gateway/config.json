@@ -5,7 +5,7 @@
   "defaultScheme": "Bearer",
   "applicationUrl": "http://*:10092",
   "bindIP": "127.0.0.1",
-  "Microcenter": "127.0.0.1:9001",
+  "Microcenter": "172.18.152.11:9001",
   "filetype": ".jpg,.png,.doc,.txt",
   "httpspassword": "linezero",
   "Cookies": [ "Areacode", "Role", "UserId", "Name", "Phone" ],

@@ -21,7 +21,7 @@
 注册分发中心，集成网关，认证中心，熔断机制，选举机制，架构实现了RPC相关功能。通信协议基于[weaving-socket](https://gitee.com/dotnetchina/weaving-socket)
 
 
-# 使用说明
+# 安装-下载使用说明
 
 - 安装
    windows 直接运行发布后，从发布目录中拷贝。

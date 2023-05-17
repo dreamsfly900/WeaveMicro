@@ -1,5 +1,5 @@
 # WeaveMicro
-- 支持.net core 2.x-5.x，正常使用 
+- 支持.net core 2.x-7.x，正常使用 
 
 - 支持linux系统，centos，radhat,麒麟，统信，鲲鹏，X86_64,等系统，经过测试互认证。
 

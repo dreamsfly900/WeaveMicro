@@ -1,7 +1,10 @@
 # WeaveMicro
-支持.net core 2.x-5.x，正常使用 ，
-支持linux系统，centos，radhat,麒麟，统信，鲲鹏，X86_64,等系统，经过测试互认证。
-业务开发业务逻辑API类时， 搜索nuget包，wRPCService。执行业务逻辑，搜索WeaveRemoteService包
+- 支持.net core 2.x-5.x，正常使用 
+
+- 支持linux系统，centos，radhat,麒麟，统信，鲲鹏，X86_64,等系统，经过测试互认证。
+
+- 业务开发业务逻辑API类时， 搜索nuget包，wRPCService。执行业务逻辑，搜索WeaveRemoteService包
+
 - RPM包下载
 
     [WeaveMicro-1-1.arm64](https://gitee.com/UDCS/weave-micro/blob/new/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84/WeaveMicro-1-1.arm64.rpm)

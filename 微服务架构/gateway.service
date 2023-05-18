@@ -1,0 +1,24 @@
+[Unit]
+Description=微服务网关
+
+[Service]
+ExecStart=/usr/dotnet/dotnet   /root/gateway/gateway.dll
+User=root
+# Kill root process
+KillMode=process
+
+# Wait up to 30 minutes for service to start/stop
+TimeoutSec=30min
+
+# Remove process, file, thread limits
+#
+
+
+# Restart on non-successful exits.
+Restart=on-failure
+
+# Don't restart if we've restarted more than 3 times in 2 minutes.
+StartLimitInterval=120
+StartLimitBurst=3
+[Install]
+WantedBy=multi-user.target

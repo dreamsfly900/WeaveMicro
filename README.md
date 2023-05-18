@@ -22,7 +22,7 @@
 使用.net core开发， 支持多CPU多系统，目前已做国产化适配认证。
 #### 软件架构
 注册分发中心，集成网关，认证中心，熔断机制，选举机制，架构实现了RPC相关功能。通信协议基于[weaving-socket](https://gitee.com/dotnetchina/weaving-socket)
-
+![输入图片说明](%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84/a.png)
 
 # 安装-下载使用说明
 

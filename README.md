@@ -36,7 +36,7 @@
 
      [包下载地址](https://gitee.com/UDCS/weave-micro/releases/tag/1.0.0)
  
-  - 设置服务随linux后台启动运行教程 [linux服务设置教程](https://gitee.com/UDCS/weave-micro/releases/download/1.0.0/%E8%AE%BE%E7%BD%AE%E7%A8%8B%E5%BA%8Flinux%E9%9A%8F%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B.zip)
+- 设置服务随linux后台启动运行教程 [linux服务设置教程](https://gitee.com/UDCS/weave-micro/releases/download/1.0.0/%E8%AE%BE%E7%BD%AE%E7%A8%8B%E5%BA%8Flinux%E9%9A%8F%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B.zip)
     
 # 运行步骤：
 

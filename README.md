@@ -6,14 +6,14 @@
 - 业务开发业务逻辑API类时， 搜索nuget包，wRPCService。执行业务逻辑，搜索WeaveRemoteService包
 
 - WINX64 运行包
-[weave_win_1.0.0-1.X64.zip](https://gitee.com/UDCS/weave-micro/releases/download/1.0.0/weave_win_1.0.0-1.X64.zip)
+[weave_win_1.0.0-1.X64.zip](https://gitee.com/UDCS/weave-micro/releases/tag/1.0.0)
 - RPM包下载
 
-    [WeaveMicro-1-1.arm64](https://gitee.com/UDCS/weave-micro/releases/download/1.0.0/WeaveMicro-1-1.arm64.rpm)
+    [WeaveMicro-1-1.arm64](https://gitee.com/UDCS/weave-micro/releases/tag/1.0.0)
 
-    [WeaveMicro-1.0.0-1.aarch64.rpm](https://gitee.com/UDCS/weave-micro/releases/download/1.0.0/WeaveMicro-1.0.0-1.aarch64.rpm)
+    [WeaveMicro-1.0.0-1.aarch64.rpm](https://gitee.com/UDCS/weave-micro/releases/tag/1.0.0)
 
-    [WeaveMicro-1.0.0-1.x86_64.rpm](https://gitee.com/UDCS/weave-micro/releases/download/1.0.0/WeaveMicro-1.0.0-1.x86_64.rpm)
+    [WeaveMicro-1.0.0-1.x86_64.rpm](https://gitee.com/UDCS/weave-micro/releases/tag/1.0.0)
 
 # Weave微服务架构介绍
 
@@ -34,11 +34,8 @@
 
      使用    yum install WeaveMicro-*-*.*.rpm(WeaveMicro-1-1.arm64.rpm 或 WeaveMicro-1.0.0-1.aarch64.rpm 或 WeaveMicro-1.0.0-1.x86_64.rpm)进行安装。
 
-     [WeaveMicro-1-1.arm64](https://gitee.com/UDCS/weave-micro/releases/download/1.0.0/WeaveMicro-1-1.arm64.rpm)
-
-    [WeaveMicro-1.0.0-1.aarch64.rpm](https://gitee.com/UDCS/weave-micro/releases/download/1.0.0/WeaveMicro-1.0.0-1.aarch64.rpm)
-
-    [WeaveMicro-1.0.0-1.x86_64.rpm](https://gitee.com/UDCS/weave-micro/releases/download/1.0.0/WeaveMicro-1.0.0-1.x86_64.rpm)
+     [包下载地址](https://gitee.com/UDCS/weave-micro/releases/tag/1.0.0)
+ 
 
     
 # 运行步骤：

@@ -57,7 +57,13 @@ namespace WeaveDoc
         public JObject info(string data)
         {
             //当传入参数变化时，清空缓存，记录参数
-            if (data != infoData) { infoData = data; json = null; }
+            if (data != infoData)
+            {
+                infoData = data;
+                json = null;
+
+                //Swashbuckle.AspNetCore.SwaggerGen.SchemaRepository.RegisterType
+            }
             //如果有缓存，则直接返回
             if (json != null && json.HasValues) return json;
 
@@ -103,7 +109,7 @@ namespace WeaveDoc
             schemaOptions.SchemaIdSelector = type =>
             {
                 string name = type.ToString();
-                if (Types.ContainsKey(name)) { return name + "_" + Types[name]; }
+                if (Types.ContainsKey(name)) { Types[name] += 1; return name + "_" + Types[name]; }
                 else { Types.TryAdd(name, 0); return name; }
             };
             //DataTable等不支持的类型直接返回Object

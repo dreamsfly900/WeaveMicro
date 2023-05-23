@@ -3,8 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Description>WeaveMicro微服务，API文档支持类库</Description>
+	<Authors>dreamsfly900</Authors>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,4 +19,8 @@
     <ProjectReference Include="..\wRPCService\wRPCService.csproj" />
   </ItemGroup>
 
+	<!--生成Release完成后，发布Nuget包（其中NugetApiKey_xxx需要设置环境变量）-->
+	<Target Name="PublishNuget" AfterTargets="AfterRebuild" Condition="'$(Configuration)' == 'Release'">
+		<Exec Command="dotnet nuget push $(PackageOutputAbsolutePath)$(PackageId).$(PackageVersion).nupkg -k $(NugetApiKey_dreamsfly900) -s https://api.nuget.org/v3/index.json" ContinueOnError="ErrorAndContinue" />
+	</Target>
 </Project>

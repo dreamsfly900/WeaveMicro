@@ -5,7 +5,8 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Description>WeaveMicro微服务，远程API启动类库，负责连接注册中心与启动本地方法的监听</Description>
-    <Version>1.0.7</Version>
+    <Version>1.0.8</Version>
+	<Authors>dreamsfly900</Authors>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,4 +21,8 @@
     </None>
   </ItemGroup>
 
+	<!--生成Release完成后，发布Nuget包（其中NugetApiKey_xxx需要设置环境变量）-->
+	<Target Name="PublishNuget" AfterTargets="AfterRebuild" Condition="'$(Configuration)' == 'Release'">
+		<Exec Command="dotnet nuget push $(PackageOutputAbsolutePath)$(PackageId).$(PackageVersion).nupkg -k $(NugetApiKey_dreamsfly900) -s https://api.nuget.org/v3/index.json" ContinueOnError="ErrorAndContinue" />
+	</Target>
 </Project>

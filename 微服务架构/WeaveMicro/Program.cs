@@ -14,6 +14,7 @@ using System.Text;
 using WeaveMicrocenter;
 using wRPCclient;
 using System.Linq;
+using Weave.Server;
 
 namespace WeaveMicro
 {
@@ -29,7 +30,7 @@ namespace WeaveMicro
             Console.WriteLine("欢迎使用Weave微服务中心");
             var builder = new ConfigurationBuilder().SetBasePath(_Path).AddJsonFile("config.json");
             config = builder.Build();
-
+            weaveP2Server.resttime = 1;
             weaveP2Server.weaveReceiveBitEvent += WeaveP2Server_weaveReceiveBitEvent;
             weaveP2Server.weaveDeleteSocketListEvent += WeaveP2Server_weaveDeleteSocketListEvent;
             List<server> tempservers = GetServers("temp.json");
@@ -49,7 +50,7 @@ namespace WeaveMicro
             CreateHostBuilder(args).Build().Run();
 
 
-            while (true)
+           // while (true)
             {
                 string command = Console.ReadLine();
                 switch (command)
@@ -152,6 +153,7 @@ namespace WeaveMicro
                 Routeloglist.CopyTo(0, routeLogs, 0, routeLogs.Length);
                 if (Routeloglist.Count > 0)
                 {
+                    Console.WriteLine("写入访问日志.....");
                     using (StreamWriter sw = new StreamWriter(_Path + "route/" + DateTime.Now.ToString("yyyyMMddHH") + "_log.json", true, Encoding.UTF8))
                     {
                         sw.Write(Newtonsoft.Json.JsonConvert.SerializeObject(routeLogs));
@@ -160,6 +162,7 @@ namespace WeaveMicro
                     }
                     lock(Routeloglist)
                      Routeloglist.Clear();
+                    Console.WriteLine("写入访问日志.....结束");
                 }
                 System.Threading.Thread.Sleep(1000 * 60 );
             }

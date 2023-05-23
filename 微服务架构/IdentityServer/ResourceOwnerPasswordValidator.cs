@@ -54,19 +54,7 @@ namespace IdentityServer
                 context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "invalid custom credential:" + e.Message);
             }
 
-            //if (context.UserName == "admin" && context.Password == "123")
-            //{
-            //    context.Result = new GrantValidationResult(
-            //     subject: context.UserName,
-            //     authenticationMethod: "custom",
-            //     claims: GetUserClaims());
-            //}
-            //else
-            //{
-
-            //    //验证失败
-            //    context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "invalid custom credential");
-            //}
+            
         }
         public static String getSha256(String strData)
         {

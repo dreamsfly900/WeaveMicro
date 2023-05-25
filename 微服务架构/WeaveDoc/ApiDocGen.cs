@@ -57,13 +57,7 @@ namespace WeaveDoc
         public JObject info(string data)
         {
             //当传入参数变化时，清空缓存，记录参数
-            if (data != infoData)
-            {
-                infoData = data;
-                json = null;
-
-                //Swashbuckle.AspNetCore.SwaggerGen.SchemaRepository.RegisterType
-            }
+            if (data != infoData) { infoData = data; json = null; }
             //如果有缓存，则直接返回
             if (json != null && json.HasValues) return json;
 
@@ -108,7 +102,10 @@ namespace WeaveDoc
             //防止类型重名
             schemaOptions.SchemaIdSelector = type =>
             {
-                string name = type.ToString();
+                //无保留字符，包括大写字母和小写字母、十进制数字、连字符、句点、下划线和波浪号。
+                //另外，如果模型都是字段，则也不显示内容
+                string name = type.ToString().Replace("+", "~");
+
                 if (Types.ContainsKey(name)) { Types[name] += 1; return name + "_" + Types[name]; }
                 else { Types.TryAdd(name, 0); return name; }
             };
@@ -116,8 +113,11 @@ namespace WeaveDoc
             schemaOptions.CustomTypeMappings.Add(typeof(DataTable), () => new OpenApiSchema() { Type = "object", Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = nameof(DataTable) } });
             schemaOptions.CustomTypeMappings.Add(typeof(DataSet), () => new OpenApiSchema() { Type = "object", Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = nameof(DataSet) } });
             schemaOptions.CustomTypeMappings.Add(typeof(ExpandoObject), () => new OpenApiSchema() { Type = "object", Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = nameof(ExpandoObject) } });
+            schemaOptions.CustomTypeMappings.Add(typeof(System.Collections.IDictionary), () => new OpenApiSchema() { Type = "object", Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = "IDictionary" } });
             schemaOptions.CustomTypeMappings.Add(typeof(IDictionary<,>), () => new OpenApiSchema() { Type = "object", Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = "IDictionary<,>" } });
             schemaOptions.CustomTypeMappings.Add(typeof(Dictionary<,>), () => new OpenApiSchema() { Type = "object", Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = "Dictionary<,>" } });
+            //应用自定义过滤器,以适应自有框架特性
+            options.DocumentFilters.Add(new ZCustomTypeMappingsFilter(schemaOptions.CustomTypeMappings));
             /*
             bool noSupportType = returnType == typeof(DataTable)
                 || returnType == typeof(DataSet)
@@ -196,6 +196,7 @@ namespace WeaveDoc
             o.Add($"{docName}/swagger", new ApiDocGen());
         }
     }
+
     /// <summary>
     /// API方法操作过滤器，框架自定义的标准主要在这里实现
     /// </summary>
@@ -241,6 +242,36 @@ namespace WeaveDoc
             operation.Responses["200"].Description = "执行成功";
         }
 
+    }
+
+    /// <summary>
+    /// 添加自定义类型的文档过滤器，如DataTable等。
+    /// </summary>
+    public class ZCustomTypeMappingsFilter : IDocumentFilter
+    {
+        /// <summary>
+        /// 自定义类型
+        /// </summary>
+        private IDictionary<Type, Func<OpenApiSchema>> CustomTypeMappings = null;
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="customTypeMappings">自定义类型</param>
+        public ZCustomTypeMappingsFilter(IDictionary<Type, Func<OpenApiSchema>> customTypeMappings) {
+            CustomTypeMappings = customTypeMappings;
+        }
+        /// <summary>
+        /// 接口方法
+        /// </summary>
+        /// <param name="swaggerDoc">Swagger文档</param>
+        /// <param name="context">过滤器上下文</param>
+        public void Apply(OpenApiDocument swaggerDoc, DocumentFilterContext context)
+        {
+            foreach (var o in CustomTypeMappings) {
+                var type = o.Value.Invoke();
+                swaggerDoc.Components.Schemas.Add(type.Reference.Id, type);
+            }
+        }
     }
     /// <summary>
     /// API文档扩展类

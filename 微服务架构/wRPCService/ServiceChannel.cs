@@ -123,38 +123,40 @@ namespace wRPCService
                         }
                         else
                         {
-                            SliceAttribute Slice = (SliceAttribute)Attribute.GetCustomAttribute(mi, typeof(SliceAttribute));
-                            SteamAttribute SteamAttr = (SteamAttribute)Attribute.GetCustomAttribute(mi, typeof(SteamAttribute));
+                           
                             rpcdata = mi.Invoke(obj, objs);
                           
-                            if (Slice != null)
+                          
+                        }
+                        SliceAttribute Slice = (SliceAttribute)Attribute.GetCustomAttribute(mi, typeof(SliceAttribute));
+                        SteamAttribute SteamAttr = (SteamAttribute)Attribute.GetCustomAttribute(mi, typeof(SteamAttribute));
+                        if (Slice != null)
+                        {
+                            String tmpdata = Newtonsoft.Json.JsonConvert.SerializeObject(rpcdata);
+                            int sendlen = 1024 * 1024;
+                            int lern = (tmpdata.Length / sendlen);
+                            int lerna = (tmpdata.Length % sendlen) > 0 ? 1 : 0;
+                            for (int sa = 0; sa < lern + lerna; sa++)
                             {
-                                String tmpdata = Newtonsoft.Json.JsonConvert.SerializeObject(rpcdata);
-                                int sendlen = 1024 * 1024;
-                                int lern = (tmpdata.Length / sendlen);
-                                int lerna = (tmpdata.Length % sendlen) > 0 ? 1 : 0;
-                                for (int sa = 0; sa < lern + lerna; sa++)
-                                {
-                                    int sylen = sendlen;
-                                    int sylen2 = tmpdata.Length - sa * sendlen;
-                                    if (sylen2 < sylen)
-                                        sylen = sylen2;
-                                    byte[] outdata = GZIP.GZipCompress(tmpdata.Substring(sa * sendlen, sylen));
+                                int sylen = sendlen;
+                                int sylen2 = tmpdata.Length - sa * sendlen;
+                                if (sylen2 < sylen)
+                                    sylen = sylen2;
+                                byte[] outdata = GZIP.GZipCompress(tmpdata.Substring(sa * sendlen, sylen));
 
-                                    P2Server.Send(soc, 0x01, outdata);
-                                }
-                                P2Server.Send(soc, 0x11, new byte[1]);
+                                P2Server.Send(soc, 0x01, outdata);
                             }
-                            if (SteamAttr != null)
-                            {
-                                System.IO.Stream stream = (Stream)rpcdata;
-                                
-                            }
-                            else
-                            {
-                                String tmpdata = Newtonsoft.Json.JsonConvert.SerializeObject(rpcdata);
-                                P2Server.Send(soc, 0x01, GZIP.GZipCompress(tmpdata)); 
-                            }
+                            P2Server.Send(soc, 0x11, new byte[1]);
+                        }
+                        if (SteamAttr != null)
+                        {
+                            System.IO.Stream stream = (Stream)rpcdata;
+
+                        }
+                        else
+                        {
+                            String tmpdata = Newtonsoft.Json.JsonConvert.SerializeObject(rpcdata);
+                            P2Server.Send(soc, 0x01, GZIP.GZipCompress(tmpdata));
                         }
                         //DateTime dt2 = DateTime.Now;
                         //Console.WriteLine("service:" + (dt2 - P2Server.dt).TotalMilliseconds);

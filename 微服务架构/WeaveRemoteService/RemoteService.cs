@@ -8,6 +8,7 @@ using wRPCService;
 
 namespace WeaveRemoteService
 {
+    
     public class RemoteService:IDisposable
     {
         ServiceChannel service ;
@@ -17,6 +18,7 @@ namespace WeaveRemoteService
         server ser;
         public RemoteService(String Name)
         {
+            
             var config= builder.Build();
             Console.WriteLine("成功加载配置文档config.json");
             service = new ServiceChannel(Convert.ToInt32( config["Port"]));

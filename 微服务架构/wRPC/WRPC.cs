@@ -13,6 +13,8 @@ namespace wRPCclient
    
     public class ClientChannel : IDisposable
     {
+        public delegate void recdata(string data);
+        public recdata recs = null;
         String IP;
         int Port;
         Weave.Client.TcpSynClient tcpSynClient;
@@ -122,27 +124,43 @@ namespace wRPCclient
         }
         String call(String datastr)
         {
-         
+
+            
             if (!isline)
                 isline= connection();
             if (isline)
             {
                 if (tcpSynClient.Send(0x01, GZIP.GZipCompress(datastr)))
                 {
+                   
                     dt = DateTime.Now;
-                    var commdata = tcpSynClient.Receives(null);
-                    DateTime dt2 = DateTime.Now;
-                 //   Console.WriteLine("call:" + (dt2 - dt).TotalMilliseconds);
-                    if (commdata == null)
-                        throw new Exception("通信意外！");
+                  
+                        var commdata = tcpSynClient.Receives(null);
+                        DateTime dt2 = DateTime.Now;
+                        //   Console.WriteLine("call:" + (dt2 - dt).TotalMilliseconds);
+                        if (commdata == null)
+                            throw new Exception("通信意外！");
                     if (commdata.comand == 0x01)
                     {
-                        return GZIP.GZipDecompress(commdata.data);
+                        if (recs == null)
+                        {
+                            return GZIP.GZipDecompress(commdata.data);
+                        }
+                        else
+                            recs(GZIP.GZipDecompress(commdata.data));
                     }
-                    else
+                    if (commdata.comand == 0x11)
+                        if (recs != null) return "";
+                    else 
+                    {
                         throw new Exception(GZIP.GZipDecompress(commdata.data));
+                    }
+                   
+                   
                 }
+
             }
+            
             return "无法发送到服务器";
         }
         

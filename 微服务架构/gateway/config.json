@@ -9,5 +9,6 @@
   "filetype": ".jpg,.png,.doc,.txt",
   "httpspassword": "linezero",
   "Cookies": [ "Areacode", "Role", "UserId", "Name", "Phone" ],
+   "stream": "false",
   "Headers": [ "token" ]
 }

@@ -294,13 +294,26 @@ namespace gateway
                         keysCookies.Add("RemoteIpAddress", rlog.requestIP);
                         //  context.Request.Headers
                         //await context.Response.WriteAsync($"");
-                        String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh, keysCookies, FDATA);
-                        ////String retun =  clientChannel.Call<String>(rl, rls[rls.Length - 1], objs);
-                        //Encoding utf8 = Encoding.ASCII;
-                        //Encoding ISO = Encoding.UTF8;//换成你想转的编码
-                        //byte[] temp = utf8.GetBytes(retun);
-                        //string result = ISO.GetString(temp);
-                        await context.Response.WriteAsync($"{retun}");
+                       bool stream=Startup.config.GetSection("stream").Get<bool>();
+                        if (stream)
+                        {
+                            String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh, keysCookies, new wRPCclient.
+                                ClientChannel.recdata((str) =>
+                                {
+                                     context.Response.WriteAsync($"{str}");
+
+                                }), FDATA);
+                        }
+                        else
+                        {
+                            String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh, keysCookies,null, FDATA);
+                            ////String retun =  clientChannel.Call<String>(rl, rls[rls.Length - 1], objs);
+                            //Encoding utf8 = Encoding.ASCII;
+                            //Encoding ISO = Encoding.UTF8;//换成你想转的编码
+                            //byte[] temp = utf8.GetBytes(retun);
+                            //string result = ISO.GetString(temp);
+                            await context.Response.WriteAsync($"{retun}");
+                        }
 
                         // await context.Response.WriteAsync($"{ retun}{ objs.Length},{rl},{rls[rls.Length - 1]}，{ser.ToString()},{context.Request.ContentType}");
                         DateTime dt2 = DateTime.Now;

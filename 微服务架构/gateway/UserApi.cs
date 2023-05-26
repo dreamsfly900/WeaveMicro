@@ -291,6 +291,7 @@ namespace gateway
                                 }
                             }
                         }
+                        keysCookies.Add("RemoteIpAddress", rlog.requestIP);
                         //  context.Request.Headers
                         //await context.Response.WriteAsync($"");
                         String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh, keysCookies, FDATA);

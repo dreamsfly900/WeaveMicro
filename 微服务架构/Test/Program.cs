@@ -11,7 +11,7 @@ using wRPCService;
 
 namespace Test
 {
-   
+     
     class Program
     {
        static wRPCclient.ClientChannel clientChannel = new wRPCclient.ClientChannel("127.0.0.1", 10098);
@@ -21,8 +21,14 @@ namespace Test
         public static extern uint MM_EndPeriod(uint uMilliseconds);
         static  void Main(string[] args)
         {
+
+             
+            
             RemoteService remoteService = new RemoteService("TEST");
             remoteService.Start();
+            String retun = clientChannel.Call<object>("big/api/page", "InsertConfig", "{\r\n  \"Id\": 0,\r\n  \"PageName\": \"11\",\r\n  \"Width\": \"1920px\",\r\n  \"Height\": \"1080px\",\r\n  \"Config\": [],\r\n  \"UserId\": 15,\r\n  \"Createtime\": \"\",\r\n  \"Pushrate\": \"\",\r\n  \"Image\": \"\"\r\n}\r\n");
+          
+           
             // MM_BeginPeriod(1);//设置休眠精度
                                //while (true)
                                //{
@@ -33,8 +39,7 @@ namespace Test
             //    DateTime dt2 = DateTime.Now;
             //    Console.WriteLine("Main:" + (dt2 - dt).TotalMilliseconds);
             //}
-            String retun = clientChannel.Call<String>("api/abcd", "ff2","asdasd");
-             retun = clientChannel.Call<String>("api/abcd", "ff");
+          // retun = clientChannel.Call<String>("api/abcd", "ff");
             while (true)
             {
                 System.Threading.Thread.Sleep(10);

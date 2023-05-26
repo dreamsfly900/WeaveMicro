@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Threading.Tasks;
 using wRPC;
 
@@ -21,6 +22,17 @@ namespace testdll2
         {
 
             Console.WriteLine(str);
+        }
+    }
+    [Route("big/api/page")]
+    public class PageController
+    {
+        [Authorize]
+        [InstallFun(FunAttribute.NONE, "插入页面配置信息")]
+        public int InsertConfig(T_Page model)
+        {
+            //model.UserId = "2";
+            return 1;
         }
     }
     [Route("api/abcd")]

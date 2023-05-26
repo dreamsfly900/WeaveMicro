@@ -28,6 +28,8 @@ namespace wRPC
     }
     public class SteamAttribute : System.Attribute
     { }
+    public class SliceAttribute : System.Attribute
+    { }
     public class AuthorizeAttribute : System.Attribute
     { }
     public class ParamAttribute : System.Attribute

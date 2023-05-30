@@ -22,7 +22,8 @@ namespace gateway
         }
          
         public static string CallService(server ser, String rt, String rls, object[] objs,
-            Dictionary<string, String> Headers, Dictionary<string, String> keysCookies, ClientChannel.recdata rec=null, wRPCclient.filedata fd =null)
+            Dictionary<string, String> Headers, Dictionary<string, String> keysCookies, ClientChannel.recdata rec=null, ClientChannel.recdataStream recStream=null,
+            wRPCclient.filedata fd =null)
         {
             bool locked = false;
             wRPCclient.ClientChannel clientChannel = null;
@@ -43,16 +44,11 @@ namespace gateway
                   
                 }
                 clientChannel.recs = rec;
-                if (rec != null)
-                {
-                    clientChannel.Call<object>(rt, rls, objs);
-                    return "";
-                }
-                else
-                {
-                    var data = clientChannel.Call<object>(rt, rls, objs);
+                clientChannel.recsStream = recStream;
+                     var data = clientChannel.Call<object>(rt, rls, objs);
+                
                     return Newtonsoft.Json.JsonConvert.SerializeObject(data);
-                }
+              
             }
             catch (Exception e)
             {

@@ -64,5 +64,33 @@ namespace testdll2
            /// Console.WriteLine(name);
             return "Class2.f2f22的返回值";
         }
+        
+        [InstallFun(FunAttribute.Get, "测试流传输")]
+        public void ff22()
+        {
+            int i = 0;
+            while (true)
+            { i++;
+                this.PushStream("Weave微服务架构,是.net core下开发的由分发网关，服务中心，认证中心，服务API 组成，具有多负载分布式特点");
+                if (i > 1000)
+                    return;
+             }
+            /// Console.WriteLine(name);
+           
+        }
+        [InstallFun(FunAttribute.Get, "测试流传输", "application/octet-stream")]
+        public void ffs22()
+        {
+            int i = 0;
+            while (true)
+            {
+                i++;
+                this.PushStream(System.Text.UTF8Encoding.UTF8.GetBytes("Weave微服务架构,是.net core下开发的由分发网关，服务中心，认证中心，服务API 组成，具有多负载分布式特点"));
+                if (i > 1000)
+                    return;
+            }
+            /// Console.WriteLine(name);
+
+        }
     }
 }

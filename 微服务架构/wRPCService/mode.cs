@@ -3,9 +3,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Text;
-using wRPC;
+using Weave.Server;
+using wRPCService;
 
 namespace wRPC
 {
@@ -67,6 +69,7 @@ namespace wRPC
                                 serv.Route = tt.FullName.Replace(".", @"/") + "/" + mi.Name;
                             serv.annotation = myattribute.Annotation;
                             serv.Method = myattribute.Type.ToString();
+                            serv.ContentType = myattribute.ContentType;
                             ParameterInfo[] paramsInfo = mi.GetParameters();//得到指定方法的参数列表 
                             serv.parameter = new string[paramsInfo.Length];
                             serv.parameterexplain = new string[paramsInfo.Length];
@@ -112,6 +115,18 @@ namespace wRPC
 
             return listservice.ToArray();
         }
+        public WeaveP2Server P2Server;
+        public Socket soc;
+        public bool PushStream(String data)
+        {
+            return P2Server.Send(soc,0x11, GZIP.GZipCompress(data));
+          //  return false;
+        }
+        public bool PushStream(byte[] data)
+        {
+           return P2Server.Send(soc, 0x12, GZIP.Compress(data));
+          //  return false;
+        }
     }
     public class service
     {
@@ -121,6 +136,7 @@ namespace wRPC
         public String[] parameterexplain { get; set; }
         public string annotation { get; set; }
         public bool Authorize { get;  set; }
+        public string ContentType { get;  set; }
     }
     public class Rpcdata<T>
     {

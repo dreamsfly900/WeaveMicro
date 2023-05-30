@@ -56,6 +56,11 @@ namespace wRPCService
                     if (myattribute != null)
                     {
                         object[] objs = rpdata.parameter;
+                        if (obj is FunctionBase)
+                        {
+                            (obj as FunctionBase).P2Server = P2Server;
+                            (obj as FunctionBase).soc = soc;
+                        }
                         if (obj is FunctionBase && rpdata.Headers != null)
                         {
 
@@ -128,36 +133,13 @@ namespace wRPCService
                           
                           
                         }
-                        SliceAttribute Slice = (SliceAttribute)Attribute.GetCustomAttribute(mi, typeof(SliceAttribute));
-                        SteamAttribute SteamAttr = (SteamAttribute)Attribute.GetCustomAttribute(mi, typeof(SteamAttribute));
-                        if (Slice != null)
-                        {
-                            String tmpdata = Newtonsoft.Json.JsonConvert.SerializeObject(rpcdata);
-                            int sendlen = 1024 * 1024;
-                            int lern = (tmpdata.Length / sendlen);
-                            int lerna = (tmpdata.Length % sendlen) > 0 ? 1 : 0;
-                            for (int sa = 0; sa < lern + lerna; sa++)
-                            {
-                                int sylen = sendlen;
-                                int sylen2 = tmpdata.Length - sa * sendlen;
-                                if (sylen2 < sylen)
-                                    sylen = sylen2;
-                                byte[] outdata = GZIP.GZipCompress(tmpdata.Substring(sa * sendlen, sylen));
-
-                                P2Server.Send(soc, 0x01, outdata);
-                            }
-                            P2Server.Send(soc, 0x11, new byte[1]);
-                        }
-                        if (SteamAttr != null)
-                        {
-                            System.IO.Stream stream = (Stream)rpcdata;
-
-                        }
-                        else
+                        if (rpcdata != null)
                         {
                             String tmpdata = Newtonsoft.Json.JsonConvert.SerializeObject(rpcdata);
                             P2Server.Send(soc, 0x01, GZIP.GZipCompress(tmpdata));
-                        }
+                        }else
+                            P2Server.Send(soc, 0x10, GZIP.GZipCompress("成功"));
+
                         //DateTime dt2 = DateTime.Now;
                         //Console.WriteLine("service:" + (dt2 - P2Server.dt).TotalMilliseconds);
 

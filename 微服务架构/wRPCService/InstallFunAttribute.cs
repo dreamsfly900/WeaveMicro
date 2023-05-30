@@ -16,15 +16,17 @@ namespace wRPC
             Type = type;
         }
 
-        public InstallFunAttribute(FunAttribute type= FunAttribute.NONE, String annotation="")
+        public InstallFunAttribute(FunAttribute type= FunAttribute.NONE, String annotation="",string contentType="")
         {
             Type = type;
             Annotation = annotation;
+            ContentType= contentType;
         }
 
         public FunAttribute Type { get; set; }
 
-        public String Annotation { get; set; } 
+        public String Annotation { get; set; }
+        public String ContentType { get; set; }
     }
     public class SteamAttribute : System.Attribute
     { }

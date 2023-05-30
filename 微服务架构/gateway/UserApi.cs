@@ -14,6 +14,7 @@ using Newtonsoft.Json;
 using WeaveMicroClient;
 using System.Linq;
 using System.Text.RegularExpressions;
+using wRPCclient;
 
 namespace gateway
 {
@@ -292,28 +293,33 @@ namespace gateway
                             }
                         }
                         keysCookies.Add("RemoteIpAddress", rlog.requestIP);
+                        //if (context.Response.Headers["Content-Type"] != "application/octet-stream")
+                        //    context.Response.Headers["Content-Type"] = "application/octet-stream";
                         //  context.Request.Headers
                         //await context.Response.WriteAsync($"");
-                       bool stream=Startup.config.GetSection("stream").Get<bool>();
-                        if (stream)
+
+                        if (ser.services.Length > 0)
                         {
-                            String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh, keysCookies, new wRPCclient.
+                            if (ser.services[0].ContentType != "")
+                            {
+                                context.Response.Headers["Content-Type"] = ser.services[0].ContentType;
+                            }
+                        }
+                        String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh, keysCookies, new 
                                 ClientChannel.recdata((str) =>
                                 {
                                      context.Response.WriteAsync($"{str}");
 
+                                }),new ClientChannel.recdataStream((data) =>
+                                {
+                                    //application/octet-stream
+                                  
+                                    //context.Response.WriteAsync($"{str}");
+                                    context.Response.Body.WriteAsync(data);
                                 }), FDATA);
-                        }
-                        else
-                        {
-                            String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh, keysCookies,null, FDATA);
-                            ////String retun =  clientChannel.Call<String>(rl, rls[rls.Length - 1], objs);
-                            //Encoding utf8 = Encoding.ASCII;
-                            //Encoding ISO = Encoding.UTF8;//换成你想转的编码
-                            //byte[] temp = utf8.GetBytes(retun);
-                            //string result = ISO.GetString(temp);
+                       if(retun!= "null")
                             await context.Response.WriteAsync($"{retun}");
-                        }
+                        
 
                         // await context.Response.WriteAsync($"{ retun}{ objs.Length},{rl},{rls[rls.Length - 1]}，{ser.ToString()},{context.Request.ContentType}");
                         DateTime dt2 = DateTime.Now;

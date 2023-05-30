@@ -15,6 +15,8 @@ namespace wRPCclient
     {
         public delegate void recdata(string data);
         public recdata recs = null;
+        public delegate void recdataStream(byte[] data);
+        public recdataStream recsStream = null;
         String IP;
         int Port;
         Weave.Client.TcpSynClient tcpSynClient;
@@ -134,26 +136,29 @@ namespace wRPCclient
                 {
                    
                     dt = DateTime.Now;
-                  
+                    while (true)
+                    {
                         var commdata = tcpSynClient.Receives(null);
                         DateTime dt2 = DateTime.Now;
                         //   Console.WriteLine("call:" + (dt2 - dt).TotalMilliseconds);
                         if (commdata == null)
                             throw new Exception("通信意外！");
-                    if (commdata.comand == 0x01)
-                    {
-                        if (recs == null)
+                        if (commdata.comand == 0x01)
                         {
+
                             return GZIP.GZipDecompress(commdata.data);
+
+
                         }
-                        else
-                            recs(GZIP.GZipDecompress(commdata.data));
-                    }
-                    if (commdata.comand == 0x11)
-                        if (recs != null) return "";
-                    else 
-                    {
-                        throw new Exception(GZIP.GZipDecompress(commdata.data));
+                        if (commdata.comand == 0x10)
+                        { return ""; }
+                        if (commdata.comand == 0x11) { recs(GZIP.GZipDecompress(commdata.data)); }
+                        if (commdata.comand == 0x12) { recsStream(GZIP.Decompress(commdata.data)); }
+                        else if (commdata.comand == 0x2)
+                        {
+                            throw new Exception(GZIP.GZipDecompress(commdata.data));
+                            return "";
+                        }
                     }
                    
                    

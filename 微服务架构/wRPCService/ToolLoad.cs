@@ -152,7 +152,7 @@ namespace wRPCService
                             serv.Route = tt.FullName.Replace(".", @"/") + "/" + mi.Name;
                         serv.annotation = myattribute.Annotation;
                         serv.Method = myattribute.Type.ToString();
-
+                        serv.ContentType = myattribute.ContentType;
                         ParameterInfo[] paramsInfo = mi.GetParameters();//得到指定方法的参数列表 
                         serv.parameter = new string[paramsInfo.Length];
                         serv.parameterexplain = new string[paramsInfo.Length];

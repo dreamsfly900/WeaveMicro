@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace wRPC
+namespace wRPCService
 {
     public class GZIP
     {

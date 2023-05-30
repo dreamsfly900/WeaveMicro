@@ -26,7 +26,7 @@ namespace Test
             
             RemoteService remoteService = new RemoteService("TEST");
             remoteService.Start();
-            String retun = clientChannel.Call<object>("big/api/page", "InsertConfig", "{\r\n  \"Id\": 0,\r\n  \"PageName\": \"11\",\r\n  \"Width\": \"1920px\",\r\n  \"Height\": \"1080px\",\r\n  \"Config\": [],\r\n  \"UserId\": 15,\r\n  \"Createtime\": \"\",\r\n  \"Pushrate\": \"\",\r\n  \"Image\": \"\"\r\n}\r\n");
+            String retun = clientChannel.Call<object>("big/api/page", "InsertConfig", "{\r\n  \"Id\": 0,\r\n  \"PageName\": \"11\",\r\n  \"Width\": \"1920px\",\r\n  \"Height\": \"1080px\",\r\n  \"Config\": \"[]\",\r\n  \"UserId\": 15,\r\n  \"Createtime\": \"\",\r\n  \"Pushrate\": \"\",\r\n  \"Image\": \"\"\r\n}\r\n");
           
            
             // MM_BeginPeriod(1);//设置休眠精度

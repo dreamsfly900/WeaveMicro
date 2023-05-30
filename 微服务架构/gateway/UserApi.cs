@@ -308,7 +308,8 @@ namespace gateway
                         String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh, keysCookies, new 
                                 ClientChannel.recdata((str) =>
                                 {
-                                     context.Response.WriteAsync($"{str}");
+                                    context.Response.Body.WriteAsync(System.Text.UTF8Encoding.UTF8.GetBytes(str));
+                                   // context.Response.WriteAsync($"{str}");
 
                                 }),new ClientChannel.recdataStream((data) =>
                                 {

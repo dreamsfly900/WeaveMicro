@@ -72,7 +72,7 @@ namespace testdll2
             while (true)
             { i++;
                 this.PushStream("Weave微服务架构,是.net core下开发的由分发网关，服务中心，认证中心，服务API 组成，具有多负载分布式特点");
-                if (i > 1000)
+                if (i > 20000)
                     return;
              }
             /// Console.WriteLine(name);
@@ -86,7 +86,7 @@ namespace testdll2
             {
                 i++;
                 this.PushStream(System.Text.UTF8Encoding.UTF8.GetBytes("Weave微服务架构,是.net core下开发的由分发网关，服务中心，认证中心，服务API 组成，具有多负载分布式特点"));
-                if (i > 1000)
+                if (i > 100000)
                     return;
             }
             /// Console.WriteLine(name);

@@ -1,5 +1,6 @@
 ﻿using Model;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using wRPC;
 
@@ -64,31 +65,53 @@ namespace testdll2
            /// Console.WriteLine(name);
             return "Class2.f2f22的返回值";
         }
-        
+        [InstallFun(FunAttribute.Get, "测试流传输")]
+        public List<String> ff23()
+        {
+            int i = 0;
+            DateTime dt = DateTime.Now;
+            List<String> listt = new List<string>();
+            while (true)
+            {
+                i++;
+                listt.Add("Weave微服务架构,是.net core下开发的由分发网关，服务中心，认证中心，服务API 组成，具有多负载分布式特点");
+                if (i > 20000)
+                    break;
+            }
+            DateTime dt2 = DateTime.Now;
+            Console.WriteLine("ff22:" + (dt2 - dt).TotalMilliseconds);
+            listt.Add("111111111112222222222222222224444444444444f分段传输");
+            return listt;
+        }
         [InstallFun(FunAttribute.Get, "测试流传输")]
         public void ff22()
         {
             int i = 0;
+            DateTime dt = DateTime.Now;
             while (true)
             { i++;
                 this.PushStream("Weave微服务架构,是.net core下开发的由分发网关，服务中心，认证中心，服务API 组成，具有多负载分布式特点");
                 if (i > 20000)
-                    return;
+                  break;
              }
-            /// Console.WriteLine(name);
-           
+            DateTime dt2 = DateTime.Now;
+            Console.WriteLine("ff22:"+(dt2-dt).TotalMilliseconds);
+
         }
         [InstallFun(FunAttribute.Get, "测试流传输", "application/octet-stream")]
         public void ffs22()
         {
+            DateTime dt = DateTime.Now;
             int i = 0;
             while (true)
             {
                 i++;
                 this.PushStream(System.Text.UTF8Encoding.UTF8.GetBytes("Weave微服务架构,是.net core下开发的由分发网关，服务中心，认证中心，服务API 组成，具有多负载分布式特点"));
                 if (i > 100000)
-                    return;
+                    break;
             }
+            DateTime dt2 = DateTime.Now;
+            Console.WriteLine("ffs22:" + (dt2 - dt).TotalMilliseconds);
             /// Console.WriteLine(name);
 
         }

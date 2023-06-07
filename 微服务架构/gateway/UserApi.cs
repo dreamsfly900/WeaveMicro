@@ -4,8 +4,7 @@ using Microsoft.AspNetCore.Routing;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
-using Weave.Client;
+using System.Threading.Tasks; 
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using Microsoft.Extensions.Configuration;
@@ -308,7 +307,7 @@ namespace gateway
                         String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh, keysCookies, new 
                                 ClientChannel.recdata((str) =>
                                 {
-                                    context.Response.Body.WriteAsync(System.Text.UTF8Encoding.UTF8.GetBytes(str));
+                                     context.Response.Body.WriteAsync(System.Text.UTF8Encoding.UTF8.GetBytes(str));
                                    // context.Response.WriteAsync($"{str}");
 
                                 }),new ClientChannel.recdataStream((data) =>

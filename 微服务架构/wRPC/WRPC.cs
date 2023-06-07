@@ -43,9 +43,8 @@ namespace wRPCclient
         }
         public bool IsLine()
         {
-            bool b=tcpSynClient.Start();
-            tcpSynClient.Stop();
-            return b;
+            
+            return isline;
         }
         public  T2 Call<T1, T2>(String Route, string callfun, T1 parameter)
         {
@@ -124,10 +123,12 @@ namespace wRPCclient
             string datastr = Newtonsoft.Json.JsonConvert.SerializeObject(rpcdata);
             return datastr;
         }
+        myreceivebitobj funobj;
         String call(String datastr)
         {
+            funobj = new myreceivebitobj(reca);
 
-            
+
             if (!isline)
                 isline= connection();
             if (isline)
@@ -135,29 +136,38 @@ namespace wRPCclient
                 if (tcpSynClient.Send(0x01, GZIP.GZipCompress(datastr)))
                 {
                    
-                    dt = DateTime.Now;
+                   
+                    
                     while (true)
-                    {
-                        var commdata = tcpSynClient.Receives(null);
-                        DateTime dt2 = DateTime.Now;
+                    { dt = DateTime.Now;
+                        var commdata = tcpSynClient.Receives(funobj);
+                        DateTime dt3 = DateTime.Now;
+                     //   Console.WriteLine("Receives:" + (dt3 - dt).TotalMilliseconds);
                         //   Console.WriteLine("call:" + (dt2 - dt).TotalMilliseconds);
                         if (commdata == null)
                             throw new Exception("通信意外！");
                         if (commdata.comand == 0x01)
                         {
-
+                            DateTime dt2 = DateTime.Now;
+                            Console.WriteLine("0x01:" + (dt2 - dt).TotalMilliseconds);
                             return GZIP.GZipDecompress(commdata.data);
 
 
                         }
                         if (commdata.comand == 0x10)
-                        { return ""; }
-                        if (commdata.comand == 0x11) { recs(GZIP.GZipDecompress(commdata.data)); }
-                        if (commdata.comand == 0x12) { recsStream(GZIP.Decompress(commdata.data)); }
+                        {
+                            DateTime dt2 = DateTime.Now;
+                            Console.WriteLine("0x10:" + (dt2 - dt).TotalMilliseconds);
+                            return ""; }
+                        //if (commdata.comand == 0x11) { 
+                            
+                        //    recs(GZIP.GZipDecompress(commdata.data));
+                        //}
+                        //if (commdata.comand == 0x12) { recsStream(GZIP.Decompress(commdata.data)); }
                         else if (commdata.comand == 0x2)
                         {
                             throw new Exception(GZIP.GZipDecompress(commdata.data));
-                            return "";
+                            
                         }
                     }
                    
@@ -168,7 +178,20 @@ namespace wRPCclient
             
             return "无法发送到服务器";
         }
-        
+
+        private void reca(byte command, byte[] data, TcpSynClient soc)
+        {
+           
+           
+            if (command == 0x11)
+            {
+
+                recs(GZIP.GZipDecompress(data));
+            }
+            if (command == 0x12) { recsStream(GZIP.Decompress(data)); }
+            
+        }
+
         public void Dispose()
         {
             isline = false;

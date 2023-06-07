@@ -136,6 +136,24 @@ namespace wRPCService
                         if (rpcdata != null)
                         {
                             String tmpdata = Newtonsoft.Json.JsonConvert.SerializeObject(rpcdata);
+                           
+                            int sendlen = 1024 * 1024;
+                            if (tmpdata.Length > sendlen)
+                            {
+                                int lern = (tmpdata.Length / sendlen);
+                                int lerna = (tmpdata.Length % sendlen) > 0 ? 1 : 0;
+                                for (int sa = 0; sa < lern + lerna; sa++)
+                                {
+                                    int sylen = sendlen;
+                                    int sylen2 = tmpdata.Length - sa * sendlen;
+                                    if (sylen2 < sylen)
+                                        sylen = sylen2;
+                                    byte[] outdata = GZIP.GZipCompress(tmpdata.Substring(sa * sendlen, sylen));
+
+                                    P2Server.Send(soc, 0x11, outdata);
+                                }
+                                P2Server.Send(soc, 0x10, GZIP.GZipCompress("成功"));
+                            }else
                             P2Server.Send(soc, 0x01, GZIP.GZipCompress(tmpdata));
                         }else
                             P2Server.Send(soc, 0x10, GZIP.GZipCompress("成功"));

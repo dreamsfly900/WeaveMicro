@@ -140,34 +140,38 @@ namespace wRPCclient
                     
                     while (true)
                     { dt = DateTime.Now;
-                        var commdata = tcpSynClient.Receives(funobj);
-                        DateTime dt3 = DateTime.Now;
-                     //   Console.WriteLine("Receives:" + (dt3 - dt).TotalMilliseconds);
-                        //   Console.WriteLine("call:" + (dt2 - dt).TotalMilliseconds);
-                        if (commdata == null)
-                            throw new Exception("通信意外！");
-                        if (commdata.comand == 0x01)
+                        var commdatas = tcpSynClient.ReceiveList(funobj);
+                        foreach (var commdata in commdatas)
                         {
-                            DateTime dt2 = DateTime.Now;
-                            Console.WriteLine("0x01:" + (dt2 - dt).TotalMilliseconds);
-                            return GZIP.GZipDecompress(commdata.data);
+                            DateTime dt3 = DateTime.Now;
+                            //   Console.WriteLine("Receives:" + (dt3 - dt).TotalMilliseconds);
+                            //   Console.WriteLine("call:" + (dt2 - dt).TotalMilliseconds);
+                            if (commdata == null)
+                                throw new Exception("通信意外！");
+                            if (commdata.comand == 0x01)
+                            {
+                                DateTime dt2 = DateTime.Now;
+                                Console.WriteLine("0x01:" + (dt2 - dt).TotalMilliseconds);
+                                return GZIP.GZipDecompress(commdata.data);
 
 
-                        }
-                        if (commdata.comand == 0x10)
-                        {
-                            DateTime dt2 = DateTime.Now;
-                            Console.WriteLine("0x10:" + (dt2 - dt).TotalMilliseconds);
-                            return ""; }
-                        //if (commdata.comand == 0x11) { 
-                            
-                        //    recs(GZIP.GZipDecompress(commdata.data));
-                        //}
-                        //if (commdata.comand == 0x12) { recsStream(GZIP.Decompress(commdata.data)); }
-                        else if (commdata.comand == 0x2)
-                        {
-                            throw new Exception(GZIP.GZipDecompress(commdata.data));
-                            
+                            }
+                            if (commdata.comand == 0x10)
+                            {
+                                DateTime dt2 = DateTime.Now;
+                                Console.WriteLine("0x10:" + (dt2 - dt).TotalMilliseconds);
+                                return "";
+                            }
+                            //if (commdata.comand == 0x11) { 
+
+                            //    recs(GZIP.GZipDecompress(commdata.data));
+                            //}
+                            //if (commdata.comand == 0x12) { recsStream(GZIP.Decompress(commdata.data)); }
+                            else if (commdata.comand == 0x2)
+                            {
+                                throw new Exception(GZIP.GZipDecompress(commdata.data));
+
+                            }
                         }
                     }
                    

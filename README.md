@@ -73,7 +73,8 @@
   "SwaggerPath": null
 }
 ```
-
+##### 运行微服务服务监控页面
+- 根据您配置的http://*:5022，地址访问http://127.0.0.1/apiHtml/server.html 来查看，加入中心的网关和服务情况和数量。
 ####  运行API网关
 
 - 运行gateway项目-》API网关-》gateway.exe 

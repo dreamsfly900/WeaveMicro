@@ -1,4 +1,4 @@
-# WeaveMicro
+# WeaveMicro（帅哥，美女给个Star再走）
 - 支持.net core 2.x-7.x，正常使用 
 
 - 支持linux系统，centos，radhat,麒麟，统信，鲲鹏，X86_64,等系统，经过测试互认证。[查看证书](%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230524143454.png)
@@ -6,14 +6,14 @@
 - 业务开发业务逻辑API类时， 搜索nuget包，wRPCService。执行业务逻辑，搜索WeaveRemoteService包
 
 - WINX64 运行包
-[weave_win_1.0.0-1.X64.zip](https://gitee.com/UDCS/weave-micro/releases/tag/1.0.0)
+[weave_win_1.0.0-1.X64.zip](https://gitee.com/UDCS/weave-micro/releases)
 - RPM包下载
 
-    [WeaveMicro-1-1.arm64](https://gitee.com/UDCS/weave-micro/releases/tag/1.0.0)
+    [WeaveMicro-1-1.arm64](https://gitee.com/UDCS/weave-micro/releases)
 
-    [WeaveMicro-1.0.0-1.aarch64.rpm](https://gitee.com/UDCS/weave-micro/releases/tag/1.0.0)
+    [WeaveMicro-1.0.0-1.aarch64.rpm](https://gitee.com/UDCS/weave-micro/releases)
 
-    [WeaveMicro-1.0.0-1.x86_64.rpm](https://gitee.com/UDCS/weave-micro/releases/tag/1.0.0)
+    [WeaveMicro-1.0.0-1.x86_64.rpm](https://gitee.com/UDCS/weave-micro/releases)
 
 # Weave微服务架构介绍
 
@@ -21,6 +21,7 @@
 - 包括以下内容：
 - 1.分发网关 2.服务中心 3.认证中心 4.服务API 
 - 具有多负载分布式特点，也可以配合反向代理，应用在多种开发环境下，
+- 流数据支持，回复响应类型支持。
 使用.net core开发， 支持多CPU多系统，目前已做国产化适配认证。
 #### 软件架构
 注册分发中心，集成网关，认证中心，熔断机制，选举机制，架构实现了RPC相关功能。通信协议基于[weaving-socket](https://gitee.com/dotnetchina/weaving-socket)
@@ -34,7 +35,7 @@
 
      使用    yum install WeaveMicro-*-*.*.rpm(WeaveMicro-1-1.arm64.rpm 或 WeaveMicro-1.0.0-1.aarch64.rpm 或 WeaveMicro-1.0.0-1.x86_64.rpm)进行安装。
 
-     [包下载地址](https://gitee.com/UDCS/weave-micro/releases/tag/1.0.0)
+     [包下载地址](https://gitee.com/UDCS/weave-micro/releases)
  
 - 设置服务随linux后台启动运行教程 [linux服务设置教程](https://gitee.com/UDCS/weave-micro/releases/download/1.0.0/%E8%AE%BE%E7%BD%AE%E7%A8%8B%E5%BA%8Flinux%E9%9A%8F%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B.zip)
     

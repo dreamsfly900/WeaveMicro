@@ -141,6 +141,8 @@ namespace wRPCclient
                     while (true)
                     { dt = DateTime.Now;
                         var commdatas = tcpSynClient.ReceiveList(funobj);
+                        if(commdatas==null)
+                            return "";
                         foreach (var commdata in commdatas)
                         {
                             DateTime dt3 = DateTime.Now;

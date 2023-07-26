@@ -116,6 +116,7 @@ namespace WeaveDoc
             schemaOptions.CustomTypeMappings.Add(typeof(System.Collections.IDictionary), () => new OpenApiSchema() { Type = "object", Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = "IDictionary" } });
             schemaOptions.CustomTypeMappings.Add(typeof(IDictionary<,>), () => new OpenApiSchema() { Type = "object", Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = "IDictionary<,>" } });
             schemaOptions.CustomTypeMappings.Add(typeof(Dictionary<,>), () => new OpenApiSchema() { Type = "object", Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = "Dictionary<,>" } });
+            schemaOptions.CustomTypeMappings.Add(typeof(Stream), () => new OpenApiSchema() { Type = "object", Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = nameof(Stream) } });
             //应用自定义过滤器,以适应自有框架特性
             options.DocumentFilters.Add(new ZCustomTypeMappingsFilter(schemaOptions.CustomTypeMappings));
             /*
@@ -257,7 +258,8 @@ namespace WeaveDoc
         /// 构造函数
         /// </summary>
         /// <param name="customTypeMappings">自定义类型</param>
-        public ZCustomTypeMappingsFilter(IDictionary<Type, Func<OpenApiSchema>> customTypeMappings) {
+        public ZCustomTypeMappingsFilter(IDictionary<Type, Func<OpenApiSchema>> customTypeMappings)
+        {
             CustomTypeMappings = customTypeMappings;
         }
         /// <summary>
@@ -267,7 +269,8 @@ namespace WeaveDoc
         /// <param name="context">过滤器上下文</param>
         public void Apply(OpenApiDocument swaggerDoc, DocumentFilterContext context)
         {
-            foreach (var o in CustomTypeMappings) {
+            foreach (var o in CustomTypeMappings)
+            {
                 var type = o.Value.Invoke();
                 swaggerDoc.Components.Schemas.Add(type.Reference.Id, type);
             }

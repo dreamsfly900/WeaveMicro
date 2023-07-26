@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Abstractions;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Abstractions;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -7,6 +8,7 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -90,13 +92,21 @@ namespace WeaveDoc
                     ?.FirstOrDefault();
                 if (localType != null) returnType = localType;
             }
-            api.SupportedResponseTypes.Add(new ApiResponseType()
+            if (returnType == typeof(void))
             {
-                StatusCode = 200,
-                ApiResponseFormats = new List<ApiResponseFormat>() { new ApiResponseFormat { MediaType = "application/json" } },
-                ModelMetadata = new EmptyModelMetadataProvider().GetMetadataForType(returnType),
-                Type = returnType
-            });
+                returnType = typeof(FileStreamResult);
+                api.SupportedResponseTypes.Add(new ApiResponseType(){StatusCode = 200,});
+            }
+            else
+            {
+                api.SupportedResponseTypes.Add(new ApiResponseType()
+                {
+                    StatusCode = 200,
+                    ApiResponseFormats = new List<ApiResponseFormat>() { new ApiResponseFormat { MediaType = "application/json" } },
+                    ModelMetadata = new EmptyModelMetadataProvider().GetMetadataForType(returnType),
+                    Type = returnType
+                });
+            }
             return api;
         }
         /// <summary>

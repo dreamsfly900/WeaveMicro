@@ -14,14 +14,14 @@ namespace wRPCService
 {
     public class ServiceChannel
     {
-        Weave.Server.WeaveP2Server P2Server = new Weave.Server.WeaveP2Server(Weave.Base.WeaveDataTypeEnum.Bytes);
+      public  Weave.Server.WeaveP2Server P2Server = new Weave.Server.WeaveP2Server(Weave.Base.WeaveDataTypeEnum.Bytes);
         Dictionary<string, object> keyValuePairs = new Dictionary<string, object>();
         int Port;
       
         public ServiceChannel(int port)
         {
            // MM_BeginPeriod(1);
-            P2Server.resttime = 0;
+            P2Server.resttime = 10;
             P2Server.weaveReceiveBitEvent += P2Server_weaveReceiveBitEvent;
               Port = port;
          

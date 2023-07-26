@@ -16,12 +16,18 @@ namespace WeaveRemoteService
         service[] sric;
         MicroClient mc;
         server ser;
-        public RemoteService(String Name)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Name">服务名称</param>
+        /// <param name="resttime">响应时间，默认0ms，可能会造成CPU占用高</param>
+        public RemoteService(String Name,int resttime=0)
         {
             
             var config= builder.Build();
             Console.WriteLine("成功加载配置文档config.json");
             service = new ServiceChannel(Convert.ToInt32( config["Port"]));
+            service.P2Server.resttime= resttime;
             sric = ToolLoad.GetService();
             //foreach (var s in sric)
             //{

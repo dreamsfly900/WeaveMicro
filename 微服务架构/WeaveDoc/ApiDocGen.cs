@@ -139,7 +139,7 @@ namespace WeaveDoc
             {
                 //不加不影响使用，加了生活会更美好
                 Console.ForegroundColor = ConsoleColor.Red;
-                var errResult = new JObject { { "code", 503 }, { "msg", "服务器错误" } };
+                var errResult = new JObject { { "code", 503 }, { "msg", "服务器错误" + err.Message } };
                 //判断异步Api方法中忘记在TRY的return前加await
                 string msg = "Failed to generate Operation for action - ";
                 int offset = err.Message.IndexOf(msg);

@@ -174,6 +174,11 @@ namespace wRPCclient
                                 throw new Exception(GZIP.GZipDecompress(commdata.data));
 
                             }
+                            else if (commdata.comand == 0x5)
+                            {
+                                throw new Exception(GZIP.GZipDecompress(commdata.data));
+
+                            }
                         }
                     }
                    

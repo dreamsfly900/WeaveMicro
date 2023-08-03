@@ -56,8 +56,8 @@ namespace gateway
                 //{
 
                 //}
-               // _serviceDic.TryRemove(ser.IP + ":" + ser.Port, out CCQ);
-
+                // _serviceDic.TryRemove(ser.IP + ":" + ser.Port, out CCQ);
+                Console.WriteLine(e.StackTrace);
                 return JsonConvert.SerializeObject(new { code = 503, msg = "服务器错误" });
             }
             finally

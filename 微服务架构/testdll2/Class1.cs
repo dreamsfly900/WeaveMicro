@@ -1,6 +1,7 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using wRPC;
 
@@ -34,6 +35,30 @@ namespace testdll2
         {
             //model.UserId = "2";
             return 1;
+        }
+    }
+    [Route("hydrops/camera")]//路由地址
+    public class cameraController : FunctionBase
+    { 
+        [Authorize]
+        [InstallFun(FunAttribute.Get)]
+        public bool upfile(String path, String file, byte[] data)
+        {
+            try
+            {
+                return true;
+                //using (MemoryStream ms = new MemoryStream(data))
+                //{
+                //    System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
+                //    if (!Directory.Exists(path))
+                //        Directory.CreateDirectory(path);
+                //    img.Save(path + file);
+                //    return true;
+                //}
+            }
+            catch { }
+            return false;
+
         }
     }
     [Route("api/abcd")]

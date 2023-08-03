@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Concurrent;
+using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using testdll2;
 using WeaveMicroClient;
 using WeaveRemoteService;
 using wRPC;
+using wRPCclient;
 using wRPCService;
 
 namespace Test
@@ -21,11 +23,13 @@ namespace Test
         public static extern uint MM_EndPeriod(uint uMilliseconds);
         static  void Main(string[] args)
         {
-
-             
-            
             RemoteService remoteService = new RemoteService("TEST");
             remoteService.Start();
+            clientChannel = new wRPCclient.ClientChannel("127.0.0.1", 10098);
+            bool retun = clientChannel.Call<bool>("hydrops/camera", "upfile", "asdfs", "asda.jjj", new byte[100]);
+
+
+            
           //  String retun = clientChannel.Call<object>("api/WeChat", "SendFuWuTemplate", "{\r\n  \"Id\": 0,\r\n  \"PageName\": \"11\",\r\n  \"Width\": \"1920px\",\r\n  \"Height\": \"1080px\",\r\n  \"Config\": \"[]\",\r\n  \"UserId\": 15,\r\n  \"Createtime\": \"\",\r\n  \"Pushrate\": \"\",\r\n  \"Image\": \"\"\r\n}\r\n");
           
            

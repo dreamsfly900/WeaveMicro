@@ -104,7 +104,10 @@ namespace wRPCService
                                 objs[i] = Convert.ChangeType(objs[i], tType);
 
                             }
-
+                            else if(tType.Equals(typeof(byte)) || tType.Equals(typeof(byte[])) || (!tType.IsInterface && !tType.IsClass))
+                            {
+                                objs[i] = Convert.FromBase64String(objs[i].ToString());
+                            }
                             else if (tType.IsClass)//如果是类,将它的json字符串转换成对象   
 
                             {

@@ -3,7 +3,7 @@
   "IdentityServer": "http://172.18.152.11:5220",
   "Audience": "api1",
   "defaultScheme": "Bearer",
-  "applicationUrl": "http://127.0.0.1:5221",
+  "applicationUrl": "http://127.0.0.1:5221,https://127.0.0.1:1222",
   "bindIP": "127.0.0.1",
   "Microcenter": "127.0.0.1:9001",
   "filetype": ".jpg,.png,.doc,.txt,.xlsx,.xls,.docx,.AVI,.mov,.rmvb,.rm,.FLV,.mp4,.3GP,.BMP,.DIB,.PCP,.DIF,.WMF,.GIF,.JPG,.TIF,.EPS,.PSD,.CDR,.IFF,.TGA,.PCD,.MPT,.PNG,.gif",

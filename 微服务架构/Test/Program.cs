@@ -4,7 +4,6 @@ using System.Collections.Concurrent;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using testdll2;
 using WeaveMicroClient;
 using WeaveRemoteService;
 using wRPC;
@@ -16,7 +15,7 @@ namespace Test
      
     class Program
     {
-       static wRPCclient.ClientChannel clientChannel = new wRPCclient.ClientChannel("192.168.70.102", 10100);
+       static wRPCclient.ClientChannel clientChannel ;
         [DllImport("winmm.dll", EntryPoint = "timeBeginPeriod")]
         public static extern uint MM_BeginPeriod(uint uMilliseconds);
         [DllImport("winmm.dll", EntryPoint = "timeEndPeriod")]
@@ -26,24 +25,24 @@ namespace Test
             RemoteService remoteService = new RemoteService("TEST");
             remoteService.Start();
             clientChannel = new wRPCclient.ClientChannel("127.0.0.1", 10098);
-            bool retun = clientChannel.Call<bool>("hydrops/camera", "upfile", "asdfs", "asda.jjj", new byte[100]);
+            var ibj = clientChannel.Call<object>("api/RadarData", "readerConfig","");
 
 
-            
-          //  String retun = clientChannel.Call<object>("api/WeChat", "SendFuWuTemplate", "{\r\n  \"Id\": 0,\r\n  \"PageName\": \"11\",\r\n  \"Width\": \"1920px\",\r\n  \"Height\": \"1080px\",\r\n  \"Config\": \"[]\",\r\n  \"UserId\": 15,\r\n  \"Createtime\": \"\",\r\n  \"Pushrate\": \"\",\r\n  \"Image\": \"\"\r\n}\r\n");
-          
-           
+
+            //  String retun = clientChannel.Call<object>("api/WeChat", "SendFuWuTemplate", "{\r\n  \"Id\": 0,\r\n  \"PageName\": \"11\",\r\n  \"Width\": \"1920px\",\r\n  \"Height\": \"1080px\",\r\n  \"Config\": \"[]\",\r\n  \"UserId\": 15,\r\n  \"Createtime\": \"\",\r\n  \"Pushrate\": \"\",\r\n  \"Image\": \"\"\r\n}\r\n");
+
+
             // MM_BeginPeriod(1);//设置休眠精度
-                               //while (true)
-                               //{
-                               //    System.Threading.Thread.Sleep(10);
-                               //    DateTime dt = DateTime.Now;
-                               //    bb();
+            //while (true)
+            //{
+            //    System.Threading.Thread.Sleep(10);
+            //    DateTime dt = DateTime.Now;
+            //    bb();
 
             //    DateTime dt2 = DateTime.Now;
             //    Console.WriteLine("Main:" + (dt2 - dt).TotalMilliseconds);
             //}
-          // retun = clientChannel.Call<String>("api/abcd", "ff");
+            // retun = clientChannel.Call<String>("api/abcd", "ff");
             while (true)
             {
                 System.Threading.Thread.Sleep(10);

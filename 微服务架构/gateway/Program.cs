@@ -40,10 +40,11 @@ namespace gateway
             }
 
             applicationUrl = config["applicationUrl"];
-            args = new string[] { config["applicationUrl"] };
+            args = new string[] { config["applicationUrl"].Replace(",",";") };
             Console.WriteLine(AppDomain.CurrentDomain.BaseDirectory + "server.pfx");
             var certificate = new X509Certificate2(AppDomain.CurrentDomain.BaseDirectory+"server.pfx", config["httpspassword"]);
             Proccessor.filetype = config["filetype"].Split(",");
+            
             CreateHostBuilder(args).UseKestrel(options =>
             {
                 options.ConfigureHttpsDefaults(options => { options.ServerCertificate = certificate; });

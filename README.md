@@ -328,6 +328,46 @@
         }
 
 ```
+
+## API-获取HTTP header信息
+首先需要在gateway网关中修改配置文件，
+>  
+  "Headers": [ "token" ]//添加需要获取到的HTTP header
+```
+[InstallFun(FunAttribute.Get, "测试")]
+        public string ff22()
+        { 
+          var value = this.Headers["对应KEY"];
+            return "";
+        }
+```
+## API-获取OAuth2.0  认证信息中包含信息
+认证中心需要返回对应的资料内容如下：
+
+```
+   context.Result = new GrantValidationResult(
+                             subject: context.UserName,
+                             authenticationMethod: "custom",
+                             claims: new Claim[] {
+                                new Claim("UserId", "ceshi123"),
+                                new Claim("Name","ceshi"),
+                                new Claim("Phone", "135135"),
+                                new Claim("Role","admin"),
+                                 new Claim("Area","41")
+                             });
+```
+
+然后需要在gateway网关中修改配置文件，
+>  "Cookies": [ "Areacode", "Role", "UserId", "Name", "Phone" ]
+
+```
+[InstallFun(FunAttribute.Get, "测试")]
+        public string ff22()
+        { 
+          var value = this.Cookies["对应KEY"];
+            return "";
+        }
+```
 # 调用和验证
  
 #### 通过网关HTTP/HTTPS Restful调用服务
@@ -347,7 +387,6 @@
  String retun = clientChannel.Call<String>("api/abcd", "ff2","asdasd");//"api/abcd" 路由地址，ff2，调用的方法名称，"asdasd" 传入的参数，有几个就写几个，多个参数，可以写多个如，Call<String>("路由名", "方法名","参数1"，"参数2");
   //Call<String> 为返回的值类型
 ```
-
 
 # 其他说明
 

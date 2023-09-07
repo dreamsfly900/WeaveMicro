@@ -287,6 +287,18 @@
         }
 
 ```
+## API- 异步返回调用
+```
+   public async Task<String> ff()
+        {
+           object obj=  this.Cookies;            object obj2 = this.Headers;
+
+
+            
+             await Task.Delay(1000);
+            return await Task.Run(() => { ; return "aaaaaa"; } ) ;
+        }
+```
 ## API-流式写入返回（字符串）
 流式返回可以在数据量较大的时候，数据快速响应到页面
 ```

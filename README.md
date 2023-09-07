@@ -234,6 +234,43 @@
     //API签名可以这样写（wRPCService v1.0.8 以上版本）
     public async Task<IApiResult> Update(T_DisasterCase o)...
 ```
+## API-GET方法
+ [InstallFun(FunAttribute.Get, "此方法用于测试")]//指定方法为远程方法， 
+       //FunAttribute { NONE,Get,POST ，file} 包含四种请求类型，为方法写注释
+        public String ff(String md)
+        {
+          
+         //   Console.WriteLine(md);
+            return "Class2.ff的返回值";
+        }
+## API-post方法
+ [InstallFun(FunAttribute.POST, "此方法用于测试")]//指定方法为远程方法， 
+       //FunAttribute { NONE,Get,POST ，file} 包含四种请求类型，为方法写注释
+        public String ff(String md,int a)
+        {
+          
+         //   Console.WriteLine(md);
+            return "Class2.ff的返回值";
+        }
+## API-json 实体对象请求方法
+ [InstallFun(FunAttribute.NONE, "此方法用于测试")]//指定方法为远程方法， 
+       //FunAttribute { NONE,Get,POST ，file} 包含四种请求类型，为方法写注释
+        public String ff(mode md)//只能传入一个对象
+        {
+          
+         //   Console.WriteLine(md.name);
+            return "Class2.ff的返回值";
+        }
+## API-文件上传方法
+[InstallFun(FunAttribute.file, "此方法用于测试")]
+        public String ff(string name)//接收文件并保存
+        {
+           object obj=  this.Cookies;            object obj2 = this.Headers; 
+            System.IO.FileStream streamWriter = new System.IO.FileStream(this.Filedata.filename,System.IO.FileMode.Create);
+            streamWriter.Write(this.Filedata.data,0, this.Filedata.data.Length);
+            streamWriter.Close();
+            return this.Filedata.filename;
+        }
 
 # 调用和验证
  

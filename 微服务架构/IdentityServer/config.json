@@ -3,7 +3,7 @@
   "IdentityServer": "https://localhost:5000",
   "Audience": "api1",
   "defaultScheme": "Bearer",
-  "applicationUrl": "https://localhost:1221",
+  "applicationUrl": "https://localhost:1221;https://localhost:1223",
   "httpspassword": "linezero",
-  "Microcenter": "116.255.241.135:9002"
+  "Microcenter": "127.0.0.1:9002"
 }

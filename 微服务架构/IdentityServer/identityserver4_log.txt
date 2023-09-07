@@ -1,0 +1,30 @@
+2023-09-04 15:00:39.020 +08:00 [DBG] Hosting starting
+2023-09-04 15:00:39.123 +08:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2023-09-04 15:00:39.131 +08:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2023-09-04 15:00:39.134 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2023-09-04 15:00:39.134 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2023-09-04 15:00:39.134 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2023-09-04 15:00:39.135 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2023-09-04 15:00:39.135 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2023-09-04 15:00:39.201 +08:00 [INF] User profile is available. Using 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-09-04 15:00:39.206 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-2502554e-8fd9-4d5d-966d-3d486ede9490.xml'.
+2023-09-04 15:00:39.211 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-544c9a78-aa22-4dfe-9576-8e202abcc6ac.xml'.
+2023-09-04 15:00:39.212 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-8b9ec217-d077-4ce2-8b1b-502ae410a2c3.xml'.
+2023-09-04 15:00:39.212 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-fb4c5c43-ee22-4e1f-bd55-d922330b6740.xml'.
+2023-09-04 15:00:39.218 +08:00 [DBG] Found key "2502554e-8fd9-4d5d-966d-3d486ede9490".
+2023-09-04 15:00:39.225 +08:00 [DBG] Found key "544c9a78-aa22-4dfe-9576-8e202abcc6ac".
+2023-09-04 15:00:39.226 +08:00 [DBG] Found key "8b9ec217-d077-4ce2-8b1b-502ae410a2c3".
+2023-09-04 15:00:39.226 +08:00 [DBG] Found key "fb4c5c43-ee22-4e1f-bd55-d922330b6740".
+2023-09-04 15:00:39.234 +08:00 [DBG] Considering key "544c9a78-aa22-4dfe-9576-8e202abcc6ac" with expiration date "2023-10-31T02:49:30.8637242+00:00" as default key.
+2023-09-04 15:00:39.236 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-09-04 15:00:39.237 +08:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-09-04 15:00:39.239 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-09-04 15:00:39.242 +08:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-09-04 15:00:39.245 +08:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-09-04 15:00:39.250 +08:00 [DBG] Using key "544c9a78-aa22-4dfe-9576-8e202abcc6ac" as the default key.
+2023-09-04 15:00:39.252 +08:00 [DBG] Key ring with default key "544c9a78-aa22-4dfe-9576-8e202abcc6ac" was loaded during application startup.
+2023-09-04 15:00:39.381 +08:00 [DBG] Hosting started
+2023-09-04 15:00:39.382 +08:00 [DBG] Loaded hosting startup assembly IdentityServer
+2023-09-04 15:00:39.382 +08:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-09-04 15:00:39.383 +08:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-09-04 15:00:43.754 +08:00 [DBG] Hosting shutdown

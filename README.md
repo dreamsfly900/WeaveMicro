@@ -235,6 +235,8 @@
     public async Task<IApiResult> Update(T_DisasterCase o)...
 ```
 ## API-GET方法
+
+```
  [InstallFun(FunAttribute.Get, "此方法用于测试")]//指定方法为远程方法， 
        //FunAttribute { NONE,Get,POST ，file} 包含四种请求类型，为方法写注释
         public String ff(String md)
@@ -243,7 +245,11 @@
          //   Console.WriteLine(md);
             return "Class2.ff的返回值";
         }
+
+```
 ## API-post方法
+
+```
  [InstallFun(FunAttribute.POST, "此方法用于测试")]//指定方法为远程方法， 
        //FunAttribute { NONE,Get,POST ，file} 包含四种请求类型，为方法写注释
         public String ff(String md,int a)
@@ -252,7 +258,11 @@
          //   Console.WriteLine(md);
             return "Class2.ff的返回值";
         }
+
+```
 ## API-json 实体对象请求方法
+
+```
  [InstallFun(FunAttribute.NONE, "此方法用于测试")]//指定方法为远程方法， 
        //FunAttribute { NONE,Get,POST ，file} 包含四种请求类型，为方法写注释
         public String ff(mode md)//只能传入一个对象
@@ -261,7 +271,11 @@
          //   Console.WriteLine(md.name);
             return "Class2.ff的返回值";
         }
+
+```
 ## API-文件上传方法
+
+```
 [InstallFun(FunAttribute.file, "此方法用于测试")]
         public String ff(string name)//接收文件并保存
         {
@@ -272,6 +286,48 @@
             return this.Filedata.filename;
         }
 
+```
+## API-流式写入返回（字符串）
+流式返回可以在数据量较大的时候，数据快速响应到页面
+```
+ [InstallFun(FunAttribute.Get, "测试流传输")]
+        public void ff22()
+        {
+            int i = 0;
+            DateTime dt = DateTime.Now;
+            while (true)
+            { i++;
+                this.PushStream("Weave微服务架构,是.net core下开发的由分发网关，服务中心，认证中心，服务API 组成，具有多负载分布式特点");
+                if (i > 20000)
+                  break;
+             }
+            DateTime dt2 = DateTime.Now;
+            Console.WriteLine("ff22:"+(dt2-dt).TotalMilliseconds);
+
+        }
+```
+## API-流式写入返回（二进制）
+
+```
+     [InstallFun(FunAttribute.Get, "测试流传输", "application/octet-stream")]
+        public void ffs22()
+        {
+            DateTime dt = DateTime.Now;
+            int i = 0;
+            while (true)
+            {
+                i++;
+                this.PushStream(System.Text.UTF8Encoding.UTF8.GetBytes("Weave微服务架构,是.net core下开发的由分发网关，服务中心，认证中心，服务API 组成，具有多负载分布式特点"));
+                if (i > 100000)
+                    break;
+            }
+            DateTime dt2 = DateTime.Now;
+            Console.WriteLine("ffs22:" + (dt2 - dt).TotalMilliseconds);
+            /// Console.WriteLine(name);
+
+        }
+
+```
 # 调用和验证
  
 #### 通过网关调用服务

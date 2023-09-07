@@ -1,4 +1,4 @@
-# WeaveMicro（帅哥，美女给个Star再走）
+# WeaveMicro
 - 支持.net core 2.x-7.x，正常使用 
 
 - 支持linux系统，centos，radhat,麒麟，统信，鲲鹏，X86_64,等系统，经过测试互认证。[查看证书](%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230524143454.png)

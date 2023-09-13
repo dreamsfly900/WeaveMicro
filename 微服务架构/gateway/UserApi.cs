@@ -31,325 +31,330 @@ namespace gateway
             if (context.Request.Method == "NONE")
                 context.Request.Method = "POST";
             if (context.Request.Method != "GET" && context.Request.Method != "POST")
-                return;
-            RouteLog rlog = new RouteLog();
-            wRPCclient.filedata FDATA = new wRPCclient.filedata();
-            try
             {
-                Dictionary<string, String> servicesDic = new Dictionary<string, String>();
-                dynamic contentFromBody = "";
-                //    await context.Response.WriteAsync(Encoding.GetEncoding("GB2312").ToString());
-                context.Response.ContentType = "application/json;charset=utf-8";
-                if (servers == null)
+                // await _next(context);
+               // return;
+            }
+            else
+            {
+                RouteLog rlog = new RouteLog();
+                wRPCclient.filedata FDATA = new wRPCclient.filedata();
+                try
                 {
-                    await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 999, msg = "非法请求" }));
-                    return;
-                }
-                if (context.Request.ContentLength != null)
-                {
-
-                    var body = "";
-                    var filebyte = new byte[0];
-
-                    context.Request.EnableBuffering();
-                    using (var mem = new MemoryStream())
-                    using (var reader = new StreamReader(mem))
+                    Dictionary<string, String> servicesDic = new Dictionary<string, String>();
+                    dynamic contentFromBody = "";
+                    //    await context.Response.WriteAsync(Encoding.GetEncoding("GB2312").ToString());
+                    context.Response.ContentType = "application/json;charset=utf-8";
+                    if (servers == null)
                     {
-                        context.Request.Body.Seek(0, SeekOrigin.Begin);
-                        await context.Request.Body.CopyToAsync(mem);
-                        mem.Seek(0, SeekOrigin.Begin);
-
-                        if (context.Request.ContentType.IndexOf("multipart/form-data") >= 0)
-                        {
-                            string WebKitForm = reader.ReadLine();
-
-                            string cd = reader.ReadLine();
-                            string ct = reader.ReadLine();
-                            String[] Content_Disposition = cd.Split(";");
-                            String[] Content_Type = ct.Split(":");
-                            try
-                            {
-                                foreach (String sstype in Content_Disposition)
-                                {
-                                    if (sstype.Split("=")[0].Trim() == "filename")
-                                    {
-                                        FDATA.filename = sstype.Split("=")[1].Replace("\"", "");
-                                        FDATA.filetype = FDATA.filename.Substring(FDATA.filename.LastIndexOf("."));
-                                    }
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 510, msg = "传输非法文件" }));
-                                //context.Abort();
-                                return;
-                            }
-                            bool fileisok = false;
-                            foreach (string ftype in filetype)
-                            {
-                                if (FDATA.filetype == ftype)
-                                {
-                                    fileisok = true;
-                                    break;
-                                }
-
-                            }
-                            if (!fileisok)
-                            {
-                                await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 555, msg = "非法文件" }));
-                                //context.Abort();
-                                return;
-                            }
-
-                            string a = reader.ReadLine();
-                            mem.Position =System.Text.UTF8Encoding.UTF8.GetBytes (WebKitForm + "\r\n" + cd + "\r\n" + ct + "\r\n" + "\r\n").Length ;
-
-                            byte[] data = new byte[mem.Length - mem.Position - System.Text.UTF8Encoding.UTF8.GetBytes("\r\n" + WebKitForm + "--\r\n").Length];
-                            mem.Read(data, 0, data.Length);
-                            //System.IO.FileStream streamWriter = new System.IO.FileStream(FDATA.filename, System.IO.FileMode.Create);
-                            //streamWriter.Write(data, 0, data.Length);
-                            //streamWriter.Close();
-                            // String str = reader.ReadToEnd() ;
-
-                            //String tempstr=str.Split("\r\n" + WebKitForm+ "--")[0];
-                            //filebyte = System.Text.Encoding.Default.GetBytes(tempstr);
-                            FDATA.data = data;
-                            //  reader.ReadLine();
-
-                            string endWebKitForm = WebKitForm + "--";
-                        }
-                        else
-                        {
-
-                            body = reader.ReadToEnd();
-
-                        }
+                        await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 999, msg = "非法请求" }));
+                        return;
                     }
-                    if (context.Request.ContentType != null)
+                    if (context.Request.ContentLength != null)
                     {
-                        if (context.Request.ContentType.IndexOf("application/json") >= 0)
-                        {
-                            contentFromBody = body;
-                        }
-                        else if (context.Request.ContentType.IndexOf("application/x-www-form-urlencoded") >= 0)
-                        {
-                            contentFromBody = body.Split("&");
 
-                            foreach (string datastr in contentFromBody)
-                            {
-                                servicesDic.Add(datastr.Split("=")[0], datastr.Split("=")[1]);
-                            }
-                        }
-                        else if (context.Request.ContentType.IndexOf("multipart/form-data") >= 0)
+                        var body = "";
+                        var filebyte = new byte[0];
+
+                        context.Request.EnableBuffering();
+                        using (var mem = new MemoryStream())
+                        using (var reader = new StreamReader(mem))
                         {
-                            if (context.Request.QueryString.ToString().Length > 1)
+                            context.Request.Body.Seek(0, SeekOrigin.Begin);
+                            await context.Request.Body.CopyToAsync(mem);
+                            mem.Seek(0, SeekOrigin.Begin);
+                            if (context.Request.ContentType != null)
+                                if (context.Request.ContentType.IndexOf("multipart/form-data") >= 0)
+                                {
+                                    string WebKitForm = reader.ReadLine();
+
+                                    string cd = reader.ReadLine();
+                                    string ct = reader.ReadLine();
+                                    String[] Content_Disposition = cd.Split(";");
+                                    String[] Content_Type = ct.Split(":");
+                                    try
+                                    {
+                                        foreach (String sstype in Content_Disposition)
+                                        {
+                                            if (sstype.Split("=")[0].Trim() == "filename")
+                                            {
+                                                FDATA.filename = sstype.Split("=")[1].Replace("\"", "");
+                                                FDATA.filetype = FDATA.filename.Substring(FDATA.filename.LastIndexOf("."));
+                                            }
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 510, msg = "传输非法文件" }));
+                                        //context.Abort();
+                                        return;
+                                    }
+                                    bool fileisok = false;
+                                    foreach (string ftype in filetype)
+                                    {
+                                        if (FDATA.filetype == ftype)
+                                        {
+                                            fileisok = true;
+                                            break;
+                                        }
+
+                                    }
+                                    if (!fileisok)
+                                    {
+                                        await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 555, msg = "非法文件" }));
+                                        //context.Abort();
+                                        return;
+                                    }
+
+                                    string a = reader.ReadLine();
+                                    mem.Position = System.Text.UTF8Encoding.UTF8.GetBytes(WebKitForm + "\r\n" + cd + "\r\n" + ct + "\r\n" + "\r\n").Length;
+
+                                    byte[] data = new byte[mem.Length - mem.Position - System.Text.UTF8Encoding.UTF8.GetBytes("\r\n" + WebKitForm + "--\r\n").Length];
+                                    mem.Read(data, 0, data.Length);
+                                    //System.IO.FileStream streamWriter = new System.IO.FileStream(FDATA.filename, System.IO.FileMode.Create);
+                                    //streamWriter.Write(data, 0, data.Length);
+                                    //streamWriter.Close();
+                                    // String str = reader.ReadToEnd() ;
+
+                                    //String tempstr=str.Split("\r\n" + WebKitForm+ "--")[0];
+                                    //filebyte = System.Text.Encoding.Default.GetBytes(tempstr);
+                                    FDATA.data = data;
+                                    //  reader.ReadLine();
+
+                                    string endWebKitForm = WebKitForm + "--";
+                                }
+                                else
+                                {
+
+                                    body = reader.ReadToEnd();
+
+                                }
+                        }
+                        if (context.Request.ContentType != null)
+                        {
+                            if (context.Request.ContentType.IndexOf("application/json") >= 0)
                             {
-                                contentFromBody = context.Request.QueryString.ToString().Substring(1).Split("&");
+                                contentFromBody = body;
+                            }
+                            else if (context.Request.ContentType.IndexOf("application/x-www-form-urlencoded") >= 0)
+                            {
+                                contentFromBody = body.Split("&");
 
                                 foreach (string datastr in contentFromBody)
                                 {
                                     servicesDic.Add(datastr.Split("=")[0], datastr.Split("=")[1]);
                                 }
                             }
+                            else if (context.Request.ContentType.IndexOf("multipart/form-data") >= 0)
+                            {
+                                if (context.Request.QueryString.ToString().Length > 1)
+                                {
+                                    contentFromBody = context.Request.QueryString.ToString().Substring(1).Split("&");
+
+                                    foreach (string datastr in contentFromBody)
+                                    {
+                                        servicesDic.Add(datastr.Split("=")[0], datastr.Split("=")[1]);
+                                    }
+                                }
+                            }
                         }
+
                     }
 
-                }
+                    rlog.Route = context.Request.Path.Value.Trim('/');
+                    rlog.gayway = Program.applicationUrl;
 
-                rlog.Route = context.Request.Path.Value.Trim('/');
-                rlog.gayway = Program.applicationUrl;
+                    rlog.requestIP = context.Connection.RemoteIpAddress.ToString();
+                    server ser = await WeightAlgorithm.Get(servers, context.Request.Path.Value.Trim('/'));
 
-                rlog.requestIP = context.Connection.RemoteIpAddress.ToString();
-                server ser = await WeightAlgorithm.Get(servers, context.Request.Path.Value.Trim('/'));
-
-                if (ser == null)
-                {
-                    await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 404, msg = "非法请求" }));
-                    //context.Abort();
-                    return;
-                }
-                else
-                {
-                    rlog.RouteIP = ser.IP + ser.Port;
-                    if (!IsAuthenticated(context, ser.services[0].Authorize))
+                    if (ser == null)
                     {
-                        await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 401, msg = "非法请求" }));
-                        // context.Abort();
+                        await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 404, msg = "非法请求" }));
+                        //context.Abort();
                         return;
                     }
-
-                    try
+                    else
                     {
-                        DateTime dt = DateTime.Now;
-                        //ser.services[0].parameter
-                        object[] objs = new object[0];
-                        if (ser.services[0].parameter != null)
+                        rlog.RouteIP = ser.IP + ser.Port;
+                        if (!IsAuthenticated(context, ser.services[0].Authorize))
                         {
-                            objs = new object[ser.services[0].parameter.Length];
-                            for (int i = 0; i < objs.Length; i++)
+                            await context.Response.WriteAsync(JsonConvert.SerializeObject(new { code = 401, msg = "非法请求" }));
+                            // context.Abort();
+                            return;
+                        }
+
+                        try
+                        {
+                            DateTime dt = DateTime.Now;
+                            //ser.services[0].parameter
+                            object[] objs = new object[0];
+                            if (ser.services[0].parameter != null)
                             {
-
-                                if (ser.services[0].Method == "NONE")
+                                objs = new object[ser.services[0].parameter.Length];
+                                for (int i = 0; i < objs.Length; i++)
                                 {
-                                    if (context.Request.ContentType != null)
-                                        if (context.Request.ContentType.ToLower().Contains("application/json"))
-                                        {
-                                            objs[i] = Newtonsoft.Json.JsonConvert.DeserializeObject(contentFromBody);
-                                        }
-                                        else if (context.Request.ContentType.ToLower() == "application/x-www-form-urlencoded")
-                                        {
-                                            objs[i] = servicesDic[ser.services[0].parameter[i]];
-                                        }
-                                }
-                                else if (ser.services[0].Method.ToUpper() == "GET")
-                                {
-                                    if (context.Request.Query == null)
-                                    {
 
-                                    }
-                                    else
+                                    if (ser.services[0].Method == "NONE")
                                     {
-                                        objs[i] = context.Request.Query[ser.services[0].parameter[i]].ToString();
+                                        if (context.Request.ContentType != null)
+                                            if (context.Request.ContentType.ToLower().Contains("application/json"))
+                                            {
+                                                objs[i] = Newtonsoft.Json.JsonConvert.DeserializeObject(contentFromBody);
+                                            }
+                                            else if (context.Request.ContentType.ToLower() == "application/x-www-form-urlencoded")
+                                            {
+                                                objs[i] = servicesDic[ser.services[0].parameter[i]];
+                                            }
                                     }
-                                }
-                                else if (ser.services[0].Method.ToUpper() == "POST")
-                                {
-                                    if (!context.Request.HasFormContentType)
+                                    else if (ser.services[0].Method.ToUpper() == "GET")
                                     {
-
-                                    }
-                                    else
-                                    {
-                                        if (context.Request.ContentType.ToLower().IndexOf("application/x-www-form-urlencoded") >= 0)
+                                        if (context.Request.Query == null)
                                         {
-                                            objs[i] = servicesDic[ser.services[0].parameter[i]];
+
                                         }
                                         else
-                                            objs[i] = context.Request.Form[ser.services[0].parameter[i]].ToString();
+                                        {
+                                            objs[i] = context.Request.Query[ser.services[0].parameter[i]].ToString();
+                                        }
                                     }
-                                }
-                                else if (ser.services[0].Method.ToUpper() == "FILE")
-                                {
-                                    if (context.Request.ContentType.IndexOf("multipart/form-data") >= 0)
+                                    else if (ser.services[0].Method.ToUpper() == "POST")
                                     {
-                                        if (servicesDic.Count > 0)
-                                            objs[i] = servicesDic[ser.services[0].parameter[i]];
+                                        if (!context.Request.HasFormContentType)
+                                        {
+
+                                        }
+                                        else
+                                        {
+                                            if (context.Request.ContentType.ToLower().IndexOf("application/x-www-form-urlencoded") >= 0)
+                                            {
+                                                objs[i] = servicesDic[ser.services[0].parameter[i]];
+                                            }
+                                            else
+                                                objs[i] = context.Request.Form[ser.services[0].parameter[i]].ToString();
+                                        }
                                     }
-                                }
-                                if (context.Request.ContentType != null && context.Request.ContentType.ToLower().Contains("application/json"))
-                                {
-                                    continue;
-                                }
-                                else
-                                {
-                                    Regex reg = new Regex(_noSafe, RegexOptions.IgnoreCase);
-                                    if (objs[i] != null && reg.IsMatch(objs[i].ToString()))
+                                    else if (ser.services[0].Method.ToUpper() == "FILE")
                                     {
-                                        await context.Response.WriteAsync($" ~, {"警告！！不安全SELECT!已记录IP，等待报警"}");
-                                        return;
+                                        if (context.Request.ContentType.IndexOf("multipart/form-data") >= 0)
+                                        {
+                                            if (servicesDic.Count > 0)
+                                                objs[i] = servicesDic[ser.services[0].parameter[i]];
+                                        }
+                                    }
+                                    if (context.Request.ContentType != null && context.Request.ContentType.ToLower().Contains("application/json"))
+                                    {
+                                        continue;
+                                    }
+                                    else
+                                    {
+                                        Regex reg = new Regex(_noSafe, RegexOptions.IgnoreCase);
+                                        if (objs[i] != null && reg.IsMatch(objs[i].ToString()))
+                                        {
+                                            await context.Response.WriteAsync($" ~, {"警告！！不安全SELECT!已记录IP，等待报警"}");
+                                            return;
 
+                                        }
+                                    }
+                                }
+
+                            }
+
+                            string datastr = Newtonsoft.Json.JsonConvert.SerializeObject(context.Request.Headers);
+
+                            String rl = context.Request.Path.Value.Trim('/');
+                            String[] rls = rl.Split('/');
+                            rl = "";
+                            for (int i = 0; i < rls.Length - 1; i++)
+                            {
+                                rl += rls[i] + "/";
+                            }
+                            rl = rl.Substring(0, rl.Length - 1);
+                            String[] Headers = Startup.config.GetSection("Headers").Get<String[]>();
+                            Dictionary<string, String> keysh = new Dictionary<string, string>();
+                            foreach (string hh in Headers)
+                            {
+                                Regex reg = new Regex(_noSafe, RegexOptions.IgnoreCase);
+                                if (reg.IsMatch(context.Request.Headers[hh].ToString()))
+                                {
+                                    await context.Response.WriteAsync($" ~, {"警告！！不安全SELECT!已记录IP，等待报警"}");
+                                    return;
+
+                                }
+                                keysh.Add(hh, context.Request.Headers[hh]);
+                            }
+                            String[] Cookies = Startup.config.GetSection("Cookies").Get<String[]>();
+                            Dictionary<string, String> keysCookies = new Dictionary<string, string>();
+
+                            if (context.User.Identity.IsAuthenticated)
+                            {
+                                foreach (string hh in Cookies)
+                                {
+                                    if (context.User.Claims.Count(c => c.Type == hh) > 0)
+                                    {
+
+                                        keysCookies.Add(hh, context.User.Claims.Single(c => c.Type == hh).Value);
                                     }
                                 }
                             }
+                            keysCookies.Add("RemoteIpAddress", rlog.requestIP);
+                            //if (context.Response.Headers["Content-Type"] != "application/octet-stream")
+                            //    context.Response.Headers["Content-Type"] = "application/octet-stream";
+                            //  context.Request.Headers
+                            //await context.Response.WriteAsync($"");
 
-                        }
-
-                        string datastr = Newtonsoft.Json.JsonConvert.SerializeObject(context.Request.Headers);
-
-                        String rl = context.Request.Path.Value.Trim('/');
-                        String[] rls = rl.Split('/');
-                        rl = "";
-                        for (int i = 0; i < rls.Length - 1; i++)
-                        {
-                            rl += rls[i] + "/";
-                        }
-                        rl = rl.Substring(0, rl.Length - 1);
-                        String[] Headers = Startup.config.GetSection("Headers").Get<String[]>();
-                        Dictionary<string, String> keysh = new Dictionary<string, string>();
-                        foreach (string hh in Headers)
-                        {
-                            Regex reg = new Regex(_noSafe, RegexOptions.IgnoreCase);
-                            if (reg.IsMatch(context.Request.Headers[hh].ToString()))
+                            if (ser.services.Length > 0)
                             {
-                                await context.Response.WriteAsync($" ~, {"警告！！不安全SELECT!已记录IP，等待报警"}");
-                                return;
-
-                            }
-                            keysh.Add(hh, context.Request.Headers[hh]);
-                        }
-                        String[] Cookies = Startup.config.GetSection("Cookies").Get<String[]>();
-                        Dictionary<string, String> keysCookies = new Dictionary<string, string>();
-
-                        if (context.User.Identity.IsAuthenticated)
-                        {
-                            foreach (string hh in Cookies)
-                            {
-                                if (context.User.Claims.Count(c => c.Type == hh) > 0)
+                                if (ser.services[0].ContentType != "")
                                 {
-
-                                    keysCookies.Add(hh, context.User.Claims.Single(c => c.Type == hh).Value);
+                                    context.Response.Headers["Content-Type"] = ser.services[0].ContentType;
                                 }
                             }
-                        }
-                        keysCookies.Add("RemoteIpAddress", rlog.requestIP);
-                        //if (context.Response.Headers["Content-Type"] != "application/octet-stream")
-                        //    context.Response.Headers["Content-Type"] = "application/octet-stream";
-                        //  context.Request.Headers
-                        //await context.Response.WriteAsync($"");
+                            String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh, keysCookies, new
+                                    ClientChannel.recdata((str) =>
+                                    {
+                                        context.Response.Body.WriteAsync(System.Text.UTF8Encoding.UTF8.GetBytes(str));
+                                        // context.Response.WriteAsync($"{str}");
 
-                        if (ser.services.Length > 0)
+                                    }), new ClientChannel.recdataStream((data) =>
+                                    {
+                                        //application/octet-stream
+
+                                        //context.Response.WriteAsync($"{str}");
+                                        context.Response.Body.WriteAsync(data);
+                                    }), FDATA);
+                            if (retun != "null")
+                                await context.Response.WriteAsync($"{retun}");
+
+
+                            // await context.Response.WriteAsync($"{ retun}{ objs.Length},{rl},{rls[rls.Length - 1]}，{ser.ToString()},{context.Request.ContentType}");
+                            DateTime dt2 = DateTime.Now;
+                            rlog.time = (dt2 - dt).TotalMilliseconds.ToString();
+                            //    Console.WriteLine((dt2 - dt).TotalMilliseconds);
+                            return;
+                            //string httpstr = Newtonsoft.Json.JsonConvert.SerializeObject(httpmode);
+                        }
+                        catch (Exception ex)
                         {
-                            if (ser.services[0].ContentType != "")
-                            {
-                                context.Response.Headers["Content-Type"] = ser.services[0].ContentType;
-                            }
+
+                            await context.Response.WriteAsync($" ~服务调用 异常");
+                            return;
                         }
-                        String retun = CallServer.CallService(ser, rl, rls[rls.Length - 1], objs, keysh, keysCookies, new 
-                                ClientChannel.recdata((str) =>
-                                {
-                                     context.Response.Body.WriteAsync(System.Text.UTF8Encoding.UTF8.GetBytes(str));
-                                   // context.Response.WriteAsync($"{str}");
+                        finally
+                        {
+                            if (Program.mc != null)
+                                Program.mc.SendLog(rlog);
+                        }
 
-                                }),new ClientChannel.recdataStream((data) =>
-                                {
-                                    //application/octet-stream
-                                  
-                                    //context.Response.WriteAsync($"{str}");
-                                    context.Response.Body.WriteAsync(data);
-                                }), FDATA);
-                       if(retun!= "null")
-                            await context.Response.WriteAsync($"{retun}");
-                        
-
-                        // await context.Response.WriteAsync($"{ retun}{ objs.Length},{rl},{rls[rls.Length - 1]}，{ser.ToString()},{context.Request.ContentType}");
-                        DateTime dt2 = DateTime.Now;
-                        rlog.time = (dt2 - dt).TotalMilliseconds.ToString();
-                        //    Console.WriteLine((dt2 - dt).TotalMilliseconds);
-                        return;
-                        //string httpstr = Newtonsoft.Json.JsonConvert.SerializeObject(httpmode);
                     }
-                    catch (Exception ex)
-                    {
-
-                        await context.Response.WriteAsync($" ~服务调用 异常");
-                        return;
-                    }
-                    finally
-                    {
-                        if (Program.mc != null)
-                            Program.mc.SendLog(rlog);
-                    }
+                }
+                catch (Exception e)
+                { await context.Response.WriteAsync($" ~, {e.Message}"); }
+                finally
+                {
 
                 }
-            }
-            catch (Exception e)
-            { await context.Response.WriteAsync($" ~, {e.Message}"); }
-            finally
-            {
 
             }
-
-
         }
 
         static bool IsAuthenticated(HttpContext context, bool Authorize)

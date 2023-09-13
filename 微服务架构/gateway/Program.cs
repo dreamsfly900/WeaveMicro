@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using System;
+using System.Security.Authentication;
 using System.Security.Cryptography.X509Certificates;
 using WeaveMicroClient;
 using wRPC;
@@ -16,6 +17,7 @@ namespace gateway
         public static string applicationUrl;
         static void Main(string[] args)
         {
+            AppContext.SetSwitch("Microsoft.AspNetCore.Server.Kestrel.EnableWindows81Http2", true);
             //server[] servers= Funconfig.getConfig();
             //server ser= WeightAlgorithm.Get(servers, "abcd/ff");
             Console.WriteLine("Running WeaveMicro网关.");
@@ -47,7 +49,10 @@ namespace gateway
             
             CreateHostBuilder(args).UseKestrel(options =>
             {
-                options.ConfigureHttpsDefaults(options => { options.ServerCertificate = certificate; });
+                options.ConfigureHttpsDefaults(
+                    options => {
+                        options.SslProtocols =   SslProtocols.Tls11 |SslProtocols.Tls12 | SslProtocols.Tls13;
+                        options.ServerCertificate = certificate; });
             }).Build().Run();
 
             //mainthread loop

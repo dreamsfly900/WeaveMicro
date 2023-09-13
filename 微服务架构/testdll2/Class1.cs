@@ -86,7 +86,7 @@ namespace testdll2
         [InstallFun(FunAttribute.NONE, "此方法用于测试")]
         public String    ff2([Param("用户名")] string name)
         {
-
+           
            /// Console.WriteLine(name);
             return "Class2.f2f22的返回值";
         }

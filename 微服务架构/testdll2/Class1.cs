@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using wRPC;
+using wRPC.DataLogic;
 
 namespace testdll2
 {
@@ -61,9 +63,28 @@ namespace testdll2
 
         }
     }
-    [Route("api/abcd")]
-    public class Class2: FunctionBase
+    [Route("api/test")]
+    public class testclass : ApiBase<object>
     {
+        public async Task<ApiResult<String>> test()
+        {
+            return await TRY(async () =>
+            {
+                return "";
+            });
+        }
+        public async Task<IApiResult> testapi()
+        {
+            return await TRY(async () =>
+            {
+                return "";
+            });
+        }
+    }
+    [Route("api/abcd")]
+    public class Class2 : FunctionBase
+    {
+        
         /// <summary>
         /// 此方法用于测试XML注释（需要生成XML文档）
         /// </summary>
@@ -72,14 +93,10 @@ namespace testdll2
         public async Task<String> ff()
         {
            object obj=  this.Cookies;            object obj2 = this.Headers;
+          
 
-
-            //   Console.WriteLine(md.name);
-            //System.IO.FileStream streamWriter = new System.IO.FileStream(this.Filedata.filename,System.IO.FileMode.Create);
-            //streamWriter.Write(this.Filedata.data,0, this.Filedata.data.Length);
-            //streamWriter.Close();
-            //this.Filedata.filename
-             await Task.Delay(1000);
+             
+                await Task.Delay(1000);
             return await Task.Run(() => { ; return "aaaaaa"; } ) ;
         }
         [Authorize]

@@ -14,6 +14,10 @@
     [WeaveMicro-1.0.0-1.aarch64.rpm](https://gitee.com/UDCS/weave-micro/releases)
 
     [WeaveMicro-1.0.0-1.x86_64.rpm](https://gitee.com/UDCS/weave-micro/releases)
+- 登录认证中心RPM包下载
+
+     [登录认证中心RPM包发行与使用说明](https://gitee.com/UDCS/weave-micro/releases/tag/1.0.1.a)
+
 
 # Weave微服务架构介绍
 
@@ -405,6 +409,38 @@
         }
 ```
 # 调用和验证
+之前版本认证中心需要重新编译内容，自己提供实现，目前可通过接口继承进行实现。简化编写方法
+新建2.0类库 ，nuget 搜索 WeaveVerify，继承 IdentityBase，实现内部方法
+
+```
+  public class Verifyabc : IdentityBase
+  {
+      public override string PrjName { get; set; } = "abc";//项目名称
+
+      public override Verifymode attestation(string Loginname, string Password)
+      {
+          Verifymode vm = new Verifymode();
+          if (true)
+          { //认证成功赋值内容
+              vm.Verify = true;
+              vm.Claims = new Claim[] {
+                  new Claim("UserId", "123"),
+                  new Claim("Name", "admin"),
+                  new Claim("GivenName", "sdfq") } ;
+             
+          }
+          else
+          {
+//认证失败提示错误内容
+              vm.Verify = false;
+              vm.ERRMessage = "XXX错误~！";
+          }
+          return vm;
+      }
+  }
+```
+测试提交参数
+![测试提交参数截图](https://foruda.gitee.com/images/1697712264366894372/f6b34e4a_598831.png "屏幕截图")
  
 #### 通过网关HTTP/HTTPS Restful调用服务
 

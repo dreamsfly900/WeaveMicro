@@ -4,6 +4,7 @@ using System.Text;
 
 namespace wRPC
 {
+   
     public enum FunAttribute { NONE,Get,POST,file }
     public class InstallFunAttribute : System.Attribute
     {

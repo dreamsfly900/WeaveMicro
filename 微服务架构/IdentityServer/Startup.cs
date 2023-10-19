@@ -3,7 +3,9 @@
 
 
 using System;
+using System.Collections.Concurrent;
 using System.IO;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
@@ -15,11 +17,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using WeaveVerify;
 
 namespace IdentityServer
 {
     public class Startup
     {
+     
         public IHostingEnvironment Environment { get; }
 
         public Startup(IHostingEnvironment environment)
@@ -88,6 +92,6 @@ namespace IdentityServer
             // uncomment, if you wan to add an MVC-based UI
             //app.UseMvcWithDefaultRoute();
         }
-
+    
     }
 }

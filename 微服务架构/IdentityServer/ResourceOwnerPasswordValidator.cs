@@ -7,11 +7,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using System.Reflection;
+using WeaveVerify;
+using System.Collections.Concurrent;
 
 namespace IdentityServer
 {
     public class ResourceOwnerPasswordValidator : IResourceOwnerPasswordValidator
     {
+         
         public ResourceOwnerPasswordValidator()
         {
 
@@ -32,20 +36,26 @@ namespace IdentityServer
             }
             try
             {
-                
-                   
+
+                if (Program.keyValuePairs.ContainsKey(type))
+                {
+                    var Verifymode = Program.keyValuePairs[type].attestation(Loginname, Password);
+                    if (Verifymode.Verify)
+                    {
                         //验证成功
                         context.Result = new GrantValidationResult(
                              subject: context.UserName,
                              authenticationMethod: "custom",
-                             claims: new Claim[] {
-                                new Claim("UserId", "ceshi123"),
-                                new Claim("Name","ceshi"),
-                                new Claim("Phone", "135135"),
-                                new Claim("Role","admin"),
-                                 new Claim("Area","41")
-                             });
-                   
+                             claims: Verifymode.Claims
+                             );
+                    }
+                    else
+                    {
+                        context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, Verifymode.ERRMessage);
+                    }
+                }
+                else
+                { context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "不能认证相关项目"); }
                 
             }
             catch (Exception e)
@@ -56,38 +66,10 @@ namespace IdentityServer
 
             
         }
-        public static String getSha256(String strData)
-        {
-            try
-            {
-                byte[] bytValue = System.Text.Encoding.UTF8.GetBytes(strData);
-
-                SHA256 sha256 = new SHA256CryptoServiceProvider();
-                byte[] retVal = sha256.ComputeHash(bytValue);
-                StringBuilder sb = new StringBuilder();
-                for (int i = 0; i < retVal.Length; i++)
-                {
-                    sb.Append(retVal[i].ToString("x2"));
-                }
-                return sb.ToString();
-            }
-            catch (System.Exception ex)
-            {
-                throw new Exception("get sha256 error:" + ex.Message, ex);
-            }
-        }
+       
+  
+    
         //可以根据需要设置相应的Claim
-        private Claim[] GetUserClaims()
-        {
-            return new Claim[]
-            {
-            new Claim("UserId", "123"),
-            new Claim("Name","admin"),
-            new Claim("GivenName", "sdfq"),
-            new Claim("FamilyName", "zxc"),
-            new Claim("Email", "123211@qq.com"),
-            new Claim("Role","admin")
-            };
-        }
+      
     }
 }

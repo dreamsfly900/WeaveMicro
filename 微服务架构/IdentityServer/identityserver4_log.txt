@@ -28,3 +28,257 @@
 2023-09-04 15:00:39.382 +08:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
 2023-09-04 15:00:39.383 +08:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
 2023-09-04 15:00:43.754 +08:00 [DBG] Hosting shutdown
+2023-10-19 18:06:17.402 +08:00 [DBG] Hosting starting
+2023-10-19 18:06:17.702 +08:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2023-10-19 18:06:17.709 +08:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2023-10-19 18:06:17.712 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2023-10-19 18:06:17.712 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2023-10-19 18:06:17.712 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2023-10-19 18:06:17.713 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2023-10-19 18:06:17.713 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2023-10-19 18:06:17.873 +08:00 [INF] User profile is available. Using 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-19 18:06:17.881 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-2502554e-8fd9-4d5d-966d-3d486ede9490.xml'.
+2023-10-19 18:06:17.904 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-544c9a78-aa22-4dfe-9576-8e202abcc6ac.xml'.
+2023-10-19 18:06:17.917 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-8b9ec217-d077-4ce2-8b1b-502ae410a2c3.xml'.
+2023-10-19 18:06:17.930 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-fb4c5c43-ee22-4e1f-bd55-d922330b6740.xml'.
+2023-10-19 18:06:17.956 +08:00 [DBG] Found key "2502554e-8fd9-4d5d-966d-3d486ede9490".
+2023-10-19 18:06:17.971 +08:00 [DBG] Found key "544c9a78-aa22-4dfe-9576-8e202abcc6ac".
+2023-10-19 18:06:17.971 +08:00 [DBG] Found key "8b9ec217-d077-4ce2-8b1b-502ae410a2c3".
+2023-10-19 18:06:17.972 +08:00 [DBG] Found key "fb4c5c43-ee22-4e1f-bd55-d922330b6740".
+2023-10-19 18:06:17.980 +08:00 [DBG] Considering key "544c9a78-aa22-4dfe-9576-8e202abcc6ac" with expiration date "2023-10-31T02:49:30.8637242+00:00" as default key.
+2023-10-19 18:06:17.983 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-10-19 18:06:17.984 +08:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-10-19 18:06:17.986 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-10-19 18:06:17.990 +08:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-10-19 18:06:17.993 +08:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-10-19 18:06:17.996 +08:00 [DBG] Using key "544c9a78-aa22-4dfe-9576-8e202abcc6ac" as the default key.
+2023-10-19 18:06:17.997 +08:00 [DBG] Key ring with default key "544c9a78-aa22-4dfe-9576-8e202abcc6ac" was loaded during application startup.
+2023-10-19 18:06:18.282 +08:00 [DBG] Hosting started
+2023-10-19 18:06:18.283 +08:00 [DBG] Loaded hosting startup assembly IdentityServer
+2023-10-19 18:06:18.283 +08:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-10-19 18:06:18.284 +08:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-10-19 18:06:41.601 +08:00 [DBG] Hosting starting
+2023-10-19 18:06:41.718 +08:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2023-10-19 18:06:41.726 +08:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2023-10-19 18:06:41.730 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2023-10-19 18:06:41.730 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2023-10-19 18:06:41.730 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2023-10-19 18:06:41.731 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2023-10-19 18:06:41.731 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2023-10-19 18:06:41.782 +08:00 [INF] User profile is available. Using 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-19 18:06:41.787 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-2502554e-8fd9-4d5d-966d-3d486ede9490.xml'.
+2023-10-19 18:06:41.793 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-544c9a78-aa22-4dfe-9576-8e202abcc6ac.xml'.
+2023-10-19 18:06:41.794 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-8b9ec217-d077-4ce2-8b1b-502ae410a2c3.xml'.
+2023-10-19 18:06:41.795 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-fb4c5c43-ee22-4e1f-bd55-d922330b6740.xml'.
+2023-10-19 18:06:41.801 +08:00 [DBG] Found key "2502554e-8fd9-4d5d-966d-3d486ede9490".
+2023-10-19 18:06:41.809 +08:00 [DBG] Found key "544c9a78-aa22-4dfe-9576-8e202abcc6ac".
+2023-10-19 18:06:41.810 +08:00 [DBG] Found key "8b9ec217-d077-4ce2-8b1b-502ae410a2c3".
+2023-10-19 18:06:41.811 +08:00 [DBG] Found key "fb4c5c43-ee22-4e1f-bd55-d922330b6740".
+2023-10-19 18:06:41.820 +08:00 [DBG] Considering key "544c9a78-aa22-4dfe-9576-8e202abcc6ac" with expiration date "2023-10-31T02:49:30.8637242+00:00" as default key.
+2023-10-19 18:06:41.823 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-10-19 18:06:41.825 +08:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-10-19 18:06:41.827 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-10-19 18:06:41.832 +08:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-10-19 18:06:41.835 +08:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-10-19 18:06:41.839 +08:00 [DBG] Using key "544c9a78-aa22-4dfe-9576-8e202abcc6ac" as the default key.
+2023-10-19 18:06:41.841 +08:00 [DBG] Key ring with default key "544c9a78-aa22-4dfe-9576-8e202abcc6ac" was loaded during application startup.
+2023-10-19 18:06:41.979 +08:00 [DBG] Hosting started
+2023-10-19 18:06:41.980 +08:00 [DBG] Loaded hosting startup assembly IdentityServer
+2023-10-19 18:06:41.981 +08:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-10-19 18:06:41.982 +08:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-10-19 18:10:33.196 +08:00 [DBG] Hosting starting
+2023-10-19 18:10:33.292 +08:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2023-10-19 18:10:33.300 +08:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2023-10-19 18:10:33.302 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2023-10-19 18:10:33.302 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2023-10-19 18:10:33.302 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2023-10-19 18:10:33.303 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2023-10-19 18:10:33.303 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2023-10-19 18:10:33.338 +08:00 [INF] User profile is available. Using 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-19 18:10:33.342 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-2502554e-8fd9-4d5d-966d-3d486ede9490.xml'.
+2023-10-19 18:10:33.347 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-544c9a78-aa22-4dfe-9576-8e202abcc6ac.xml'.
+2023-10-19 18:10:33.348 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-8b9ec217-d077-4ce2-8b1b-502ae410a2c3.xml'.
+2023-10-19 18:10:33.349 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-fb4c5c43-ee22-4e1f-bd55-d922330b6740.xml'.
+2023-10-19 18:10:33.355 +08:00 [DBG] Found key "2502554e-8fd9-4d5d-966d-3d486ede9490".
+2023-10-19 18:10:33.363 +08:00 [DBG] Found key "544c9a78-aa22-4dfe-9576-8e202abcc6ac".
+2023-10-19 18:10:33.364 +08:00 [DBG] Found key "8b9ec217-d077-4ce2-8b1b-502ae410a2c3".
+2023-10-19 18:10:33.365 +08:00 [DBG] Found key "fb4c5c43-ee22-4e1f-bd55-d922330b6740".
+2023-10-19 18:10:33.373 +08:00 [DBG] Considering key "544c9a78-aa22-4dfe-9576-8e202abcc6ac" with expiration date "2023-10-31T02:49:30.8637242+00:00" as default key.
+2023-10-19 18:10:33.376 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-10-19 18:10:33.377 +08:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-10-19 18:10:33.379 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-10-19 18:10:33.384 +08:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-10-19 18:10:33.388 +08:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-10-19 18:10:33.391 +08:00 [DBG] Using key "544c9a78-aa22-4dfe-9576-8e202abcc6ac" as the default key.
+2023-10-19 18:10:33.392 +08:00 [DBG] Key ring with default key "544c9a78-aa22-4dfe-9576-8e202abcc6ac" was loaded during application startup.
+2023-10-19 18:10:33.529 +08:00 [DBG] Hosting started
+2023-10-19 18:10:33.529 +08:00 [DBG] Loaded hosting startup assembly IdentityServer
+2023-10-19 18:10:33.531 +08:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-10-19 18:10:33.531 +08:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-10-19 18:12:18.982 +08:00 [DBG] Hosting starting
+2023-10-19 18:12:19.073 +08:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2023-10-19 18:12:19.081 +08:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2023-10-19 18:12:19.083 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2023-10-19 18:12:19.083 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2023-10-19 18:12:19.084 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2023-10-19 18:12:19.084 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2023-10-19 18:12:19.084 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2023-10-19 18:12:19.118 +08:00 [INF] User profile is available. Using 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-19 18:12:19.123 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-2502554e-8fd9-4d5d-966d-3d486ede9490.xml'.
+2023-10-19 18:12:19.128 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-544c9a78-aa22-4dfe-9576-8e202abcc6ac.xml'.
+2023-10-19 18:12:19.131 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-8b9ec217-d077-4ce2-8b1b-502ae410a2c3.xml'.
+2023-10-19 18:12:19.131 +08:00 [DBG] Reading data from file 'C:\Users\gejie\AppData\Local\ASP.NET\DataProtection-Keys\key-fb4c5c43-ee22-4e1f-bd55-d922330b6740.xml'.
+2023-10-19 18:12:19.137 +08:00 [DBG] Found key "2502554e-8fd9-4d5d-966d-3d486ede9490".
+2023-10-19 18:12:19.146 +08:00 [DBG] Found key "544c9a78-aa22-4dfe-9576-8e202abcc6ac".
+2023-10-19 18:12:19.147 +08:00 [DBG] Found key "8b9ec217-d077-4ce2-8b1b-502ae410a2c3".
+2023-10-19 18:12:19.148 +08:00 [DBG] Found key "fb4c5c43-ee22-4e1f-bd55-d922330b6740".
+2023-10-19 18:12:19.157 +08:00 [DBG] Considering key "544c9a78-aa22-4dfe-9576-8e202abcc6ac" with expiration date "2023-10-31T02:49:30.8637242+00:00" as default key.
+2023-10-19 18:12:19.159 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-10-19 18:12:19.161 +08:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-10-19 18:12:19.164 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-10-19 18:12:19.169 +08:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-10-19 18:12:19.174 +08:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-10-19 18:12:19.178 +08:00 [DBG] Using key "544c9a78-aa22-4dfe-9576-8e202abcc6ac" as the default key.
+2023-10-19 18:12:19.179 +08:00 [DBG] Key ring with default key "544c9a78-aa22-4dfe-9576-8e202abcc6ac" was loaded during application startup.
+2023-10-19 18:12:19.317 +08:00 [DBG] Hosting started
+2023-10-19 18:12:19.317 +08:00 [DBG] Loaded hosting startup assembly IdentityServer
+2023-10-19 18:12:19.319 +08:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-10-19 18:12:19.320 +08:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-10-19 18:12:22.466 +08:00 [DBG] Connection id "0HMUGHFHAC5PC" accepted.
+2023-10-19 18:12:22.470 +08:00 [DBG] Connection id "0HMUGHFHAC5PC" started.
+2023-10-19 18:12:52.314 +08:00 [DBG] Connection id "0HMUGHFHAC5PD" accepted.
+2023-10-19 18:12:52.325 +08:00 [DBG] Connection id "0HMUGHFHAC5PD" started.
+2023-10-19 18:13:53.858 +08:00 [DBG] Connection id "0HMUGHFHAC5PC" received FIN.
+2023-10-19 18:13:53.870 +08:00 [DBG] Connection id "0HMUGHFHAC5PC" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-10-19 18:13:53.873 +08:00 [DBG] Connection id "0HMUGHFHAC5PC" disconnecting.
+2023-10-19 18:13:53.880 +08:00 [DBG] Connection id "0HMUGHFHAC5PC" stopped.
+2023-10-19 18:14:13.712 +08:00 [DBG] Connection id "0HMUGHFHAC5PD" received FIN.
+2023-10-19 18:14:13.712 +08:00 [DBG] Connection id "0HMUGHFHAC5PE" accepted.
+2023-10-19 18:14:13.714 +08:00 [DBG] Connection id "0HMUGHFHAC5PD" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-10-19 18:14:13.714 +08:00 [DBG] Connection id "0HMUGHFHAC5PE" started.
+2023-10-19 18:14:13.715 +08:00 [DBG] Connection id "0HMUGHFHAC5PD" disconnecting.
+2023-10-19 18:14:13.721 +08:00 [DBG] Connection id "0HMUGHFHAC5PD" stopped.
+2023-10-19 18:14:35.832 +08:00 [DBG] Connection id "0HMUGHFHAC5PF" accepted.
+2023-10-19 18:14:35.842 +08:00 [DBG] Connection id "0HMUGHFHAC5PF" started.
+2023-10-19 18:14:35.848 +08:00 [DBG] Connection id "0HMUGHFHAC5PG" accepted.
+2023-10-19 18:14:35.848 +08:00 [DBG] Connection id "0HMUGHFHAC5PG" started.
+2023-10-19 18:14:35.938 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:1221/connect/token - -
+2023-10-19 18:14:35.940 +08:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-10-19 18:14:44.521 +08:00 [DBG] Login Url: /Account/Login
+2023-10-19 18:14:44.521 +08:00 [DBG] Login Return Url Parameter: ReturnUrl
+2023-10-19 18:14:44.523 +08:00 [DBG] Logout Url: /Account/Logout
+2023-10-19 18:14:44.524 +08:00 [DBG] ConsentUrl Url: /consent
+2023-10-19 18:14:44.524 +08:00 [DBG] Consent Return Url Parameter: returnUrl
+2023-10-19 18:14:44.525 +08:00 [DBG] Error Url: /home/error
+2023-10-19 18:14:44.525 +08:00 [DBG] Error Id Parameter: errorId
+2023-10-19 18:14:44.532 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2023-10-19 18:14:44.566 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2023-10-19 18:14:44.574 +08:00 [DBG] Request path /connect/token matched to endpoint type Token
+2023-10-19 18:14:48.137 +08:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2023-10-19 18:14:48.140 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2023-10-19 18:14:48.144 +08:00 [WRN] Invalid HTTP request for token endpoint
+2023-10-19 18:14:48.277 +08:00 [DBG] Connection id "0HMUGHFHAC5PG" completed keep alive response.
+2023-10-19 18:14:48.281 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:1221/connect/token - - - 400 - application/json;+charset=UTF-8 12346.1653ms
+2023-10-19 18:15:04.507 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:1221/connect/token - -
+2023-10-19 18:15:04.510 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2023-10-19 18:15:04.511 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2023-10-19 18:15:04.512 +08:00 [DBG] Request path /connect/token matched to endpoint type Token
+2023-10-19 18:15:04.513 +08:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2023-10-19 18:15:04.515 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2023-10-19 18:15:04.516 +08:00 [WRN] Invalid HTTP request for token endpoint
+2023-10-19 18:15:04.517 +08:00 [DBG] Connection id "0HMUGHFHAC5PG" completed keep alive response.
+2023-10-19 18:15:04.518 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:1221/connect/token - - - 400 - application/json;+charset=UTF-8 10.7772ms
+2023-10-19 18:15:42.016 +08:00 [DBG] Connection id "0HMUGHFHAC5PF" received FIN.
+2023-10-19 18:15:42.046 +08:00 [DBG] Connection id "0HMUGHFHAC5PE" received FIN.
+2023-10-19 18:15:42.046 +08:00 [DBG] Connection id "0HMUGHFHAC5PF" disconnecting.
+2023-10-19 18:15:42.048 +08:00 [DBG] Connection id "0HMUGHFHAC5PF" stopped.
+2023-10-19 18:15:42.055 +08:00 [DBG] Connection id "0HMUGHFHAC5PE" disconnecting.
+2023-10-19 18:15:42.055 +08:00 [DBG] Connection id "0HMUGHFHAC5PF" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-10-19 18:15:42.073 +08:00 [DBG] Connection id "0HMUGHFHAC5PE" stopped.
+2023-10-19 18:15:42.084 +08:00 [DBG] Connection id "0HMUGHFHAC5PE" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-10-19 18:15:47.180 +08:00 [DBG] Connection id "0HMUGHFHAC5PH" accepted.
+2023-10-19 18:15:47.186 +08:00 [DBG] Connection id "0HMUGHFHAC5PH" started.
+2023-10-19 18:15:47.186 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:1221/connect/token - -
+2023-10-19 18:15:47.193 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2023-10-19 18:15:47.198 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2023-10-19 18:15:47.200 +08:00 [DBG] Request path /connect/token matched to endpoint type Token
+2023-10-19 18:15:47.209 +08:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2023-10-19 18:15:47.210 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2023-10-19 18:15:47.213 +08:00 [WRN] Invalid HTTP request for token endpoint
+2023-10-19 18:15:47.213 +08:00 [DBG] Connection id "0HMUGHFHAC5PG" completed keep alive response.
+2023-10-19 18:15:47.214 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:1221/connect/token - - - 400 - application/json;+charset=UTF-8 28.3170ms
+2023-10-19 18:15:58.558 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:1221/connect/token - -
+2023-10-19 18:15:58.563 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2023-10-19 18:15:58.565 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2023-10-19 18:15:58.567 +08:00 [DBG] Request path /connect/token matched to endpoint type Token
+2023-10-19 18:15:58.567 +08:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2023-10-19 18:15:58.568 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2023-10-19 18:15:58.569 +08:00 [WRN] Invalid HTTP request for token endpoint
+2023-10-19 18:15:58.570 +08:00 [DBG] Connection id "0HMUGHFHAC5PG" completed keep alive response.
+2023-10-19 18:15:58.571 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:1221/connect/token - - - 400 - application/json;+charset=UTF-8 12.9616ms
+2023-10-19 18:17:00.360 +08:00 [DBG] Connection id "0HMUGHFHAC5PH" received FIN.
+2023-10-19 18:17:00.363 +08:00 [DBG] Connection id "0HMUGHFHAC5PH" disconnecting.
+2023-10-19 18:17:00.369 +08:00 [DBG] Connection id "0HMUGHFHAC5PH" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-10-19 18:17:00.372 +08:00 [DBG] Connection id "0HMUGHFHAC5PH" stopped.
+2023-10-19 18:21:00.628 +08:00 [DBG] Connection id "0HMUGHFHAC5PG" received FIN.
+2023-10-19 18:21:00.641 +08:00 [DBG] Connection id "0HMUGHFHAC5PG" disconnecting.
+2023-10-19 18:21:00.645 +08:00 [DBG] Connection id "0HMUGHFHAC5PG" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-10-19 18:21:00.658 +08:00 [DBG] Connection id "0HMUGHFHAC5PG" stopped.
+2023-10-19 18:21:32.137 +08:00 [DBG] Connection id "0HMUGHFHAC5PI" accepted.
+2023-10-19 18:21:32.180 +08:00 [DBG] Connection id "0HMUGHFHAC5PI" started.
+2023-10-19 18:21:32.185 +08:00 [DBG] Connection id "0HMUGHFHAC5PJ" accepted.
+2023-10-19 18:21:32.186 +08:00 [DBG] Connection id "0HMUGHFHAC5PJ" started.
+2023-10-19 18:21:32.186 +08:00 [DBG] Connection id "0HMUGHFHAC5PI" received FIN.
+2023-10-19 18:21:32.189 +08:00 [DBG] Connection id "0HMUGHFHAC5PI" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-10-19 18:21:32.191 +08:00 [DBG] Connection id "0HMUGHFHAC5PI" disconnecting.
+2023-10-19 18:21:32.191 +08:00 [DBG] Connection id "0HMUGHFHAC5PI" stopped.
+2023-10-19 18:21:32.192 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:1221/connect/token application/x-www-form-urlencoded 117
+2023-10-19 18:21:32.193 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2023-10-19 18:21:32.193 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2023-10-19 18:21:32.194 +08:00 [DBG] Request path /connect/token matched to endpoint type Token
+2023-10-19 18:21:34.470 +08:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2023-10-19 18:21:34.473 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2023-10-19 18:21:34.491 +08:00 [DBG] Start token request.
+2023-10-19 18:21:34.497 +08:00 [DBG] Start client validation
+2023-10-19 18:21:34.502 +08:00 [DBG] Start parsing Basic Authentication secret
+2023-10-19 18:21:34.505 +08:00 [DBG] Start parsing for secret in post body
+2023-10-19 18:21:34.515 +08:00 [DBG] Connection id "0HMUGHFHAC5PJ", Request id "0HMUGHFHAC5PJ:00000002": started reading request body.
+2023-10-19 18:21:34.516 +08:00 [DBG] Connection id "0HMUGHFHAC5PJ", Request id "0HMUGHFHAC5PJ:00000002": done reading request body.
+2023-10-19 18:21:34.524 +08:00 [DBG] Parser found secret: PostBodySecretParser
+2023-10-19 18:21:34.524 +08:00 [DBG] Secret id found: client
+2023-10-19 18:21:34.536 +08:00 [DBG] client configuration validation for client client succeeded.
+2023-10-19 18:21:34.545 +08:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2023-10-19 18:21:34.545 +08:00 [DBG] Client validation success
+2023-10-19 18:21:34.569 +08:00 [DBG] Start token request validation
+2023-10-19 18:21:34.578 +08:00 [DBG] Start resource owner password token request validation
+2023-10-19 18:21:41.136 +08:00 [INF] User authentication failed: ["不能认证相关项目"], request details: {"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"api1","AuthorizationCode":null,"RefreshToken":null,"UserName":"zz","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","scope":"api1","client_id":"client","client_secret":"***REDACTED***","prj":"Hydrops","username":"zz","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2023-10-19 18:21:41.163 +08:00 [DBG] Connection id "0HMUGHFHAC5PJ" completed keep alive response.
+2023-10-19 18:21:41.168 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:1221/connect/token application/x-www-form-urlencoded 117 - 400 - application/json;+charset=UTF-8 8976.5150ms
+2023-10-19 18:21:52.368 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:1221/connect/token application/x-www-form-urlencoded 113
+2023-10-19 18:21:52.372 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2023-10-19 18:21:52.390 +08:00 [DBG] AuthenticationScheme: idsrv was not authenticated.
+2023-10-19 18:21:52.391 +08:00 [DBG] Request path /connect/token matched to endpoint type Token
+2023-10-19 18:21:52.392 +08:00 [DBG] Endpoint enabled: Token, successfully created handler: IdentityServer4.Endpoints.TokenEndpoint
+2023-10-19 18:21:52.393 +08:00 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.TokenEndpoint for /connect/token
+2023-10-19 18:21:52.394 +08:00 [DBG] Start token request.
+2023-10-19 18:21:52.395 +08:00 [DBG] Start client validation
+2023-10-19 18:21:52.395 +08:00 [DBG] Start parsing Basic Authentication secret
+2023-10-19 18:21:52.396 +08:00 [DBG] Start parsing for secret in post body
+2023-10-19 18:21:52.397 +08:00 [DBG] Connection id "0HMUGHFHAC5PJ", Request id "0HMUGHFHAC5PJ:00000003": started reading request body.
+2023-10-19 18:21:52.398 +08:00 [DBG] Connection id "0HMUGHFHAC5PJ", Request id "0HMUGHFHAC5PJ:00000003": done reading request body.
+2023-10-19 18:21:52.399 +08:00 [DBG] Parser found secret: PostBodySecretParser
+2023-10-19 18:21:52.399 +08:00 [DBG] Secret id found: client
+2023-10-19 18:21:52.400 +08:00 [DBG] client configuration validation for client client succeeded.
+2023-10-19 18:21:52.401 +08:00 [DBG] Secret validator success: HashedSharedSecretValidator
+2023-10-19 18:21:52.402 +08:00 [DBG] Client validation success
+2023-10-19 18:21:52.402 +08:00 [DBG] Start token request validation
+2023-10-19 18:21:52.404 +08:00 [DBG] Start resource owner password token request validation
+2023-10-19 18:22:03.896 +08:00 [DBG] Resource owner password token request validation success.
+2023-10-19 18:22:03.896 +08:00 [INF] Token request validation success
+{"ClientId":"client","ClientName":null,"GrantType":"password","Scopes":"api1","AuthorizationCode":null,"RefreshToken":null,"UserName":"zz","AuthenticationContextReferenceClasses":null,"Tenant":null,"IdP":null,"Raw":{"grant_type":"password","scope":"api1","client_id":"client","client_secret":"***REDACTED***","prj":"abc","username":"zz","password":"***REDACTED***"},"$type":"TokenRequestValidationLog"}
+2023-10-19 18:22:03.940 +08:00 [DBG] Getting claims for access token for client: client
+2023-10-19 18:22:03.942 +08:00 [DBG] Getting claims for access token for subject: zz
+2023-10-19 18:22:06.922 +08:00 [DBG] Claim types from profile service that were filtered: ["sub","amr","idp","auth_time"]
+2023-10-19 18:22:07.098 +08:00 [DBG] Token request success.
+2023-10-19 18:22:07.105 +08:00 [DBG] Connection id "0HMUGHFHAC5PJ" completed keep alive response.
+2023-10-19 18:22:07.107 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:1221/connect/token application/x-www-form-urlencoded 113 - 200 - application/json;+charset=UTF-8 14739.5341ms

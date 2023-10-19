@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+using System.Web;
 using wRPC;
 using static wRPC.FunctionBase;
 
@@ -100,8 +101,8 @@ namespace wRPCService
                             {
 
                                 //改变参数类型   
-
-                                objs[i] = Convert.ChangeType(objs[i], tType);
+                                //HttpUtility.UrlDecode
+                                objs[i] = (Convert.ChangeType(objs[i], tType));
 
                             }
                             else if(tType.Equals(typeof(byte)) || tType.Equals(typeof(byte[])) || (!tType.IsInterface && !tType.IsClass))

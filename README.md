@@ -318,6 +318,30 @@
 
         }
 ```
+## 使用统一的回复数据规则-并简化使用方法
+```
+ [Route("api/test")]
+ public class testclass : ApiBase<object>//继承ApiBase<object>基类
+ {
+     public async Task<ApiResult<String>> test()
+     {
+         return await TRY(async () =>
+         {
+// 写自己的方法内容
+             return "";
+         });
+     }
+     public async Task<IApiResult> testapi()
+     {
+         return await TRY(async () =>
+         {
+// 写自己的方法内容
+             return "";
+         });
+     }
+ }
+```
+
 ## API-流式写入返回（二进制）
 
 ```

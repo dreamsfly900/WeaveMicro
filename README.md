@@ -102,51 +102,41 @@
 }
 ```
 ####  运行认证验证中心（OAuth 2.0 框架）
- 
-   - 找到项目中IdentityServer 项目，ResourceOwnerPasswordValidator.cs 文件，ValidateAsync方法 根据方法示例替换成，自己的验证账号和密码的方法
-   - 如果您有自己的项目支持OAuth 2.0 框架，请求可以部署发布您自己的认证服务，只需要在网关配置好相关配置。
+ 下载对应的打包发布程序您的服务器上
+ [登录认证中心RPM包发行与使用说明](https://gitee.com/UDCS/weave-micro/releases/tag/1.0.1.a)
+#### 认证中心的认证编写
+之前版本认证中心需要重新编译内容，自己提供实现，目前可通过接口继承进行实现。简化编写方法
+新建2.0类库 ，nuget 搜索 WeaveVerify，继承 IdentityBase，实现内部方法
 
 ```
- public async Task ValidateAsync(ResourceOwnerPasswordValidationContext context)
-        {
-            //根据context.UserName和context.Password与数据库的数据做校验，判断是否合法
+  public class Verifyabc : IdentityBase
+  {
+      public override string PrjName { get; set; } = "abc";//项目名称
 
-            string Loginname = context.UserName.Trim();//用户名
-            string Password = context.Password.Trim();//密码
-            string type = context.Request.Raw["prj"].Trim();//项目名称
-            
-            if (string.IsNullOrEmpty(type))
-            {
-                context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "The requested resource does not exist");
-                return;
-            }
-            try
-            {
-                
-                   //此处自己写判断
-                        //验证成功
-                        context.Result = new GrantValidationResult(
-                             subject: context.UserName,
-                             authenticationMethod: "custom",
-                             claims: new Claim[] {
-                                new Claim("UserId", "ceshi123"),
-                                new Claim("Name","ceshi"),
-                                new Claim("Phone", "135135"),
-                                new Claim("Role","admin"),
-                                 new Claim("Area","41")
-                             });
-                   
-                
-            }
-            catch (Exception e)
-            {
-                //验证失败                
-                context.Result = new GrantValidationResult(TokenRequestErrors.InvalidGrant, "invalid custom credential:" + e.Message);
-            }
-
-            
-        }
+      public override Verifymode attestation(string Loginname, string Password)
+      {
+          Verifymode vm = new Verifymode();
+          if (true)
+          { //认证成功赋值内容
+              vm.Verify = true;
+              vm.Claims = new Claim[] {
+                  new Claim("UserId", "123"),
+                  new Claim("Name", "admin"),
+                  new Claim("GivenName", "sdfq") } ;
+             
+          }
+          else
+          {
+//认证失败提示错误内容
+              vm.Verify = false;
+              vm.ERRMessage = "XXX错误~！";
+          }
+          return vm;
+      }
+  }
 ```
+测试提交参数
+![测试提交参数截图](https://foruda.gitee.com/images/1697712264366894372/f6b34e4a_598831.png "屏幕截图")
 # 制作API服务
 
 #### 编写自己的API服务，制作业务方法并运行
@@ -409,39 +399,7 @@
         }
 ```
 # 调用和验证
-#### 认证中心的认证编写和运行
-之前版本认证中心需要重新编译内容，自己提供实现，目前可通过接口继承进行实现。简化编写方法
-新建2.0类库 ，nuget 搜索 WeaveVerify，继承 IdentityBase，实现内部方法
 
-```
-  public class Verifyabc : IdentityBase
-  {
-      public override string PrjName { get; set; } = "abc";//项目名称
-
-      public override Verifymode attestation(string Loginname, string Password)
-      {
-          Verifymode vm = new Verifymode();
-          if (true)
-          { //认证成功赋值内容
-              vm.Verify = true;
-              vm.Claims = new Claim[] {
-                  new Claim("UserId", "123"),
-                  new Claim("Name", "admin"),
-                  new Claim("GivenName", "sdfq") } ;
-             
-          }
-          else
-          {
-//认证失败提示错误内容
-              vm.Verify = false;
-              vm.ERRMessage = "XXX错误~！";
-          }
-          return vm;
-      }
-  }
-```
-测试提交参数
-![测试提交参数截图](https://foruda.gitee.com/images/1697712264366894372/f6b34e4a_598831.png "屏幕截图")
  
 #### 通过网关HTTP/HTTPS Restful调用服务
 

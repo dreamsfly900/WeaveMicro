@@ -282,3 +282,80 @@
 2023-10-19 18:22:07.098 +08:00 [DBG] Token request success.
 2023-10-19 18:22:07.105 +08:00 [DBG] Connection id "0HMUGHFHAC5PJ" completed keep alive response.
 2023-10-19 18:22:07.107 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:1221/connect/token application/x-www-form-urlencoded 113 - 200 - application/json;+charset=UTF-8 14739.5341ms
+2023-10-31 18:33:57.703 +08:00 [DBG] Hosting starting
+2023-10-31 18:33:57.845 +08:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2023-10-31 18:33:57.852 +08:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2023-10-31 18:33:57.855 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2023-10-31 18:33:57.855 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2023-10-31 18:33:57.855 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2023-10-31 18:33:57.855 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2023-10-31 18:33:57.856 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2023-10-31 18:33:57.888 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator.B8N0XH48LBXEBM6\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-31 18:33:57.894 +08:00 [DBG] Repository contains no viable default key. Caller should generate a key with immediate activation.
+2023-10-31 18:33:57.894 +08:00 [DBG] Policy resolution states that a new key should be added to the key ring.
+2023-10-31 18:33:57.899 +08:00 [INF] Creating key "a54c7313-c017-44b1-a2a6-ad764417f2e0" with creation date "2023-10-31T10:33:57.8955342+00:00", activation date "2023-10-31T10:33:57.8899275+00:00", and expiration date "2024-01-29T10:33:57.8899275+00:00".
+2023-10-31 18:33:57.921 +08:00 [DBG] Descriptor deserializer type for key "a54c7313-c017-44b1-a2a6-ad764417f2e0" is 'Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'.
+2023-10-31 18:33:57.935 +08:00 [DBG] No key escrow sink found. Not writing key "a54c7313-c017-44b1-a2a6-ad764417f2e0" to escrow.
+2023-10-31 18:33:57.942 +08:00 [DBG] Encrypting to Windows DPAPI for current user account (B8N0XH48LBXEBM6\Administrator).
+2023-10-31 18:33:57.954 +08:00 [INF] Writing data to file 'C:\Users\Administrator.B8N0XH48LBXEBM6\AppData\Local\ASP.NET\DataProtection-Keys\key-a54c7313-c017-44b1-a2a6-ad764417f2e0.xml'.
+2023-10-31 18:33:57.955 +08:00 [DBG] Key cache expiration token triggered by 'CreateNewKey' operation.
+2023-10-31 18:33:57.956 +08:00 [DBG] Reading data from file 'C:\Users\Administrator.B8N0XH48LBXEBM6\AppData\Local\ASP.NET\DataProtection-Keys\key-a54c7313-c017-44b1-a2a6-ad764417f2e0.xml'.
+2023-10-31 18:33:57.976 +08:00 [DBG] Found key "a54c7313-c017-44b1-a2a6-ad764417f2e0".
+2023-10-31 18:33:57.982 +08:00 [DBG] Considering key "a54c7313-c017-44b1-a2a6-ad764417f2e0" with expiration date "2024-01-29T10:33:57.8899275+00:00" as default key.
+2023-10-31 18:33:57.983 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-10-31 18:33:57.984 +08:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-10-31 18:33:57.985 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-10-31 18:33:57.988 +08:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-10-31 18:33:57.990 +08:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-10-31 18:33:57.993 +08:00 [DBG] Using key "a54c7313-c017-44b1-a2a6-ad764417f2e0" as the default key.
+2023-10-31 18:33:57.995 +08:00 [DBG] Key ring with default key "a54c7313-c017-44b1-a2a6-ad764417f2e0" was loaded during application startup.
+2023-10-31 18:33:58.091 +08:00 [DBG] Hosting started
+2023-10-31 18:33:58.091 +08:00 [DBG] Loaded hosting startup assembly IdentityServer
+2023-10-31 18:33:58.092 +08:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-10-31 18:33:58.092 +08:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-10-31 18:37:58.833 +08:00 [DBG] Hosting starting
+2023-10-31 18:37:58.933 +08:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2023-10-31 18:37:58.939 +08:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2023-10-31 18:37:58.942 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2023-10-31 18:37:58.942 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2023-10-31 18:37:58.942 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2023-10-31 18:37:58.942 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2023-10-31 18:37:58.943 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2023-10-31 18:37:58.987 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator.B8N0XH48LBXEBM6\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-31 18:37:58.990 +08:00 [DBG] Reading data from file 'C:\Users\Administrator.B8N0XH48LBXEBM6\AppData\Local\ASP.NET\DataProtection-Keys\key-a54c7313-c017-44b1-a2a6-ad764417f2e0.xml'.
+2023-10-31 18:37:58.999 +08:00 [DBG] Found key "a54c7313-c017-44b1-a2a6-ad764417f2e0".
+2023-10-31 18:37:59.015 +08:00 [DBG] Considering key "a54c7313-c017-44b1-a2a6-ad764417f2e0" with expiration date "2024-01-29T10:33:57.8899275+00:00" as default key.
+2023-10-31 18:37:59.017 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-10-31 18:37:59.018 +08:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-10-31 18:37:59.019 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-10-31 18:37:59.024 +08:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-10-31 18:37:59.028 +08:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-10-31 18:37:59.031 +08:00 [DBG] Using key "a54c7313-c017-44b1-a2a6-ad764417f2e0" as the default key.
+2023-10-31 18:37:59.032 +08:00 [DBG] Key ring with default key "a54c7313-c017-44b1-a2a6-ad764417f2e0" was loaded during application startup.
+2023-10-31 18:37:59.115 +08:00 [DBG] Hosting started
+2023-10-31 18:37:59.116 +08:00 [DBG] Loaded hosting startup assembly IdentityServer
+2023-10-31 18:37:59.117 +08:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-10-31 18:37:59.117 +08:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-10-31 18:39:00.101 +08:00 [DBG] Hosting starting
+2023-10-31 18:39:00.193 +08:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2023-10-31 18:39:00.202 +08:00 [INF] Using the default authentication scheme idsrv for IdentityServer
+2023-10-31 18:39:00.205 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2023-10-31 18:39:00.205 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2023-10-31 18:39:00.206 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2023-10-31 18:39:00.206 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2023-10-31 18:39:00.206 +08:00 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2023-10-31 18:39:00.258 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator.B8N0XH48LBXEBM6\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-10-31 18:39:00.263 +08:00 [DBG] Reading data from file 'C:\Users\Administrator.B8N0XH48LBXEBM6\AppData\Local\ASP.NET\DataProtection-Keys\key-a54c7313-c017-44b1-a2a6-ad764417f2e0.xml'.
+2023-10-31 18:39:00.275 +08:00 [DBG] Found key "a54c7313-c017-44b1-a2a6-ad764417f2e0".
+2023-10-31 18:39:00.295 +08:00 [DBG] Considering key "a54c7313-c017-44b1-a2a6-ad764417f2e0" with expiration date "2024-01-29T10:33:57.8899275+00:00" as default key.
+2023-10-31 18:39:00.297 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-10-31 18:39:00.298 +08:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-10-31 18:39:00.299 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-10-31 18:39:00.302 +08:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-10-31 18:39:00.304 +08:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-10-31 18:39:00.307 +08:00 [DBG] Using key "a54c7313-c017-44b1-a2a6-ad764417f2e0" as the default key.
+2023-10-31 18:39:00.312 +08:00 [DBG] Key ring with default key "a54c7313-c017-44b1-a2a6-ad764417f2e0" was loaded during application startup.
+2023-10-31 18:39:00.384 +08:00 [DBG] Hosting started
+2023-10-31 18:39:00.384 +08:00 [DBG] Loaded hosting startup assembly IdentityServer
+2023-10-31 18:39:00.387 +08:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-10-31 18:39:00.387 +08:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net

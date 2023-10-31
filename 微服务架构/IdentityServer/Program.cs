@@ -72,22 +72,25 @@ namespace IdentityServer
                         {
 
                             //  MethodInfo[] mis = tt.GetMethods();
-
-
-                            object obj = assembly.CreateInstance(tt.FullName);
-                            if (obj is IdentityBase)
+                            if(tt.BaseType!=null)
+                            if (tt.BaseType.FullName == "WeaveVerify.IdentityBase")
                             {
-                                try
+                                object obj = assembly.CreateInstance(tt.FullName);
+                                if (obj is IdentityBase)
                                 {
-                                    IdentityBase oob = obj as IdentityBase;
+                                    try
+                                    {
+                                        IdentityBase oob = obj as IdentityBase;
 
-                                    listservice.TryAdd(oob.PrjName, oob);
-                                }
-                                catch (Exception ee)
-                                {
-                                    Console.WriteLine("GetService--eee-" + ee.Message);
-                                }
+                                        listservice.TryAdd(oob.PrjName, oob);
+                                            Console.WriteLine("GetService--已经加载-" + tt.FullName);
+                                        }
+                                    catch (Exception ee)
+                                    {
+                                        Console.WriteLine("GetService--eee-" + ee.Message);
+                                    }
 
+                                }
                             }
 
                         }
@@ -100,7 +103,7 @@ namespace IdentityServer
                 }
                 catch (Exception e)
                 { 
-                    Console.WriteLine(file+"---GetService---" +e.Message); 
+                  // Console.WriteLine(file+"---GetService---" +e.Message); 
                 }
             }
             return listservice;

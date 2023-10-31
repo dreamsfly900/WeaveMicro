@@ -25,13 +25,15 @@ namespace IdentityServer
         public static void Main(string[] args)
         {
             Console.Title = "IdentityServer4 - 认证中心";
-
+             
             CreateWebHostBuilder(args).Build().Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args)
         {
             var config = builder.Build();
+            
+            OAuthConfig.UserApi.ApiName =  string.IsNullOrWhiteSpace(config["apiname"]) ? "api1" : config["apiname"];   
             var certificate = new X509Certificate2("server.pfx", config["httpspassword"]);
             return WebHost.CreateDefaultBuilder().UseUrls(config["applicationUrl"])
                     .UseStartup<Startup>().UseKestrel(options =>

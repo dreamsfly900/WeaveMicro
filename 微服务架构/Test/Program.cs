@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections;
 using System.Collections.Concurrent;
 using System.IO;
 using System.Reflection;
+using System.Reflection.PortableExecutable;
 using System.Runtime.InteropServices;
 using WeaveMicroClient;
 using WeaveRemoteService;
@@ -24,11 +26,10 @@ namespace Test
         {
             RemoteService remoteService = new RemoteService("TEST");
             remoteService.Start();
-            clientChannel = new wRPCclient.ClientChannel("127.0.0.1", 10098);
-            var ibj = clientChannel.Call<object>("api/RadarData", "readerConfig","");
+            //clientChannel = new wRPCclient.ClientChannel("127.0.0.1", 10098);
+            //var ibj = clientChannel.Call<object>("api/RadarData", "readerConfig","");
 
-
-
+         
             //  String retun = clientChannel.Call<object>("api/WeChat", "SendFuWuTemplate", "{\r\n  \"Id\": 0,\r\n  \"PageName\": \"11\",\r\n  \"Width\": \"1920px\",\r\n  \"Height\": \"1080px\",\r\n  \"Config\": \"[]\",\r\n  \"UserId\": 15,\r\n  \"Createtime\": \"\",\r\n  \"Pushrate\": \"\",\r\n  \"Image\": \"\"\r\n}\r\n");
 
 

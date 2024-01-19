@@ -85,6 +85,7 @@
 - linux 系统 可以运行dotnet gateway.dll 
 - 安装 rpm 包后可以执行  `chmod  777 /gateway/gateway`  然后在执行 `/gateway/gateway`
 可以修改目录下config.json文件更改端口和服务中心地址，认证中心注册地址，本地网关找到config.json文件 修改配置
+- 支持添加头部以及禁用HTTP谓词，以便支持网监要求
 ```
 {
   "Authentication": true,//开启登录认证
@@ -98,7 +99,18 @@
   "filetype": ".jpg,.png,.doc,.txt",//指定可上传文件的后缀
   "httpspassword": "linezero",//https证书密码
   "Cookies": [ "Role", "UserId", "Name", "Phone" ],//开启认证后，token中所包含的指定信息，可明文带入远程服务中
-  "Headers": [ "token" ]//http指定头部内容可以带入，远程服务中
+  "Headers": [ "token" ],//http指定头部内容可以带入，远程服务中
+   //设置不允许的HTTP谓词，如TRACE
+  "HttpDisableMethods": [ "Trace", "Debug" ],
+   //添加额外的头部
+  "AddHeaders": {
+    "Referrer-Policy": "no-referrer",
+    "X-Content-Type-Options": "nosniff",
+    "X-Download-Options": "noopen",
+    "X-Permitted-Cross-Domain-Policies": "master-only",
+    "X-Frame-Options": "sameorigin",
+    "X-XSS-Protection": "1; mode=block"
+  },
 }
 ```
 ####  运行认证验证中心（OAuth 2.0 框架）

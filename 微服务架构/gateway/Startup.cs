@@ -11,8 +11,11 @@ using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks; 
+using System.Threading.Tasks;
 using IdentityServer4;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
 //[assembly: OwinStartup(typeof(gateway.Startup))]
 namespace gateway
 {
@@ -22,9 +25,9 @@ namespace gateway
 
         public Startup(IConfiguration configuration)
         {
-            
+
             Configuration = configuration;
-           
+
         }
 
         public IConfiguration Configuration { get; }
@@ -32,14 +35,14 @@ namespace gateway
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-             config = builder.Build();
+            config = builder.Build();
             if (Convert.ToBoolean(config["Authentication"]))
             {
                 services.AddAuthentication(config["defaultScheme"])
                   .AddJwtBearer(config["defaultScheme"], options =>
                   {
                       options.TokenValidationParameters.ValidateIssuer = false;
-                    //  options.TokenValidationParameters.RequireAudience = false;
+                      //  options.TokenValidationParameters.RequireAudience = false;
                       options.Authority = config["IdentityServer"];
                       options.RequireHttpsMetadata = false;
 
@@ -56,7 +59,7 @@ namespace gateway
         {
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             Proccessor.servers = Funconfig.getConfig();
-        
+
             if (env.IsDevelopment())
             {
                 // app.UseDeveloperExceptionPage();
@@ -66,7 +69,10 @@ namespace gateway
             {
                 app.UseExceptionHandler("/Error");
             }
-
+            //设置不允许的HTTP方法，如TRACE
+            app.UseMiddleware<Http405Middleware>(config);
+            //添加额外的头部
+            app.UseMiddleware<AddHeaderMiddleware>(config);
             // app.UseIdentityServer();
             // app.UseStaticFiles();
 
@@ -77,7 +83,7 @@ namespace gateway
             }
             //app.UseAuthorization();
             app.UseMiddleware<CorsMiddleware>();
-            
+
             app.Run(Proccessor.agent);
             //app.UseEndpoint(endpoints =>
             //{
@@ -134,4 +140,44 @@ namespace gateway
         }
     }
 
+    public class Http405Middleware
+    {
+        private readonly RequestDelegate _next;
+        private readonly IEnumerable<string> disableMethods;
+        public Http405Middleware(RequestDelegate next, IConfiguration config)
+        {
+            _next = next;
+            disableMethods = config.GetSection("HttpDisableMethods")?.Get<string[]>()?.Select(d => d.ToUpper()) ?? default;
+        }
+
+        public async Task Invoke(HttpContext context)
+        {
+            if (disableMethods != null && disableMethods.Contains(context.Request.Method.ToUpper()))
+            {
+                context.Response.StatusCode = (int)HttpStatusCode.MethodNotAllowed;
+                return;
+            }
+            await _next(context);
+        }
+    }
+    public class AddHeaderMiddleware
+    {
+        private readonly RequestDelegate _next;
+        private readonly Dictionary<string, string> _addHeaders;
+        public AddHeaderMiddleware(RequestDelegate next, IConfiguration config)
+        {
+            _next = next;
+            _addHeaders = config.GetSection("AddHeaders")?.Get<Dictionary<string, string>>() ?? default;
+        }
+
+        public async Task Invoke(HttpContext context)
+        {
+            if (_addHeaders != null)
+                foreach (var s in _addHeaders)
+                    if (!string.IsNullOrWhiteSpace(s.Key))
+                        if (string.IsNullOrWhiteSpace(s.Value)) context.Response.Headers.Remove(s.Key);
+                        else context.Response.Headers.Add(s.Key, s.Value);
+            await _next(context);
+        }
+    }
 }

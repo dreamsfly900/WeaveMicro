@@ -9,5 +9,14 @@
   "filetype": ".jpg,.png,.doc,.txt,.xlsx,.xls,.docx,.AVI,.mov,.rmvb,.rm,.FLV,.mp4,.3GP,.BMP,.DIB,.PCP,.DIF,.WMF,.GIF,.JPG,.TIF,.EPS,.PSD,.CDR,.IFF,.TGA,.PCD,.MPT,.PNG,.gif",
   "httpspassword": "linezero",
   "Cookies": [ "Areacode", "Role", "UserId", "Name", "Phone" ],
+  "HttpDisableMethods": [ "Trace", "Debug" ],
+  "AddHeaders": {
+    "Referrer-Policy": "no-referrer",
+    "X-Content-Type-Options": "nosniff",
+    "X-Download-Options": "noopen",
+    "X-Permitted-Cross-Domain-Policies": "master-only",
+    "X-Frame-Options": "sameorigin",
+    "X-XSS-Protection": "1; mode=block"
+  },
   "Headers": [ "token" ]
 }

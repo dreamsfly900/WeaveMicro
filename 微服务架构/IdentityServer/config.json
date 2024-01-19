@@ -1,7 +1,7 @@
 {
   "Authentication": true,
   "IdentityServer": "https://localhost:5000",
-  "Audience": "api1",
+  "apiname": "api1",
   "defaultScheme": "Bearer",
   "applicationUrl": "http://localhost:1221;https://localhost:1223",
   "httpspassword": "linezero",

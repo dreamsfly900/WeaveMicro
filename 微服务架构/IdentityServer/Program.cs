@@ -25,13 +25,15 @@ namespace IdentityServer
         public static void Main(string[] args)
         {
             Console.Title = "IdentityServer4 - 认证中心";
-
+             
             CreateWebHostBuilder(args).Build().Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args)
         {
             var config = builder.Build();
+            
+            OAuthConfig.UserApi.ApiName =  string.IsNullOrWhiteSpace(config["apiname"]) ? "api1" : config["apiname"];   
             var certificate = new X509Certificate2("server.pfx", config["httpspassword"]);
             return WebHost.CreateDefaultBuilder().UseUrls(config["applicationUrl"])
                     .UseStartup<Startup>().UseKestrel(options =>
@@ -70,22 +72,25 @@ namespace IdentityServer
                         {
 
                             //  MethodInfo[] mis = tt.GetMethods();
-
-
-                            object obj = assembly.CreateInstance(tt.FullName);
-                            if (obj is IdentityBase)
+                            if(tt.BaseType!=null)
+                            if (tt.BaseType.FullName == "WeaveVerify.IdentityBase")
                             {
-                                try
+                                object obj = assembly.CreateInstance(tt.FullName);
+                                if (obj is IdentityBase)
                                 {
-                                    IdentityBase oob = obj as IdentityBase;
+                                    try
+                                    {
+                                        IdentityBase oob = obj as IdentityBase;
 
-                                    listservice.TryAdd(oob.PrjName, oob);
-                                }
-                                catch (Exception ee)
-                                {
-                                    Console.WriteLine("GetService--eee-" + ee.Message);
-                                }
+                                        listservice.TryAdd(oob.PrjName, oob);
+                                            Console.WriteLine("GetService--已经加载-" + tt.FullName);
+                                        }
+                                    catch (Exception ee)
+                                    {
+                                        Console.WriteLine("GetService--eee-" + ee.Message);
+                                    }
 
+                                }
                             }
 
                         }
@@ -98,7 +103,7 @@ namespace IdentityServer
                 }
                 catch (Exception e)
                 { 
-                    Console.WriteLine(file+"---GetService---" +e.Message); 
+                  // Console.WriteLine(file+"---GetService---" +e.Message); 
                 }
             }
             return listservice;

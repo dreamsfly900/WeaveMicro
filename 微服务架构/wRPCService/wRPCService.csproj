@@ -12,7 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Weave.Server" Version="2.0.22" />
+    <PackageReference Include="Weave.Server" Version="2.0.24" />
   </ItemGroup>
 
 </Project>

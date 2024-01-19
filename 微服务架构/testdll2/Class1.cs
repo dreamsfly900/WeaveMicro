@@ -75,7 +75,8 @@ namespace testdll2
         }
         public async Task<IApiResult> testapi()
         {
-            return await TRY(async () =>
+            return await TRY
+                (async () =>
             {
                 return "";
             });
